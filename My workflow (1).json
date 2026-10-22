@@ -1,0 +1,1343 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an expert lead researcher and sales strategist.\n\nHere is the business data from Google Maps:\n- Name: {{ $('Filter').item.json.title }}\n- Phone: {{ $('Filter').item.json.phone }}\n- Address: {{ $('Filter').item.json.address }}\n\nHere is the raw Google Search results for this business:\n{{ JSON.stringify($json.organic_results) }}\n\nYOUR TASKS:\n1. Extract their official Instagram link (or \"Not Found\").\n2. Extract their official Facebook page link (or \"Not Found\").\n3. Extract their TikTok or X (Twitter) profile link (or \"Not Found\").\n4. Extract any public contact email found (or \"Not Found\").\n5. Write a punchy, hyper-personalized cold outreach pitch (under 70 words).\n6. Create an architectural strategy on why an automated booking funnel will scale them.\n7. Provide a modern responsive Tailwind CSS landing page mockup code.\n\nOutput your response strictly as valid JSON with these keys:\n{\n  \"email\": \"...\",\n  \"instagram\": \"...\",\n  \"facebook\": \"...\",\n  \"tiktok_x\": \"...\",\n  \"pitch\": \"...\",\n  \"demo_code\": \"...\"\n}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1104,
+        -192
+      ],
+      "id": "01637b9d-58bb-4143-b471-7da443421665",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.6-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        1008,
+        128
+      ],
+      "id": "fee14997-2863-40fc-99b4-82e434d8e4bd",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "rak8abilaZviDdmW",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://serpapi.com/search.json?engine=google_maps&q=Med+Spa+in+Dallas+TX&type=search&api_key=fe7b5baccf409cb6f9e1cb74c17fdc77ac9191a59a6c602ca60e3cec3582a1ec",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        -304,
+        128
+      ],
+      "id": "ee01af1a-b853-411c-aeb2-db98d2dfa633",
+      "name": "HTTP Request",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "local_results",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        -288
+      ],
+      "id": "3ab5ad65-9612-4ec6-951f-fc6d709912c9",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "6792133c-c8c3-43ae-82ed-b68a25218bd3",
+              "leftValue": "{{ $json.website }}",
+              "rightValue": "Is Not Empty",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "b59f5faf-0184-4d35-a0be-941429e26274",
+              "leftValue": "={{ $json.reviews || $json.rating_count || 0 }}",
+              "rightValue": 15,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        288,
+        -528
+      ],
+      "id": "8ebd3a65-5c6c-4959-a772-d3859886e5a0",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "url": "=https://serpapi.com/search.json?engine=google&q={{ encodeURIComponent($json.title + \" Dallas \" + \"instagram OR facebook OR tiktok OR email\") }}&api_key=fe7b5baccf409cb6f9e1cb74c17fdc77ac9191a59a6c602ca60e3cec3582a1ec",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        544,
+        -32
+      ],
+      "id": "2e060198-962a-4d7e-be04-348e311aed6e",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        832,
+        -160
+      ],
+      "id": "14ca0fed-3cec-48d9-82d1-4083d85266b0",
+      "name": "Wait",
+      "webhookId": "5a2666bf-6d64-44c5-9516-ac8b0f2c5669"
+    },
+    {
+      "parameters": {
+        "maxItems": 5
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        560,
+        -544
+      ],
+      "id": "f139a922-f02a-428b-903a-c934a27be7c1",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1lb1m2tjvUH5kv0dj5u5YaeZ157uPRj3BYTpUXJ28xc8",
+          "mode": "list",
+          "cachedResultName": "Client Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1lb1m2tjvUH5kv0dj5u5YaeZ157uPRj3BYTpUXJ28xc8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1lb1m2tjvUH5kv0dj5u5YaeZ157uPRj3BYTpUXJ28xc8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Business Name": "={{ $('Filter').item.json.title }}",
+            "address": "={{ $('Filter').item.json.address }}",
+            "email": "={{ $json.email }}",
+            "facebook": "={{ $json.facebook }}",
+            "tiktiok": "={{ $json.tiktok_x }}",
+            "AI Cold Pitch": "={{ $json.pitch }}",
+            "Landing Page Code / Prompt": "={{ $json.demo_code }}",
+            "instagram": "={{ $json.instagram }}",
+            "phone": "={{ $('Limit').first().json.phone || $('Split Out').first().json.phone || 'N/A' }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Business Name",
+              "displayName": "Business Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "phone",
+              "displayName": "phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "address",
+              "displayName": "address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "instagram",
+              "displayName": "instagram",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "facebook",
+              "displayName": "facebook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "tiktiok",
+              "displayName": "tiktiok",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "AI Cold Pitch",
+              "displayName": "AI Cold Pitch",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Landing Page Code / Prompt",
+              "displayName": "Landing Page Code / Prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1776,
+        -224
+      ],
+      "id": "1c4b9453-14df-42c7-b51e-a018a5d0bec0",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pcJekP0vCCmAAHTD",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const raw = $input.item.json.output || '';\n\n// Regex se direct values nikaalna bina kisi JSON parse crash ke\nconst extract = (key) => {\n  const match = raw.match(new RegExp(`\"${key}\"\\\\s*:\\\\s*\"([\\\\s\\\\S]*?)\"(?=\\\\s*,\\\\s*\"|\\\\s*}\\\\s*$)`));\n  return match ? match[1].replace(/\\\\\"/g, '\"').replace(/\\\\n/g, '\\n').trim() : 'Not Found';\n};\n\nreturn {\n  json: {\n    email: extract('email'),\n    instagram: extract('instagram'),\n    facebook: extract('facebook'),\n    tiktok_x: extract('tiktok_x'),\n    pitch: extract('pitch'),\n    demo_code: extract('demo_code')\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1472,
+        128
+      ],
+      "id": "fe6ef32d-689c-440b-8512-4806962cc0d6",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "sendTo": "mismailhasham279@gmail.com",
+        "subject": "=🎯 New Lead Found: {{ $('Append row in sheet').first().json[\"Business Name\"] || $('AI Agent').first().json.output?.business_name || 'High Potential Client' }}",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #f8fafc;\">\n  <h2 style=\"color: #0f172a; margin-top: 0; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;\">\n    🚀 New Client Lead Discovered\n  </h2>\n\n  <p style=\"color: #475569; font-size: 14px;\">A business without a website has been identified and processed by your automation agent.</p>\n\n  <div style=\"background-color: #ffffff; padding: 15px; border-radius: 6px; border: 1px solid #cbd5e1; margin-bottom: 15px;\">\n    <p style=\"margin: 8px 0; font-size: 14px;\"><strong>🏢 Business Name:</strong> {{ $('Append row in sheet').first().json[\"Business Name\"] || $('Limit').first().json.title }}</p>\n    <p style=\"margin: 8px 0; font-size: 14px;\"><strong>📞 Phone:</strong> {{ $('Append row in sheet').first().json[\"phone no\"] || $('Limit').first().json.phone || 'N/A' }}</p>\n    <p style=\"margin: 8px 0; font-size: 14px;\"><strong>📍 Address:</strong> {{ $('Append row in sheet').first().json[\"address\"] || $('Limit').first().json.address || 'N/A' }}</p>\n    <p style=\"margin: 8px 0; font-size: 14px;\"><strong>✉️ Email / Contact:</strong> {{ $('Append row in sheet').first().json[\"Email\"] || 'Pending Outreach' }}</p>\n    <p style=\"margin: 8px 0; font-size: 14px;\"><strong>🌐 Website Status:</strong> <span style=\"color: #dc2626; font-weight: bold;\">Missing / No Website</span></p>\n  </div>\n\n  <div style=\"background-color: #eff6ff; padding: 15px; border-radius: 6px; border-left: 4px solid #3b82f6;\">\n    <h3 style=\"margin-top: 0; color: #1e40af; font-size: 15px;\">🤖 AI Generated Pitch / Summary:</h3>\n    <p style=\"color: #1e293b; font-size: 13px; line-height: 1.5; white-space: pre-wrap;\">{{ $('AI Agent').first().json.output }}</p>\n  </div>\n\n  <p style=\"font-size: 12px; color: #94a3b8; margin-top: 20px; text-align: center;\">\n    Automated Lead Gen Pipeline • Powered by n8n\n  </p>\n</div>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1984,
+        48
+      ],
+      "id": "3debfa51-a788-41e9-9f9f-3b2022f0ec1b",
+      "name": "Send a message",
+      "webhookId": "871b28ef-3819-4151-8ecc-bd2ba65afeda",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "8x6tNXWb2ZNn3mKd",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -928,
+        -240
+      ],
+      "id": "12e336a9-fe35-457a-a624-d1b32bf775eb",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "const targets = [\n  { niche: \"Mobile mechanic\", city: \"Plano TX\", country: \"us\" },\n  { niche: \"Handyman\", city: \"Lubbock TX\", country: \"us\" },\n  { niche: \"Tree trimming service\", city: \"Mesa AZ\", country: \"us\" },\n  { niche: \"Towing service\", city: \"Arlington TX\", country: \"us\" },\n  { niche: \"Junk removal\", city: \"Fort Worth TX\", country: \"us\" },\n  { niche: \"Pressure washing\", city: \"Garland TX\", country: \"us\" }\n];\n\nconst pick = targets[Math.floor(Math.random() * targets.length)];\n\nreturn [\n  {\n    json: {\n      niche: pick.niche,\n      city: pick.city,\n      country_code: pick.country,\n      search_query: `${pick.niche} in ${pick.city}`,\n      source: 'maps' // SerpAPI Maps guaranteed leads deta hai bina error ke\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -544,
+        -176
+      ],
+      "id": "50e96493-393c-4481-a3f1-7fc15fcd1318",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "8a69fdc1-d569-43e1-a7b6-e30a31ed16e9",
+              "leftValue": "={{ $json.needs_more_leads }}",
+              "rightValue": 5,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        320,
+        400
+      ],
+      "id": "2151ab6b-b144-42bd-82bf-7bb69af22b2b",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "let passCount = 0;\ntry {\n  passCount = $('Filter').all().length;\n} catch (e) {\n  passCount = 0;\n}\n\n// Loop count track karein\nconst currentLoop = $runIndex || 0;\n\nreturn [\n  {\n    json: {\n      // Agar 5 se kam hain AUR loop 3 se kam dafa chala hai, tabhi mazeed dhoonde\n      needs_more_leads: passCount < 5 && currentLoop < 3,\n      leads_found: passCount,\n      attempts: currentLoop + 1\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        304,
+        -320
+      ],
+      "id": "ecca3bf1-2ad8-4c74-9166-1fbd44b512a4",
+      "name": "Check Zero Leads"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -816,
+        -496
+      ],
+      "id": "57a7c511-af5a-474c-ad0e-b4d5bf4608ee",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.source }}",
+                    "rightValue": "maps",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "d2455985-ba36-45c2-9b16-4f4202eb7c47"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "1590e37e-7e55-47d8-b355-be7d1c392b09",
+                    "leftValue": "={{ $json.source }}",
+                    "rightValue": "yellowpages",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "b523598e-0bf5-41b7-b662-b03e55e9f22e",
+                    "leftValue": "={{ $json.source }}",
+                    "rightValue": "yelp",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        16,
+        192
+      ],
+      "id": "70dd9405-96e2-43e1-9abb-883bb1b32571",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "url": "https://api.hasdata.com/scrape/yellow-pages/search",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "={{ $('Code in JavaScript1').first().json.niche }}"
+            },
+            {
+              "name": "location",
+              "value": "={{ $('Code in JavaScript1').first().json.city }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "9b1f37e3-1ac4-49ef-bfca-106771748b51"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        -384,
+        656
+      ],
+      "id": "bf2a7500-cc50-4f46-a6b6-3ea6a7aa8278",
+      "name": "YellowPages Scraper"
+    },
+    {
+      "parameters": {
+        "url": "https://api.hasdata.com/scrape/yelp/search",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "find_desc",
+              "value": "={{ $('Code in JavaScript1').first().json.niche }}"
+            },
+            {
+              "name": "find_loc",
+              "value": "={{ $('Code in JavaScript1').first().json.city }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "9b1f37e3-1ac4-49ef-bfca-106771748b51"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        112,
+        768
+      ],
+      "id": "801c057d-7dcd-4109-9aab-3b9892330b29",
+      "name": "yelp/search"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        1152,
+        464
+      ],
+      "id": "8a4d3505-6048-4fe2-9a44-b8010d0f02b7",
+      "name": "Error Trigger"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Workflow Name: {{ $json.workflow.name }}\nFailed Node: {{ $json.execution.error.node.name }}\nError Message: {{ $json.execution.error.message }}\nError Stack: {{ $json.execution.error.stack }}",
+        "options": {
+          "systemMessage": "You are an automated n8n DevOps engineer. Analyze the execution error details from the previous node. Diagnose the exact cause (such as API rate limits, schema/column mismatch, or network timeout). Provide a short 3-line summary: 1) What broke, 2) Which node failed, and 3) Exact step to fix it."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1568,
+        480
+      ],
+      "id": "06505469-4a33-4f46-b66b-c578106776c1",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        1440,
+        688
+      ],
+      "id": "94cd35bb-2058-4b56-be5a-42e2dd428a84",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "rak8abilaZviDdmW",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "founder@ismaildigital.site",
+        "toEmail": "{{ $('Code in JavaScript2').item.json.email }}",
+        "subject": "=Quick question regarding {{ $('Code in JavaScript2').item.json.business_title }}",
+        "emailFormat": "text",
+        "text": "={{ $json.content.parts[0].text }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        4800,
+        128
+      ],
+      "id": "c0e03be1-1865-41b2-99a3-cbc422f93d3a",
+      "name": "Send an Email",
+      "webhookId": "94283c58-8d4c-4608-b701-3930f07dff45",
+      "credentials": {
+        "smtp": {
+          "id": "7HXrJXXp5lT3hUhi",
+          "name": "SMTP account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-collector",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        2896,
+        480
+      ],
+      "id": "747c4fbc-c00e-4ce4-9e40-56ab2d241c2c",
+      "name": "Webhook1",
+      "webhookId": "d3803512-7744-4584-bcde-038af7bc2f5d"
+    },
+    {
+      "parameters": {
+        "operation": "Run actor and get dataset",
+        "actorSource": "store",
+        "actorId": {
+          "__rl": true,
+          "value": "nwua9Gu5YrADL7ZDj",
+          "mode": "list",
+          "cachedResultName": "Google Maps Scraper (compass/crawler-google-places)",
+          "cachedResultUrl": "https://console.apify.com/actors/nwua9Gu5YrADL7ZDj/input"
+        },
+        "customBody": "{\n  \"searchStringsArray\": [\n    \"Roofing contractor in Tampa Florida\",\n    \"Emergency plumber in Manchester UK\"\n  ],\n  \"maxCrawledPlacesPerSearch\": 10,\n  \"website\": \"withoutWebsite\",\n  \"skipClosedPlaces\": true,\n  \"maxReviews\": 100,\n  \"scrapeReviews\": false\n}",
+        "timeout": {}
+      },
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 1,
+      "position": [
+        3408,
+        544
+      ],
+      "id": "f40742e1-3b13-4fde-a292-ee291d655153",
+      "name": "Run an Actor and get dataset",
+      "credentials": {
+        "apifyApi": {
+          "id": "d1qDFC76DgbBygsH",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://google.serper.dev/search",
+        "sendQuery": true,
+        "specifyQuery": "json",
+        "jsonQuery": "={\n  \"q\": \"{{ $json.Business_Name }} {{ $json.Phone }} site:facebook.com OR site:instagram.com\"\n}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-KEY",
+              "value": "7b399632ea5ec61ba461380a593e0d5282a96b55"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        3744,
+        240
+      ],
+      "id": "7e0e7fb1-7230-4139-acf2-0ab77871ba6b",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nlet results = [];\n\nfor (const item of items) {\n  // Apify scraper se business details\n  const apifyData = $('Run an Actor and get dataset').first()?.json || {};\n  const businessTitle = apifyData.title || item.json.title || \"Business Owner\";\n  let phone = apifyData.phone || item.json.phone || \"\";\n\n  // Phone number clean karna\n  phone = phone.replace(/[^0-9]/g, '');\n  if (phone.startsWith('0')) {\n    phone = '92' + phone.substring(1);\n  }\n\n  // Google Serper results me se social links aur email nikalna\n  const organic = item.json.organic || [];\n  let fbLink = \"None\";\n  let instaLink = \"None\";\n  let extractedEmail = \"None\";\n\n  for (const res of organic) {\n    const link = res.link || \"\";\n    const snippet = res.snippet || \"\";\n\n    if (link.includes(\"facebook.com\") && fbLink === \"None\") {\n      fbLink = link;\n    }\n    if (link.includes(\"instagram.com\") && instaLink === \"None\") {\n      instaLink = link;\n    }\n\n    const emails = snippet.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/);\n    if (emails && extractedEmail === \"None\") {\n      extractedEmail = emails[0];\n    }\n  }\n\n  const validEmail = extractedEmail !== \"None\" && extractedEmail.includes(\"@\");\n\n  results.push({\n    json: {\n      business_title: businessTitle,\n      phone: phone,\n      email: validEmail ? extractedEmail : \"\",\n      has_email: validEmail,\n      facebook: fbLink,\n      instagram: instaLink\n    }\n  });\n}\n\nreturn results;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4096,
+        576
+      ],
+      "id": "b36e9687-410a-464d-97a0-abef3ed25996",
+      "name": "Code in JavaScript2"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1fzQwiE5SNtep2MF91AMReh8-MHni7ItnTbOGpgBSCdE",
+          "mode": "list",
+          "cachedResultName": "CraftLogic Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fzQwiE5SNtep2MF91AMReh8-MHni7ItnTbOGpgBSCdE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1fzQwiE5SNtep2MF91AMReh8-MHni7ItnTbOGpgBSCdE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Business_Name": "={{ $json.title }}",
+            "Niche_Query": "=local business",
+            "Phone": "='{{ $json.phone }}",
+            "Email": "={{ $json.email || \"None\" }}",
+            "Website": "={{ $json.website || \"None\" }}",
+            "facebook": "={{ $json.Facebook || \"None\" }}",
+            "instagram": "={{ $json.Instagram  || \"None\" }}",
+            "Pitch": "=Hi {{ $json.Business_Name }}, I noticed your Google Maps profile has great reviews but no official website. We build custom websites that help local contractors convert Google Maps calls into booked clients."
+          },
+          "matchingColumns": [
+            "Business_Name"
+          ],
+          "schema": [
+            {
+              "id": "Business_Name",
+              "displayName": "Business_Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Niche_Query",
+              "displayName": "Niche_Query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Website",
+              "displayName": "Website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pitch",
+              "displayName": "Pitch",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "facebook",
+              "displayName": "facebook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "instagram",
+              "displayName": "instagram",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        5280,
+        224
+      ],
+      "id": "22ee7058-d001-46d2-9c56-53f29c2c12ef",
+      "name": "Append row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "pcJekP0vCCmAAHTD",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-3.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-3.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are an expert sales copywriter for a web design agency (ismaildigital.site).\nWrite a short, friendly, personalized cold email pitch (under 75 words) to:\nBusiness Name: {{ $('Code in JavaScript2').item.json.business_title }}\nNiche: Local Service Business\n\nContext: They are on Google Maps with great reviews but no website.\nOffer: Tell them how having a modern website will turn their Google Maps visitors into booked paying clients.\nTone: Professional, helpful, not spammy.\nOutput: Only return the final email text (no greeting placeholders or extra commentary)."
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        4240,
+        304
+      ],
+      "id": "e9aa5a98-424b-4020-baa9-c8e92e60e05e",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "rak8abilaZviDdmW",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "c9bff9a4-761c-4a53-854f-fe10f0fc7f3d",
+              "leftValue": "={{ $('Code in JavaScript2').item.json.has_email }}",
+              "rightValue": "None",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        4592,
+        336
+      ],
+      "id": "2a9f00f1-a64a-475e-9274-66eaf1a12a2b",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"number\": \"={{ $json.phone }}\",\n  \"text\": \"={{ $json.text }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        3776,
+        576
+      ],
+      "id": "cd114963-7b9f-4fc3-8d8a-3b9ee9adeb44",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8080/message/sendText/craftlogic",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "ismail12345"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"number\": \"={{ $('Code in JavaScript2').item.json.phone }}\",\n  \"text\": \"={{ $('Message a model').item.json.content.parts[0].text }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        4880,
+        448
+      ],
+      "id": "c8cd4dfb-9a75-4168-9fdd-b31caa6b42db",
+      "name": "HTTP Request3"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check Zero Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Zero Leads": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "YellowPages Scraper",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "yelp/search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "YellowPages Scraper": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "yelp/search": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        []
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        []
+      ]
+    },
+    "Run an Actor and get dataset": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet1": {
+      "main": [
+        []
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Send an Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send an Email": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "errorWorkflow": "9UKFrhwF0Id6AOXg"
+  },
+  "versionId": "55210af8-440d-46fe-abbc-88803c270e7c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ce228d974f93d216d6fad7a5588c7d297079d2fb70516a83c6c78aeae5c656d1"
+  },
+  "nodeGroups": [],
+  "id": "9UKFrhwF0Id6AOXg",
+  "tags": []
+}
