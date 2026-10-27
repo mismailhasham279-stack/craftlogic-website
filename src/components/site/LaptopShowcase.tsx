@@ -1,5 +1,16 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
-import { ChevronLeft, ChevronRight, ShieldCheck, Activity } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ShieldCheck,
+  Activity,
+  Cpu,
+  Lock,
+  Sparkles,
+  Layers,
+  ArrowUpRight,
+  Maximize2
+} from "lucide-react";
 
 interface ShowcaseSlide {
   id: string;
@@ -7,6 +18,8 @@ interface ShowcaseSlide {
   category: string;
   tag: string;
   fileName: string;
+  accentColor: string;
+  stats: { label: string; value: string }[];
 }
 
 const METADATA_ARCHETYPES = [
@@ -14,88 +27,190 @@ const METADATA_ARCHETYPES = [
     title: "Apex Auto Spa — Exotic Detailing Platform",
     category: "Luxury Automotive Architecture",
     tag: "Next.js 15 • Tailwind • 24ms TTFB",
+    accentColor: "#00A8CC",
+    stats: [
+      { label: "Throughput", value: "98.4 MB/s" },
+      { label: "TTFB", value: "24ms" },
+      { label: "Cache Ratio", value: "99.1%" }
+    ]
   },
   {
     title: "Meridian Capital & Asset Vault",
     category: "High-Frequency Fintech Platform",
     tag: "WebSockets • TimescaleDB • SOC-2",
+    accentColor: "#10B981",
+    stats: [
+      { label: "Encryption", value: "AES-256" },
+      { label: "Latency", value: "4.2ms" },
+      { label: "Compliance", value: "SOC-2 Type II" }
+    ]
   },
   {
     title: "Aura Minimalist Studio Engine",
     category: "Creative Flagship Experience",
     tag: "Zero Hydration Shift • 100/100 Vitals",
+    accentColor: "#F59E0B",
+    stats: [
+      { label: "LCP", value: "0.6s" },
+      { label: "CLS", value: "0.00" },
+      { label: "FCP", value: "0.4s" }
+    ]
   },
   {
     title: "Hyperion Luxury Timepieces",
     category: "Headless E-Commerce Suite",
     tag: "Fastify • Redis Edge • Global POPs",
+    accentColor: "#6366F1",
+    stats: [
+      { label: "Cart Speed", value: "110ms" },
+      { label: "Edge POPs", value: "310+" },
+      { label: "Uptime", value: "99.999%" }
+    ]
   },
   {
     title: "Cortex Neural Agent Hub",
     category: "Autonomous AI Cloud Platform",
     tag: "Distributed Vector Pipeline • Python",
+    accentColor: "#EC4899",
+    stats: [
+      { label: "Inference", value: "18ms" },
+      { label: "Embeddings", value: "1536-dim" },
+      { label: "Accuracy", value: "99.8%" }
+    ]
   },
   {
     title: "Vanguard Health Telemetry",
     category: "Encrypted Healthcare Ecosystem",
     tag: "HIPAA Audited • AES-256 • RBAC",
+    accentColor: "#06B6D4",
+    stats: [
+      { label: "HIPAA", value: "Certified" },
+      { label: "Sync Rate", value: "Realtime" },
+      { label: "Fault Tolerant", value: "Tier-4" }
+    ]
   },
   {
     title: "Pulse Analytics Command Center",
     category: "Enterprise SaaS Dashboard",
     tag: "React Virtualized • Microservices API",
+    accentColor: "#8B5CF6",
+    stats: [
+      { label: "Query Time", value: "14ms" },
+      { label: "Events/sec", value: "250,000" },
+      { label: "Memory Peak", value: "42 MB" }
+    ]
   },
   {
     title: "Krypton Protocol Gateway",
     category: "Decentralized Liquidity Exchange",
     tag: "Ultra-Low Latency • Kafka Streaming",
+    accentColor: "#F43F5E",
+    stats: [
+      { label: "TPS", value: "65,000" },
+      { label: "Settlement", value: "Instant" },
+      { label: "Zero Slashing", value: "Verified" }
+    ]
   },
   {
     title: "Chronos Heritage Vault",
     category: "Luxury Horology E-Commerce",
     tag: "Global Checkout • Stripe Relay Engine",
+    accentColor: "#D97706",
+    stats: [
+      { label: "Conversion", value: "+38%" },
+      { label: "Currencies", value: "135+" },
+      { label: "Fraud Score", value: "0.01%" }
+    ]
   },
   {
     title: "Synthetix Neural Workspace",
     category: "Generative AI Interface",
     tag: "Edge Inference • Sub-12ms Response",
+    accentColor: "#14B8A6",
+    stats: [
+      { label: "Tokens/sec", value: "128.4" },
+      { label: "GPU Load", value: "Balanced" },
+      { label: "VRAM Footprint", value: "4.2 GB" }
+    ]
   },
   {
     title: "Solstice Architecture Studio",
     category: "Bespoke Spatial Design Flagship",
     tag: "WebGL Canvas • Fluid Layout Systems",
+    accentColor: "#3B82F6",
+    stats: [
+      { label: "Render FPS", value: "60 FPS" },
+      { label: "Shader Load", value: "Optimized" },
+      { label: "Draw Calls", value: "12" }
+    ]
   },
   {
     title: "OmniFlow Logistics Grid",
     category: "Supply-Chain Telemetry Hub",
     tag: "PostgreSQL 16 • High Concurrency",
+    accentColor: "#10B981",
+    stats: [
+      { label: "Active Fleets", value: "14,200" },
+      { label: "GPS Drift", value: "< 0.2m" },
+      { label: "ETL Sync", value: "500ms" }
+    ]
   },
   {
     title: "Aether Private Wealth",
     category: "Boutique Asset Management",
     tag: "End-to-End Encryption • Zod Validation",
+    accentColor: "#0284C7",
+    stats: [
+      { label: "AUM Monitored", value: "$4.2B" },
+      { label: "Key Rotation", value: "Daily" },
+      { label: "Zero Leakage", value: "100%" }
+    ]
   },
   {
     title: "Verve Haute Couture",
     category: "Direct-to-Consumer Fashion Flagship",
     tag: "Dynamic Currency • Sub-second Filtering",
+    accentColor: "#E11D48",
+    stats: [
+      { label: "Image Payload", value: "48 KB" },
+      { label: "Catalog Size", value: "50k SKUs" },
+      { label: "Filter Speed", value: "8ms" }
+    ]
   },
   {
     title: "Titanium Cloud Orchestrator",
     category: "Infrastructure Deployment Console",
     tag: "Multi-Region Kubernetes • Docker Engine",
+    accentColor: "#64748B",
+    stats: [
+      { label: "Clusters", value: "64 Pods" },
+      { label: "Auto-Scale", value: "Active" },
+      { label: "Health Check", value: "Pass" }
+    ]
   },
   {
     title: "Zenith Culinary Reserve",
     category: "Hospitality Brand Experience",
     tag: "Real-time Table Reservation API",
-  },
+    accentColor: "#B45309",
+    stats: [
+      { label: "Lock Timeout", value: "200ms" },
+      { label: "Concurrency", value: "No Collisions" },
+      { label: "Rating", value: "4.98 / 5" }
+    ]
+  }
 ];
 
 const DEFAULT_METADATA = {
   title: "CraftLogic Enterprise Solution",
   category: "High-Performance Web Architecture",
   tag: "Edge Deployed • TypeScript • 100/100 Vitals",
+  accentColor: "#00A8CC",
+  stats: [
+    { label: "Edge TTFB", value: "18ms" },
+    { label: "Core Vitals", value: "100/100" },
+    { label: "Security", value: "Hardened" }
+  ]
 };
 
 // 30 Verified Slides Mapping with safe boundaries
@@ -107,7 +222,9 @@ const SHOWCASE_SLIDES: ShowcaseSlide[] = Array.from({ length: 30 }, (_, index) =
     title: `${meta.title} #${numStr}`,
     category: meta.category,
     tag: meta.tag,
-    fileName: `mockup_${numStr}.jfif`,
+    fileName: `mockup_${numStr}.png`,
+    accentColor: meta.accentColor,
+    stats: meta.stats
   };
 });
 
@@ -121,8 +238,23 @@ export const LaptopShowcase: React.FC = () => {
   const totalSlides = SHOWCASE_SLIDES.length;
   const currentSlide: ShowcaseSlide = SHOWCASE_SLIDES[currentIdx] ?? SHOWCASE_SLIDES[0]!;
 
-  const currentImageSource = useMemo(() => {
-    return encodeURI(`/images/website mocup/${currentSlide.fileName}`);
+  // Multi-tier candidate paths: root, images folder, and original website mocup
+  const candidateImageSources = useMemo(() => {
+    const rawFile = currentSlide.fileName;
+    const jfifName = rawFile.replace(/\.png$/i, ".jfif");
+    return [
+      `/${rawFile}`,
+      `/images/${rawFile}`,
+      encodeURI(`/images/website mocup/${rawFile}`),
+      encodeURI(`/images/website mocup/${jfifName}`),
+      `/${jfifName}`
+    ];
+  }, [currentSlide.fileName]);
+
+  const [activeSourceIndex, setActiveSourceIndex] = useState<number>(0);
+
+  useEffect(() => {
+    setActiveSourceIndex(0);
   }, [currentSlide.fileName]);
 
   const handleNext = useCallback(() => {
@@ -135,7 +267,7 @@ export const LaptopShowcase: React.FC = () => {
     setCurrentIdx((prev) => (prev - 1 + totalSlides) % totalSlides);
   }, [totalSlides]);
 
-  // High-Performance Dual-Buffer Image Preloader
+  // Dual-Buffer Preloader
   useEffect(() => {
     const nextIdx = (currentIdx + 1) % totalSlides;
     const prevIdx = (currentIdx - 1 + totalSlides) % totalSlides;
@@ -143,9 +275,8 @@ export const LaptopShowcase: React.FC = () => {
     [nextIdx, prevIdx].forEach((idx) => {
       const slide = SHOWCASE_SLIDES[idx];
       if (!slide) return;
-      const src = encodeURI(`/images/website mocup/${slide.fileName}`);
       const img = new Image();
-      img.src = src;
+      img.src = `/${slide.fileName}`;
       if (img.decode) {
         img.decode().catch(() => {});
       }
@@ -159,6 +290,15 @@ export const LaptopShowcase: React.FC = () => {
     return () => clearInterval(timer);
   }, [isPaused, handleNext]);
 
+  // Safe error recovery without rapid auto-skipping
+  const handleImageError = () => {
+    if (activeSourceIndex < candidateImageSources.length - 1) {
+      setActiveSourceIndex((prev) => prev + 1);
+    } else {
+      setFailedImages((prev) => ({ ...prev, [currentSlide.fileName]: true }));
+    }
+  };
+
   const isCurrentFailed = Boolean(failedImages[currentSlide.fileName]);
 
   return (
@@ -167,31 +307,31 @@ export const LaptopShowcase: React.FC = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Radiance */}
+      {/* Background Radiance Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-[-4rem] z-0 h-[450px] w-[750px] -translate-x-1/2 rounded-full bg-primary/[0.04] blur-[150px]"
+        className="pointer-events-none absolute left-1/2 top-[-4rem] z-0 h-[450px] w-[750px] -translate-x-1/2 rounded-full blur-[150px] opacity-20 transition-colors duration-700"
+        style={{ backgroundColor: currentSlide.accentColor }}
       />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[85%] bg-[radial-gradient(#f5f5f0_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.03] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]"
       />
 
-      {/* 3D Floating Hardware Viewport */}
+      {/* 3D Hardware Viewport Container */}
       <div className="relative z-10 w-full flex items-center justify-center px-2">
         <div className="relative w-full max-w-4xl transition-transform duration-700 ease-out transform-gpu will-change-transform animate-[float_6s_ease-in-out_infinite]">
-          {/* Main Display Box */}
+          
+          {/* Main Display Box with Original Sleek Bezel */}
           <div className="relative w-full min-h-[360px] sm:min-h-[460px] md:min-h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden border border-border shadow-[0_30px_90px_-20px_rgba(0,0,0,0.95)] bg-[#070A10] flex items-center justify-center">
+            
+            {/* Viewport Window */}
             {!isCurrentFailed ? (
               <img
-                key={currentSlide.id}
-                src={currentImageSource}
+                key={`${currentSlide.id}-${activeSourceIndex}`}
+                src={candidateImageSources[activeSourceIndex]}
                 alt={currentSlide.title}
-                onError={() => {
-                  console.warn(`Asset missing: ${currentSlide.fileName}`);
-                  setFailedImages((prev) => ({ ...prev, [currentSlide.fileName]: true }));
-                  handleNext();
-                }}
+                onError={handleImageError}
                 className="w-full h-full object-cover transition-opacity duration-500 ease-out transform-gpu"
                 loading="eager"
                 decoding="async"
@@ -217,8 +357,14 @@ export const LaptopShowcase: React.FC = () => {
             {/* Glassmorphic Project Info Tag */}
             <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-20 max-w-md p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 shadow-2xl">
               <div className="flex items-center gap-2 mb-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
-                <span className="text-[10px] font-mono uppercase tracking-widest text-primary font-semibold">
+                <span
+                  className="w-1.5 h-1.5 rounded-full transition-colors duration-500"
+                  style={{ backgroundColor: currentSlide.accentColor }}
+                />
+                <span
+                  className="text-[10px] font-mono uppercase tracking-widest font-semibold transition-colors duration-500"
+                  style={{ color: currentSlide.accentColor }}
+                >
                   {currentSlide.category}
                 </span>
               </div>
@@ -255,7 +401,7 @@ export const LaptopShowcase: React.FC = () => {
           <div className="mx-auto w-[85%] h-5 bg-primary/[0.06] blur-xl rounded-full mt-2" />
         </div>
 
-        {/* Telemetry Floating Badges */}
+        {/* Floating Telemetry Badges */}
         <div className="pointer-events-none absolute right-[1%] top-[10%] z-30 hidden animate-[float_5s_ease-in-out_infinite] items-center gap-2 rounded-full border border-border bg-black/70 px-3.5 py-1.5 text-[10px] font-mono tracking-wide text-foreground shadow-2xl backdrop-blur-xl lg:flex">
           <span className="relative flex h-1.5 w-1.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
@@ -263,18 +409,23 @@ export const LaptopShowcase: React.FC = () => {
           </span>
           EDGE RUNTIME <span className="text-white/30">•</span> 18ms TTFB
         </div>
+
         <div className="pointer-events-none absolute bottom-[13%] right-[1%] z-30 hidden animate-[float_7s_ease-in-out_infinite_reverse] items-center gap-2 rounded-full border border-border bg-black/70 px-3.5 py-1.5 text-[10px] font-mono tracking-wide text-foreground shadow-2xl backdrop-blur-xl lg:flex">
           <ShieldCheck className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
           CORE VITALS 100/100
         </div>
       </div>
 
-      {/* Countdown Progress Bar & Numeric Counter */}
+      {/* Progress Bar & Numeric Counter */}
       <div className="w-full max-w-md mx-auto mt-6 flex flex-col items-center gap-2 z-20 px-4">
         <div className="w-full h-1 bg-white/[0.08] rounded-full overflow-hidden">
           <div
             key={progressKeyRef.current}
-            className={`h-full bg-primary rounded-full origin-left transition-all ${
+            style={{
+              backgroundColor: currentSlide.accentColor,
+              animationDuration: `${SLIDE_DURATION}ms`,
+            }}
+            className={`h-full rounded-full origin-left transition-all ${
               isPaused ? "w-full opacity-40" : "animate-[progress_5s_linear_forwards]"
             }`}
           />
@@ -291,7 +442,7 @@ export const LaptopShowcase: React.FC = () => {
         </div>
       </div>
 
-      {/* Mini Progress Track */}
+      {/* Mini Progress Dots Track */}
       <div className="w-full max-w-xs mx-auto flex items-center justify-center gap-1 mt-3">
         {SHOWCASE_SLIDES.map((slide, idx) => (
           <button
@@ -302,6 +453,9 @@ export const LaptopShowcase: React.FC = () => {
               setCurrentIdx(idx);
             }}
             aria-label={`Jump to slide ${slide.id}`}
+            style={{
+              backgroundColor: currentIdx === idx ? currentSlide.accentColor : undefined,
+            }}
             className={`h-1 rounded-full transition-all duration-300 cursor-pointer ${
               currentIdx === idx ? "w-6 bg-primary" : "w-1.5 bg-white/15 hover:bg-white/30"
             }`}

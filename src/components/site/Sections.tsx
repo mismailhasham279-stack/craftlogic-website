@@ -199,7 +199,7 @@ export function Trust() {
   );
 }
 
-/* ---------------- 2. Services Grid ---------------- */
+/* ---------------- 2. Services Grid (Touch-Optimized & Mobile-Resilient) ---------------- */
 const SERVICES = [
   {
     n: "01",
@@ -240,6 +240,8 @@ const SERVICES = [
 ];
 
 export function Services() {
+  const [activeTouchIndex, setActiveTouchIndex] = useState<number | null>(null);
+
   return (
     <section id="services" className="py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
@@ -248,27 +250,64 @@ export function Services() {
           title="Everything You Need to Succeed Online."
           subtitle="Whether you need a new website or a complete redesign, we deliver solutions that solve real business problems."
         />
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-5">
-          {SERVICES.map((service, index) => (
-            <Reveal key={service.n} delay={(index % 3) * 70} className="h-full">
-              <article className="group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/55 hover:bg-surface-2 hover:shadow-[0_16px_40px_-28px_rgba(212,175,55,0.25)] sm:min-h-[230px] sm:p-7">
-                <span className="absolute top-6 right-6 font-mono text-[10px] tracking-[0.18em] text-primary/65 transition-colors duration-300 group-hover:text-primary sm:top-7 sm:right-7">
-                  {service.n}
-                </span>
-                <service.icon
-                  className="h-4 w-4 text-primary/85 transition-colors duration-300 group-hover:text-primary"
-                  strokeWidth={1.5}
-                />
-                <h3 className="font-display mt-6 max-w-[18rem] text-lg font-semibold tracking-tight sm:text-xl text-foreground">
-                  {service.title}
-                </h3>
-                <p className="mt-2.5 max-w-sm text-sm leading-relaxed text-muted-foreground font-normal">
-                  {service.copy}
-                </p>
-                <span className="absolute bottom-0 left-0 h-px w-8 bg-primary/55 transition-[width,background-color] duration-300 group-hover:w-full group-hover:bg-primary" />
-              </article>
-            </Reveal>
-          ))}
+        
+        {/* Responsive Grid: Mobile 1 Col, Tablet 2 Cols, Desktop 3 Cols */}
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-5">
+          {SERVICES.map((service, index) => {
+            const isTouchActive = activeTouchIndex === index;
+
+            return (
+              <Reveal key={service.n} delay={(index % 3) * 70} className="h-full">
+                <article
+                  onTouchStart={() => setActiveTouchIndex(index)}
+                  onTouchEnd={() => setTimeout(() => setActiveTouchIndex(null), 1000)}
+                  className={`group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-xl border bg-card p-6 transition-all duration-300 sm:min-h-[230px] sm:p-7 select-none cursor-pointer ${
+                    isTouchActive
+                      ? "border-primary/80 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(212,175,55,0.3)] scale-[0.99]"
+                      : "border-border hover:-translate-y-1 hover:border-primary/55 hover:bg-surface-2 hover:shadow-[0_16px_40px_-28px_rgba(212,175,55,0.25)]"
+                  }`}
+                >
+                  {/* Number Badge */}
+                  <span
+                    className={`absolute top-6 right-6 font-mono text-[10px] tracking-[0.18em] transition-colors duration-300 sm:top-7 sm:right-7 ${
+                      isTouchActive ? "text-primary font-bold" : "text-primary/65 group-hover:text-primary"
+                    }`}
+                  >
+                    {service.n}
+                  </span>
+
+                  {/* Icon Frame */}
+                  <service.icon
+                    className={`h-4 w-4 transition-colors duration-300 ${
+                      isTouchActive ? "text-primary" : "text-primary/85 group-hover:text-primary"
+                    }`}
+                    strokeWidth={1.5}
+                  />
+
+                  {/* Title */}
+                  <h3
+                    className={`font-display mt-6 max-w-[18rem] text-lg font-semibold tracking-tight transition-colors duration-300 sm:text-xl ${
+                      isTouchActive ? "text-primary" : "text-foreground group-hover:text-foreground"
+                    }`}
+                  >
+                    {service.title}
+                  </h3>
+
+                  {/* Body Text */}
+                  <p className="mt-2.5 max-w-sm text-sm leading-relaxed text-muted-foreground font-normal">
+                    {service.copy}
+                  </p>
+
+                  {/* Dynamic Yellow Progress Line */}
+                  <span
+                    className={`absolute bottom-0 left-0 h-px bg-primary transition-[width,background-color] duration-300 ${
+                      isTouchActive ? "w-full bg-primary" : "w-8 group-hover:w-full group-hover:bg-primary"
+                    }`}
+                  />
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -519,7 +558,7 @@ export function BusinessProblem() {
   );
 }
 
-/* ---------------- 5. Free Demo Section (Direct Email Dispatch to foundercraftlogic@gmail.com) ---------------- */
+/* ---------------- 5. Free Demo Section ---------------- */
 export function FreeDemo() {
   const [demoSent, setDemoSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -541,7 +580,6 @@ export function FreeDemo() {
     setSubmitting(true);
 
     try {
-      // Direct AJAX post to FormSubmit: Dispatched straight to your email
       const response = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
         method: "POST",
         headers: {
@@ -560,7 +598,6 @@ export function FreeDemo() {
       if (response.ok) {
         setDemoSent(true);
       } else {
-        // Fallback: direct mail link if network blocked
         const subject = `Free Homepage Demo Request from ${name}`;
         const body = `Hi Ismail,\n\nI want to see a Free Homepage Demo for my business.\n\nName: ${name}\nContact: ${contact}\nBusiness Type: ${business || "Not specified"}\n`;
         window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -937,7 +974,7 @@ export function About() {
   );
 }
 
-/* ---------------- 10. Start Project Form (FormSubmit AJAX Direct Dispatch) ---------------- */
+/* ---------------- 10. Start Project Form ---------------- */
 export function StartProject() {
   const [projectSent, setProjectSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
