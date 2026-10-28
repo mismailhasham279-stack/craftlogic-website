@@ -206,3 +206,53 @@
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   UNIVERSAL TOUCH & DESKTOP HOVER MICRO-INTERACTIONS
+   Ensures finger contact on mobile mirrors desktop mouse hover behavior
+   ========================================================================== */
+
+/* 1. Touch Responsiveness: Disables unwanted double-tap zoom delays on interactive cards */
+.group,
+article,
+.interactive-card {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 2. Mobile Instant Touch State Emulation */
+@media (hover: none) and (pointer: coarse) {
+  /* Trigger bottom gold line expansion on touch contact */
+  .group:active span.absolute.bottom-0.left-0,
+  .group:focus-within span.absolute.bottom-0.left-0 {
+    width: 100% !important;
+    background-color: var(--primary) !important;
+  }
+
+  /* Trigger gold index counter light-up (e.g., 01, 02... 06) on touch contact */
+  .group:active > span.font-mono,
+  .group:focus-within > span.font-mono {
+    color: var(--primary) !important;
+    opacity: 1 !important;
+  }
+
+  /* Trigger title gold transition */
+  .group:active h3,
+  .group:focus-within h3 {
+    color: var(--foreground) !important;
+  }
+
+  /* Card elevation and border aura on touch contact */
+  article.group:active,
+  article.group:focus-within {
+    border-color: color-mix(in oklab, var(--primary) 70%, transparent) !important;
+    box-shadow: 0 14px 34px -14px color-mix(in oklab, var(--primary) 28%, transparent) !important;
+  }
+
+  /* Trust pillars bottom horizontal indicator expansion */
+  .group:active span.h-px,
+  .group:focus-within span.h-px {
+    width: 3rem !important;
+    background-color: var(--primary) !important;
+  }
+}
