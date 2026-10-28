@@ -147,6 +147,8 @@ const CORE_PILLARS = [
 ];
 
 export function Trust() {
+  const [activeTouchIndex, setActiveTouchIndex] = useState<number | null>(null);
+
   return (
     <section
       id="trust"
@@ -177,29 +179,45 @@ export function Trust() {
         </div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {CORE_PILLARS.map((v, i) => (
-            <Reveal key={v.title} delay={i * 90}>
-              <div className="group relative flex h-full flex-col justify-between rounded-xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/45 hover:bg-surface-2">
-                <div>
-                  <v.icon className="h-5 w-5 text-primary stroke-[1.75] transition-transform duration-300 group-hover:-translate-y-0.5" />
-                  <h3 className="font-mono mt-6 text-xs font-bold tracking-[0.14em] uppercase text-foreground">
-                    {v.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground font-normal">
-                    {v.copy}
-                  </p>
+          {CORE_PILLARS.map((v, i) => {
+            const isTouchActive = activeTouchIndex === i;
+
+            return (
+              <Reveal key={v.title} delay={i * 90}>
+                <div
+                  onTouchStart={() => setActiveTouchIndex(i)}
+                  onTouchEnd={() => setTimeout(() => setActiveTouchIndex(null), 1200)}
+                  className={`interactive-card group relative flex h-full flex-col justify-between rounded-xl border bg-card p-8 select-none cursor-pointer ${
+                    isTouchActive
+                      ? "border-primary/80 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(212,175,55,0.3)] scale-[0.985]"
+                      : "border-border"
+                  }`}
+                >
+                  <div>
+                    <v.icon className="h-5 w-5 text-primary stroke-[1.75] transition-transform duration-300 group-hover:-translate-y-0.5" />
+                    <h3 className="font-mono mt-6 text-xs font-bold tracking-[0.14em] uppercase text-foreground">
+                      {v.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground font-normal">
+                      {v.copy}
+                    </p>
+                  </div>
+                  <span
+                    className={`mt-6 block h-px bg-primary/60 transition-all duration-500 ${
+                      isTouchActive ? "w-full bg-primary" : "w-0 group-hover:w-12"
+                    }`}
+                  />
                 </div>
-                <span className="mt-6 block h-px w-0 bg-primary/60 transition-all duration-500 group-hover:w-12" />
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
-/* ---------------- 2. Services Grid (Touch-Optimized & Mobile-Resilient) ---------------- */
+/* ---------------- 2. Services Grid (Universal Touch & Hover) ---------------- */
 const SERVICES = [
   {
     n: "01",
@@ -251,7 +269,6 @@ export function Services() {
           subtitle="Whether you need a new website or a complete redesign, we deliver solutions that solve real business problems."
         />
         
-        {/* Responsive Grid: Mobile 1 Col, Tablet 2 Cols, Desktop 3 Cols */}
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-5">
           {SERVICES.map((service, index) => {
             const isTouchActive = activeTouchIndex === index;
@@ -260,14 +277,13 @@ export function Services() {
               <Reveal key={service.n} delay={(index % 3) * 70} className="h-full">
                 <article
                   onTouchStart={() => setActiveTouchIndex(index)}
-                  onTouchEnd={() => setTimeout(() => setActiveTouchIndex(null), 1000)}
-                  className={`group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-xl border bg-card p-6 transition-all duration-300 sm:min-h-[230px] sm:p-7 select-none cursor-pointer ${
+                  onTouchEnd={() => setTimeout(() => setActiveTouchIndex(null), 1200)}
+                  className={`interactive-card group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-xl border bg-card p-6 sm:min-h-[230px] sm:p-7 select-none cursor-pointer ${
                     isTouchActive
-                      ? "border-primary/80 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(212,175,55,0.3)] scale-[0.99]"
-                      : "border-border hover:-translate-y-1 hover:border-primary/55 hover:bg-surface-2 hover:shadow-[0_16px_40px_-28px_rgba(212,175,55,0.25)]"
+                      ? "border-primary/90 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(212,175,55,0.35)] scale-[0.985]"
+                      : "border-border"
                   }`}
                 >
-                  {/* Number Badge */}
                   <span
                     className={`absolute top-6 right-6 font-mono text-[10px] tracking-[0.18em] transition-colors duration-300 sm:top-7 sm:right-7 ${
                       isTouchActive ? "text-primary font-bold" : "text-primary/65 group-hover:text-primary"
@@ -276,7 +292,6 @@ export function Services() {
                     {service.n}
                   </span>
 
-                  {/* Icon Frame */}
                   <service.icon
                     className={`h-4 w-4 transition-colors duration-300 ${
                       isTouchActive ? "text-primary" : "text-primary/85 group-hover:text-primary"
@@ -284,7 +299,6 @@ export function Services() {
                     strokeWidth={1.5}
                   />
 
-                  {/* Title */}
                   <h3
                     className={`font-display mt-6 max-w-[18rem] text-lg font-semibold tracking-tight transition-colors duration-300 sm:text-xl ${
                       isTouchActive ? "text-primary" : "text-foreground group-hover:text-foreground"
@@ -293,12 +307,10 @@ export function Services() {
                     {service.title}
                   </h3>
 
-                  {/* Body Text */}
                   <p className="mt-2.5 max-w-sm text-sm leading-relaxed text-muted-foreground font-normal">
                     {service.copy}
                   </p>
 
-                  {/* Dynamic Yellow Progress Line */}
                   <span
                     className={`absolute bottom-0 left-0 h-px bg-primary transition-[width,background-color] duration-300 ${
                       isTouchActive ? "w-full bg-primary" : "w-8 group-hover:w-full group-hover:bg-primary"
@@ -364,7 +376,7 @@ export function Work() {
               <Link
                 to="/work/$slug"
                 params={{ slug: selectedProjects[0].project.slug }}
-                className="focus-ring group grid overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_24px_70px_-42px_rgba(212,175,55,0.25)] lg:grid-cols-[1.25fr_0.75fr]"
+                className="interactive-card focus-ring group grid overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_24px_70px_-42px_rgba(212,175,55,0.25)] lg:grid-cols-[1.25fr_0.75fr]"
                 aria-label={`View ${selectedProjects[0].presentation.name} details`}
               >
                 <div className="relative flex items-center justify-center overflow-hidden bg-surface p-5 sm:p-8 lg:min-h-[390px] lg:p-10">
@@ -403,7 +415,7 @@ export function Work() {
                 <Link
                   to="/work/$slug"
                   params={{ slug: project.slug }}
-                  className="focus-ring group block h-full overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_18px_48px_-34px_rgba(212,175,55,0.22)]"
+                  className="interactive-card focus-ring group block h-full overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_18px_48px_-34px_rgba(212,175,55,0.22)]"
                   aria-label={`View ${presentation.name} details`}
                 >
                   <div className="relative overflow-hidden bg-surface p-4 sm:p-5">
@@ -496,7 +508,7 @@ export function BusinessProblem() {
             return (
               <Reveal key={block.title} delay={index * 100}>
                 <article
-                  className={`group h-full overflow-hidden rounded-xl border bg-card transition-all duration-300 ${
+                  className={`interactive-card group h-full overflow-hidden rounded-xl border bg-card transition-all duration-300 ${
                     isSolution
                       ? "border-primary/40 hover:border-primary/70 hover:shadow-[0_20px_50px_-36px_rgba(212,175,55,0.25)]"
                       : "border-white/10 hover:border-white/20"
@@ -774,7 +786,7 @@ export function Process() {
                     <span className="font-mono text-[9px]">{s.n}</span>
                   </span>
                   <Reveal delay={i * 70} className="h-full">
-                    <article className="h-full rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/35 hover:bg-surface-2 md:p-6">
+                    <article className="interactive-card h-full rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/35 hover:bg-surface-2 md:p-6">
                       <h3
                         className={`font-display text-lg font-semibold tracking-tight ${activeStep ? "text-foreground" : "text-foreground/90"}`}
                       >
@@ -831,7 +843,7 @@ export function WhyMe() {
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {GUARANTEES.map((g, i) => (
             <Reveal key={g.title} delay={i * 70}>
-              <article className="group h-full rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/45 hover:bg-surface-2">
+              <article className="interactive-card group h-full rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/45 hover:bg-surface-2">
                 <g.icon className="h-6 w-6 text-primary mb-4" />
                 <h3 className="font-display text-base font-bold text-foreground mb-2">{g.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{g.copy}</p>
@@ -885,7 +897,7 @@ export function FaqSection() {
             const isOpen = openIdx === idx;
             return (
               <Reveal key={idx} delay={idx * 60}>
-                <div className="rounded-xl border border-border bg-card overflow-hidden transition-colors hover:border-primary/40">
+                <div className="interactive-card rounded-xl border border-border bg-card overflow-hidden transition-colors hover:border-primary/40">
                   <button
                     onClick={() => setOpenIdx(isOpen ? null : idx)}
                     className="w-full flex items-center justify-between p-6 text-left font-display font-semibold text-foreground text-base sm:text-lg cursor-pointer"
@@ -1245,7 +1257,6 @@ export function Footer() {
   return (
     <footer className="border-t border-border py-14 bg-background">
       <div className="mx-auto flex max-w-[1400px] flex-col gap-10 px-6 md:px-10 lg:flex-row lg:items-start lg:justify-between">
-        {/* Brand Column */}
         <div className="flex items-start gap-3 select-none">
           <div className="relative flex shrink-0 items-center justify-center pt-0.5">
             <svg
@@ -1276,7 +1287,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Quick Nav Links */}
         <nav aria-label="Footer">
           <ul className="grid grid-cols-2 gap-x-10 gap-y-3 sm:grid-cols-4">
             {FOOTER_LINKS.map((l) => (
@@ -1294,7 +1304,6 @@ export function Footer() {
           </ul>
         </nav>
 
-        {/* Direct Contacts & Complete Social Hub */}
         <div className="space-y-4 text-sm">
           <div className="space-y-2 font-mono text-xs">
             <a
@@ -1313,13 +1322,11 @@ export function Footer() {
             </a>
           </div>
 
-          {/* All 7 Official Social Channels */}
           <div className="pt-2">
             <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-3">
               Official Channels
             </p>
             <div className="flex flex-wrap items-center gap-2.5">
-              {/* Instagram */}
               <a
                 href={SOCIAL.instagram}
                 target="_blank"
@@ -1330,7 +1337,6 @@ export function Footer() {
                 <InstagramIcon className="h-4 w-4" />
               </a>
 
-              {/* Facebook */}
               <a
                 href={SOCIAL.facebook}
                 target="_blank"
@@ -1341,7 +1347,6 @@ export function Footer() {
                 <FacebookIcon className="h-4 w-4" />
               </a>
 
-              {/* TikTok */}
               <a
                 href={SOCIAL.tiktok}
                 target="_blank"
@@ -1352,7 +1357,6 @@ export function Footer() {
                 <TikTokIcon className="h-4 w-4" />
               </a>
 
-              {/* Threads */}
               <a
                 href={SOCIAL.threads}
                 target="_blank"
@@ -1363,7 +1367,6 @@ export function Footer() {
                 <ThreadsIcon className="h-4 w-4" />
               </a>
 
-              {/* X / Twitter */}
               <a
                 href={SOCIAL.x}
                 target="_blank"
@@ -1374,7 +1377,6 @@ export function Footer() {
                 <XTwitterIcon className="h-4 w-4" />
               </a>
 
-              {/* LinkedIn */}
               <a
                 href={SOCIAL.linkedin}
                 target="_blank"
@@ -1385,7 +1387,6 @@ export function Footer() {
                 <LinkedInIcon className="h-4 w-4" />
               </a>
 
-              {/* YouTube */}
               <a
                 href={SOCIAL.youtube}
                 target="_blank"
@@ -1400,7 +1401,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="mx-auto mt-12 max-w-[1400px] border-t border-border px-6 pt-7 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-xs text-muted-foreground">
           © 2026 CRAFTLOGIC Studio. All rights reserved.

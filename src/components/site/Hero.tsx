@@ -83,3 +83,5 @@ export function Hero({ onOpenInquiry }: HeroProps) {
 }
 
 export default Hero;
+
+

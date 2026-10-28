@@ -241,3 +241,4 @@ export function HeroMesh({ reducedMotion }: HeroMeshProps): React.JSX.Element {
 }
 
 export default HeroMesh;
+

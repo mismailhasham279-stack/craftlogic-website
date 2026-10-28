@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://ismail-digital-crafted.lovable.app/sitemap.xml
+Sitemap: https://craftlogic.live/sitemap.xml

@@ -11,8 +11,8 @@ interface SEOProps {
 export function SEO({
   title = "CRAFTLOGIC — High-Performance Web Engineering & Digital Agency",
   description = "CraftLogic builds resilient, high-converting digital storefronts, SaaS applications, and bespoke web platforms engineered for business growth.",
-  canonicalUrl = "https://ismail-digital-crafted.lovable.app/",
-  image = "https://ismail-digital-crafted.lovable.app/logo.png",
+  canonicalUrl = "https://craftlogic.live/",
+  image = "https://craftlogic.live/logo.png",
   type = "website",
 }: SEOProps) {
   useEffect(() => {
@@ -102,9 +102,9 @@ export function SEO({
       "@type": "ProfessionalService",
       name: "CRAFTLOGIC",
       legalName: "CRAFTLOGIC Digital Agency",
-      url: "https://ismail-digital-crafted.lovable.app",
-      logo: "https://ismail-digital-crafted.lovable.app/logo.png",
-      image: "https://ismail-digital-crafted.lovable.app/logo.png",
+      url: "https://craftlogic.live",
+      logo: "https://craftlogic.live/logo.png",
+      image: "https://craftlogic.live/logo.png",
       description: description,
       founder: {
         "@type": "Person",

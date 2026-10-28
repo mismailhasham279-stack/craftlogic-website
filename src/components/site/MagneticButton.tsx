@@ -49,3 +49,5 @@ export function MagneticButton({ href, children, variant = "solid", className }:
     </a>
   );
 }
+
+

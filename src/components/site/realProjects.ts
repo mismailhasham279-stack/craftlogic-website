@@ -131,3 +131,5 @@ export const realCaseStudies: CaseStudyData[] = [
     techStack: ["React 19", "TypeScript", "Tailwind CSS", "State Machine", "Edge CDN"],
   },
 ];
+
+

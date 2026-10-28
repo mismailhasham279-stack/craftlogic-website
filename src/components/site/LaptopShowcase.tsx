@@ -467,3 +467,4 @@ export const LaptopShowcase: React.FC = () => {
 };
 
 export default LaptopShowcase;
+

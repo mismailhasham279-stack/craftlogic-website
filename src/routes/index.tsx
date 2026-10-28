@@ -36,7 +36,7 @@ function HomePage() {
       <SEO
         title="CRAFTLOGIC — High-Performance Web Engineering & Digital Agency"
         description="CraftLogic builds resilient, high-converting digital storefronts, SaaS applications, and bespoke web platforms engineered for business growth."
-        canonicalUrl="https://ismail-digital-crafted.lovable.app/"
+        canonicalUrl="https://craftlogic.live/"
       />
 
       {/* Global Header Navigation */}
@@ -66,3 +66,5 @@ function HomePage() {
     </div>
   );
 }
+
+

@@ -16,6 +16,9 @@ import {
   BookOpen,
 } from "lucide-react";
 
+export const SITE_URL = "https://craftlogic.live";
+export const BRAND_NAME = "CRAFTLOGIC";
+
 export const PROJECT_ASSETS = {
   luxevia: {
     thumbnail: "/images/projects/luxevia/thumbnail.webp",

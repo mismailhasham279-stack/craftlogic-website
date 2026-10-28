@@ -554,7 +554,7 @@ Before finishing, review the entire website visually and improve anything that l
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://ismail-digital-crafted.lovable.app
+**Live app**: https://craftlogic.live
 
 ## Build with Lovable
 

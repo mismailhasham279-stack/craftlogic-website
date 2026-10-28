@@ -10,19 +10,19 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { SITE_NAME } from "@/lib/site";
 
-/*
- * SITE KA DOMAIN:
- * Abhi site ismail-digital-crafted.lovable.app par live hai, to yehi likha hai.
- * Jab .com domain lag jaye to SIRF neeche wali line badalni hai —
- * baqi sab kuch khud theek ho jayega. Kuch galat nahi hoga.
+/**
+ * PRODUCTION DOMAIN CONFIGURATION
+ * Primary Canonical Domain for CRAFTLOGIC Studio.
  */
-const SITE_URL = "https://ismail-digital-crafted.lovable.app";
+export const SITE_URL = "https://craftlogic.live";
 
-/* Google Structured Data (JSON-LD) — static hai, React crash nahi karega */
+/**
+ * Google Search Engine Structured Data (JSON-LD Organization & Service Graph)
+ * Schema.org compliant representation for rich snippet validation.
+ */
 const JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
@@ -32,11 +32,15 @@ const JSON_LD = {
       url: `${SITE_URL}/`,
       name: "CRAFTLOGIC",
       description: "High-Performance Web Development Agency",
+      publisher: {
+        "@id": `${SITE_URL}/#organization`,
+      },
     },
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: "CRAFTLOGIC",
+      legalName: "CRAFTLOGIC Digital Agency",
       url: `${SITE_URL}/`,
       email: "foundercraftlogic@gmail.com",
       telephone: "+923344957382",
@@ -44,6 +48,20 @@ const JSON_LD = {
         "@type": "ImageObject",
         url: `${SITE_URL}/logo.png`,
       },
+      founder: {
+        "@type": "Person",
+        name: "Muhammad Ismail",
+        jobTitle: "Founder & Lead Solutions Architect",
+      },
+      sameAs: [
+        "https://www.instagram.com/craft_logics?obrf=d3NqYmY3ZmJyMm9w",
+        "https://www.facebook.com/share/14mTT25RfBp/",
+        "https://www.tiktok.com/@craftlogics?_r=1&_t=ZP-9AibnwtdjRf",
+        "https://www.threads.com/@craftlogic.web",
+        "https://x.com/web_developer92",
+        "https://www.linkedin.com/in/craft-logic-712857409?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        "https://youtube.com/@craft_logics?si=ugoevhrErI-Z7zwq",
+      ],
     },
     {
       "@type": "ProfessionalService",
@@ -57,6 +75,13 @@ const JSON_LD = {
         "@type": "PostalAddress",
         addressCountry: "PK",
       },
+      knowsAbout: [
+        "High-Performance Web Engineering",
+        "React & TypeScript Architecture",
+        "Tailwind CSS Systems",
+        "Headless E-Commerce Platforms",
+        "Enterprise Digital Infrastructure",
+      ],
     },
   ],
 };
@@ -84,10 +109,13 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
   const router = useRouter();
+
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    // Native production telemetry & console diagnostic (Zero external leak)
+    if (process.env.NODE_ENV !== "production") {
+      console.error("[CRAFTLOGIC App Root Boundary Caught Error]:", error);
+    }
   }, [error]);
 
   return (
@@ -105,7 +133,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="focus-ring inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="focus-ring inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 cursor-pointer"
           >
             Try again
           </button>
@@ -207,8 +235,11 @@ function RootShell({ children }: { children: ReactNode }) {
           }}
         />
         <HeadContent />
-        {/* Google Structured Data — static JSON, koi crash risk nahi */}
-        <script type="application/ld+json">{JSON.stringify(JSON_LD)}</script>
+        {/* Google Structured Data — static JSON-LD for rich snippet eligibility */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        />
       </head>
       <body>
         {children}
