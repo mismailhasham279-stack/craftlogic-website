@@ -102,6 +102,12 @@ export function Nav({ onOpenInquiry }: NavProps) {
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/blog"
+              className="font-sans text-xs font-medium tracking-wide text-muted-foreground transition-colors hover:text-white"
+            >
+              Blog
+            </Link>
           </nav>
 
           {/* Header Action Controls */}
@@ -180,6 +186,19 @@ export function Nav({ onOpenInquiry }: NavProps) {
                   {link.label}
                 </motion.a>
               ))}
+              <motion.div
+                initial={{ opacity: 0, x: -15 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: NAV_LINKS.length * 0.05, duration: 0.2 }}
+              >
+                <Link
+                  to="/blog"
+                  onClick={handleLinkClick}
+                  className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white hover:text-primary transition-colors py-1 block"
+                >
+                  Blog
+                </Link>
+              </motion.div>
             </div>
 
             <div className="mt-auto border-t border-white/10 pt-6 space-y-4">
