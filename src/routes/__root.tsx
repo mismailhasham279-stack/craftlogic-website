@@ -235,6 +235,19 @@ function RootShell({ children }: { children: ReactNode }) {
           }}
         />
         <HeadContent />
+        {/* Google Analytics (GA4) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NDL52JNNZ8"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-NDL52JNNZ8');`,
+          }}
+        />
         {/* Google Structured Data — static JSON-LD for rich snippet eligibility */}
         <script
           type="application/ld+json"
