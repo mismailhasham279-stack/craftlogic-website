@@ -113,7 +113,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
   useEffect(() => {
     // Native production telemetry & console diagnostic (Zero external leak)
-    if (process.env.NODE_ENV !== "production") {
+    if (process.env["NODE_ENV"] !== "production") {
       console.error("[CRAFTLOGIC App Root Boundary Caught Error]:", error);
     }
   }, [error]);
