@@ -94,13 +94,14 @@ export function Nav({ onOpenInquiry }: NavProps) {
             className="hidden lg:flex items-center gap-7 xl:gap-8"
           >
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.hash}
-                href={`#${link.hash}`}
+                to="/"
+                hash={link.hash}
                 className="font-sans text-xs font-medium tracking-wide text-muted-foreground transition-colors hover:text-white"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Link
               to="/blog"
@@ -112,14 +113,25 @@ export function Nav({ onOpenInquiry }: NavProps) {
 
           {/* Header Action Controls */}
           <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={onOpenInquiry}
-              className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-4 sm:px-5 py-2 font-display text-xs font-bold text-primary-foreground shadow-md transition-all duration-200 hover:bg-accent active:scale-95 cursor-pointer"
-            >
-              <span>Start a Project</span>
-              <ArrowRight className="h-3.5 w-3.5" />
-            </button>
+            {onOpenInquiry ? (
+              <button
+                type="button"
+                onClick={onOpenInquiry}
+                className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-4 sm:px-5 py-2 font-display text-xs font-bold text-primary-foreground shadow-md transition-all duration-200 hover:bg-accent active:scale-95 cursor-pointer"
+              >
+                <span>Start a Project</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </button>
+            ) : (
+              <Link
+                to="/"
+                hash="contact"
+                className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-4 sm:px-5 py-2 font-display text-xs font-bold text-primary-foreground shadow-md transition-all duration-200 hover:bg-accent active:scale-95 cursor-pointer"
+              >
+                <span>Start a Project</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            )}
 
             <button
               type="button"
@@ -174,17 +186,21 @@ export function Nav({ onOpenInquiry }: NavProps) {
 
             <div className="flex flex-col justify-center gap-6 py-8">
               {NAV_LINKS.map((link, idx) => (
-                <motion.a
+                <motion.div
                   initial={{ opacity: 0, x: -15 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05, duration: 0.2 }}
                   key={link.hash}
-                  href={`#${link.hash}`}
-                  onClick={handleLinkClick}
-                  className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white hover:text-primary transition-colors py-1"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    to="/"
+                    hash={link.hash}
+                    onClick={handleLinkClick}
+                    className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white hover:text-primary transition-colors py-1 block"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
               <motion.div
                 initial={{ opacity: 0, x: -15 }}
@@ -202,14 +218,26 @@ export function Nav({ onOpenInquiry }: NavProps) {
             </div>
 
             <div className="mt-auto border-t border-white/10 pt-6 space-y-4">
-              <button
-                type="button"
-                onClick={handleCtaClick}
-                className="w-full min-h-[48px] flex items-center justify-center gap-2 rounded-lg bg-primary py-3 font-display text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all active:scale-98 cursor-pointer"
-              >
-                <span>Start a Project</span>
-                <ArrowRight className="h-4 w-4" />
-              </button>
+              {onOpenInquiry ? (
+                <button
+                  type="button"
+                  onClick={handleCtaClick}
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2 rounded-lg bg-primary py-3 font-display text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all active:scale-98 cursor-pointer"
+                >
+                  <span>Start a Project</span>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              ) : (
+                <Link
+                  to="/"
+                  hash="contact"
+                  onClick={handleLinkClick}
+                  className="w-full min-h-[48px] flex items-center justify-center gap-2 rounded-lg bg-primary py-3 font-display text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all active:scale-98 cursor-pointer"
+                >
+                  <span>Start a Project</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              )}
 
               <div className="text-center font-mono text-[11px] text-muted-foreground">
                 Direct Inquiries: <span className="text-white">foundercraftlogic@gmail.com</span>
