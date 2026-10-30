@@ -4,7 +4,7 @@ import { Footer } from "@/components/site/Sections";
 import { getAllPosts } from "@/data/posts";
 import { SITE_ORIGIN } from "@/lib/site";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Blog — CRAFTLOGIC" },

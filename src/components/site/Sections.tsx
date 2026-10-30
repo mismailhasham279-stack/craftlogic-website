@@ -933,6 +933,10 @@ export function About() {
               <img
                 src="/images/founder/muhammad-ismail.jpg"
                 alt="Muhammad Ismail, Founder of CRAFTLOGIC"
+                width={560}
+                height={420}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover object-center"
               />
               <div
