@@ -77,6 +77,150 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-much-does-a-business-website-cost-in-2026",
+    title: "How Much Does a Business Website Cost in 2026? A Clear, Honest Price Guide",
+    description:
+      "How much does a business website cost in 2026? See real price ranges, what drives the cost, and how to avoid hidden fees — before you pay a cent.",
+    date: "October 30, 2026",
+    published: "2026-10-30",
+    readTime: "5 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "Ask ten web designers what a business website costs and you will get ten different answers. One quotes $200, another quotes $10,000, and both insist they are right. No wonder so many business owners delay the decision — not because they doubt a website helps, but because nobody gives them a straight answer on price.",
+      },
+      {
+        kind: "p",
+        text: "Here is the straight answer: in 2026, a professional small-business website typically costs between $500 and $5,000. A simple, well-built site for a local business sits at the lower end. A larger site with online booking, many pages, or custom features sits higher. Anything far outside that range deserves a second look.",
+      },
+      {
+        kind: "h2",
+        text: "The Short Answer: Realistic Price Ranges",
+      },
+      {
+        kind: "list",
+        items: [
+          "DIY website builders ($0–$30/month): Tools like Wix or Squarespace look cheap, but you build it yourself and the monthly fee never stops. Over three years, that \"cheap\" site often costs more than a professionally built one.",
+          "Freelancer or small studio ($500–$3,000): The sweet spot for most small businesses. You get a custom design, proper pages, contact forms, and basic search optimisation, built by someone who does this every day.",
+          "Agency ($3,000–$10,000+): Bigger teams and longer processes. That makes sense for large companies, but for a local med spa, dental clinic, or law firm, it is usually more than you need.",
+          "Custom web application ($5,000+): If your site needs logins, dashboards, or complex tools built from scratch, the price rises — because you are no longer buying a website, you are buying software.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Most of the businesses CRAFTLOGIC works with — med spas, dentists, realtors, wedding planners, interior designers, law firms, and contractors — land comfortably in the $500–$3,000 range.",
+      },
+      {
+        kind: "h2",
+        text: "What Actually Drives the Price?",
+      },
+      {
+        kind: "p",
+        text: "A website is not one product with one price — each decision below moves the number:",
+      },
+      {
+        kind: "p",
+        text: "Number of pages. A five-page site (home, services, about, gallery, contact) costs less than a twenty-page site. Every extra page needs design, writing, and testing.",
+      },
+      {
+        kind: "p",
+        text: "Design quality. A template tweaked with your logo is cheaper than a design built around your brand, photos, and customers. The difference shows in the first three seconds a visitor spends on your site.",
+      },
+      {
+        kind: "p",
+        text: "Features. A simple contact form is standard. Online booking, payment collection, a gallery, a blog, or a quote calculator each add work — and each can bring in real revenue. A booking system that fills empty slots pays for itself quickly.",
+      },
+      {
+        kind: "p",
+        text: "Content and photos. Someone has to write clear, persuasive text and prepare images that look professional. If that work is included, the price reflects it. If not, you will be doing it yourself late at night.",
+      },
+      {
+        kind: "p",
+        text: "Search optimisation (SEO). A site Google can find, read, and rank needs proper structure, fast loading, and local signals. That is the difference between a website and a website that brings customers.",
+      },
+      {
+        kind: "h2",
+        text: "The Hidden Costs Nobody Mentions",
+      },
+      {
+        kind: "p",
+        text: "The build price is only part of the story. Before you agree to anything, ask about:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Domain name: usually $10–$20 per year.",
+          "Hosting: $5–$30 per month for a small business site.",
+          "Maintenance and updates: software, security, and small fixes. Some providers charge monthly; others include a period of support.",
+          "Changes after launch: adding a page or updating prices later should have a clear, small cost — not a surprise invoice.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "If a quote seems suspiciously cheap, one of these costs is usually hiding behind it.",
+      },
+      {
+        kind: "h2",
+        text: "What Does a Small Business Actually Need?",
+      },
+      {
+        kind: "p",
+        text: "Forget the biggest package. Most local businesses need the same solid foundation:",
+      },
+      {
+        kind: "list",
+        items: [
+          "A homepage that says, in seconds, what you do, who you serve, and what to do next.",
+          "A services page that answers the questions customers always ask.",
+          "Proof — real photos, genuine reviews, and examples of your work.",
+          "An easy way to contact or book you, on every page, on any phone.",
+          "Speed and mobile-friendliness, because most of your customers will visit on their phones.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Take a med spa. Its clients do not need a twenty-page website. They need treatments, prices, real results, and a booking button that works. A focused five-to-seven-page site does that job.",
+      },
+      {
+        kind: "h2",
+        text: "Cheap vs. Right: What a $100 Website Really Costs You",
+      },
+      {
+        kind: "p",
+        text: "A $100 website is not a bargain if it loads slowly, looks unfinished, and never appears on Google. Customers judge your business by your website in seconds. A site that looks cheap quietly tells visitors your service might be cheap too — and the customers you lose never tell you why they left.",
+      },
+      {
+        kind: "p",
+        text: "The real question is not \"what is the cheapest website?\" It is \"what does a website that brings customers cost?\" For most small businesses: a few hundred to a few thousand dollars, once — for an asset that works every day, all year.",
+      },
+      {
+        kind: "h2",
+        text: "How to Get an Exact Quote Without Surprises",
+      },
+      {
+        kind: "p",
+        text: "Before you pay anyone, ask for three things: a fixed, all-inclusive price in writing; a list of exactly which pages and features are included; and a preview of the design before the final build. If a provider cannot show you your homepage first, keep looking.",
+      },
+      {
+        kind: "p",
+        text: "That is exactly how CRAFTLOGIC works. You see a free homepage concept first — the real design for your business, not a generic mockup. Only when you like it do we agree on an exact, all-inclusive quote, with no hidden costs. You know the full price before you spend anything.",
+      },
+      {
+        kind: "h2",
+        text: "Final Word",
+      },
+      {
+        kind: "p",
+        text: "A business website in 2026 is not a luxury purchase. It is where customers check you, compare you, and decide whether to contact you. The right budget buys a fast, professional site that brings bookings — not the cheapest option, and not the most expensive one.",
+      },
+      {
+        kind: "p",
+        text: "Ready to see what your website could look like? Visit CRAFTLOGIC at https://craftlogic.live/ and get in touch through the contact page to claim your free homepage concept. You will see the design first, get an exact quote, and decide with zero pressure.",
+      },
+    ],
+  }
 ];
 
 export function getPost(slug: string): Post | undefined {
