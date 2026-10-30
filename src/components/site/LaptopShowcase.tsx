@@ -222,7 +222,7 @@ const SHOWCASE_SLIDES: ShowcaseSlide[] = Array.from({ length: 30 }, (_, index) =
     title: `${meta.title} #${numStr}`,
     category: meta.category,
     tag: meta.tag,
-    fileName: `mockup_${numStr}.png`,
+    fileName: `mockup_${numStr}.webp`,
     accentColor: meta.accentColor,
     stats: meta.stats
   };
@@ -231,6 +231,8 @@ const SHOWCASE_SLIDES: ShowcaseSlide[] = Array.from({ length: 30 }, (_, index) =
 export const LaptopShowcase: React.FC = () => {
   const [currentIdx, setCurrentIdx] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
   const SLIDE_DURATION = 5000;
   const progressKeyRef = useRef<number>(0);
@@ -238,16 +240,17 @@ export const LaptopShowcase: React.FC = () => {
   const totalSlides = SHOWCASE_SLIDES.length;
   const currentSlide: ShowcaseSlide = SHOWCASE_SLIDES[currentIdx] ?? SHOWCASE_SLIDES[0]!;
 
-  // Multi-tier candidate paths: root, images folder, and original website mocup
+  // WebP-first candidates: the optimized image loads first, PNG as fallback
   const candidateImageSources = useMemo(() => {
-    const rawFile = currentSlide.fileName;
-    const jfifName = rawFile.replace(/\.png$/i, ".jfif");
+    const webpFile = currentSlide.fileName;
+    const pngFile = webpFile.replace(/\.webp$/i, ".png");
+    const jfifFile = pngFile.replace(/\.png$/i, ".jfif");
     return [
-      `/${rawFile}`,
-      `/images/${rawFile}`,
-      encodeURI(`/images/website mocup/${rawFile}`),
-      encodeURI(`/images/website mocup/${jfifName}`),
-      `/${jfifName}`
+      `/${webpFile}`,
+      `/${pngFile}`,
+      encodeURI(`/images/website mocup/${pngFile}`),
+      encodeURI(`/images/website mocup/${jfifFile}`),
+      `/${jfifFile}`
     ];
   }, [currentSlide.fileName]);
 
@@ -283,12 +286,25 @@ export const LaptopShowcase: React.FC = () => {
     });
   }, [currentIdx, totalSlides]);
 
+  // Pause autoplay (and its image preloading) while the showcase is off-screen,
+  // so phones stop downloading new slides the visitor is not looking at.
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry?.isIntersecting ?? true),
+      { threshold: 0.05 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   // Autoplay Loop Timer
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || !isVisible) return;
     const timer = setInterval(handleNext, SLIDE_DURATION);
     return () => clearInterval(timer);
-  }, [isPaused, handleNext]);
+  }, [isPaused, isVisible, handleNext]);
 
   // Safe error recovery without rapid auto-skipping
   const handleImageError = () => {
@@ -303,6 +319,7 @@ export const LaptopShowcase: React.FC = () => {
 
   return (
     <div
+      ref={containerRef}
       className="relative w-full max-w-5xl mx-auto flex flex-col items-center select-none pt-2 pb-6"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
