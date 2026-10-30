@@ -46,7 +46,7 @@ const projectsList: ProjectCaseStudy[] = [
     location: "United States • Global Shipping",
     liveUrl: "https://usa-luxe-curated.vercel.app",
     browserDisplayUrl: "usa-luxe-curated.vercel.app",
-    thumbnailPath: "/project-previews/usa-luxe-curate.png",
+    thumbnailPath: "/project-previews/usa-luxe-curate.webp",
     accentColor: "#D4AF37",
     metrics: [
       { kpi: "4.2x", label: "Checkout Conversion Velocity" },
@@ -83,7 +83,7 @@ const projectsList: ProjectCaseStudy[] = [
     location: "Deanside, Victoria • Australia",
     liveUrl: "https://grace-nails-studio.vercel.app",
     browserDisplayUrl: "grace-nails-studio.vercel.app",
-    thumbnailPath: "/project-previews/nails-by-grace.png",
+    thumbnailPath: "/project-previews/nails-by-grace.webp",
     accentColor: "#F472B6",
     metrics: [
       { kpi: "94%", label: "Manual Chat Inquiries Automated" },
@@ -126,7 +126,7 @@ const projectsList: ProjectCaseStudy[] = [
     location: "Almaty / Astana • Kazakhstan",
     liveUrl: "https://usa-luxe-curated.vercel.app",
     browserDisplayUrl: "shoptop.kz/curated",
-    thumbnailPath: "/project-previews/curate.png",
+    thumbnailPath: "/project-previews/curate.webp",
     accentColor: "#10B981",
     metrics: [
       { kpi: "+180%", label: "Drop Day Sales Velocity" },
@@ -163,7 +163,7 @@ const projectsList: ProjectCaseStudy[] = [
     location: "United Arab Emirates • Pakistan",
     liveUrl: "https://haider-stillbok-premium.vercel.app",
     browserDisplayUrl: "haider-stillbok-premium.vercel.app",
-    thumbnailPath: "/project-previews/haider-stillbok.png",
+    thumbnailPath: "/project-previews/haider-stillbok.webp",
     accentColor: "#38BDF8",
     metrics: [
       { kpi: "100%", label: "Spec Verification Accuracy" },
@@ -200,7 +200,7 @@ const projectsList: ProjectCaseStudy[] = [
     location: "Geneva • Dubai • London",
     liveUrl: "https://aurevane-edit.vercel.app",
     browserDisplayUrl: "aurevane-edit.vercel.app",
-    thumbnailPath: "/project-previews/aurevane.png",
+    thumbnailPath: "/project-previews/aurevane.webp",
     accentColor: "#E5C378",
     metrics: [
       { kpi: "60 FPS", label: "Fluid Shader Animation" },
