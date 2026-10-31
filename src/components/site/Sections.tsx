@@ -189,7 +189,7 @@ export function Trust() {
                   onTouchEnd={() => setTimeout(() => setActiveTouchIndex(null), 1200)}
                   className={`interactive-card group relative flex h-full flex-col justify-between rounded-xl border bg-card p-8 select-none cursor-pointer ${
                     isTouchActive
-                      ? "border-primary/80 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(212,175,55,0.3)] scale-[0.985]"
+                      ? "border-primary/80 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(255,255,255,0.3)] scale-[0.985]"
                       : "border-border"
                   }`}
                 >
@@ -280,7 +280,7 @@ export function Services() {
                   onTouchEnd={() => setTimeout(() => setActiveTouchIndex(null), 1200)}
                   className={`interactive-card group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-xl border bg-card p-6 sm:min-h-[230px] sm:p-7 select-none cursor-pointer ${
                     isTouchActive
-                      ? "border-primary/90 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(212,175,55,0.35)] scale-[0.985]"
+                      ? "border-primary/90 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(255,255,255,0.35)] scale-[0.985]"
                       : "border-border"
                   }`}
                 >
@@ -376,11 +376,11 @@ export function Work() {
               <Link
                 to="/work/$slug"
                 params={{ slug: selectedProjects[0].project.slug }}
-                className="interactive-card focus-ring group grid overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_24px_70px_-42px_rgba(212,175,55,0.25)] lg:grid-cols-[1.25fr_0.75fr]"
+                className="interactive-card focus-ring group grid overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_24px_70px_-42px_rgba(255,255,255,0.25)] lg:grid-cols-[1.25fr_0.75fr]"
                 aria-label={`View ${selectedProjects[0].presentation.name} details`}
               >
                 <div className="relative flex items-center justify-center overflow-hidden bg-surface p-5 sm:p-8 lg:min-h-[390px] lg:p-10">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(212,175,55,0.06),transparent_62%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(255,255,255,0.06),transparent_62%)]" />
                   <ProjectBrowserFrame
                     src={selectedProjects[0].project.thumbnail}
                     projectName={selectedProjects[0].presentation.name}
@@ -415,11 +415,11 @@ export function Work() {
                 <Link
                   to="/work/$slug"
                   params={{ slug: project.slug }}
-                  className="interactive-card focus-ring group block h-full overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_18px_48px_-34px_rgba(212,175,55,0.22)]"
+                  className="interactive-card focus-ring group block h-full overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_18px_48px_-34px_rgba(255,255,255,0.22)]"
                   aria-label={`View ${presentation.name} details`}
                 >
                   <div className="relative overflow-hidden bg-surface p-4 sm:p-5">
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(212,175,55,0.05),transparent_62%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(255,255,255,0.05),transparent_62%)]" />
                     <ProjectBrowserFrame
                       src={project.thumbnail}
                       projectName={presentation.name}
@@ -510,7 +510,7 @@ export function BusinessProblem() {
                 <article
                   className={`interactive-card group h-full overflow-hidden rounded-xl border bg-card transition-all duration-300 ${
                     isSolution
-                      ? "border-primary/40 hover:border-primary/70 hover:shadow-[0_20px_50px_-36px_rgba(212,175,55,0.25)]"
+                      ? "border-primary/40 hover:border-primary/70 hover:shadow-[0_20px_50px_-36px_rgba(255,255,255,0.25)]"
                       : "border-white/10 hover:border-white/20"
                   }`}
                 >
@@ -522,7 +522,7 @@ export function BusinessProblem() {
                     <span
                       className={`h-2 w-2 rounded-full ${
                         isSolution
-                          ? "bg-primary shadow-[0_0_8px_rgba(212,175,55,0.8)]"
+                          ? "bg-primary shadow-[0_0_8px_rgba(255,255,255,0.8)]"
                           : "bg-red-400/80"
                       }`}
                     />
@@ -628,8 +628,8 @@ export function FreeDemo() {
   return (
     <section id="demo" className="border-t border-border py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        <div className="relative overflow-hidden rounded-2xl border border-primary/25 bg-card p-8 sm:p-12 md:p-16 shadow-[0_28px_80px_-56px_rgba(212,175,55,0.2)]">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_12%_0%,rgba(212,175,55,0.06),transparent_48%)]" />
+        <div className="relative overflow-hidden rounded-2xl border border-primary/25 bg-card p-8 sm:p-12 md:p-16 shadow-[0_28px_80px_-56px_rgba(255,255,255,0.2)]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_12%_0%,rgba(255,255,255,0.06),transparent_48%)]" />
 
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-14 items-center">
             <div className="lg:col-span-6">
@@ -779,7 +779,7 @@ export function Process() {
                   <span
                     className={`absolute top-1 left-0 grid h-[23px] w-[23px] place-items-center rounded-full border transition-all duration-500 md:top-0 ${
                       activeStep
-                        ? "border-primary/70 bg-background text-primary shadow-[0_0_14px_-5px_rgba(212,175,55,0.5)]"
+                        ? "border-primary/70 bg-background text-primary shadow-[0_0_14px_-5px_rgba(255,255,255,0.5)]"
                         : "border-primary/30 bg-background text-muted-foreground"
                     }`}
                   >
@@ -970,7 +970,7 @@ export function About() {
             </Reveal>
             <Reveal delay={150}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg font-normal">
-                I founded CraftLogic with one simple goal: to help businesses get high-quality
+                We started CRAFTLOGIC with one simple goal: to help businesses get high-quality
                 websites without the usual delays, complicated technical talk, or messy templates.
                 Every project is built properly from the ground up to help your business grow.
               </p>
