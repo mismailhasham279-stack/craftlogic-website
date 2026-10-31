@@ -55,8 +55,8 @@ export function Nav({ onOpenInquiry }: NavProps) {
       <header
         className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "border-b border-white/10 bg-[#090a0f]/95 backdrop-blur-md shadow-lg shadow-black/40 py-2.5 sm:py-3"
-            : "border-b border-white/5 bg-[#090a0f]/80 backdrop-blur-sm py-3 sm:py-3.5"
+            ? "border-b border-black/10 bg-white/95 backdrop-blur-md shadow-lg shadow-black/10 py-2.5 sm:py-3"
+            : "border-b border-black/5 bg-white/80 backdrop-blur-sm py-3 sm:py-3.5"
         }`}
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-4 sm:px-6 md:px-10">
@@ -76,15 +76,15 @@ export function Nav({ onOpenInquiry }: NavProps) {
                 className="h-7 w-7 sm:h-8 sm:w-8 transition-transform duration-300 group-hover:scale-105"
                 aria-hidden="true"
               >
-                <path d="M32 8L54 20L32 32L10 20L32 8Z" fill="#6366F1" />
-                <path d="M32 20L54 32L32 44L10 32L32 20Z" fill="#0EA5E9" />
-                <path d="M32 32L54 44L32 56L10 44L32 32Z" fill="#10B981" />
+                <path d="M32 8L54 20L32 32L10 20L32 8Z" fill="#5052D8" />
+                <path d="M32 20L54 32L32 44L10 32L32 20Z" fill="#128DD8" />
+                <path d="M32 32L54 44L32 56L10 44L32 32Z" fill="#0AB18E" />
               </svg>
             </div>
 
             <div className="flex items-center tracking-[-0.04em] font-extrabold text-lg sm:text-xl font-display leading-none">
-              <span className="text-white">CRAFT</span>
-              <span className="text-[#10B981] ml-0.5">LOGIC</span>
+              <span className="text-black">CRAFT</span>
+              <span className="font-serif-logo text-[#0AAA8C] ml-0.5">LOGIC</span>
             </div>
           </Link>
 
@@ -98,14 +98,14 @@ export function Nav({ onOpenInquiry }: NavProps) {
                 key={link.hash}
                 to="/"
                 hash={link.hash}
-                className="font-sans text-xs font-medium tracking-wide text-muted-foreground transition-colors hover:text-white"
+                className="font-sans text-xs font-medium tracking-wide text-muted-foreground transition-colors hover:text-black"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               to="/blog"
-              className="font-sans text-xs font-medium tracking-wide text-muted-foreground transition-colors hover:text-white"
+              className="font-sans text-xs font-medium tracking-wide text-muted-foreground transition-colors hover:text-black"
             >
               Blog
             </Link>
@@ -137,7 +137,7 @@ export function Nav({ onOpenInquiry }: NavProps) {
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              className="lg:hidden flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 active:scale-95 cursor-pointer"
+              className="lg:hidden flex h-10 w-10 items-center justify-center rounded-lg border border-black/10 bg-black/5 text-black transition-colors hover:bg-black/10 active:scale-95 cursor-pointer"
             >
               {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -153,9 +153,9 @@ export function Nav({ onOpenInquiry }: NavProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 z-50 flex flex-col bg-[#090a0f] px-6 pt-5 pb-8 overflow-y-auto"
+            className="fixed inset-0 z-50 flex flex-col bg-white px-6 pt-5 pb-8 overflow-y-auto"
           >
-            <div className="flex items-center justify-between border-b border-white/10 pb-5">
+            <div className="flex items-center justify-between border-b border-black/10 pb-5">
               <div className="flex items-center gap-1.5">
                 <svg
                   viewBox="0 0 64 64"
@@ -164,13 +164,13 @@ export function Nav({ onOpenInquiry }: NavProps) {
                   className="h-7 w-7"
                   aria-hidden="true"
                 >
-                  <path d="M32 8L54 20L32 32L10 20L32 8Z" fill="#6366F1" />
-                  <path d="M32 20L54 32L32 44L10 32L32 20Z" fill="#0EA5E9" />
-                  <path d="M32 32L54 44L32 56L10 44L32 32Z" fill="#10B981" />
+                  <path d="M32 8L54 20L32 32L10 20L32 8Z" fill="#5052D8" />
+                  <path d="M32 20L54 32L32 44L10 32L32 20Z" fill="#128DD8" />
+                  <path d="M32 32L54 44L32 56L10 44L32 32Z" fill="#0AB18E" />
                 </svg>
                 <div className="flex items-center font-extrabold text-lg font-display tracking-tight">
-                  <span className="text-white">CRAFT</span>
-                  <span className="text-[#10B981] ml-0.5">LOGIC</span>
+                  <span className="text-black">CRAFT</span>
+                  <span className="font-serif-logo text-[#0AAA8C] ml-0.5">LOGIC</span>
                 </div>
               </div>
 
@@ -178,7 +178,7 @@ export function Nav({ onOpenInquiry }: NavProps) {
                 type="button"
                 onClick={() => setIsMobileMenuOpen(false)}
                 aria-label="Close mobile menu"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-muted-foreground hover:bg-white/10 hover:text-white cursor-pointer"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-black/5 text-muted-foreground hover:bg-black/10 hover:text-black cursor-pointer"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -196,7 +196,7 @@ export function Nav({ onOpenInquiry }: NavProps) {
                     to="/"
                     hash={link.hash}
                     onClick={handleLinkClick}
-                    className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white hover:text-primary transition-colors py-1 block"
+                    className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-black hover:text-primary transition-colors py-1 block"
                   >
                     {link.label}
                   </Link>
@@ -210,14 +210,14 @@ export function Nav({ onOpenInquiry }: NavProps) {
                 <Link
                   to="/blog"
                   onClick={handleLinkClick}
-                  className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white hover:text-primary transition-colors py-1 block"
+                  className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-black hover:text-primary transition-colors py-1 block"
                 >
                   Blog
                 </Link>
               </motion.div>
             </div>
 
-            <div className="mt-auto border-t border-white/10 pt-6 space-y-4">
+            <div className="mt-auto border-t border-black/10 pt-6 space-y-4">
               {onOpenInquiry ? (
                 <button
                   type="button"
@@ -240,7 +240,7 @@ export function Nav({ onOpenInquiry }: NavProps) {
               )}
 
               <div className="text-center font-mono text-[11px] text-muted-foreground">
-                Direct Inquiries: <span className="text-white">foundercraftlogic@gmail.com</span>
+                Direct Inquiries: <span className="text-black">foundercraftlogic@gmail.com</span>
               </div>
             </div>
           </motion.div>
