@@ -32,7 +32,7 @@ export function Hero({ onOpenInquiry }: HeroProps) {
           <header>
             {/* Minimal Eyebrow Badge */}
             <div className="inline-flex min-h-[26px] items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-3 py-0.5">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary shadow-[0_0_10px_rgba(212,175,55,0.7)]" />
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary shadow-[0_0_10px_rgba(255,255,255,0.7)]" />
               <span className="font-mono text-[9px] sm:text-[10px] font-semibold tracking-[0.14em] text-foreground/90 uppercase">
                 FULL-STACK DIGITAL AGENCY • CRAFTLOGIC
               </span>
