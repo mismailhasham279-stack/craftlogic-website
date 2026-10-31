@@ -76,15 +76,15 @@ export function Nav({ onOpenInquiry }: NavProps) {
                 className="h-7 w-7 sm:h-8 sm:w-8 transition-transform duration-300 group-hover:scale-105"
                 aria-hidden="true"
               >
-                <path d="M32 8L54 20L32 32L10 20L32 8Z" fill="#6366F1" />
-                <path d="M32 20L54 32L32 44L10 32L32 20Z" fill="#0EA5E9" />
-                <path d="M32 32L54 44L32 56L10 44L32 32Z" fill="#10B981" />
+                <path d="M32 8L54 20L32 32L10 20L32 8Z" fill="#ffffff" />
+                <path d="M32 20L54 32L32 44L10 32L32 20Z" fill="#d4d4d4" />
+                <path d="M32 32L54 44L32 56L10 44L32 32Z" fill="#a3a3a3" />
               </svg>
             </div>
 
             <div className="flex items-center tracking-[-0.04em] font-extrabold text-lg sm:text-xl font-display leading-none">
               <span className="text-white">CRAFT</span>
-              <span className="text-[#10B981] ml-0.5">LOGIC</span>
+              <span className="text-white ml-0.5">LOGIC</span>
             </div>
           </Link>
 
