@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Pause, Play } from "lucide-react";
-import { projects } from "@/data/projects";
+import { projects, PUBLIC_PROJECT_IDS } from "@/data/projects";
 
 // Project marquee — the reference site's signature work section: two rows
 // of white project cards gliding in OPPOSITE directions (top left, bottom
 // right), with a pause control and a black "View all projects" pill below.
-// All projects, names, categories and images are CRAFTLOGIC's own.
-const WORK_IDS = ["luxevia", "nailsbygrace", "shoptop", "haider-stillbok", "aurevane"];
+// All projects, names, categories and images are CRAFTLOGIC's own. Only
+// projects the site itself marks public are linked, so no card ever leads
+// to a dead page (Aurevane and Haider Stillbok detail pages are currently
+// closed by the site's own public gate).
+const WORK_IDS = ["luxevia", "nailsbygrace", "shoptop", "usaluxe"];
 
 const WORK_IMAGES: Record<string, string> = {
   luxevia: "/project-previews/luxevia.svg",
   nailsbygrace: "/project-previews/nails-by-grace.webp",
   shoptop: "/project-previews/curate.webp",
-  "haider-stillbok": "/project-previews/haider-stillbok.webp",
-  aurevane: "/project-previews/aurevane.webp",
+  usaluxe: "/project-previews/usa-luxe-curate.webp",
 };
 
 // One brand color + type style per project, mirroring the reference's
@@ -23,8 +25,7 @@ const CARD_STYLE: Record<string, { color: string; serif: boolean }> = {
   luxevia: { color: "#6C2BD9", serif: true },
   nailsbygrace: { color: "#0F766E", serif: false },
   shoptop: { color: "#FF4D00", serif: false },
-  "haider-stillbok": { color: "#0F172A", serif: false },
-  aurevane: { color: "#4A90D9", serif: true },
+  usaluxe: { color: "#4A90D9", serif: true },
 };
 
 type CardItem = { id: string; slug: string; name: string; category: string; img: string };
@@ -87,7 +88,7 @@ export function WorkMarquee() {
   const [paused, setPaused] = useState(false);
   const items: CardItem[] = WORK_IDS.flatMap((id) => {
     const p = projects.find((item) => item.id === id);
-    return p
+    return p && PUBLIC_PROJECT_IDS.has(p.id)
       ? [{ id, slug: p.slug, name: p.name, category: p.category, img: WORK_IMAGES[id] ?? "/project-previews/aurevane.webp" }]
       : [];
   });
