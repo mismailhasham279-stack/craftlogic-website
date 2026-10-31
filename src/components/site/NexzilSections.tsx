@@ -13,6 +13,13 @@ import {
   Cloud,
   Wrench,
   HeartHandshake,
+  Sparkles,
+  ShoppingBag,
+  Search,
+  Gauge,
+  MapPin,
+  BarChart3,
+  ClipboardCheck,
 } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { projects } from "@/data/projects";
@@ -282,7 +289,7 @@ const COLOR_BLOCKS = [
     title: "Custom Website Development",
     accent: "Development",
     tagline: "Websites shaped around your business, not around a template.",
-    img: "/project-previews/aurevane.webp",
+    icon: Globe,
   },
   {
     n: "02",
@@ -290,7 +297,7 @@ const COLOR_BLOCKS = [
     title: "Website Experiences",
     accent: "Experiences",
     tagline: "Clear stories. Considered interactions. Beautifully engineered.",
-    img: "/project-previews/curate.webp",
+    icon: Sparkles,
   },
   {
     n: "03",
@@ -298,7 +305,7 @@ const COLOR_BLOCKS = [
     title: "Online Stores & Booking",
     accent: "Booking",
     tagline: "Shops and bookings that turn visitors into orders.",
-    img: "/project-previews/usa-luxe-curate.webp",
+    icon: ShoppingBag,
   },
   {
     n: "04",
@@ -306,7 +313,7 @@ const COLOR_BLOCKS = [
     title: "SEO & Google Visibility",
     accent: "Visibility",
     tagline: "Get found on Google by the customers already looking for you.",
-    img: "/project-previews/nails-by-grace.webp",
+    icon: Search,
   },
   {
     n: "05",
@@ -314,7 +321,7 @@ const COLOR_BLOCKS = [
     title: "Care Plans & Support",
     accent: "Support",
     tagline: "Updates, backups, and security handled for you, every month.",
-    img: "/project-previews/haider-stillbok.webp",
+    icon: HeartHandshake,
   },
   {
     n: "06",
@@ -322,7 +329,7 @@ const COLOR_BLOCKS = [
     title: "Speed & Foundations",
     accent: "Foundations",
     tagline: "Release, observe, and improve. Build the foundations that last.",
-    img: "/project-previews/aurevane.webp",
+    icon: Gauge,
   },
   {
     n: "07",
@@ -330,7 +337,7 @@ const COLOR_BLOCKS = [
     title: "Local & Google Profiles",
     accent: "Local",
     tagline: "Your Google Business Profile, set up and working for your city.",
-    img: "/project-previews/curate.webp",
+    icon: MapPin,
   },
   {
     n: "08",
@@ -338,7 +345,7 @@ const COLOR_BLOCKS = [
     title: "Analytics & Growth",
     accent: "Growth",
     tagline: "Simple reports that show what is working — in plain words.",
-    img: "/project-previews/usa-luxe-curate.webp",
+    icon: BarChart3,
   },
   {
     n: "09",
@@ -346,7 +353,7 @@ const COLOR_BLOCKS = [
     title: "Audits & Redesign",
     accent: "Redesign",
     tagline: "An honest review first, then a rebuild that fixes what matters.",
-    img: "/project-previews/nails-by-grace.webp",
+    icon: ClipboardCheck,
   },
 ];
 
@@ -379,14 +386,11 @@ export function ColorBlocks() {
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl">
-                <img
-                  src={b.img}
-                  alt={b.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-[16/9] w-full object-cover object-top"
-                />
+              <div className="mx-auto mt-8 flex h-56 max-w-3xl flex-col items-center justify-center gap-3 rounded-2xl bg-white shadow-2xl md:h-64">
+                <b.icon className="size-14 md:size-16" style={{ color: b.bg }} aria-hidden="true" />
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500">
+                  {b.accent}
+                </span>
               </div>
             </Reveal>
             <Reveal delay={160}>
