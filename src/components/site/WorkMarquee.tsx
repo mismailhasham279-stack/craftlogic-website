@@ -10,9 +10,9 @@ import { projects } from "@/data/projects";
 const WORK_IDS = ["luxevia", "nailsbygrace", "shoptop", "haider-stillbok", "aurevane"];
 
 const WORK_IMAGES: Record<string, string> = {
-  luxevia: "/project-previews/curate.webp",
+  luxevia: "/project-previews/luxevia.svg",
   nailsbygrace: "/project-previews/nails-by-grace.webp",
-  shoptop: "/project-previews/usa-luxe-curate.webp",
+  shoptop: "/project-previews/curate.webp",
   "haider-stillbok": "/project-previews/haider-stillbok.webp",
   aurevane: "/project-previews/aurevane.webp",
 };
