@@ -6,11 +6,13 @@ import { Hero } from "@/components/site/Hero";
 import { Work } from "@/components/site/Work";
 import {
   Trust,
+  Principles,
   Services,
   BusinessProblem,
   FreeDemo,
   Process,
   WhyMe,
+  WaysToWork,
   FaqSection,
   About,
   StartProject,
@@ -46,12 +48,14 @@ function HomePage() {
         {/* Hero Section with Laptop Showcase and In-Place Modal Trigger */}
         <Hero onOpenInquiry={openInquiryModal} />
         <Trust />
+        <Principles />
         <Services />
         <Work />
         <BusinessProblem />
         <FreeDemo />
         <Process />
         <WhyMe />
+        <WaysToWork />
         <FaqSection />
         <About />
         <StartProject />
