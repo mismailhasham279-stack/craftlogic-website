@@ -3,8 +3,9 @@ import { useState } from "react";
 import { SEO } from "@/components/site/SEO";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
+import { TilesWall } from "@/components/site/TilesWall";
+import { WorkMarquee } from "@/components/site/WorkMarquee";
 import {
-  WorkShowcase,
   ConnectedTeam,
   CompanyBlack,
   ColorBlocks,
@@ -45,7 +46,8 @@ function HomePage() {
       <main id="main-content" className="relative">
         {/* Typographic hero with services pill cloud */}
         <Hero onOpenInquiry={openInquiryModal} />
-        <WorkShowcase />
+        <TilesWall />
+        <WorkMarquee />
         <ConnectedTeam />
         <CompanyBlack />
         <ColorBlocks />
