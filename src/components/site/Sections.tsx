@@ -10,6 +10,11 @@ import {
   Phone,
   RefreshCw,
   Rocket,
+  Search,
+  Gauge,
+  CalendarCheck,
+  BarChart3,
+  FileSearch,
   ShieldCheck,
   ShoppingCart,
   Smartphone,
@@ -21,7 +26,6 @@ import {
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 import { ProjectBrowserFrame } from "./ProjectBrowserFrame";
-import { useScrollProgress } from "@/hooks/use-reveal";
 import { EMAIL, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_RAW, SOCIAL, projects } from "@/data/projects";
 
 export { EMAIL };
@@ -132,17 +136,17 @@ const CORE_PILLARS = [
   {
     icon: CheckCircle2,
     title: "LOOK ESTABLISHED",
-    copy: "Make a strong, professional impression so new customers trust you immediately.",
+    copy: "A clean, professional website tells new customers that your business is serious and reliable. When people can see your work, your services, and real reviews in one place, they trust you faster and feel confident contacting you instead of a competitor.",
   },
   {
     icon: Globe,
     title: "GET INQUIRIES 24/7",
-    copy: "Customers can see your work, check your services, and contact you at any time.",
+    copy: "Your website works even when you are closed. Customers can read about your services, see your past work, and send you a message at any time of the day or night, so you never miss an enquiry just because you were busy or asleep.",
   },
   {
     icon: TrendingUp,
     title: "EASY FOR CUSTOMERS",
-    copy: "Clear buttons and simple layouts that make it effortless for visitors to message or call you.",
+    copy: "Visitors should never have to guess what to do next. Clear buttons, simple pages, and a short contact form make it effortless for a customer to call you, message you on WhatsApp, or book an appointment in less than a minute.",
   },
 ];
 
@@ -172,8 +176,12 @@ export function Trust() {
           </Reveal>
           <Reveal delay={100}>
             <p className="max-w-xl text-base leading-relaxed text-muted-foreground lg:pt-1 font-normal">
-              Most clients search online before buying. We build clean, fast websites that show you
-              take your business seriously and give customers full confidence to choose you.
+              Most customers search online before they buy. They compare two or three businesses,
+              look at their websites, and then decide who to contact. If your website looks old,
+              loads slowly, or does not explain what you do, those customers quietly move on to
+              someone else. We build clean, fast websites that show you take your business
+              seriously, explain your services in plain words, and give customers full confidence
+              to choose you.
             </p>
           </Reveal>
         </div>
@@ -189,7 +197,7 @@ export function Trust() {
                   onTouchEnd={() => setTimeout(() => setActiveTouchIndex(null), 1200)}
                   className={`interactive-card group relative flex h-full flex-col justify-between rounded-xl border bg-card p-8 select-none cursor-pointer ${
                     isTouchActive
-                      ? "border-primary/80 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(212,175,55,0.3)] scale-[0.985]"
+                      ? "border-primary/80 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.3)] scale-[0.985]"
                       : "border-border"
                   }`}
                 >
@@ -223,37 +231,79 @@ const SERVICES = [
     n: "01",
     icon: Layout,
     title: "Business Websites",
-    copy: "Modern websites that showcase your services clearly and make it simple for clients to reach out.",
+    copy: "A complete, modern website for your business that explains what you do, who you help, and how to contact you. Every page is written in plain words, designed to look professional on phones and computers, and built to turn visitors into enquiries. We include your services, your work, customer reviews, and a simple contact form, so a new visitor understands your business within seconds and knows exactly what to do next.",
   },
   {
     n: "02",
     icon: Sparkles,
     title: "Landing Pages",
-    copy: "Single-page layouts built to explain one clear offer and turn ad visitors into direct inquiries.",
+    copy: "A single focused page built around one offer, one service, or one advertising campaign. Instead of giving visitors many choices, a landing page guides them to one clear action, such as booking a call, requesting a quote, or buying a product. This is the fastest way to turn paid ads and social media traffic into real enquiries.",
   },
   {
     n: "03",
     icon: ShoppingCart,
     title: "Online Stores",
-    copy: "Clean and secure online shops where customers can easily browse products and make purchases.",
+    copy: "A clean and secure online shop where customers can browse your products, see clear prices and photos, and buy with confidence. We set up product pages, categories, search, and a simple checkout, and we make sure the store loads fast and works perfectly on mobile phones, where most shopping happens today.",
   },
   {
     n: "04",
     icon: RefreshCw,
     title: "Website Redesign",
-    copy: "Upgrading slow or outdated websites into fast, modern platforms that look great on any screen.",
+    copy: "If your current website looks old, loads slowly, or no longer brings customers, we rebuild it from the ground up. We keep what already works, fix what is broken, improve the design and speed, and rewrite the content in simple words, so your website starts working for your business again instead of just sitting there.",
   },
   {
     n: "05",
     icon: Smartphone,
     title: "Mobile-First Web Apps",
-    copy: "Custom tools, booking systems, or client portals built around your specific daily business needs.",
+    copy: "Custom tools built around your daily work, such as booking systems, client portals, quote calculators, or internal dashboards. Because we design for mobile phones first, your customers and your team can use the tool anywhere, without confusion or extra steps.",
   },
   {
     n: "06",
     icon: MessageSquare,
     title: "WhatsApp & Form Setup",
-    copy: "Connecting direct WhatsApp buttons, instant forms, and Google Maps directly into your website.",
+    copy: "Direct WhatsApp buttons, instant contact forms, and Google Maps placed exactly where customers need them. A visitor can message you in one tap, without copying numbers or searching for your contact page, which means more enquiries and fewer lost customers.",
+  },
+  {
+    n: "07",
+    icon: Search,
+    title: "SEO — Get Found on Google",
+    copy: "SEO means helping your business show up higher on Google when customers search for what you offer. We fix your page titles and descriptions, improve your content and page speed, set up your Google Business Profile, and build local pages, so customers in your city find you before they find your competitors. Results take time, usually a few months, but they keep bringing enquiries without paying for ads.",
+  },
+  {
+    n: "08",
+    icon: ShieldCheck,
+    title: "Website Care Plans",
+    copy: "A monthly care plan that keeps your website safe, fast, and up to date after launch. We handle software updates, backups, security checks, and small content changes for you, so you never have to worry about something breaking, and your website keeps working smoothly month after month.",
+  },
+  {
+    n: "09",
+    icon: Gauge,
+    title: "Speed Optimization",
+    copy: "If your website takes more than a few seconds to open, many visitors leave before they ever see it. We find exactly what is slowing your site down, compress heavy images, clean up slow code, and test the result, so your pages open fast on phones and computers and visitors stay long enough to contact you.",
+  },
+  {
+    n: "10",
+    icon: CalendarCheck,
+    title: "Booking & E-commerce Setup",
+    copy: "Online booking for appointments, classes, or services, and full e-commerce setup for selling products online. Customers can pick a time or a product, pay or reserve in a few simple steps, and you receive the booking or order immediately, without back-and-forth messages.",
+  },
+  {
+    n: "11",
+    icon: Mail,
+    title: "Domain & Business Email Setup",
+    copy: "Your own domain name and a professional business email address, such as hello@yourbusiness.com, instead of a free personal email. We buy and connect the domain, set up email forwarding, and make sure your website and email work together from day one, so your business looks established everywhere.",
+  },
+  {
+    n: "12",
+    icon: BarChart3,
+    title: "Analytics Setup",
+    copy: "Simple, clear reports that show how many people visit your website, where they come from, and which pages they read. We install and configure analytics for you and explain the numbers in plain words, so you can see what is working and make better decisions about your business.",
+  },
+  {
+    n: "13",
+    icon: FileSearch,
+    title: "Paid Website Audit",
+    copy: "A complete, honest review of your current website, with a clear report of what is helping you and what is hurting you. We check speed, mobile design, content, Google visibility, and missing pages, then give you a practical fix list in order of importance, so you know exactly what to improve first, whether you hire us or not.",
   },
 ];
 
@@ -265,8 +315,8 @@ export function Services() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <SectionHeading
           label="Our Services"
-          title="Everything You Need to Succeed Online."
-          subtitle="Whether you need a new website or a complete redesign, we deliver solutions that solve real business problems."
+          title="Everything Your Business Needs to Succeed Online."
+          subtitle="Whether you need a brand-new website, a complete redesign, or help getting found on Google, we offer every service a growing business needs in one place. Each service below is explained in plain words, with no technical jargon, so you know exactly what you are getting."
         />
         
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-5">
@@ -280,7 +330,7 @@ export function Services() {
                   onTouchEnd={() => setTimeout(() => setActiveTouchIndex(null), 1200)}
                   className={`interactive-card group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-xl border bg-card p-6 sm:min-h-[230px] sm:p-7 select-none cursor-pointer ${
                     isTouchActive
-                      ? "border-primary/90 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(212,175,55,0.35)] scale-[0.985]"
+                      ? "border-primary/90 bg-surface-2 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.35)] scale-[0.985]"
                       : "border-border"
                   }`}
                 >
@@ -367,7 +417,7 @@ export function Work() {
         <SectionHeading
           label="Our Portfolio"
           title="Recent Client Projects."
-          subtitle="Take a look at some of the websites and platforms we have built for businesses."
+          subtitle="Take a look at some of the websites and platforms we have built for real businesses. Every project below is real client work, with real results, and you can open each one to see the design, the features, and what it achieved for the business."
         />
 
         <div className="mt-14 space-y-6 lg:space-y-8">
@@ -376,11 +426,11 @@ export function Work() {
               <Link
                 to="/work/$slug"
                 params={{ slug: selectedProjects[0].project.slug }}
-                className="interactive-card focus-ring group grid overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_24px_70px_-42px_rgba(212,175,55,0.25)] lg:grid-cols-[1.25fr_0.75fr]"
+                className="interactive-card focus-ring group grid overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_24px_70px_-42px_rgba(0,0,0,0.25)] lg:grid-cols-[1.25fr_0.75fr]"
                 aria-label={`View ${selectedProjects[0].presentation.name} details`}
               >
                 <div className="relative flex items-center justify-center overflow-hidden bg-surface p-5 sm:p-8 lg:min-h-[390px] lg:p-10">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(212,175,55,0.06),transparent_62%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(0,0,0,0.06),transparent_62%)]" />
                   <ProjectBrowserFrame
                     src={selectedProjects[0].project.thumbnail}
                     projectName={selectedProjects[0].presentation.name}
@@ -415,11 +465,11 @@ export function Work() {
                 <Link
                   to="/work/$slug"
                   params={{ slug: project.slug }}
-                  className="interactive-card focus-ring group block h-full overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_18px_48px_-34px_rgba(212,175,55,0.22)]"
+                  className="interactive-card focus-ring group block h-full overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_18px_48px_-34px_rgba(0,0,0,0.22)]"
                   aria-label={`View ${presentation.name} details`}
                 >
                   <div className="relative overflow-hidden bg-surface p-4 sm:p-5">
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(212,175,55,0.05),transparent_62%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(0,0,0,0.05),transparent_62%)]" />
                     <ProjectBrowserFrame
                       src={project.thumbnail}
                       projectName={presentation.name}
@@ -496,8 +546,10 @@ export function BusinessProblem() {
           </Reveal>
           <Reveal delay={150}>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground font-normal">
-              Social media is great for being discovered. But your website is where visitors
-              actually turn into paying clients.
+              Social media is great for being discovered, but it is rented space: algorithms
+              change, followers get distracted, and you do not control the platform. Your website
+              is the one place you fully own, where visitors actually turn into paying clients,
+              because everything there is built around one goal: making it easy to contact you.
             </p>
           </Reveal>
         </div>
@@ -510,19 +562,19 @@ export function BusinessProblem() {
                 <article
                   className={`interactive-card group h-full overflow-hidden rounded-xl border bg-card transition-all duration-300 ${
                     isSolution
-                      ? "border-primary/40 hover:border-primary/70 hover:shadow-[0_20px_50px_-36px_rgba(212,175,55,0.25)]"
-                      : "border-white/10 hover:border-white/20"
+                      ? "border-primary/40 hover:border-primary/70 hover:shadow-[0_20px_50px_-36px_rgba(0,0,0,0.25)]"
+                      : "border-black/10 hover:border-black/20"
                   }`}
                 >
                   <div
                     className={`flex items-center gap-2 border-b px-6 py-4 sm:px-7 ${
-                      isSolution ? "border-primary/20 bg-primary/5" : "border-white/10 bg-surface"
+                      isSolution ? "border-primary/20 bg-primary/5" : "border-black/10 bg-surface"
                     }`}
                   >
                     <span
                       className={`h-2 w-2 rounded-full ${
                         isSolution
-                          ? "bg-primary shadow-[0_0_8px_rgba(212,175,55,0.8)]"
+                          ? "bg-primary shadow-[0_0_8px_rgba(0,0,0,0.8)]"
                           : "bg-red-400/80"
                       }`}
                     />
@@ -628,8 +680,8 @@ export function FreeDemo() {
   return (
     <section id="demo" className="border-t border-border py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        <div className="relative overflow-hidden rounded-2xl border border-primary/25 bg-card p-8 sm:p-12 md:p-16 shadow-[0_28px_80px_-56px_rgba(212,175,55,0.2)]">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_12%_0%,rgba(212,175,55,0.06),transparent_48%)]" />
+        <div className="relative overflow-hidden rounded-2xl border border-primary/25 bg-card p-8 sm:p-12 md:p-16 shadow-[0_28px_80px_-56px_rgba(0,0,0,0.2)]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_12%_0%,rgba(0,0,0,0.06),transparent_48%)]" />
 
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-14 items-center">
             <div className="lg:col-span-6">
@@ -663,7 +715,7 @@ export function FreeDemo() {
                       </h3>
                       <p className="mt-2 text-sm text-muted-foreground">
                         Your preview request has been securely dispatched to{" "}
-                        <strong className="text-white">{EMAIL}</strong>. We will review your
+                        <strong className="text-foreground">{EMAIL}</strong>. We will review your
                         business type and prepare your preview shortly!
                       </p>
                     </div>
@@ -731,76 +783,108 @@ export function FreeDemo() {
   );
 }
 
-/* ---------------- 6. Process Section ---------------- */
-const STEPS = [
+/* ---------------- 6. Process Section: 7 stages, 3 chapters ---------------- */
+const CHAPTERS = [
   {
-    n: "01",
-    title: "Discussion & Plan",
-    copy: "We understand what you sell, who your clients are, and what pages you need.",
+    chapter: "Chapter 1",
+    name: "Plan",
+    tagline: "Find the direction.",
+    stages: [
+      {
+        n: "01",
+        title: "Discover",
+        copy: "We start with a simple conversation about your business: what you sell, who your customers are, what your competitors do, and what a good result looks like for you. We also look at your current website, if you have one, and note what is working and what is not, before we suggest anything.",
+      },
+      {
+        n: "02",
+        title: "Strategize",
+        copy: "Next, we agree on the plan together: which pages your website needs, what each page should say, what features matter most, and a realistic timeline. You approve the plan before any design work starts, so there are no surprises later about scope or cost.",
+      },
+    ],
   },
   {
-    n: "02",
-    title: "Design Preview",
-    copy: "We create a modern layout and show it to you so you can give feedback and changes.",
+    chapter: "Chapter 2",
+    name: "Create",
+    tagline: "Shape it. Build it. Prove it.",
+    stages: [
+      {
+        n: "03",
+        title: "Design",
+        copy: "We design your website page by page, starting with the homepage, and show you a real preview you can click through. You tell us what you like and what to change, and we revise it until you are happy with how it looks and feels.",
+      },
+      {
+        n: "04",
+        title: "Develop",
+        copy: "We build the approved design with clean, modern code, so your website loads fast, works on every phone and computer, and is easy to update later. We add your content, photos, forms, and WhatsApp buttons, and connect your domain and email.",
+      },
+      {
+        n: "05",
+        title: "Test",
+        copy: "Before launch, we test everything carefully: every button, every form, every page on mobile and desktop, and the loading speed. We fix any problem we find, so your customers never see a broken page or a form that does not work.",
+      },
+    ],
   },
   {
-    n: "03",
-    title: "Fast Development",
-    copy: "We build your website with clean code so it opens fast and never gets stuck.",
-  },
-  {
-    n: "04",
-    title: "Final Launch",
-    copy: "We test everything on mobile and desktop, link your domain, and make your site live.",
+    chapter: "Chapter 3",
+    name: "Evolve",
+    tagline: "Launch with a future.",
+    stages: [
+      {
+        n: "06",
+        title: "Launch",
+        copy: "We make your website live, connect your domain, set up analytics so you can see your visitors, and check everything one final time. We also show you how to update basic content yourself, so you are never locked out of your own website.",
+      },
+      {
+        n: "07",
+        title: "Care",
+        copy: "After launch, you can choose a monthly care plan, and we keep your website updated, backed up, and secure. If you want new pages or features later, we add them step by step, so your website grows with your business instead of going out of date.",
+      },
+    ],
   },
 ];
 
 export function Process() {
-  const { ref, progress } = useScrollProgress<HTMLDivElement>();
   return (
     <section id="process" className="border-t border-border py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        <SectionHeading label="How It Works" title="Simple 4-Step Process." />
-        <div ref={ref} className="relative mt-16">
-          <div className="absolute top-0 bottom-0 left-[11px] w-px bg-border md:top-[11px] md:right-0 md:bottom-auto md:left-0 md:h-px md:w-full" />
-          <div
-            className="absolute top-0 left-[11px] w-px origin-top bg-primary transition-transform duration-200 md:top-[11px] md:left-0 md:h-px md:w-full md:origin-left"
-            style={{ transform: `scaleY(${progress})`, height: "100%" }}
-          />
-          <div
-            className="absolute top-[11px] left-0 hidden h-px w-full origin-left bg-primary transition-transform duration-200 md:block"
-            style={{ transform: `scaleX(${progress})` }}
-          />
-          <ol className="grid gap-8 md:grid-cols-4 md:gap-6">
-            {STEPS.map((s, i) => {
-              const activeStep = progress > (i + 0.4) / STEPS.length;
-              return (
-                <li key={s.n} className="relative pl-10 md:pt-12 md:pl-0">
-                  <span
-                    className={`absolute top-1 left-0 grid h-[23px] w-[23px] place-items-center rounded-full border transition-all duration-500 md:top-0 ${
-                      activeStep
-                        ? "border-primary/70 bg-background text-primary shadow-[0_0_14px_-5px_rgba(212,175,55,0.5)]"
-                        : "border-primary/30 bg-background text-muted-foreground"
-                    }`}
-                  >
-                    <span className="font-mono text-[9px]">{s.n}</span>
+        <SectionHeading
+          label="Our Process"
+          title="A Clear Path From First Call to Launch — and Beyond."
+          subtitle="Seven stages, grouped into three simple chapters. You always know what is happening, what comes next, and what we need from you, so a website project never feels confusing or stressful."
+        />
+        <div className="mt-14 space-y-12">
+          {CHAPTERS.map((c) => (
+            <div key={c.name}>
+              <Reveal>
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-t border-black/10 pt-6">
+                  <span className="font-mono text-[11px] font-medium tracking-[0.2em] text-muted-foreground uppercase">
+                    {c.chapter}
                   </span>
-                  <Reveal delay={i * 70} className="h-full">
-                    <article className="interactive-card h-full rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/35 hover:bg-surface-2 md:p-6">
-                      <h3
-                        className={`font-display text-lg font-semibold tracking-tight ${activeStep ? "text-foreground" : "text-foreground/90"}`}
-                      >
-                        {s.title}
-                      </h3>
-                      <p className="mt-2.5 max-w-xs text-sm leading-relaxed text-muted-foreground font-normal">
-                        {s.copy}
+                  <h3 className="font-display text-2xl font-bold tracking-tight text-foreground">
+                    {c.name}
+                  </h3>
+                  <span className="text-base text-muted-foreground">{c.tagline}</span>
+                </div>
+              </Reveal>
+              <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {c.stages.map((st, i) => (
+                  <Reveal key={st.n} delay={i * 70} className="h-full">
+                    <article className="interactive-card h-full rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/40">
+                      <span className="font-mono text-[11px] tracking-[0.18em] text-muted-foreground">
+                        {st.n}
+                      </span>
+                      <h4 className="font-display mt-3 text-lg font-semibold tracking-tight text-foreground">
+                        {st.title}
+                      </h4>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground font-normal">
+                        {st.copy}
                       </p>
                     </article>
                   </Reveal>
-                </li>
-              );
-            })}
-          </ol>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -812,22 +896,22 @@ const GUARANTEES = [
   {
     icon: Zap,
     title: "Fast Loading Guarantee",
-    copy: "Your website will load in under 2 seconds, so visitors never leave out of frustration.",
+    copy: "Your website will load in under 2 seconds on a normal phone connection, because we compress images, clean up slow code, and test the speed before launch. Visitors never leave out of frustration while waiting for a slow page, and Google also ranks faster websites higher.",
   },
   {
     icon: Smartphone,
     title: "100% Mobile Ready",
-    copy: "Carefully designed to look stunning on iPhones, Android phones, tablets, and laptops.",
+    copy: "More than 70% of visitors come from phones, so we design for mobile screens first and then adapt the design for tablets and computers. Every button, image, and form is tested on real phone sizes, so your website looks stunning and works perfectly everywhere.",
   },
   {
     icon: ShieldCheck,
     title: "You Own Everything",
-    copy: "100% full ownership of your domain, code, design, and content. No hidden lock-ins.",
+    copy: "You receive 100% ownership of your domain, your website code, your design, and your content. There are no hidden lock-ins and no monthly hostage fees. If you ever want to move or change developers, everything is yours, and we hand it over cleanly.",
   },
   {
     icon: Rocket,
     title: "Post-Launch Support",
-    copy: "We don't vanish after launch. We provide free technical support to ensure everything runs smoothly.",
+    copy: "We do not vanish after launch. Every project includes 30 days of free technical support, and after that you can choose a monthly care plan. If anything breaks or needs a quick adjustment, we fix it fast, so your business never suffers because of a website problem.",
   },
 ];
 
@@ -838,7 +922,7 @@ export function WhyMe() {
         <SectionHeading
           label="Why CRAFTLOGIC"
           title="Our Commitment to Quality."
-          subtitle="Honest work, clear communication, and websites built to last."
+          subtitle="Honest work, clear communication, and websites built to last. These four promises apply to every single project we build, no matter the size."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {GUARANTEES.map((g, i) => (
@@ -860,23 +944,35 @@ export function WhyMe() {
 const FAQS = [
   {
     q: "How long does it take to build a website?",
-    a: "A typical business website takes between 7 to 14 days from start to launch. Larger custom web apps or online stores usually take 3 to 4 weeks depending on the features.",
+    a: "A typical business website takes 7 to 14 days from our first conversation to launch. A larger online store or a custom web app usually takes 3 to 4 weeks, depending on how many pages and features you need. We agree on a realistic timeline before we start, and we keep you updated at every stage, so you always know where your project stands.",
+  },
+  {
+    q: "How much does a website cost?",
+    a: "The price depends on what your website needs: how many pages, whether you sell online, and whether you need booking or special features. A simple business website starts from $500. Before you pay anything, we show you a free homepage design and give you an exact, all-inclusive price, so there are no hidden costs later.",
   },
   {
     q: "I already have a domain or hosting. Can you use it?",
-    a: "Yes, absolutely! If you already have a domain from Namecheap, GoDaddy, Hostinger, etc., we will connect your new website to it without any problems.",
+    a: "Yes, absolutely. If you already own a domain from Namecheap, GoDaddy, Hostinger, or any other provider, we connect your new website to it without any problem. If you do not have one yet, we help you choose and set up the right domain and hosting.",
   },
   {
     q: "Can I update text, photos, and products myself later?",
-    a: "Yes. We structure your site so that you can easily update contact information, text, images, or products whenever you want without needing a developer.",
+    a: "Yes. We structure your website so you can easily update contact details, text, photos, and products whenever you want, without needing a developer for every small change. We also show you how to do it, and if you prefer, our care plan handles updates for you.",
   },
   {
     q: "Will my website look good on mobile phones?",
-    a: "Yes! More than 70% of web traffic comes from smartphones today. We design every single button and image to fit mobile screens perfectly.",
+    a: "Yes. More than 70% of visitors come from smartphones, so we design every page for mobile screens first, then adapt it for tablets and computers. Every button, image, and form is tested on real phone sizes before launch.",
   },
   {
     q: "What happens if something breaks after launch?",
-    a: "We provide 30 days of free ongoing technical support after launch. If anything goes wrong or needs a quick adjustment, we fix it immediately.",
+    a: "Every project includes 30 days of free technical support after launch. If anything goes wrong or needs a quick adjustment, we fix it fast. After that, a monthly care plan keeps your website updated, backed up, and secure.",
+  },
+  {
+    q: "Do you also help with Google and SEO?",
+    a: "Yes. We offer SEO services that help your business show up higher on Google: fixing page titles and content, improving speed, setting up your Google Business Profile, and building local pages. SEO takes time, usually a few months, but it keeps bringing enquiries without paying for ads.",
+  },
+  {
+    q: "Who owns the website, the domain, and the content?",
+    a: "You do, 100%. Your domain, your website code, your design, and your content all belong to you. There are no lock-ins. If you ever want to move to another developer, we hand everything over cleanly.",
   },
 ];
 
@@ -884,12 +980,12 @@ export function FaqSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section className="border-t border-border py-24 md:py-32 bg-background">
+    <section id="faq" className="border-t border-border py-24 md:py-32 bg-background">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <SectionHeading
           label="Got Questions?"
           title="Frequently Asked Questions."
-          subtitle="Everything you need to know about working with CraftLogic."
+          subtitle="Everything you need to know about working with CRAFTLOGIC, answered in plain words. If your question is not here, send us a message and we will answer it honestly."
         />
 
         <div className="mt-12 max-w-3xl space-y-4">
@@ -970,9 +1066,13 @@ export function About() {
             </Reveal>
             <Reveal delay={150}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg font-normal">
-                I founded CraftLogic with one simple goal: to help businesses get high-quality
+                We started CRAFTLOGIC with one simple goal: to help businesses get high-quality
                 websites without the usual delays, complicated technical talk, or messy templates.
-                Every project is built properly from the ground up to help your business grow.
+                Every project is built properly from the ground up, with clean code and honest
+                communication, so your business gets a website that works as hard as you do.
+                CRAFTLOGIC is a web design studio led by its founder, Muhammad Ismail, and every
+                project is handled directly by the founder, with no layers, no hand-offs, and no
+                surprises.
               </p>
             </Reveal>
             <Reveal delay={280}>
@@ -1075,7 +1175,7 @@ export function StartProject() {
                 </h3>
                 <p className="mt-3 text-base text-muted-foreground max-w-md mx-auto">
                   Your requirements have been successfully dispatched to{" "}
-                  <strong className="text-white">{EMAIL}</strong>. We will get back to you with a
+                  <strong className="text-foreground">{EMAIL}</strong>. We will get back to you with a
                   clear roadmap within 24 hours!
                 </p>
               </div>
@@ -1234,9 +1334,9 @@ export function Contact() {
               href={`https://wa.me/${WHATSAPP_RAW}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-5 py-3 text-sm font-medium text-emerald-400 transition-colors hover:border-emerald-500/60"
+              className="inline-flex items-center gap-2.5 rounded-lg border border-emerald-600/30 bg-emerald-600/10 px-5 py-3 text-sm font-medium text-emerald-700 transition-colors hover:border-emerald-600/60"
             >
-              <Phone className="h-4 w-4 text-emerald-400" />
+              <Phone className="h-4 w-4 text-emerald-700" />
               <span>WhatsApp: {PHONE_DISPLAY}</span>
             </a>
           </div>
@@ -1253,6 +1353,7 @@ const FOOTER_LINKS = [
   { label: "Work", hash: "work" },
   { label: "Demo", hash: "demo" },
   { label: "Process", hash: "process" },
+  { label: "FAQ", hash: "faq" },
   { label: "About", hash: "about" },
   { label: "Contact", hash: "contact" },
 ];
@@ -1270,23 +1371,23 @@ export function Footer() {
               className="h-10 w-10 sm:h-11 sm:w-11 shrink-0"
               aria-hidden="true"
             >
-              <path d="M32 8L54 20L32 32L10 20L32 8Z" fill="#6366F1" />
-              <path d="M32 20L54 32L32 44L10 32L32 20Z" fill="#0EA5E9" />
-              <path d="M32 32L54 44L32 56L10 44L32 32Z" fill="#10B981" />
+              <path d="M32 8L54 20L32 32L10 20L32 8Z" fill="#5052D8" />
+              <path d="M32 20L54 32L32 44L10 32L32 20Z" fill="#128DD8" />
+              <path d="M32 32L54 44L32 56L10 44L32 32Z" fill="#0AB18E" />
             </svg>
           </div>
 
           <div>
             <div className="flex items-center tracking-[-0.03em] font-extrabold text-xl sm:text-2xl font-display leading-none">
-              <span className="text-white">CRAFT</span>
-              <span className="text-[#10B981] ml-0.5">LOGIC</span>
+              <span className="text-black">CRAFT</span>
+              <span className="font-serif-logo text-[#0AAA8C] ml-0.5">LOGIC</span>
             </div>
             <p className="mt-1.5 text-[10px] tracking-[0.14em] text-primary uppercase font-mono">
               High-Performance Web Development Studio
             </p>
             <p className="mt-3 max-w-xs text-xs leading-relaxed text-muted-foreground font-normal">
-              High-converting websites and scalable digital infrastructure engineered with clean
-              code and modern design.
+              Clean, fast websites and honest support for growing businesses, built with modern
+              code and plain communication.
             </p>
           </div>
         </div>
@@ -1320,7 +1421,7 @@ export function Footer() {
               href={`https://wa.me/${WHATSAPP_RAW}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="focus-ring block rounded-sm text-muted-foreground transition-colors hover:text-emerald-400"
+              className="focus-ring block rounded-sm text-muted-foreground transition-colors hover:text-emerald-600"
             >
               WhatsApp: {PHONE_DISPLAY}
             </a>
@@ -1412,6 +1513,123 @@ export function Footer() {
         <p className="text-xs text-muted-foreground font-mono">Engineered by Muhammad Ismail</p>
       </div>
     </footer>
+  );
+}
+
+
+/* ---------------- Principles: editorial, text-led ---------------- */
+const PRINCIPLES = [
+  {
+    n: "01",
+    title: "Clarity before code.",
+    copy: "We understand your customers, your services, and your goals before we write a single line of code. A website that is clear about what it offers will always beat a website that only looks impressive.",
+  },
+  {
+    n: "02",
+    title: "Honest pricing, no surprises.",
+    copy: "You approve the design and the full price before we build. There are no hidden costs, no surprise charges halfway through, and no monthly fees you did not agree to.",
+  },
+  {
+    n: "03",
+    title: "Built for customers, not for awards.",
+    copy: "Every page, button, and form exists to help a real customer take the next step: call you, message you, or buy from you. If a feature does not help your business, we do not add it.",
+  },
+  {
+    n: "04",
+    title: "A website that grows with you.",
+    copy: "Your business will change, and your website should change with it. We build everything so new pages, services, and features can be added later without rebuilding from scratch.",
+  },
+];
+
+export function Principles() {
+  return (
+    <section id="principles" className="border-t border-border py-24 md:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20 items-start">
+          <div>
+            <SectionHeading
+              label="How We Work"
+              title="Good Websites Start With Clear Thinking, Not Fancy Effects."
+              subtitle="Four principles guide every project we build. They are the reason our websites are simple to use, honest in price, and genuinely useful for the businesses behind them."
+            />
+          </div>
+          <div>
+            {PRINCIPLES.map((p, i) => (
+              <Reveal key={p.n} delay={i * 70}>
+                <div className="border-t border-black/10 py-7 first:border-t-0 first:pt-0">
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-mono text-[11px] tracking-[0.18em] text-muted-foreground">
+                      {p.n}
+                    </span>
+                    <h3 className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+                      {p.title}
+                    </h3>
+                  </div>
+                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    {p.copy}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Ways to Work Together ---------------- */
+const WAYS = [
+  {
+    title: "A complete project",
+    copy: "You need a new website, a redesign, or an online store. We plan it, design it, build it, and launch it, with a fixed price agreed before we start. Best for businesses that want a finished website without an ongoing commitment.",
+    cta: "Start a Project",
+  },
+  {
+    title: "A monthly care plan",
+    copy: "Your website is already live and you want it looked after. Updates, backups, security checks, and small changes are handled for you every month, so your website stays fast and safe while you focus on your business.",
+    cta: "Ask About Care Plans",
+  },
+  {
+    title: "A paid website audit",
+    copy: "You want an honest, expert opinion before spending money. We review your whole website and give you a clear report with a fix list in order of importance. You can fix things yourself, or hire us to do it.",
+    cta: "Request an Audit",
+  },
+];
+
+export function WaysToWork() {
+  return (
+    <section id="ways" className="border-t border-border py-24 md:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+        <SectionHeading
+          label="Ways to Work Together"
+          title="Start Wherever You Are."
+          subtitle="You do not need to know exactly what you want before talking to us. Pick the starting point that fits your situation, and we will guide you from there in plain words."
+        />
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {WAYS.map((w, i) => (
+            <Reveal key={w.title} delay={i * 70} className="h-full">
+              <article className="interactive-card flex h-full flex-col justify-between rounded-xl border border-border bg-card p-7 transition-all duration-300 hover:border-primary/40">
+                <div>
+                  <h3 className="font-display text-xl font-bold tracking-tight text-foreground">
+                    {w.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{w.copy}</p>
+                </div>
+                <Link
+                  to="/"
+                  hash="start"
+                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                >
+                  {w.cta}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
