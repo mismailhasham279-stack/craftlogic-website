@@ -263,7 +263,7 @@ export function Work(): React.JSX.Element {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <div className="inline-flex min-h-7 items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-3.5 py-1">
-              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_rgba(212,175,55,0.7)]" />
+              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_rgba(0,0,0,0.25)]" />
               <span className="font-mono text-[10px] font-semibold tracking-[0.16em] uppercase text-foreground/90 sm:text-[11px]">
                 SELECTED WORK • 5 PRODUCTION CASE STUDIES
               </span>
@@ -298,22 +298,22 @@ export function Work(): React.JSX.Element {
                 className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-card/60 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
               >
                 {/* Browser Window Chrome Frame Preview */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-border/80 bg-[#090C12] shadow-inner">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-border/80 bg-white shadow-inner">
                   {/* Browser Top Bar */}
-                  <div className="flex h-7 items-center justify-between border-b border-white/10 bg-[#0E121A] px-3">
+                  <div className="flex h-7 items-center justify-between border-b border-black/10 bg-gray-100 px-3">
                     <div className="flex items-center gap-1.5">
                       <span className="h-2 w-2 rounded-full bg-rose-500/80" />
                       <span className="h-2 w-2 rounded-full bg-amber-500/80" />
                       <span className="h-2 w-2 rounded-full bg-emerald-500/80" />
                     </div>
-                    <div className="rounded bg-black/50 px-2.5 py-0.5 font-mono text-[8.5px] text-white/60">
+                    <div className="rounded bg-black/5 px-2.5 py-0.5 font-mono text-[8.5px] text-black/60">
                       https://{project.browserDisplayUrl}
                     </div>
                     <div className="h-2 w-2" />
                   </div>
 
                   {/* Direct Thumbnail Image */}
-                  <div className="relative h-[calc(100%-28px)] w-full overflow-hidden bg-black/60">
+                  <div className="relative h-[calc(100%-28px)] w-full overflow-hidden bg-gray-50">
                     <img
                       src={project.thumbnailPath}
                       alt={project.title}
@@ -331,7 +331,7 @@ export function Work(): React.JSX.Element {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute top-9 right-3 flex items-center gap-1.5 rounded-full border border-white/20 bg-black/80 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-md transition-colors hover:border-primary hover:text-primary shadow-lg"
+                    className="absolute top-9 right-3 flex items-center gap-1.5 rounded-full border border-black/15 bg-white/90 px-2.5 py-1 text-[10px] font-semibold text-black backdrop-blur-md transition-colors hover:border-primary hover:text-primary shadow-lg"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <span>Visit Live</span>
@@ -380,7 +380,7 @@ export function Work(): React.JSX.Element {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-xs font-semibold text-white transition-colors hover:border-white/30 hover:bg-white/[0.08]"
+                        className="flex items-center justify-center rounded-lg border border-black/15 bg-black/[0.04] px-3.5 py-2.5 text-xs font-semibold text-black transition-colors hover:border-black/30 hover:bg-black/[0.08]"
                         aria-label={`Open ${project.client} live link`}
                       >
                         <ExternalLink className="h-3.5 w-3.5" />
@@ -449,7 +449,7 @@ export function Work(): React.JSX.Element {
                 </div>
 
                 {/* Executive Summary */}
-                <div className="mb-6 rounded-xl border border-white/5 bg-white/[0.02] p-4 text-xs leading-relaxed text-muted-foreground">
+                <div className="mb-6 rounded-xl border border-black/10 bg-black/[0.02] p-4 text-xs leading-relaxed text-muted-foreground">
                   <span className="font-semibold text-foreground uppercase tracking-wider font-mono text-[11px] block mb-1">
                     Executive Summary:
                   </span>
@@ -458,12 +458,12 @@ export function Work(): React.JSX.Element {
 
                 {/* Problem vs Solution Deep Dive Grid */}
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <div className="rounded-xl border border-rose-500/20 bg-rose-950/15 p-5">
-                    <div className="flex items-center gap-2 text-rose-400 font-bold text-sm font-display uppercase tracking-wide">
+                  <div className="rounded-xl border border-rose-600/20 bg-rose-50 p-5">
+                    <div className="flex items-center gap-2 text-rose-600 font-bold text-sm font-display uppercase tracking-wide">
                       <AlertTriangle className="h-4 w-4" />
                       <span>The Business Bottleneck (Before)</span>
                     </div>
-                    <ul className="mt-3.5 space-y-2.5 text-xs text-rose-200/80">
+                    <ul className="mt-3.5 space-y-2.5 text-xs text-rose-800/80">
                       {activeStudy.clientPainPoints.map((point, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <span className="text-rose-500 font-bold">•</span>
@@ -473,15 +473,15 @@ export function Work(): React.JSX.Element {
                     </ul>
                   </div>
 
-                  <div className="rounded-xl border border-emerald-500/20 bg-emerald-950/15 p-5">
-                    <div className="flex items-center gap-2 text-emerald-400 font-bold text-sm font-display uppercase tracking-wide">
+                  <div className="rounded-xl border border-emerald-600/20 bg-emerald-50 p-5">
+                    <div className="flex items-center gap-2 text-emerald-600 font-bold text-sm font-display uppercase tracking-wide">
                       <ShieldCheck className="h-4 w-4" />
                       <span>CraftLogic Architecture (After)</span>
                     </div>
-                    <ul className="mt-3.5 space-y-2.5 text-xs text-emerald-200/80">
+                    <ul className="mt-3.5 space-y-2.5 text-xs text-emerald-800/80">
                       {activeStudy.engineeredDeliverables.map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-400 mt-0.5" />
+                          <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-600 mt-0.5" />
                           <span>{item}</span>
                         </li>
                       ))}
