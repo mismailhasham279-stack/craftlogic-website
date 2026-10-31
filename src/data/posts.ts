@@ -220,7 +220,7 @@ export const POSTS: Post[] = [
         text: "Ready to see what your website could look like? Visit CRAFTLOGIC at https://craftlogic.live/ and get in touch through the contact page to claim your free homepage concept. You will see the design first, get an exact quote, and decide with zero pressure.",
       },
     ],
-  }
+  },
   {
     slug: "5-pages-every-business-website-must-have",
     title: "5 Pages Every Business Website Must Have (And What Each One Should Say)",
