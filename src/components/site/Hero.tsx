@@ -32,7 +32,7 @@ export function Hero({ onOpenInquiry }: HeroProps) {
           <header>
             {/* Minimal Eyebrow Badge */}
             <div className="inline-flex min-h-[26px] items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-3 py-0.5">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary shadow-[0_0_10px_rgba(212,175,55,0.7)]" />
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary shadow-[0_0_10px_rgba(0,0,0,0.25)]" />
               <span className="font-mono text-[9px] sm:text-[10px] font-semibold tracking-[0.14em] text-foreground/90 uppercase">
                 FULL-STACK DIGITAL AGENCY • CRAFTLOGIC
               </span>
@@ -40,14 +40,17 @@ export function Hero({ onOpenInquiry }: HeroProps) {
 
             {/* Master Headline: Perfect Vertical Separation */}
             <h1 className="font-display mt-3.5 sm:mt-4 max-w-[680px] text-2xl font-extrabold tracking-[-0.025em] text-foreground sm:text-3xl md:text-3xl md:leading-[1.18] lg:text-[40px] lg:leading-[1.2] xl:text-[46px] xl:leading-[1.22]">
-              We Build High–Performance Websites Designed for Business Growth.
+              We Build Fast, Modern Websites That Bring You More Customers.
             </h1>
 
             {/* Subtext */}
             <p className="mt-3.5 sm:mt-4 mb-6 sm:mb-7 max-w-xl text-xs sm:text-sm md:text-xs lg:text-sm leading-[1.68] text-muted-foreground/90 font-normal">
-              From high-converting corporate sites to custom full-stack web applications, CraftLogic
-              combines clean modern design with resilient engineering to help your business scale
-              with confidence.
+              Most customers search online before they buy anything. If your website is slow,
+              confusing, or out of date, those customers leave and choose a competitor instead.
+              At CRAFTLOGIC, we design and build clean, fast websites that explain your business
+              clearly, earn trust in seconds, and turn visitors into phone calls, messages, and
+              orders. From a simple business website to a full online store or booking system,
+              everything is built properly, with honest pricing and no hidden costs.
             </p>
           </header>
 
@@ -64,7 +67,7 @@ export function Hero({ onOpenInquiry }: HeroProps) {
 
             <a
               href="#work"
-              className="inline-flex min-h-[46px] items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] px-6 py-2.5 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-200 hover:border-white/20 hover:bg-white/[0.07] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+              className="inline-flex min-h-[46px] items-center justify-center rounded-lg border border-black/15 bg-black/[0.03] px-6 py-2.5 text-xs sm:text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-200 hover:border-black/25 hover:bg-black/[0.06] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:scale-[0.98]"
             >
               <span>Explore Our Work</span>
             </a>
