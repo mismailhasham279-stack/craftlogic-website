@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Sections";
-import { projects } from "@/data/projects";
+import { projects, PUBLIC_PROJECT_IDS } from "@/data/projects";
 import { SITE_ORIGIN } from "@/lib/site";
 
 const PREVIEW_IMAGES: Record<string, string> = {
@@ -48,7 +48,9 @@ function WorkPage() {
           built for a real business.
         </p>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
+          {projects
+            .filter((p) => PUBLIC_PROJECT_IDS.has(p.id))
+            .map((p) => (
             <Link
               key={p.id}
               to="/work/$slug"
