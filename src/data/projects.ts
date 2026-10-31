@@ -841,7 +841,7 @@ export const projects: Project[] = [
   },
 ];
 
-const PUBLIC_PROJECT_IDS = new Set(["luxevia", "usaluxe", "nailsbygrace", "shoptop"]);
+export const PUBLIC_PROJECT_IDS = new Set(["luxevia", "usaluxe", "nailsbygrace", "shoptop"]);
 
 export const getProject = (slug: string) =>
   projects.find((project) => project.slug === slug && PUBLIC_PROJECT_IDS.has(project.id));
