@@ -118,9 +118,9 @@ export function HeroMesh({ reducedMotion }: HeroMeshProps): React.JSX.Element {
         height * 0.5,
         width * 0.47
       );
-      glow.addColorStop(0, "rgba(151, 157, 163, 0.11)");
-      glow.addColorStop(0.48, "rgba(83, 89, 95, 0.055)");
-      glow.addColorStop(1, "rgba(9, 10, 15, 0)");
+      glow.addColorStop(0, "rgba(0, 0, 0, 0.05)");
+      glow.addColorStop(0.48, "rgba(0, 0, 0, 0.025)");
+      glow.addColorStop(1, "rgba(255, 255, 255, 0)");
       context.fillStyle = glow;
       context.fillRect(0, 0, width, height);
 
@@ -138,7 +138,7 @@ export function HeroMesh({ reducedMotion }: HeroMeshProps): React.JSX.Element {
         }
         const middlePoint = pointRow[COLUMNS >> 1];
         const depth = middlePoint ? middlePoint.depth : 0;
-        context.strokeStyle = `rgba(185, 193, 199, ${0.36 + depth * 0.3})`;
+        context.strokeStyle = `rgba(0, 0, 0, ${0.08 + depth * 0.1})`;
         context.lineWidth = 0.7 + depth * 0.55;
         context.stroke();
       }
@@ -156,7 +156,7 @@ export function HeroMesh({ reducedMotion }: HeroMeshProps): React.JSX.Element {
         const middleRow = points[ROWS >> 1];
         const middlePoint = middleRow ? middleRow[col] : null;
         const depth = middlePoint ? middlePoint.depth : 0;
-        context.strokeStyle = `rgba(125, 133, 140, ${0.28 + depth * 0.25})`;
+        context.strokeStyle = `rgba(0, 0, 0, ${0.06 + depth * 0.08})`;
         context.lineWidth = 0.65 + depth * 0.4;
         context.stroke();
       }
@@ -169,7 +169,7 @@ export function HeroMesh({ reducedMotion }: HeroMeshProps): React.JSX.Element {
           if (!point || point.depth < 0.38) continue;
           context.beginPath();
           context.arc(point.x, point.y, 0.7 + point.depth * 1.1, 0, Math.PI * 2);
-          context.fillStyle = `rgba(212, 175, 55, ${point.depth * 0.34})`;
+          context.fillStyle = `rgba(0, 0, 0, ${point.depth * 0.3})`;
           context.fill();
         }
       }
