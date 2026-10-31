@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 interface NavProps {
   onOpenInquiry?: () => void;
@@ -120,7 +120,7 @@ export function Nav({ onOpenInquiry }: NavProps) {
                 className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-4 sm:px-5 py-2 font-display text-xs font-bold text-primary-foreground shadow-md transition-all duration-200 hover:bg-accent active:scale-95 cursor-pointer"
               >
                 <span>Start a Project</span>
-                <ArrowRight className="h-3.5 w-3.5" />
+                <ArrowUpRight className="h-3.5 w-3.5" />
               </button>
             ) : (
               <Link
@@ -129,7 +129,7 @@ export function Nav({ onOpenInquiry }: NavProps) {
                 className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-4 sm:px-5 py-2 font-display text-xs font-bold text-primary-foreground shadow-md transition-all duration-200 hover:bg-accent active:scale-95 cursor-pointer"
               >
                 <span>Start a Project</span>
-                <ArrowRight className="h-3.5 w-3.5" />
+                <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             )}
 
@@ -225,7 +225,7 @@ export function Nav({ onOpenInquiry }: NavProps) {
                   className="w-full min-h-[48px] flex items-center justify-center gap-2 rounded-lg bg-primary py-3 font-display text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all active:scale-98 cursor-pointer"
                 >
                   <span>Start a Project</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowUpRight className="h-4 w-4" />
                 </button>
               ) : (
                 <Link
@@ -235,7 +235,7 @@ export function Nav({ onOpenInquiry }: NavProps) {
                   className="w-full min-h-[48px] flex items-center justify-center gap-2 rounded-lg bg-primary py-3 font-display text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all active:scale-98 cursor-pointer"
                 >
                   <span>Start a Project</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowUpRight className="h-4 w-4" />
                 </Link>
               )}
 
