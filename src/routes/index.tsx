@@ -3,22 +3,20 @@ import { useState } from "react";
 import { SEO } from "@/components/site/SEO";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
-import { Work } from "@/components/site/Work";
 import {
-  Trust,
-  Principles,
-  Services,
-  BusinessProblem,
-  FreeDemo,
-  Process,
-  WhyMe,
-  WaysToWork,
-  FaqSection,
-  About,
-  StartProject,
-  Contact,
-  Footer,
-} from "@/components/site/Sections";
+  WorkShowcase,
+  ConnectedTeam,
+  CompanyBlack,
+  ColorBlocks,
+  CapabilitiesGrid,
+  ProcessV3,
+  Foundations,
+  BeforeBuild,
+  WaysV3,
+  FaqV3,
+  FinalCTA,
+} from "@/components/site/NexzilSections";
+import { Services, StartProject, Contact, Footer } from "@/components/site/Sections";
 import { ProjectInquiryModal } from "@/components/site/ProjectInquiryModal";
 
 // TanStack Router Contract: Only Route is exported for optimal code-splitting
@@ -29,8 +27,8 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
 
-  const openInquiryModal = () => setIsInquiryModalOpen(true);
-  const closeInquiryModal = () => setIsInquiryModalOpen(false);
+  const openInquiryModal = () => setInquiryModalOpen(true);
+  const closeInquiryModal = () => setInquiryModalOpen(false);
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary overflow-x-hidden">
@@ -45,20 +43,22 @@ function HomePage() {
       <Nav onOpenInquiry={openInquiryModal} />
 
       <main id="main-content" className="relative">
-        {/* Hero Section with Laptop Showcase and In-Place Modal Trigger */}
+        {/* Typographic hero with services pill cloud */}
         <Hero onOpenInquiry={openInquiryModal} />
-        <Trust />
-        <Principles />
+        <WorkShowcase />
+        <ConnectedTeam />
+        <CompanyBlack />
+        <ColorBlocks />
+        <CapabilitiesGrid />
+        {/* Full services list with long, easy-English detail */}
         <Services />
-        <Work />
-        <BusinessProblem />
-        <FreeDemo />
-        <Process />
-        <WhyMe />
-        <WaysToWork />
-        <FaqSection />
-        <About />
+        <ProcessV3 />
+        <Foundations />
+        <BeforeBuild />
+        <WaysV3 />
+        <FaqV3 />
         <StartProject />
+        <FinalCTA />
         <Contact />
       </main>
 
@@ -70,5 +70,3 @@ function HomePage() {
     </div>
   );
 }
-
-
