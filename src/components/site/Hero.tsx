@@ -1,104 +1,69 @@
-import React from "react";
-import { useReducedMotion, motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 interface HeroProps {
-  onOpenInquiry?: () => void;
+  onOpenInquiry: () => void;
 }
 
-const SERVICE_PILLS = [
-  "Business Websites",
-  "Landing Pages",
-  "Online Stores",
-  "Website Redesign",
-  "Mobile-First Web Apps",
-  "WhatsApp & Form Setup",
-  "SEO",
-  "Care Plans",
-  "Speed Optimization",
-  "Booking & E-commerce",
-  "Domain & Email Setup",
-  "Analytics Setup",
-  "Website Audit",
-];
-
-/**
- * Typographic hero in the Nexzillabs editorial style: big serif headline
- * with an italic accent line, black pill buttons, and a services pill cloud.
- * No carousel, no mesh — the type itself carries the hero.
- */
+// Hero v4 — rebuilt from a close study of the reference site's hero:
+// fully centered, no badge above the headline, line 1 in medium-weight
+// sans, line 2 in italic serif, generous whitespace, and the signature
+// pill buttons with a circular arrow chip. No pill cloud here — the
+// services wall below the hero is its own section, rebuilt next.
 export function Hero({ onOpenInquiry }: HeroProps) {
-  const shouldReduceMotion = useReducedMotion();
+  const reduceMotion = useReducedMotion();
+  const rise = (delay: number) => ({
+    initial: reduceMotion ? false : { opacity: 0, y: 14 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.7, delay, ease: "easeOut" as const },
+  });
 
   return (
-    <section
-      id="home"
-      aria-label="Hero Introduction"
-      className="relative overflow-hidden bg-background px-6 pt-14 pb-16 sm:pt-16 md:px-10 md:pt-20 md:pb-20"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-10 mx-auto w-full max-w-[1400px]"
-      >
-        <p className="font-mono text-[11px] tracking-[0.22em] text-black/50 uppercase">
-          CRAFTLOGIC — Web Design Studio
-        </p>
+    <section className="relative overflow-hidden bg-background">
+      <div className="mx-auto max-w-6xl px-5 pt-24 pb-20 text-center sm:pt-28 md:pt-36 md:pb-28">
+        <motion.h1
+          {...rise(0)}
+          className="text-[clamp(2.75rem,8.5vw,6.5rem)] leading-[1.04] tracking-tight text-foreground"
+        >
+          <span className="block font-sans font-medium">We design, build &amp; deliver</span>
+          <span className="block font-serif italic font-normal">websites for your business.</span>
+        </motion.h1>
 
-        <h1 className="font-serif mt-6 max-w-4xl text-[2.9rem] leading-[1.02] tracking-tight text-black sm:text-6xl lg:text-7xl">
-          We design, build &amp; deliver
-          <br />
-          <em className="font-normal italic">websites for your business.</em>
-        </h1>
+        <motion.p
+          {...rise(0.12)}
+          className="mx-auto mt-7 max-w-[650px] text-[17px] leading-relaxed text-muted-foreground md:text-lg"
+        >
+          CRAFTLOGIC is a web design studio. We build fast, modern business
+          websites, online stores, and booking systems that explain your
+          business clearly, earn trust in seconds, and turn visitors into
+          calls, messages, and orders.
+        </motion.p>
 
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-black/60 sm:text-lg">
-          CRAFTLOGIC is a web design studio. We build fast, modern business websites, online
-          stores, and booking systems that explain your business clearly, earn trust in seconds,
-          and turn visitors into calls, messages, and orders.
-        </p>
-
-        <div className="mt-8 flex flex-wrap items-center gap-3">
+        <motion.div
+          {...rise(0.24)}
+          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
+        >
           <button
             type="button"
             onClick={onOpenInquiry}
-            className="inline-flex min-h-[46px] cursor-pointer items-center gap-2 rounded-full bg-black px-6 py-2.5 text-sm font-semibold text-white transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex h-14 items-center gap-3 rounded-full bg-black py-2 pl-7 pr-2 text-base font-medium text-white shadow-lg shadow-black/10 transition hover:bg-zinc-800"
           >
-            <span>Start a Project</span>
-            <span className="grid h-5 w-5 place-items-center rounded-full bg-white text-black">
-              <ArrowRight className="h-3 w-3" />
+            Start a Project
+            <span className="grid size-10 place-items-center rounded-full bg-white text-black">
+              <ArrowUpRight className="size-5" aria-hidden="true" />
             </span>
           </button>
           <a
             href="#work"
-            className="inline-flex min-h-[46px] items-center justify-center rounded-full border border-black/15 bg-white px-6 py-2.5 text-sm font-semibold text-black transition-all duration-200 hover:border-black/30 active:scale-[0.98]"
+            className="inline-flex h-14 items-center gap-3 rounded-full border border-black/10 bg-white py-2 pl-7 pr-2 text-base font-medium text-black shadow-lg shadow-black/5 transition hover:bg-zinc-50"
           >
-            Explore our work
+            Explore Our Work
+            <span className="grid size-10 place-items-center rounded-full bg-black text-white">
+              <ArrowUpRight className="size-5" aria-hidden="true" />
+            </span>
           </a>
-        </div>
-
-        <div className="mt-14 border-t border-black/10 pt-8">
-          <p className="font-mono text-[11px] tracking-[0.22em] text-black/50 uppercase">
-            Explore what we can build together
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2.5">
-            {SERVICE_PILLS.map((pill) => (
-              <a
-                key={pill}
-                href="#services"
-                className="rounded-full border border-black/15 bg-white px-4 py-2 text-sm font-medium text-black transition-all duration-200 hover:border-black hover:bg-black hover:text-white"
-              >
-                {pill}
-              </a>
-            ))}
-          </div>
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-black/50">
-            Strategy, design, and engineering. Connected around the website you need to build.
-          </p>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }
-
-export default Hero;
