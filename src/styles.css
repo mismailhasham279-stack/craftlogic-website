@@ -258,3 +258,32 @@ article,
     background-color: var(--primary) !important;
   }
 }
+/* Reference-style motion: marquee rows + slow 3D tiles wall */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@keyframes spin-slow {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+.animate-marquee-left {
+  animation: marquee-left 36s linear infinite;
+}
+.animate-marquee-right {
+  animation: marquee-right 36s linear infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right,
+  .animate-spin-slow {
+    animation: none;
+  }
+}
