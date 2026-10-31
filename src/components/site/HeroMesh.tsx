@@ -169,7 +169,7 @@ export function HeroMesh({ reducedMotion }: HeroMeshProps): React.JSX.Element {
           if (!point || point.depth < 0.38) continue;
           context.beginPath();
           context.arc(point.x, point.y, 0.7 + point.depth * 1.1, 0, Math.PI * 2);
-          context.fillStyle = `rgba(212, 175, 55, ${point.depth * 0.34})`;
+          context.fillStyle = `rgba(255, 255, 255, ${point.depth * 0.34})`;
           context.fill();
         }
       }
