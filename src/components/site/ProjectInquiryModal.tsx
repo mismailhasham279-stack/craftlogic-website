@@ -146,16 +146,16 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="relative z-10 flex max-h-[92dvh] sm:max-h-[90vh] w-full max-w-2xl flex-col rounded-t-2xl sm:rounded-2xl border border-primary/30 bg-[#0B0F17] p-5 sm:p-7 shadow-2xl overflow-y-auto"
+            className="relative z-10 flex max-h-[92dvh] sm:max-h-[90vh] w-full max-w-2xl flex-col rounded-t-2xl sm:rounded-2xl border border-black/15 bg-white p-5 sm:p-7 shadow-2xl overflow-y-auto"
           >
             {/* Modal Header */}
-            <div className="flex items-start justify-between border-b border-white/10 pb-4">
+            <div className="flex items-start justify-between border-b border-black/10 pb-4">
               <div>
                 <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 font-mono text-[9px] sm:text-[10px] font-semibold text-primary uppercase tracking-widest">
                   <Sparkles className="h-3 w-3" />
                   <span>Start A Project</span>
                 </div>
-                <h3 className="font-display mt-2 text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+                <h3 className="font-display mt-2 text-xl sm:text-2xl font-extrabold tracking-tight text-black">
                   Tell Us About Your Vision.
                 </h3>
                 <p className="mt-0.5 text-[11px] text-muted-foreground">
@@ -167,7 +167,7 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                 type="button"
                 onClick={onClose}
                 aria-label="Close Inquiry Form"
-                className="rounded-full border border-white/10 bg-white/5 p-2 text-muted-foreground transition-colors hover:bg-white/10 hover:text-white cursor-pointer min-h-[42px] min-w-[42px] flex items-center justify-center"
+                className="rounded-full border border-black/10 bg-black/5 p-2 text-muted-foreground transition-colors hover:bg-black/10 hover:text-black cursor-pointer min-h-[42px] min-w-[42px] flex items-center justify-center"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -182,11 +182,11 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
                   <CheckCircle2 className="h-7 w-7" />
                 </div>
-                <h4 className="font-display mt-3 text-xl font-bold text-white">
+                <h4 className="font-display mt-3 text-xl font-bold text-black">
                   Inquiry Dispatched Successfully!
                 </h4>
                 <p className="mt-1.5 max-w-xs text-xs text-muted-foreground leading-relaxed">
-                  Your requirements have reached <strong className="text-white">{EMAIL}</strong>. We
+                  Your requirements have reached <strong className="text-foreground">{EMAIL}</strong>. We
                   will review the scope and reply within 24 hours.
                 </p>
               </motion.div>
@@ -201,7 +201,7 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                    <label className="block font-mono text-[10px] uppercase tracking-wider text-black/60 mb-1">
                       Your Name *
                     </label>
                     <input
@@ -210,12 +210,12 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                       placeholder="e.g. Alex Johnson"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[44px] rounded-lg border border-black/15 bg-black/[0.03] px-3.5 py-2.5 text-xs text-black placeholder-black/40 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                    <label className="block font-mono text-[10px] uppercase tracking-wider text-black/60 mb-1">
                       Business Email *
                     </label>
                     <input
@@ -224,14 +224,14 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                       placeholder="alex@brand.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[44px] rounded-lg border border-black/15 bg-black/[0.03] px-3.5 py-2.5 text-xs text-black placeholder-black/40 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                    <label className="block font-mono text-[10px] uppercase tracking-wider text-black/60 mb-1">
                       WhatsApp / Phone
                     </label>
                     <input
@@ -239,12 +239,12 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                       placeholder="+92 300 0000000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[44px] rounded-lg border border-black/15 bg-black/[0.03] px-3.5 py-2.5 text-xs text-black placeholder-black/40 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                    <label className="block font-mono text-[10px] uppercase tracking-wider text-black/60 mb-1">
                       Project Type
                     </label>
                     <input
@@ -252,14 +252,14 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                       placeholder="e.g. E-Commerce / Full-Stack Platform"
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[44px] rounded-lg border border-black/15 bg-black/[0.03] px-3.5 py-2.5 text-xs text-black placeholder-black/40 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                    <label className="block font-mono text-[10px] uppercase tracking-wider text-black/60 mb-1">
                       Estimated Budget
                     </label>
                     <input
@@ -267,12 +267,12 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                       placeholder="e.g. $2,500 or $5k-$10k"
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[44px] rounded-lg border border-black/15 bg-black/[0.03] px-3.5 py-2.5 text-xs text-black placeholder-black/40 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                    <label className="block font-mono text-[10px] uppercase tracking-wider text-black/60 mb-1">
                       Target Timeline
                     </label>
                     <input
@@ -280,13 +280,13 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                       placeholder="e.g. 2-3 Weeks / Flexible"
                       value={formData.timeline}
                       onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[44px] rounded-lg border border-black/15 bg-black/[0.03] px-3.5 py-2.5 text-xs text-black placeholder-black/40 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                  <label className="block font-mono text-[10px] uppercase tracking-wider text-black/60 mb-1">
                     Project Scope & Bottlenecks *
                   </label>
                   <textarea
@@ -295,7 +295,7 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                     placeholder="Briefly state your requirements, current challenges, or target features..."
                     value={formData.details}
                     onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                    className="w-full rounded-lg border border-white/10 bg-black/50 p-3 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-y"
+                    className="w-full rounded-lg border border-black/15 bg-black/[0.03] p-3 text-xs text-black placeholder-black/40 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-y"
                   />
                 </div>
 
