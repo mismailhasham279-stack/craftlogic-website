@@ -369,6 +369,142 @@ export const POSTS: Post[] = [
         text: "At CRAFTLOGIC, we build fast, modern business websites around exactly this structure — clear, simple, and designed to bring enquiries, not just look good. We start with a free homepage concept, so you can see the design for your business before you commit to anything. If you would like that for your business, visit https://craftlogic.live/ and get in touch through the contact page — we would be glad to show you what your website could look like.",
       },
     ],
+  },
+  {
+    slug: "why-your-website-must-load-in-under-2-seconds",
+    title: "Why Your Website Must Load in Under 2 Seconds (And How to Fix a Slow One)",
+    description:
+      "A slow website quietly loses customers every day. Learn why speed matters, what slows your site down, and the simple fixes that bring visitors back.",
+    date: "November 1, 2026",
+    published: "2026-11-01",
+    readTime: "5 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "When someone searches for your business, they are usually ready to act — to book an appointment, get a quote, or find your opening hours. They tap your link — and then they wait.",
+      },
+      {
+        kind: "p",
+        text: "If your page takes too long to appear, most of them will not wait — they will go back and open a competitor instead. A fast website feels professional and reliable. A slow one feels careless, even if your real work is excellent.",
+      },
+      {
+        kind: "h2",
+        text: "Visitors Decide in Seconds, Not Minutes",
+      },
+      {
+        kind: "p",
+        text: "Most people visit websites on their phones, often while busy — on a lunch break or between jobs. They judge almost instantly: if the page loads quickly and looks clear, they stay; if it stalls or jumps around as it loads, they leave.",
+      },
+      {
+        kind: "p",
+        text: "This is true for every business. A patient with a toothache does not want to fight a slow dentist's page. A couple planning a wedding does not want to wait for a planner's gallery. A homeowner with a leaking roof certainly does not want to wait. In each case, speed is the first impression — before your services, prices, or reviews get a chance.",
+      },
+      {
+        kind: "h2",
+        text: "What a Slow Website Really Costs Your Business",
+      },
+      {
+        kind: "p",
+        text: "A slow website does not just feel annoying. It quietly costs you enquiries, bookings, and sales.",
+      },
+      {
+        kind: "p",
+        text: "Imagine a med spa. A visitor finds it on Google and wants to book a facial, but the booking page loads slowly and the photos appear one by one. The visitor gives up and books with another clinic whose site opened instantly — a customer the first clinic never even knew it lost.",
+      },
+      {
+        kind: "p",
+        text: "The same happens for a contractor. A homeowner compares two builders: one site opens fast, shows past work clearly, and has a simple contact form; the other is slow and looks broken on a phone. Guess which one gets the call.",
+      },
+      {
+        kind: "p",
+        text: "Every lost visitor is a lost enquiry you never see in your inbox. Over weeks and months, that adds up to real money — all because the website was too slow to do its job.",
+      },
+      {
+        kind: "h2",
+        text: "The 5 Most Common Reasons Websites Load Slowly",
+      },
+      {
+        kind: "p",
+        text: "Most slow websites suffer from the same few problems:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Images that are too large. Photos straight from a camera can be many times bigger than a website needs. A page full of them takes far longer to load, especially on mobile data.",
+          "Too many plugins and add-ons. Each extra tool — pop-ups, chat widgets, sliders, tracking scripts — adds loading time, and many sites never remove the ones they no longer use.",
+          "Slow or overcrowded hosting. Cheap shared hosting means your site shares resources with many others, so it slows down exactly when traffic rises.",
+          "No caching. Caching lets a browser save parts of your site so repeat visitors do not have to download everything again. Without it, every visit starts from zero.",
+          "Heavy design elements. Auto-playing videos, large animations, and complicated layouts look impressive, but they can cripple speed — especially on a phone.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "The good news is that none of these problems are permanent. All of them can be fixed.",
+      },
+      {
+        kind: "h2",
+        text: "How to Check Your Website Speed in 2 Minutes",
+      },
+      {
+        kind: "p",
+        text: "You do not need technical skills to check your speed. Open Google's free PageSpeed Insights tool, enter your website address, and run the test. It gives separate mobile and desktop scores, plus a list of what is slowing the page down.",
+      },
+      {
+        kind: "p",
+        text: "Do not chase a perfect score. Focus on the real experience: how long does the main content take to appear, and does it feel smooth on a phone? Also try opening your site on mobile data, not Wi-Fi — that is how many customers will see it first.",
+      },
+      {
+        kind: "h2",
+        text: "Simple Fixes That Make the Biggest Difference",
+      },
+      {
+        kind: "p",
+        text: "Here are the fixes that usually help the most:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Compress images before uploading, using modern formats. Keep photos sharp, but not oversized.",
+          "Load images only when needed, so pictures lower down the page do not slow the first screen.",
+          "Remove plugins and widgets you do not use, and keep only the tools that genuinely help customers.",
+          "Use caching and a good hosting plan, so your site stays fast even when several people visit at once.",
+          "Keep the design clean. A clear layout with one strong call to action loads faster — and converts better — than a cluttered page full of effects.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Test again after each change — small improvements add up quickly.",
+      },
+      {
+        kind: "h2",
+        text: "Speed Is Also a Google Ranking Factor",
+      },
+      {
+        kind: "p",
+        text: "Speed matters for search rankings too. Google prefers websites that give a good experience, especially on mobile, so a fast site is more likely to rank well than a slow one with similar content.",
+      },
+      {
+        kind: "p",
+        text: "So speed and visibility work together: a faster site ranks better, gets found by more people, and keeps them because it loads quickly. A slow site does the opposite — it ranks lower and loses many of the visitors it does get.",
+      },
+      {
+        kind: "p",
+        text: "Speed alone will not bring customers — you still need clear services, real photos, and honest reviews.",
+      },
+      {
+        kind: "h2",
+        text: "The Bottom Line",
+      },
+      {
+        kind: "p",
+        text: "Your website should work as hard as you do: open fast, look professional on a phone, and make it easy to contact you within seconds. If it takes too long, customers will simply choose someone faster — no matter how good your work is.",
+      },
+      {
+        kind: "p",
+        text: "At CRAFTLOGIC, we build fast, modern business websites that are designed around one goal: turning visitors into enquiries. If you would like to see how fast and clear your new homepage could look, ask us for a free homepage concept — you can judge the design before you decide anything. Then get in touch through the contact page on craftlogic.live. There is no cost and no pressure, just a design you can see for yourself.",
+      },
+    ],
   }
 ];
 
