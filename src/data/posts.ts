@@ -2,7 +2,8 @@ export type PostBlock =
   | { kind: "p"; text: string }
   | { kind: "h2"; text: string }
   | { kind: "list"; items: string[] }
-  | { kind: "image"; src: string; alt: string };
+  | { kind: "image"; src: string; alt: string }
+  | { kind: "callout"; title?: string; text: string };
 
 export interface Post {
   slug: string;
@@ -660,6 +661,11 @@ export const POSTS: Post[] = [
         kind: "p",
         text: "If you serve customers at their homes, like a contractor or a cleaning service, set a service area instead of a shop address. The goal is simple: when Google shows you, the customer should see everything they need to call you.",
       },
+      {
+        kind: "callout",
+        title: "Key point",
+        text: "Complete your free Google Business Profile first — it is the map result customers see before your website.",
+      },
       { kind: "h2", text: "2. Your website must answer the search" },
       {
         kind: "p",
@@ -673,6 +679,11 @@ export const POSTS: Post[] = [
         kind: "p",
         text: "Your website must also load fast and work perfectly on a phone, because most Google searches now happen on phones. A slow site loses the customer that the search just sent you.",
       },
+      {
+        kind: "image",
+        src: "/blog-images/google-post-website.jpg",
+        alt: "A customer browsing a local business website on her phone inside a bright shop",
+      },
       { kind: "h2", text: "3. Reviews are your best salespeople" },
       {
         kind: "p",
@@ -685,6 +696,16 @@ export const POSTS: Post[] = [
       {
         kind: "p",
         text: "Reply to every review, good or bad. A polite reply to a bad review shows future customers how you handle problems, and that often matters more than the complaint itself. Never pay for fake reviews: Google removes them, and one exposed fake review damages trust far more than a missing review ever could.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/google-post-reviews.jpg",
+        alt: "A happy customer leaving a five-star Google review on her phone inside a salon",
+      },
+      {
+        kind: "callout",
+        title: "Remember",
+        text: "Ask for the review on the day the job is finished, while the customer is still happy.",
       },
       { kind: "h2", text: "4. Write answers to the questions customers actually ask" },
       {
@@ -703,6 +724,11 @@ export const POSTS: Post[] = [
       {
         kind: "p",
         text: "Then reply fast. A customer who messages three businesses usually hires the one that replies first. Speed is part of the service now.",
+      },
+      {
+        kind: "callout",
+        title: "Takeaway",
+        text: "Traffic alone is not customers — make the next step obvious and reply fast.",
       },
       { kind: "h2", text: "How long does it take?" },
       {
