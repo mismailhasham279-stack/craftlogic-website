@@ -56,6 +56,23 @@ function Block({ block }: { block: PostBlock }) {
       </ul>
     );
   }
+  if (block.kind === "image") {
+    return (
+      <figure className="mt-8">
+        <img
+          src={block.src}
+          alt={block.alt}
+          loading="lazy"
+          className="w-full rounded-xl border border-white/10"
+        />
+        {block.alt ? (
+          <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+            {block.alt}
+          </figcaption>
+        ) : null}
+      </figure>
+    );
+  }
   return (
     <p className="mt-5 text-base leading-8 text-muted-foreground">{block.text}</p>
   );
