@@ -2,7 +2,8 @@ export type PostBlock =
   | { kind: "p"; text: string }
   | { kind: "h2"; text: string }
   | { kind: "list"; items: string[] }
-  | { kind: "image"; src: string; alt: string };
+  | { kind: "image"; src: string; alt: string }
+  | { kind: "callout"; title?: string; text: string };
 
 export interface Post {
   slug: string;
@@ -713,6 +714,51 @@ export const POSTS: Post[] = [
       {
         kind: "p",
         text: "If you would like to see how this could look for your business, we offer a free homepage concept — a preview of your new website, designed around your services, before you commit to anything. Just visit our contact page and tell us about your business.",
+      },
+    ],
+  },
+  {
+    slug: "demo-blog-boxes-layout",
+    title: "Demo: Website-Style Blog Layout (preview only)",
+    description:
+      "Preview-only demo: short parts, a real image, and highlight boxes — the new website-style blog layout. This post exists only on the preview branch and will be removed before any merge.",
+    date: "November 4, 2026",
+    published: "2026-11-04",
+    readTime: "2 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "This demo shows the new website-style layout: short parts, a real image, and highlight boxes — instead of long text walls.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-to-get-more-customers-from-google.jpg",
+        alt: "A happy customer who found a local shop on his phone is welcomed by the shop owner",
+      },
+      { kind: "h2", text: "Part 1: Get found on Google" },
+      {
+        kind: "p",
+        text: "Customers search before they buy. A complete Google profile and a fast website put your business where those searches happen.",
+      },
+      {
+        kind: "callout",
+        title: "Key point",
+        text: "Complete your free Google Business Profile first — it is the map result customers see before your website.",
+      },
+      { kind: "h2", text: "Part 2: Turn visits into enquiries" },
+      {
+        kind: "p",
+        text: "When a visitor arrives, the next step must be obvious: call, WhatsApp, or a short booking form.",
+      },
+      {
+        kind: "callout",
+        title: "Remember",
+        text: "Reply fast — the business that replies first usually wins the customer.",
+      },
+      {
+        kind: "p",
+        text: "Short parts, one image, two boxes — the whole message, without a wall of text.",
       },
     ],
   },
