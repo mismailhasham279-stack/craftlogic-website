@@ -1,7 +1,8 @@
 export type PostBlock =
   | { kind: "p"; text: string }
   | { kind: "h2"; text: string }
-  | { kind: "list"; items: string[] };
+  | { kind: "list"; items: string[] }
+  | { kind: "image"; src: string; alt: string };
 
 export interface Post {
   slug: string;
@@ -630,7 +631,32 @@ export const POSTS: Post[] = [
         text: "If you would like to see how this could look for your business, we offer a free homepage concept — a preview of your new website, including a booking page designed around your services, before you commit to anything. Just visit our contact page and tell us about your business.",
       },
     ],
-  }
+  },
+  {
+    slug: "demo-blog-image-block",
+    title: "Demo: Images in Blog Posts (preview only)",
+    description:
+      "Preview-only demo showing how an image appears inside a blog post with the new image block. This post exists only on the preview branch and will be removed before any merge.",
+    date: "November 4, 2026",
+    published: "2026-11-04",
+    readTime: "1 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "This is a preview-only demo post. It shows how an image looks inside a blog post once the new image block is added. Nothing on the live site has changed.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/demo-blog-image.jpg",
+        alt: "Illustration of a business website with a booking calendar and rising growth chart",
+      },
+      {
+        kind: "p",
+        text: "The image above sits between two text blocks, exactly how future blog drafts will include their images.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
