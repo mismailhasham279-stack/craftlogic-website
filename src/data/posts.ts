@@ -633,27 +633,86 @@ export const POSTS: Post[] = [
     ],
   },
   {
-    slug: "demo-blog-image-block",
-    title: "Demo: Images in Blog Posts (preview only)",
+    slug: "how-to-get-more-customers-from-google",
+    title: "How to Get More Customers From Google (Without Paying for Ads)",
     description:
-      "Preview-only demo showing how an image appears inside a blog post with the new image block. This post exists only on the preview branch and will be removed before any merge.",
+      "Learn how small businesses get more customers from Google for free: a complete profile, a fast website, and honest reviews that turn searches into calls.",
     date: "November 4, 2026",
     published: "2026-11-04",
-    readTime: "1 min read",
+    readTime: "6 min read",
     author: "Muhammad Ismail",
     blocks: [
       {
         kind: "p",
-        text: "This is a preview-only demo post. It shows how an image looks inside a blog post once the new image block is added. Nothing on the live site has changed.",
+        text: "Before a customer calls you, they search for you. They type your service and their city into Google — 'salon near me', 'plumber in Islamabad', 'best dentist nearby' — and they pick from what Google shows them. The businesses that win those searches do not always pay for ads. They win because Google trusts them, and customers trust what they see. Here is how a small business gets more customers from Google, for free, step by step.",
       },
       {
         kind: "image",
-        src: "/blog-images/demo-blog-image.jpg",
-        alt: "Illustration of a business website with a booking calendar and rising growth chart",
+        src: "/blog-images/how-to-get-more-customers-from-google.jpg",
+        alt: "A happy customer who found a local shop on his phone is welcomed by the shop owner",
+      },
+      { kind: "h2", text: "1. Start with your free Google Business Profile" },
+      {
+        kind: "p",
+        text: "When someone searches for a service nearby, Google first shows a map with three businesses. That map comes from your free Google Business Profile — not from your website, and not from social media. Fill it in completely: your correct phone number, opening hours, services, service area, and real photos of your work or your shop. A profile with missing hours or no photos tells Google — and customers — that the business may not be serious. A complete profile tells both that you are real and open for business.",
       },
       {
         kind: "p",
-        text: "The image above sits between two text blocks, exactly how future blog drafts will include their images.",
+        text: "If you serve customers at their homes, like a contractor or a cleaning service, set a service area instead of a shop address. The goal is simple: when Google shows you, the customer should see everything they need to call you.",
+      },
+      { kind: "h2", text: "2. Your website must answer the search" },
+      {
+        kind: "p",
+        text: "The map gets you noticed. Your website gets you chosen. When a customer clicks through, they want answers fast: what do you offer, how much does it cost, where do you work, and how do I contact you?",
+      },
+      {
+        kind: "p",
+        text: "One page per service works best. A salon should have a page for haircuts, a page for bridal, a page for facials — each one saying clearly what it includes and who it is for. A contractor should have a page for each service and each area served. Vague pages that say 'we do everything' answer nothing, so customers leave.",
+      },
+      {
+        kind: "p",
+        text: "Your website must also load fast and work perfectly on a phone, because most Google searches now happen on phones. A slow site loses the customer that the search just sent you.",
+      },
+      { kind: "h2", text: "3. Reviews are your best salespeople" },
+      {
+        kind: "p",
+        text: "When two businesses look similar, customers pick the one with better reviews. Reviews are proof from real people, and Google treats them as a sign of trust too.",
+      },
+      {
+        kind: "p",
+        text: "Ask for a review on the day the job is finished, while the customer is still happy. Send a short message with a direct link to your Google review page. Most happy customers will help if you simply ask — the mistake is never asking at all.",
+      },
+      {
+        kind: "p",
+        text: "Reply to every review, good or bad. A polite reply to a bad review shows future customers how you handle problems, and that often matters more than the complaint itself. Never pay for fake reviews: Google removes them, and one exposed fake review damages trust far more than a missing review ever could.",
+      },
+      { kind: "h2", text: "4. Write answers to the questions customers actually ask" },
+      {
+        kind: "p",
+        text: "Customers do not search in business language. Nobody searches for 'bespoke solutions for your property needs'. They search for 'how much does a kitchen renovation cost', 'dentist open on Sunday near me', or 'best salon for bridal makeup'.",
+      },
+      {
+        kind: "p",
+        text: "Write pages that answer those real questions: prices, steps, worries, and what happens after booking. Each honest answer is a page Google can show to someone at the exact moment they want to buy. This is also how your website keeps working for you months after you publish it, without paying for every click.",
+      },
+      { kind: "h2", text: "5. Turn visits into enquiries" },
+      {
+        kind: "p",
+        text: "Traffic alone is not customers. When a visitor arrives, the next step must be obvious and easy: a click-to-call button, a WhatsApp button, a short booking form, or a 'Get a quote' button. Ask only for name, phone number, and service — a long form puts people off.",
+      },
+      {
+        kind: "p",
+        text: "Then reply fast. A customer who messages three businesses usually hires the one that replies first. Speed is part of the service now.",
+      },
+      { kind: "h2", text: "How long does it take?" },
+      {
+        kind: "p",
+        text: "Be honest with yourself: free Google traffic is not instant. Most businesses see early signs in one to three months, and steadier enquiries in three to six months of consistent work. Paid ads bring visitors within days, but the moment you stop paying, the visitors stop too. Free results keep working after the work is done — that is why they are worth building. You can read more about what we build for service businesses at CRAFTLOGIC (https://craftlogic.live/).",
+      },
+      { kind: "h2", text: "Start with the free step" },
+      {
+        kind: "p",
+        text: "If you would like to see how this could look for your business, we offer a free homepage concept — a preview of your new website, designed around your services, before you commit to anything. Just visit our contact page and tell us about your business.",
       },
     ],
   },
