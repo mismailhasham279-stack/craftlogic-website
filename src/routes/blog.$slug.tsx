@@ -73,6 +73,20 @@ function Block({ block }: { block: PostBlock }) {
       </figure>
     );
   }
+  if (block.kind === "callout") {
+    return (
+      <div className="mt-8 rounded-xl border border-white/10 bg-white/5 p-6">
+        {block.title ? (
+          <p className="font-display text-base font-bold tracking-tight">
+            {block.title}
+          </p>
+        ) : null}
+        <p className="mt-2 text-base leading-8 text-muted-foreground">
+          {block.text}
+        </p>
+      </div>
+    );
+  }
   return (
     <p className="mt-5 text-base leading-8 text-muted-foreground">{block.text}</p>
   );
