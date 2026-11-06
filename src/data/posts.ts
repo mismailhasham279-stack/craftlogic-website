@@ -742,6 +742,376 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-patients-find-a-dentist-online",
+    title: "How Patients Find a Dentist Online in 2026 (And What Your Practice Website Must Do)",
+    description:
+      "Most patients Google a dentist before they book. Learn how patients find a dentist online in 2026 — and what your practice website must do to win them.",
+    date: "November 6, 2026",
+    published: "2026-11-06",
+    readTime: "6 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "A tooth hurts. A family moves to a new area. Someone finally decides to fix their smile.",
+      },
+      {
+        kind: "p",
+        text: "In 2026, almost none of these people start by walking past your clinic. They start with a search.",
+      },
+      {
+        kind: "p",
+        text: "A 2025 survey of nearly 4,000 US adults found that 56% began their search for a healthcare provider on Google. And the pattern is the same for dentists: patients search, compare a short list, and only then check the website before they book.",
+      },
+      {
+        kind: "callout",
+        text: "Your next patient is probably searching right now — 'dentist near me' — and your website decides whether they pick you or the practice next door.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-patients-find-a-dentist-online.jpg",
+        alt: "A bright modern dental reception with a patient booking an appointment on her phone",
+      },
+      { kind: "h2", text: "Step 1: The search — 'dentist near me'" },
+      {
+        kind: "p",
+        text: "Patients rarely search for a practice name. They search for a need and a place.",
+      },
+      {
+        kind: "p",
+        text: "Typical searches look like this: 'dentist near me', 'emergency dentist', 'dental implants cost', 'dentist accepting new patients', 'Invisalign near me'.",
+      },
+      {
+        kind: "p",
+        text: "Google answers with a map and three practices first, then a list of websites. This is the moment that decides everything. If your practice is not in that map pack, most searchers never scroll far enough to find you.",
+      },
+      {
+        kind: "callout",
+        text: "Patients search by problem and procedure ('implants cost', 'chipped tooth') as often as by the word 'dentist' — so each treatment needs its own page.",
+      },
+      { kind: "h2", text: "Step 2: The comparison — reviews decide in seconds" },
+      {
+        kind: "p",
+        text: "Once Google shows three practices, patients compare them in seconds. The deciding factors are simple: star rating, recent reviews, distance, and price or insurance.",
+      },
+      {
+        kind: "p",
+        text: "The numbers are clear. In the same 2025 survey, 79% of adults read reviews before choosing a provider, and 53% would not even consider a practice with fewer than four stars. Google reviews carry the most weight of all.",
+      },
+      {
+        kind: "p",
+        text: "Recent reviews matter most. Patients trust a review written last month far more than one from two years ago. A steady flow of new reviews beats a big pile of old ones.",
+      },
+      {
+        kind: "callout",
+        text: "Ask every happy patient for a review on the day of their visit — a short text link right after the appointment works best.",
+      },
+      { kind: "h2", text: "Step 3: AI answers are the new front door" },
+      {
+        kind: "p",
+        text: "Something new happened in 2026. Patients now ask AI tools to recommend a dentist — and the numbers jumped fast.",
+      },
+      {
+        kind: "p",
+        text: "A BrightLocal 2026 survey found 45% of US consumers had used ChatGPT or another AI tool for local business recommendations, up from just 6% a year earlier. ChatGPT was the most-used tool, followed by Google's AI Mode.",
+      },
+      {
+        kind: "p",
+        text: "Here is the good news: AI answers are built from the same things Google already rewards. A complete Google Business Profile, clear treatment pages, consistent practice details everywhere online, and real reviews. Fix the basics, and you show up in AI answers too.",
+      },
+      {
+        kind: "callout",
+        text: "AI tools can only recommend what they can read — if your treatments and prices exist only in a photo of a price list, AI cannot see them. Put them in real text on your website.",
+      },
+      { kind: "h2", text: "Step 4: The website check — where patients confirm their choice" },
+      {
+        kind: "p",
+        text: "After the map and the reviews, patients open your website to confirm the decision. In the survey, 44% said a practice's website influences their choice.",
+      },
+      {
+        kind: "p",
+        text: "At this point they are looking for four things: proof you are real, the treatments they need, the cost or insurance you accept, and a fast way to book.",
+      },
+      {
+        kind: "p",
+        text: "A slow, outdated website breaks the trust your reviews just built. A clean, fast website with real photos of your team, your treatments, and your clinic closes the decision.",
+      },
+      { kind: "h2", text: "Step 5: The booking — make it easy, or lose them" },
+      {
+        kind: "p",
+        text: "This is where most practices quietly lose patients. A patient who has already decided should never have to phone during office hours, wait for a callback, or fill in a long form before seeing a free time.",
+      },
+      {
+        kind: "p",
+        text: "Give every treatment its own page, in the words patients use, with the price or accepted plans and a way to book online. One dental practice tracked 360 of 821 enquiries coming through online booking alone — a channel that did not exist for them before.",
+      },
+      {
+        kind: "callout",
+        text: "Show real appointment times on your website. Patients who can pick a slot directly are far more likely to actually show up than patients waiting for a callback.",
+      },
+      { kind: "h2", text: "What your practice website must do in 2026" },
+      {
+        kind: "p",
+        text: "Here is the short checklist. If your website does all six, you are ahead of most practices in your area.",
+      },
+      {
+        kind: "list",
+        items: [
+          "A complete, accurate Google Business Profile, linked to your website.",
+          "One page per treatment, written in the words patients type.",
+          "Real reviews, asked for after every visit, and replied to.",
+          "Prices or insurance information in real text, not in a photo.",
+          "A fast website that loads in under two seconds on a phone.",
+          "Online booking with real time slots — no phone tag, no waiting.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "You cannot move your clinic closer to every patient. But you can be the most relevant, most trusted practice Google shows them — and that is a choice you control.",
+      },
+      { kind: "h2", text: "Your practice deserves to be found" },
+      {
+        kind: "p",
+        text: "Patients are already searching for a dentist like you. The question is only whether they find you first — and whether your website turns that search into a booked appointment.",
+      },
+      {
+        kind: "p",
+        text: "A professional website works for your practice 24/7: it answers patient questions, shows your reviews, and books appointments while you are with patients.",
+      },
+      {
+        kind: "p",
+        text: "At CRAFTLOGIC (https://craftlogic.live/), we build fast, modern websites for dental practices and other local businesses — designed to be found on Google, trusted in seconds, and easy to book from.",
+      },
+      {
+        kind: "p",
+        text: "We start with a free homepage concept — a real preview of your new homepage, made for your practice, before you pay anything. If you like it, we build the full website. If not, you keep the idea and walk away.",
+      },
+      {
+        kind: "p",
+        text: "Visit our contact page (https://craftlogic.live/#contact) and tell us about your practice. Your next patient is already searching.",
+      },
+    ],
+  },
+  {
+    slug: "how-a-salon-gets-found-on-google-maps",
+    title: "How a Salon Gets Found on Google Maps (and Fills Its Appointment Book)",
+    description:
+      "How does a salon get found on Google Maps? A complete profile, real photos, fresh reviews and a working booking button turn 'salon near me' into appointments.",
+    date: "November 6, 2026",
+    published: "2026-11-06",
+    readTime: "6 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "Picture this. A woman moves to a new area. She opens Google Maps, types 'hair salon near me', and picks from the three salons at the top.",
+      },
+      {
+        kind: "p",
+        text: "She never visits a website first. She never scrolls a feed. The map decides.",
+      },
+      {
+        kind: "p",
+        text: "Nearly half of all Google searches carry local intent — someone looking for something nearby. And the three map results at the top, the local 3-pack, take about 44% of all clicks on the first page.",
+      },
+      {
+        kind: "p",
+        text: "If your salon is not in those three, you are invisible to the person who was ready to book today.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-a-salon-gets-found-on-google-maps.jpg",
+        alt: "A bright modern salon interior with a stylist working on a client's hair and a phone showing a Google Maps search",
+      },
+      { kind: "h2", text: "Why Google Maps decides who gets the booking" },
+      {
+        kind: "p",
+        text: "Google ranks map results on three things: relevance, distance, and prominence.",
+      },
+      {
+        kind: "p",
+        text: "Relevance is how well your profile matches what the person searched. Distance is how close you are. Prominence is how well known your salon is — and Google says reviews count toward it.",
+      },
+      {
+        kind: "p",
+        text: "You cannot move your salon closer to every client. But relevance and prominence are fully in your hands.",
+      },
+      {
+        kind: "p",
+        text: "A salon two streets away with a complete profile, fresh photos, and fifty recent reviews will beat a closer salon with an empty listing every single time.",
+      },
+      {
+        kind: "callout",
+        text: "You cannot pay for a better spot on Google Maps. The free listing is earned — a complete profile, real photos, and honest reviews are what move you up.",
+      },
+      { kind: "h2", text: "Step 1 — Claim your free Google Business Profile" },
+      {
+        kind: "p",
+        text: "Everything on Maps starts with one free listing: your Google Business Profile.",
+      },
+      {
+        kind: "p",
+        text: "Go to business.google.com and search for your salon name and town first. Many salons already have a listing that nobody has claimed — a customer or Google created it from public information.",
+      },
+      {
+        kind: "p",
+        text: "If one exists, claim it. If nothing exists, create it. It costs nothing and takes about an hour.",
+      },
+      {
+        kind: "p",
+        text: "Use your real salon name, exactly as it appears on your sign and your invoices. Do not add keywords like 'Best Hair Salon in Town' to the name — Google's own guidelines say that can get your profile suspended.",
+      },
+      { kind: "h2", text: "Step 2 — Pick the right category (this matters more than you think)" },
+      {
+        kind: "p",
+        text: "Your primary category is the single strongest thing you type into the profile.",
+      },
+      {
+        kind: "p",
+        text: "Do not pick 'Beauty salon' if your real work is hair. Pick the most specific option Google offers — 'Hair salon', 'Nail salon', 'Barber shop' — whatever matches the service you want to be found for.",
+      },
+      {
+        kind: "p",
+        text: "Then add a few secondary categories for the other services you genuinely offer, like hair colouring or bridal styling. Only list services you really do. A wrong category brings the wrong enquiries — and eventually bad reviews.",
+      },
+      {
+        kind: "p",
+        text: "Not sure which category to pick? Search your main service plus your town, open the three salons already in the map results, and see which primary category they use.",
+      },
+      {
+        kind: "callout",
+        text: "Copy the category of the salon already ranking first for your service in your town — that is the category Google rewards for that search.",
+      },
+      { kind: "h2", text: "Step 3 — Fill in every service, with real prices" },
+      {
+        kind: "p",
+        text: "An empty profile tells Google nothing. A full profile tells Google exactly who to show you to.",
+      },
+      {
+        kind: "p",
+        text: "List every service you offer, with a short description and a starting price where you can. Haircut, balayage, bridal hair, manicure, pedicure — each one is a separate chance to match a search.",
+      },
+      {
+        kind: "p",
+        text: "Add your real opening hours and keep them updated. Inaccurate hours are the worst mistake a salon can make on Google: they send a client to a locked door, and a locked door often becomes a one-star review.",
+      },
+      {
+        kind: "p",
+        text: "Add your phone number and your website link. Use the exact same name, address, and phone number on your profile as on your website, character for character. Google cross-checks them — if they do not match, Google trusts you less.",
+      },
+      { kind: "h2", text: "Step 4 — Photos of real work, not stock photos" },
+      {
+        kind: "p",
+        text: "Clients choose a stylist with their eyes. Your photos are your portfolio, and they sit right on your listing.",
+      },
+      {
+        kind: "p",
+        text: "Upload photos of real work: a fresh balayage, a bridal updo, a clean fade, your chairs, your team at work. Ten or more photos is a good start — and keep adding new ones every month.",
+      },
+      {
+        kind: "p",
+        text: "Salons ranking in the local 3-pack average more than 50 reviews with a 4.5-star rating or higher. But photos are what make a client tap your listing instead of the one next to it.",
+      },
+      {
+        kind: "p",
+        text: "Stock photos of strangers do the opposite. Clients can tell, and so can Google.",
+      },
+      { kind: "h2", text: "Step 5 — Reviews are the tiebreaker" },
+      {
+        kind: "p",
+        text: "When three salons sit side by side on the same street, reviews decide who gets the call.",
+      },
+      {
+        kind: "p",
+        text: "Almost half of consumers will not use a business with fewer than 20 reviews, and nearly a third only use businesses rated 4.5 stars or above (BrightLocal, 2026).",
+      },
+      {
+        kind: "p",
+        text: "The reviews that help most mention the service and the stylist by name: 'Sara did my balayage and it is perfect.' Those words tell Google what you are good at, and they tell the next client exactly what to expect.",
+      },
+      {
+        kind: "p",
+        text: "How do you get them? Ask at the right moment — right after the service, when the client is happiest, looking at her hair in the mirror.",
+      },
+      {
+        kind: "callout",
+        text: "Ask for the review on the day of the appointment, while the client is still smiling at the result. Two or three new reviews every week beat thirty old ones from last January.",
+      },
+      {
+        kind: "p",
+        text: "Never buy reviews, and never write your own. Google notices, and the punishment — lost visibility — is worse than having few reviews.",
+      },
+      {
+        kind: "p",
+        text: "And when a bad review arrives, answer it. The reply matters more than the review itself, because every client who comes after reads it. A calm, kind reply turns a complaint into proof that you care.",
+      },
+      { kind: "h2", text: "Step 6 — Add a booking button, so the booking happens on the spot" },
+      {
+        kind: "p",
+        text: "Here is the part most salons miss. A client finds you on Maps, likes what she sees — and then has to leave Google, find your website, find your booking page, and start again. Most will not bother. The booking goes to the salon whose listing has a button.",
+      },
+      {
+        kind: "p",
+        text: "Google's Reserve with Google feature puts a Book button right on your listing, so clients can pick a service and a time without leaving Google. It connects to the booking software you already use, and the appointment lands straight in your calendar.",
+      },
+      {
+        kind: "p",
+        text: "It matters more than most owners realise: more than half of salon appointments are now booked outside standard working hours, and nearly half are made within 24 hours of the visit (Professional Beauty, August 2026). Your clients book at 10 pm on a Sunday. Your listing must be ready to take that booking while you sleep.",
+      },
+      { kind: "h2", text: "Your website still matters — it backs up everything on Maps" },
+      {
+        kind: "p",
+        text: "A strong profile wins the tap. Your website wins the booking.",
+      },
+      {
+        kind: "p",
+        text: "When a client does click through, she wants to see your full price list, your gallery, and your stylists — and book in seconds, on her phone. A slow or messy website sends her straight back to the map, to your competitor.",
+      },
+      {
+        kind: "p",
+        text: "Your website and your Google profile must also agree with each other: same name, same address, same phone number, same services. Google checks, and so do your clients.",
+      },
+      {
+        kind: "p",
+        text: "That is exactly what we build at CRAFTLOGIC — fast, beautiful salon websites with online booking built in, designed to turn a Google search into a confirmed appointment. See what a website like that looks like at https://craftlogic.live/.",
+      },
+      { kind: "h2", text: "Your salon's 7-day Maps checklist" },
+      {
+        kind: "p",
+        text: "You do not need a marketing budget. You need one focused week.",
+      },
+      {
+        kind: "list",
+        items: [
+          "Claim your Google Business Profile and verify it.",
+          "Set the most specific primary category for your main service.",
+          "List every service with a short description and a starting price.",
+          "Upload ten real photos of your work and your salon.",
+          "Check your hours — and update them before every holiday.",
+          "Ask three happy clients for a review this week, right after their appointment.",
+          "Add your booking link so clients can book without leaving Google.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Start with the profile, then the reviews, then the photos. That order — profile, reviews, photos — is the cheapest source of new salon clients there is, and the only one that works while you sleep.",
+      },
+      { kind: "h2", text: "Get found before your competitor does" },
+      {
+        kind: "p",
+        text: "Every salon in your town can claim the same free listing. The ones who fill it in properly are the ones who stay fully booked.",
+      },
+      {
+        kind: "p",
+        text: "If you want a website that backs up your Google Maps listing — fast, beautiful, with online booking that works on a phone — we can show you exactly what it would look like for your salon first. We build a free homepage concept, so you can see it before you decide anything.",
+      },
+      {
+        kind: "p",
+        text: "Visit our contact page (https://craftlogic.live/#contact) and tell us about your salon. Your next fully booked week could start with one search.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
