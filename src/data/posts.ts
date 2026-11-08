@@ -1112,6 +1112,165 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-a-real-estate-agents-website-turns-searches-into-viewings",
+    title: "How a Real Estate Agent's Website Turns Google Searches Into Viewings (And Wins More Listings)",
+    description:
+      "46% of buyers start their home search online. Learn what buyers search for and what your real estate website must show to turn clicks into viewings.",
+    date: "November 8, 2026",
+    published: "2026-11-08",
+    readTime: "6 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "A buyer does not walk into your office first anymore. They open Google first.",
+      },
+      {
+        kind: "p",
+        text: "They type '3 bed house for sale near me' from their sofa, often late at night. If your website answers that search well, you get the viewing. If it does not, the buyer clicks the next agent — and you never even know they were looking.",
+      },
+      {
+        kind: "p",
+        text: "Your website is not a brochure. It is your hardest-working salesperson, and it works while you sleep.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-a-real-estate-agents-website-turns-searches-into-viewings.jpg",
+        alt: "A real estate agent in a navy blazer showing listings on a tablet to a young couple outside a modern home",
+      },
+      { kind: "h2", text: "Buyers Start on Google, Not at Your Office" },
+      {
+        kind: "p",
+        text: "The numbers are clear. According to the National Association of Realtors' 2025 Profile of Home Buyers and Sellers, 46% of buyers said their first step was looking online at homes for sale — more than contacting an agent (20%) or speaking to a lender (11%).",
+      },
+      {
+        kind: "p",
+        text: "And 52% of buyers found the home they eventually bought on the internet. In total, 97% of buyers used online search at some point, and the median buyer spent 10 weeks searching before purchasing.",
+      },
+      {
+        kind: "p",
+        text: "That is 10 weeks in which your website can meet them — or lose them.",
+      },
+      {
+        kind: "callout",
+        text: "A buyer spends a median of 10 weeks searching before they buy. Your website has 10 weeks to win them — a portal listing gives you seconds.",
+      },
+      { kind: "h2", text: "What Buyers Actually Look For First" },
+      {
+        kind: "p",
+        text: "Buyers are not impressed by fancy animations. They want answers, fast.",
+      },
+      {
+        kind: "p",
+        text: "In NAR's 2025 Generational Trends research, buyers rated website features as 'very useful' in this order: photos (83%), detailed property information (79%), floor plans (57%), agent contact information (47%), and virtual tours (41%).",
+      },
+      {
+        kind: "p",
+        text: "That order is your build order. Real photos first. Honest details second. Floor plans third. Everything else comes after.",
+      },
+      {
+        kind: "p",
+        text: "A listing page that hides the price, shows three dark photos, and says 'call for details' sends the buyer back to Google — straight to your competitor.",
+      },
+      {
+        kind: "callout",
+        text: "Photos first, facts second, floor plans third. That is the order buyers rated them — build your listing pages in that order.",
+      },
+      { kind: "h2", text: "The Searches That Bring You Seller Leads" },
+      {
+        kind: "p",
+        text: "Buyers are only half the story. The most valuable leads for an agent are sellers — and sellers start with a question too.",
+      },
+      {
+        kind: "p",
+        text: "Google Keyword Planner data (September 2025 to August 2026) shows 'real estate agent near me' gets about 40,500 searches a month in the US. 'Home value estimator' gets about 33,100. 'How much is my home worth' gets about 8,100 — and other keyword tools put that number far higher.",
+      },
+      {
+        kind: "p",
+        text: "Every one of those searches is a homeowner wondering about their property's value. Most are not ready to list today — but they will remember the agent whose website gave them a straight answer.",
+      },
+      {
+        kind: "p",
+        text: "A simple 'What's my home worth?' page on your own website — a short form, an honest estimate, a named agent who replies — captures that curiosity and turns it into a lead.",
+      },
+      {
+        kind: "callout",
+        text: "72% of sellers interview only one agent before listing. If your website is the one they find first, it is usually the one they pick.",
+      },
+      { kind: "h2", text: "Your Website Must Work on a Phone" },
+      {
+        kind: "p",
+        text: "Around 70% of real estate searches happen on a mobile phone. That means most buyers will meet your website on a small screen, on a slow connection, while standing in a street outside a house they just saw.",
+      },
+      {
+        kind: "p",
+        text: "If your listings take five seconds to load, if the photos are tiny, if the 'book a viewing' button is hidden at the bottom of the page — that buyer is gone.",
+      },
+      {
+        kind: "callout",
+        text: "70% of real estate searches happen on a phone. If your website is hard to use on mobile, most of your buyers never see it properly.",
+      },
+      { kind: "h2", text: "The 5 Things Every Listing Page Needs" },
+      {
+        kind: "p",
+        text: "Every property on your website should answer the same five questions before the buyer has to ask:",
+      },
+      {
+        kind: "list",
+        items: [
+          "The real price — never 'POA' if you can avoid it. Buyers skip listings without a price.",
+          "10–20 real photos — bright, honest, in order: outside, living room, kitchen, bedrooms, bathroom, garden.",
+          "The floor plan and size — buyers think in rooms and square metres, not in adjectives.",
+          "The area, on a map — schools, transport, parks and shops near the property sell the location.",
+          "One clear next step — a 'Book a viewing' button and a short form on the same page, not a phone number buried in the footer.",
+        ],
+      },
+      { kind: "h2", text: "Why Portals Alone Are Not Enough" },
+      {
+        kind: "p",
+        text: "Portals are useful, but they are rented ground, not your own.",
+      },
+      {
+        kind: "p",
+        text: "On a portal, your listing sits next to ten other agents' listings. The buyer compares you on price alone and forgets your name in a minute. Portal leads convert at around 0.4% — roughly 4 enquiries in every 1,000 views turn into a client.",
+      },
+      {
+        kind: "p",
+        text: "Your own website changes that maths. There, the buyer sees only you: your listings, your area guides, your reviews, your face. They learn your name before they ever call.",
+      },
+      {
+        kind: "callout",
+        text: "Portal leads convert at around 0.4%. Your own website keeps the buyer with you — and keeps the lead yours.",
+      },
+      { kind: "h2", text: "How to Turn a Search Into a Viewing" },
+      {
+        kind: "p",
+        text: "A website does not sell houses. It starts conversations. The viewing is where the sale happens — so every page should make the next step easy:",
+      },
+      {
+        kind: "list",
+        items: [
+          "A 'Book a viewing' button on every listing, not just the contact page.",
+          "A short form — name, phone, preferred time. Nothing more. Long forms scare buyers away.",
+          "A fast reply. When someone books a viewing at 9pm, a reply by 9am the next morning beats a reply two days later every time.",
+        ],
+      },
+      { kind: "h2", text: "Your Website Should Be Your Best Agent" },
+      {
+        kind: "p",
+        text: "The buyers are already searching. The sellers are already wondering what their home is worth. The only question is whether they find you — or the agent down the road.",
+      },
+      {
+        kind: "p",
+        text: "A fast, honest, mobile-friendly website with real photos, real prices, floor plans, a valuation page and a one-tap way to book a viewing turns Google searches into viewings. And viewings turn into listings, sales, and referrals.",
+      },
+      {
+        kind: "p",
+        text: "Want to see what your website could look like? CRAFTLOGIC builds a free homepage concept for real estate agents — your listings, your area, your style — so you can see the difference before you decide anything. Get in touch through the contact page (https://craftlogic.live/#contact) and tell us about your agency.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
