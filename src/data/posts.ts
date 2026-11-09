@@ -1447,6 +1447,184 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-clients-find-an-interior-designer-online-in-2026",
+    title: "How Clients Find an Interior Designer Online in 2026 (And What Your Studio Website Must Show)",
+    description:
+      "Most clients Google an interior designer before they call. Learn how clients find one online in 2026 — and what your studio website must show to win them.",
+    date: "November 9, 2026",
+    published: "2026-11-09",
+    readTime: "6 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "A homeowner finishes a long day, sits on the sofa, and opens their phone.",
+      },
+      {
+        kind: "p",
+        text: "They type 'interior designer near me' — or they open Instagram, save three beautiful living rooms, and then Google the studio behind one of them.",
+      },
+      {
+        kind: "p",
+        text: "That is how most interior design clients start in 2026. Not with a phone book. Not with a walk-in. With a search.",
+      },
+      {
+        kind: "p",
+        text: "If your studio does not show up in that moment — or shows up looking unfinished — the client moves on to the next name. They never call to tell you why.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-clients-find-an-interior-designer-online-in-2026.jpg",
+        alt: "An interior designer showing a client a room design on a laptop, with fabric swatches and a floor plan on the table",
+      },
+      { kind: "h2", text: "1. The search starts with a picture, not a phone call" },
+      {
+        kind: "p",
+        text: "For most design businesses, discovery is visual first.",
+      },
+      {
+        kind: "p",
+        text: "A client sees a kitchen on Instagram, a villa on Pinterest, or a friend's renovated living room. The picture creates the interest. Then Google does the checking.",
+      },
+      {
+        kind: "p",
+        text: "That means your website has two jobs. First, it must confirm that the beautiful work they saw was not a one-off. Second, it must make the next step easy.",
+      },
+      {
+        kind: "callout",
+        text: "Add every finished project to your website the same week it goes on Instagram — so the people checking you find your newest work, not your oldest.",
+      },
+      { kind: "h2", text: "2. 'Interior designer near me' is the search that matters most" },
+      {
+        kind: "p",
+        text: "Over 1 million searches for interior designers happen in the United States every month. The single phrase 'interior designer near me' alone draws roughly 165,000 searches a month worldwide.",
+      },
+      {
+        kind: "p",
+        text: "And these are not casual browsers. Someone typing that phrase is ready to hire — they are comparing two or three nearby studios and will call the one that looks most trustworthy.",
+      },
+      {
+        kind: "p",
+        text: "Google shows the map first for these searches. A complete Google Business Profile — real project photos, recent reviews, clear services, correct hours — is what earns the call.",
+      },
+      {
+        kind: "p",
+        text: "But the profile alone is not enough. When a client clicks through to your website and finds a slow page or a broken gallery, the trust built by the profile disappears in seconds.",
+      },
+      {
+        kind: "callout",
+        text: "Your Google Business Profile gets the click. Your website closes the call. Both must be complete — one without the other loses the client.",
+      },
+      { kind: "h2", text: "3. Clients read your website like a job interview" },
+      {
+        kind: "p",
+        text: "Before any discovery call, a serious client reads your website the way an employer reads a CV.",
+      },
+      {
+        kind: "p",
+        text: "They are looking for answers to questions they may never ask out loud:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Have you done a project like mine — a kitchen, a villa, an office?",
+          "What does it cost, at least roughly?",
+          "How does the process work, and how long does it take?",
+          "Can I trust you with my home and my budget?",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Designers who book consistently in 2026 have websites that answer these questions before the first call. A beautiful portfolio gets the client in the door. Clear messaging closes the loop.",
+      },
+      { kind: "h2", text: "4. One page per service beats one long homepage" },
+      {
+        kind: "p",
+        text: "A client searching for 'kitchen interior design' does not want your general homepage. They want a page about kitchens — with kitchen photos, kitchen pricing guidance, and kitchen projects.",
+      },
+      {
+        kind: "p",
+        text: "The same is true for villa design, office fit-outs, and e-design. Each service deserves its own page, written in the words clients actually type into Google.",
+      },
+      {
+        kind: "p",
+        text: "This is also how a small studio beats a big one. A large firm ranks for 'interior design.' A focused studio can rank for 'modern villa interior design in Dubai' — searches with fewer competitors and far more serious buyers.",
+      },
+      {
+        kind: "callout",
+        text: "Build one clear page for each service you offer. A client who lands on the exact page they searched for is far more likely to enquire than one who lands on a generic homepage.",
+      },
+      { kind: "h2", text: "5. Reviews and real photos are your strongest sales tool" },
+      {
+        kind: "p",
+        text: "Nobody hires a designer they have never met without proof.",
+      },
+      {
+        kind: "p",
+        text: "Reviews are that proof. Ask for a review right after a project finishes — or right after a happy site visit — while the client is still excited. Give them the direct link so it takes ten seconds, and reply to every review you receive.",
+      },
+      {
+        kind: "p",
+        text: "Real photos matter just as much. Stock photos of rooms you did not design will be spotted, and they destroy trust faster than no photos at all.",
+      },
+      {
+        kind: "callout",
+        text: "Ask for the review on the day the job is finished. A fresh, specific review ('She redesigned our kitchen in six weeks') is worth ten vague ones.",
+      },
+      { kind: "h2", text: "6. Speed and mobile decide whether they stay" },
+      {
+        kind: "p",
+        text: "Around 70% of design-related searches now happen on a phone. A client will open your site while standing in the very room they want redesigned.",
+      },
+      {
+        kind: "p",
+        text: "If the page takes more than a few seconds to load, or the gallery is hard to swipe on a small screen, they close it. They do not wait, and they do not come back later.",
+      },
+      { kind: "h2", text: "7. What your studio website must show — the checklist" },
+      {
+        kind: "p",
+        text: "If you take one thing from this post, take this list:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Real projects, updated often — your newest work first, with the project type and location named.",
+          "A page for each service — residential, kitchen and bath, commercial, e-design.",
+          "A clear process — consultation, concept, design, delivery — in plain words.",
+          "Honest pricing guidance — even a range builds more trust than silence.",
+          "Reviews with real names — fresh, specific, and replied to.",
+          "A simple next step — a 'Book a free discovery call' button on every page.",
+          "A fast, mobile-first site — because the client is on their phone, in the room, right now.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Your website is not a portfolio. It is a sales system — the one that works while you are on site with another client.",
+      },
+      { kind: "h2", text: "The bottom line" },
+      {
+        kind: "p",
+        text: "In 2026, clients find an interior designer the same way they find everything else: a picture catches their eye, a search checks the studio, and a website decides the call.",
+      },
+      {
+        kind: "p",
+        text: "Instagram brings the discovery. Google brings the intent. But it is your website — fast, honest, full of real work — that turns a searcher into a booked consultation.",
+      },
+      {
+        kind: "p",
+        text: "If your studio's website still shows old photos, hides its prices, and has no clear way to book a call, you are not losing to better designers. You are losing to designers whose websites answer first.",
+      },
+      {
+        kind: "p",
+        text: "At CRAFTLOGIC, we build fast, beautiful websites for design studios — sites that show your real work and turn searches into booked calls.",
+      },
+      {
+        kind: "p",
+        text: "Want to see what yours could look like? We will design a free homepage concept for your studio — no cost, no obligation. Just tell us about your work, and we will show you the first page. Visit our contact page (https://craftlogic.live/#contact) to start.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
