@@ -1271,6 +1271,182 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-clients-find-a-lawyer-online-in-2026",
+    title: "How Clients Find a Lawyer Online in 2026 (And What Your Law Firm Website Must Do)",
+    description:
+      "Most clients Google a lawyer before they call. Learn how clients find a lawyer online in 2026 — and what your law firm website must do to win them.",
+    date: "November 9, 2026",
+    published: "2026-11-09",
+    readTime: "6 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "Nobody walks into a law firm off the street anymore. They open Google first.",
+      },
+      {
+        kind: "p",
+        text: "A person with an injury claim, a visa problem, or a family matter types their problem into a search box, and the firms they find there are the firms they call. If your website answers their question clearly, you get the call. If it does not, they call the firm listed right below you.",
+      },
+      {
+        kind: "p",
+        text: "Your website is not a brochure. It is the first meeting with a client who has never met you.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-clients-find-a-lawyer-online-in-2026.jpg",
+        alt: "A professional lawyer in a navy suit talking with a client over a laptop in a bright modern office",
+      },
+      { kind: "h2", text: "Clients Research First — They Google Before They Call" },
+      {
+        kind: "p",
+        text: "Martindale-Avvo's State of the Legal Consumer report for 2026 found that 92.4% of legal consumers research their issue online before contacting an attorney.",
+      },
+      {
+        kind: "p",
+        text: "A Scorpion survey of 3,000 consumers (October 2025) found that 74% research a firm online even after a personal recommendation.",
+      },
+      {
+        kind: "p",
+        text: "The ABA Journal found that 38% of consumers turn to the internet first when searching for a lawyer, ahead of asking family and friends (29%) — and 97% of those who looked online used a search engine (FindLaw).",
+      },
+      {
+        kind: "p",
+        text: "The first question is not 'does my firm have a website?' It is 'does my website answer the question a worried person just typed?'",
+      },
+      {
+        kind: "callout",
+        text: "92.4% of legal consumers research first. Your website is where that research happens — or where it ends.",
+      },
+      { kind: "h2", text: "Reviews Decide Before You Do" },
+      {
+        kind: "p",
+        text: "Hiring a lawyer is a high-trust decision, so clients read what other people said.",
+      },
+      {
+        kind: "p",
+        text: "In that survey, 57% of clients called online reviews their top deciding factor, and more than half will not hire a firm rated under four stars.",
+      },
+      {
+        kind: "p",
+        text: "UK research agrees: GrowWithQS found 63% of clients found their solicitor online, nearly a third reviewed three or more firms, and 70% contacted more than one firm before engaging.",
+      },
+      {
+        kind: "p",
+        text: "Your reviews are not decoration. They are the comparison a client makes before they ever speak to you.",
+      },
+      {
+        kind: "callout",
+        text: "57% of clients say reviews decide for them, and most will not hire a firm under four stars. Ask for a review on the day the case closes.",
+      },
+      { kind: "h2", text: "Speed of Reply Wins the Client" },
+      {
+        kind: "p",
+        text: "A person who contacts a lawyer is usually in a hurry and messages two or three firms at once.",
+      },
+      {
+        kind: "p",
+        text: "Scorpion found 72% of clients will not wait more than 24 hours for a callback, and Clio found nearly 8 in 10 expect a reply within a day.",
+      },
+      {
+        kind: "p",
+        text: "But most firms are slow: only 25% respond to online leads in under five minutes (Hennessey Digital), and clients reach someone by phone at only 52% of firms (Clio).",
+      },
+      {
+        kind: "p",
+        text: "Harvard Business Review found that contacting a lead within five minutes makes a firm roughly 21 times more likely to qualify it than waiting 30 minutes.",
+      },
+      {
+        kind: "p",
+        text: "A short intake form — name, phone, what happened — plus a reply promise turns a searcher into a client while the next firm checks its voicemail.",
+      },
+      {
+        kind: "callout",
+        text: "72% of clients will not wait 24 hours for a callback. A reply within 5 minutes makes you about 21 times more likely to win them.",
+      },
+      { kind: "h2", text: "AI Search Is Now Part of the Hunt" },
+      {
+        kind: "p",
+        text: "In 2026, clients do not only use Google. They ask AI tools too.",
+      },
+      {
+        kind: "p",
+        text: "iLawyer Marketing found 28.1% of people looking for a lawyer used ChatGPT in 2025 — triple its 9% share in 2023. BrightLocal found 45% of consumers used AI to find a local business in the past year, up from just 6% a year earlier.",
+      },
+      {
+        kind: "p",
+        text: "The good news: 94% of ChatGPT users still cross-check with Google, and AI answers by reading real pages — plain practice-area pages get quoted.",
+      },
+      {
+        kind: "p",
+        text: "A Whitespark study found AI Overviews now appear on 68% of local business searches — and the firms named there are the ones with clear pages saying who they are, what they do, and where they work.",
+      },
+      {
+        kind: "callout",
+        text: "28% of people looking for a lawyer now use ChatGPT too — but 94% of them still check Google. A clear website wins in both places.",
+      },
+      { kind: "h2", text: "What Your Website Must Show" },
+      {
+        kind: "p",
+        text: "A client visiting your website wants four answers, fast — or they leave.",
+      },
+      {
+        kind: "list",
+        items: [
+          "What you actually do. One page per practice area — injury, immigration, family, property — in plain words.",
+          "What it costs. Only 38% of consumers saw price information before instructing a solicitor, and 55% now compare prices before choosing (Legal Services Consumer Panel). Even a 'free first consultation' and a clear fee range builds more trust than silence.",
+          "How the process works. Only 30% of shoppers could easily understand how to hire a firm from its website (Clio). Three simple steps — call, consultation, next steps — remove that fear.",
+          "Proof you are real. Real reviews, real results where the rules allow, and photos of the actual lawyers — not stock images. A client hires a person, not a logo.",
+        ],
+      },
+      { kind: "h2", text: "The 5 Things Every Law Firm Website Needs" },
+      {
+        kind: "p",
+        text: "Every page on your website should pass the same five tests before it goes live:",
+      },
+      {
+        kind: "list",
+        items: [
+          "A plain first paragraph — who you are, what you do, where you work. Google and AI tools quote this.",
+          "A short contact form on every page — name, phone, and the problem in their own words.",
+          "A fast reply promise — 'We reply within one working day' — kept, every time.",
+          "Fresh reviews — recent ones matter more than old ones. Ask every week.",
+          "A mobile-friendly design — most clients search on a phone, in a stressful moment. If your form is hard to use on a small screen, they will not try twice.",
+        ],
+      },
+      { kind: "h2", text: "Your Website Should Answer, Not Just Exist" },
+      {
+        kind: "p",
+        text: "Most law firm websites fail quietly: they list services, look professional, and answer nothing.",
+      },
+      {
+        kind: "p",
+        text: "The client who just searched 'can I claim after a car accident' does not want your firm's history. They want to know: do I have a case, what does it cost, what happens next?",
+      },
+      {
+        kind: "p",
+        text: "A website that answers those three questions turns a stranger into a consultation. One that hides behind 'contact us for details' turns them into your competitor's client.",
+      },
+      {
+        kind: "callout",
+        text: "Only 30% of people could easily understand how to hire a firm from its website. Make your process simple enough to grasp in one minute.",
+      },
+      { kind: "h2", text: "The Client Is Already Searching" },
+      {
+        kind: "p",
+        text: "The client is already online — they have researched their problem, read your reviews, and compared you with two other firms. The only question is whether your website answers them — quickly, honestly, and in words they understand.",
+      },
+      {
+        kind: "p",
+        text: "A fast, clear website with real practice-area pages, honest fees, a simple three-step process, fresh reviews, and a short form that gets a quick reply turns Google searches into consultations. And consultations turn into clients.",
+      },
+      {
+        kind: "p",
+        text: "Want to see what your website could look like? CRAFTLOGIC builds a free homepage concept for law firms — your practice areas, your city, your style. Get in touch through the contact page (https://craftlogic.live/#contact) and tell us about your firm.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
