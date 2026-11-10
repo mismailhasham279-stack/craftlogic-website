@@ -1625,6 +1625,196 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-homeowners-find-a-contractor-online-in-2026",
+    title: "How Homeowners Find a Contractor Online in 2026 (And What Your Website Must Do to Get the Call)",
+    description:
+      "84% of homeowners Google a contractor before hiring. Learn how homeowners find one online in 2026 — and what your website must show to win the call.",
+    date: "November 10, 2026",
+    published: "2026-11-10",
+    readTime: "5 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "A pipe bursts on a Sunday night. A roof starts leaking after a storm. A kitchen finally needs the renovation it has waited five years for.",
+      },
+      {
+        kind: "p",
+        text: "In every one of these moments, the homeowner does the same thing first. They pick up their phone and search.",
+      },
+      {
+        kind: "p",
+        text: "They do not call a friend first. They do not drive around looking at vans. They Google it.",
+      },
+      {
+        kind: "p",
+        text: "And the contractor who wins that job is usually the one whose website answers first, looks trustworthy, and makes calling easy.",
+      },
+      {
+        kind: "p",
+        text: "This is how homeowners actually find a contractor in 2026 — and what your website must do to get the call.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-homeowners-find-a-contractor-online-in-2026.jpg",
+        alt: "A smiling homeowner with a phone, a contractor reviewing plans in a renovated kitchen",
+      },
+      { kind: "h2", text: "It Starts With a Problem, Not Your Name" },
+      {
+        kind: "p",
+        text: "Most homeowners do not search for a company name. They search for the job.",
+      },
+      {
+        kind: "p",
+        text: "'Plumber near me.' 'Roof repair cost.' 'Kitchen renovation contractor.'",
+      },
+      {
+        kind: "p",
+        text: "In fact, 89% of homeowners search online before they hire a contractor at all (NKBA Consumer Survey, 2025). And most of them have no company in mind when they start — research on plumber searches found 76% of searchers had no brand preference.",
+      },
+      {
+        kind: "p",
+        text: "That is good news. It means the job is winnable by any contractor who shows up well.",
+      },
+      {
+        kind: "p",
+        text: "It is also a warning. If your business does not appear when the problem is searched, you were never in the running.",
+      },
+      {
+        kind: "callout",
+        text: "Homeowners search the job, not your name. If your website only says your company name and nothing about the work, Google has nothing to match you with.",
+      },
+      { kind: "h2", text: "Google Decides in Seconds" },
+      {
+        kind: "p",
+        text: "84% of homeowners use Google before choosing a contractor (BrightLocal, 2026).",
+      },
+      {
+        kind: "p",
+        text: "And they decide fast. 75% pick a business in under 30 minutes. 28% decide in under 5 minutes.",
+      },
+      {
+        kind: "p",
+        text: "What do they see in those first seconds? Usually the map pack — the three businesses Google shows with a map at the top. 42% of local searchers click a map pack result.",
+      },
+      {
+        kind: "p",
+        text: "So the first battle is not your website. It is your Google Business Profile: correct name, correct service area, real photos, real reviews, and up-to-date hours.",
+      },
+      {
+        kind: "callout",
+        text: "A complete Google Business Profile makes customers 2.7x more likely to consider you reputable (Google). It costs nothing. Fill in every field.",
+      },
+      { kind: "h2", text: "The Phone Is the Showroom" },
+      {
+        kind: "p",
+        text: "73% of contractor searches include 'near me' — and 70% of home service enquiries start on a mobile phone.",
+      },
+      {
+        kind: "p",
+        text: "That means your website is almost always seen first on a small screen, often by someone standing in a leaking kitchen.",
+      },
+      {
+        kind: "p",
+        text: "If the site is slow, the back button is one tap away. If the phone number is hidden, the homeowner calls the next result instead.",
+      },
+      {
+        kind: "p",
+        text: "Your mobile site needs three things above everything else: it must load fast, it must show real photos of real work, and the call button must be visible without scrolling.",
+      },
+      {
+        kind: "callout",
+        text: "Test your own site on your phone right now. If you cannot find your number and your best photo in five seconds, neither can a homeowner.",
+      },
+      { kind: "h2", text: "Reviews Are the New References" },
+      {
+        kind: "p",
+        text: "Word of mouth used to be a neighbour recommending you over the fence. Today it is a review on Google.",
+      },
+      {
+        kind: "p",
+        text: "71% of consumers read Google reviews when choosing a local business (BrightLocal, 2026). And 92% of the top-ranked contractors hold a 4.0-star rating or higher.",
+      },
+      {
+        kind: "p",
+        text: "A contractor with 40 honest reviews beats a contractor with 3 perfect ones. Homeowners trust volume and recent reviews more than a flawless score.",
+      },
+      {
+        kind: "p",
+        text: "The best time to ask for a review is the day the job is finished, while the customer is still happy.",
+      },
+      {
+        kind: "callout",
+        text: "Ask for the review on the day the job is finished. A short message with a direct link gets far more reviews than a request sent a month later.",
+      },
+      { kind: "h2", text: "AI Is Now Recommending Contractors" },
+      {
+        kind: "p",
+        text: "Something new changed in 2026. Homeowners are no longer only searching — they are asking.",
+      },
+      {
+        kind: "p",
+        text: "45% of consumers now use AI tools like ChatGPT to find a local service, up from just 6% a year ago (BrightLocal, 2026). They type a full sentence: 'Find me a reliable roofer in Austin for a 1,500 sq ft roof.'",
+      },
+      {
+        kind: "p",
+        text: "But 78% of local service businesses are invisible to these AI answers (Footbridge Media, June 2026). The AI can only recommend a business it can describe — from your website, your reviews, and your listings.",
+      },
+      {
+        kind: "p",
+        text: "A website that says, in plain sentences, who you are, where you work, and what you do is the same website AI tools can quote. A website full of vague slogans is invisible to them.",
+      },
+      {
+        kind: "callout",
+        text: "Write one clear sentence on your homepage: your trade, your city or region, and your starting price or free quote. AI tools quote the clearest statement they can find.",
+      },
+      { kind: "h2", text: "The Website That Wins the Call" },
+      {
+        kind: "p",
+        text: "Once a homeowner lands on your site, they are checking four things:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Can this company do my job? A clear services page, written in the words customers actually use — 'roof replacement', not 'roofing solutions'.",
+          "Have they done it before? Real photos of finished work, with the town or suburb named. Stock photos tell a homeowner nothing.",
+          "What will it cost? You do not need fixed prices. A simple range, or a 'free quote' form that takes 30 seconds, removes the biggest fear.",
+          "Can I reach them now? A phone number at the top of every page, a quote form, and a reply fast. 41% of weekend home service calls go unanswered — every missed call is a job for a competitor.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Four things every contractor website needs on the homepage: your trade and town, real photos of finished work, a free quote button, and a phone number you actually answer.",
+      },
+      { kind: "h2", text: "Your Website Works While You Are on the Tools" },
+      {
+        kind: "p",
+        text: "A contractor's best hours are spent on site, not on the phone. That is exactly why the website matters.",
+      },
+      {
+        kind: "p",
+        text: "It answers the same questions all day: what you do, where you work, what it costs, and how to book you. It collects quote requests at 10pm. It shows your best work to a homeowner who has never met you.",
+      },
+      {
+        kind: "p",
+        text: "The contractors winning the most work in 2026 are not the ones with the biggest ads. They are the ones whose website is fast, clear, and easy to contact — and whose reviews prove the work is real.",
+      },
+      {
+        kind: "p",
+        text: "At CRAFTLOGIC, we build exactly that kind of website for trade and service businesses: fast, mobile-first, and designed to turn a Google search into a phone call.",
+      },
+      { kind: "h2", text: "Get a Free Homepage Concept for Your Business" },
+      {
+        kind: "p",
+        text: "Not sure what your website should look like? We will design a free homepage concept for your business — no payment, no obligation. If you like it, we build the full site around it.",
+      },
+      {
+        kind: "p",
+        text: "Visit our contact page (https://craftlogic.live/#contact) and tell us about your trade and your town. We will show you what your business could look like online — before you spend anything.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
