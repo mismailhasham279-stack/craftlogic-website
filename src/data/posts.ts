@@ -1815,6 +1815,193 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "why-customers-pick-the-local-business-whose-website-answers-first",
+    title: "Why Customers Pick the Local Business Whose Website Answers First",
+    description:
+      "98% of customers search online before choosing a local business. Learn the 5 things your website must answer in seconds — or lose them.",
+    date: "November 11, 2026",
+    published: "2026-11-11",
+    readTime: "6 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "A customer needs a plumber. A salon appointment. A cleaner for Saturday morning.",
+      },
+      {
+        kind: "p",
+        text: "They do not ask a neighbour first. They pick up their phone and search.",
+      },
+      {
+        kind: "p",
+        text: "And here is the part most local businesses miss: the customer has almost decided before they ever speak to anyone. They picked the business whose website answered first.",
+      },
+      {
+        kind: "p",
+        text: "Not the cheapest. Not the closest. The one whose website answered their question in seconds.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/why-customers-pick-the-local-business-whose-website-answers-first.jpg",
+        alt: "A customer on a phone outside a local business, smiling as they tap to call",
+      },
+      { kind: "h2", text: "The Customer Decides in Seconds, Not Days" },
+      {
+        kind: "p",
+        text: "Look at how people actually behave. 98% of consumers search online for a nearby business before spending a single dollar (2025 study, cited by WiserReview). 46% of all Google searches carry local intent — nearly half of everything searched on Google is someone looking for something near them (Backlinko, December 2025).",
+      },
+      {
+        kind: "p",
+        text: "And they move fast. 76% of people who search 'near me' on their phone visit a business within 24 hours. 88% of smartphone local searchers visit or call a business within a week (Google).",
+      },
+      {
+        kind: "p",
+        text: "That means your website is not a brochure. It is the first conversation. If you answer quickly and clearly, they stay. If you make them hunt for the answer, they leave — and they never tell you why.",
+      },
+      {
+        kind: "callout",
+        text: "The customer does not compare ten websites. They compare two or three — and pick the one that answers first. Speed of answer beats size of business.",
+      },
+      { kind: "h2", text: "Check 1: Say What You Do — and Where — in the First Line" },
+      {
+        kind: "p",
+        text: "The first line of your website should answer two questions at once: what do you do, and where do you do it?",
+      },
+      {
+        kind: "p",
+        text: '"Plumbing and heating in Manchester." "Hair salon in Leeds city centre." "House cleaning in Austin, Texas."',
+      },
+      {
+        kind: "p",
+        text: 'That is it. No clever slogan. No "Welcome to our website." No paragraph about your passion.',
+      },
+      {
+        kind: "p",
+        text: "Why does this matter so much? Because a customer searching 'plumber near me' is not browsing. They have a problem, right now, in their town. If your homepage does not say your service and your town in the first line, Google has nothing to match you with — and the customer has no reason to believe you can help them.",
+      },
+      {
+        kind: "callout",
+        text: "Service + town, in the first line, on the first screen. If a stranger cannot tell what you do and where in five seconds, your homepage is not working.",
+      },
+      { kind: "h2", text: "Check 2: The Call or Booking Button Must Be Visible — Without Scrolling" },
+      {
+        kind: "p",
+        text: "Here is the moment most local websites lose the customer. The person is ready to call. They look for a button. They cannot find it. They scroll. They still cannot find it. They go back to Google and call the next business.",
+      },
+      {
+        kind: "p",
+        text: "61% of mobile searchers are more likely to contact a local business if it has a mobile-friendly website. And most of them will never scroll to find your number.",
+      },
+      {
+        kind: "p",
+        text: "Your phone number or booking button should be visible the instant the page opens on a phone — big, clear, and tappable with one thumb. Not hidden in a menu. Not buried at the bottom of the page.",
+      },
+      {
+        kind: "callout",
+        text: "If a customer has to scroll to find how to contact you, you have already lost some of them. The call button belongs on the first screen, on every page, on every phone.",
+      },
+      { kind: "h2", text: "Check 3: Real Reviews and Real Photos of Real Work" },
+      {
+        kind: "p",
+        text: "Customers do not trust claims. They trust proof.",
+      },
+      {
+        kind: "p",
+        text: "97% of consumers read online reviews for local businesses before choosing one (BrightLocal). And 87% use Google to evaluate a local business before they ever visit or call (BrightLocal Local Consumer Review Survey, 2025).",
+      },
+      {
+        kind: "p",
+        text: 'So show them. Real reviews, with real names, on your website — not "great service!" with no name attached. Real photos of your real work: the bathroom you renovated, the haircut you finished, the kitchen you cleaned. Not stock photos. Customers can tell the difference in a second, and a stock photo tells them nothing about your work.',
+      },
+      {
+        kind: "p",
+        text: "A plumber with three honest reviews and photos of real jobs beats a plumber with a perfect-looking website and nothing real on it. Because the customer is not buying a website. They are buying trust.",
+      },
+      {
+        kind: "callout",
+        text: "Real reviews + real photos of real work. No stock photos, no fake testimonials. Proof is what turns a visitor into a caller.",
+      },
+      { kind: "h2", text: "Check 4: Your Website Must Load Fast on a Phone" },
+      {
+        kind: "p",
+        text: "Most of your customers will visit on a phone. Often on a weak signal, in a hurry, with one thumb.",
+      },
+      {
+        kind: "p",
+        text: "If your website takes more than a few seconds to load, a large share of visitors leave before they see anything at all. They do not wait. They go back and tap the next result.",
+      },
+      {
+        kind: "p",
+        text: "This is not a technical detail. It is a customer-service detail. A slow website is the online version of a shop with a locked door — the customer knocked, nobody answered, so they went next door.",
+      },
+      {
+        kind: "callout",
+        text: "Test your website on your phone, on mobile data. If it takes more than a few seconds to load, fix the speed before you spend anything on ads.",
+      },
+      { kind: "h2", text: "Check 5: Answer the Visitor's Question on the First Screen" },
+      {
+        kind: "p",
+        text: 'Every visitor arrives with one question in their head. "Can you fix this?" "Do you have a slot today?" "How much does it cost?" "Are you open now?"',
+      },
+      {
+        kind: "p",
+        text: "Your first screen should answer that question — or show them exactly where the answer is. A salon customer wants to know the price of a cut and whether there is a slot today. A cleaning customer wants to know the price and the next available day.",
+      },
+      {
+        kind: "p",
+        text: "You do not need to answer everything on the first screen. You need to answer the one question that matters most to that customer, and make the next step obvious: call, book, or message.",
+      },
+      {
+        kind: "p",
+        text: "That is what 'answering first' really means. Not having the most information. Having the right information, in the right place, before the customer has to ask.",
+      },
+      {
+        kind: "callout",
+        text: "One question, one answer, on the first screen. Everything else can wait for the second screen.",
+      },
+      { kind: "h2", text: "The 5-Check Test — Do It Tonight" },
+      {
+        kind: "p",
+        text: "Here is a test you can do in five minutes, on your own phone:",
+      },
+      {
+        kind: "list",
+        items: [
+          "First line: Does your homepage say your service and your town, in the first line?",
+          "Call button: Can you see how to call or book without scrolling?",
+          "Proof: Are there real reviews and real photos of your real work?",
+          "Speed: Does the page load fast on mobile data?",
+          "First-screen answer: Does the first screen answer the visitor's main question?",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Five checks, five minutes, on your own phone. Fix the first 'no' you find — that is the customer you win back first.",
+      },
+      { kind: "h2", text: "What This Means for Your Business" },
+      {
+        kind: "p",
+        text: "Customers do not pick the local business with the biggest advert or the flashiest website. They pick the one whose website answers first — clearly, quickly, and honestly.",
+      },
+      {
+        kind: "p",
+        text: "That is good news for a small business. You do not need the biggest budget. You need a website that says what you do, shows real proof, loads fast, and makes calling you the easiest thing on the page.",
+      },
+      {
+        kind: "p",
+        text: "And that is exactly what CRAFTLOGIC builds: fast, professional websites for local businesses — cleaners, plumbers, salons, and every business that wins customers one phone call at a time.",
+      },
+      {
+        kind: "p",
+        text: "Start with a free homepage concept. You see the real design for your business first — your service, your town, your call button, your proof, all on the first screen. Only when you like the design do we agree on an exact, all-inclusive quote. No hidden costs, no surprises, no pressure.",
+      },
+      {
+        kind: "p",
+        text: "Ready to be the business whose website answers first? Visit our contact page (https://craftlogic.live/#contact) to claim your free homepage concept.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
