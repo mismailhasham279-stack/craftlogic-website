@@ -2002,6 +2002,118 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-a-med-spa-website-brings-more-bookings",
+    title: "How a Med Spa Website Brings More Bookings (Even While You're With Clients)",
+    description:
+      "A med spa website that books clients while you work: online booking, treatment pages, reviews and local SEO that turn Google searches into appointments.",
+    date: "November 12, 2026",
+    published: "2026-11-12",
+    readTime: "5 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "Most med spa clients do not book the way they used to. They rarely call first. They search, they compare, and they decide — often late at night, from their phone, while your front desk is closed. If your website cannot take that booking in the moment, the client moves on to the next med spa in the results. A good med spa website works like your best receptionist: it answers questions, builds trust, and fills your calendar around the clock.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-a-med-spa-website-brings-more-bookings.jpg",
+        alt: "A bright modern med spa lounge, a client booking her appointment on her phone",
+      },
+      { kind: "h2", text: "Why Most Med Spa Clients Decide Before They Ever Call" },
+      {
+        kind: "p",
+        text: 'Think about how a client finds a med spa today. She searches "hydrafacial near me" or "Botox clinic in your city" and opens the top three results. Within seconds she judges each one: does it look professional, are prices visible, can she see real results, and can she book without calling? The spa that answers all four wins the appointment. The others never even get a phone call.',
+      },
+      {
+        kind: "p",
+        text: "Your website is the first consultation. Clients arrive with real worries: Will it hurt? How long does it take? How much does it cost? Is it safe? Every page should answer one of those worries clearly, before the client has to ask.",
+      },
+      { kind: "h2", text: "Online Booking: The Single Biggest Booking Lever" },
+      {
+        kind: "p",
+        text: "If you change only one thing, make it this: let clients book online, in under two minutes, from their phone.",
+      },
+      {
+        kind: "p",
+        text: "Phone-only booking loses clients in three ways. Many people simply prefer not to call. Calls only work during opening hours, while searches happen at all hours. And every round of phone tag is a chance for the client to change her mind or book somewhere else.",
+      },
+      {
+        kind: "p",
+        text: 'A booking system fixes all three. The client picks a treatment, sees real availability, chooses a time, and gets an instant confirmation. Add automatic reminders and you also cut no-shows. Keep it simple: one clear "Book Now" button on every page, a short form, and a confirmation message that tells the client exactly what happens next.',
+      },
+      {
+        kind: "callout",
+        text: 'Let clients book online in under two minutes, from their phone — one clear "Book Now" button on every page.',
+      },
+      { kind: "h2", text: "Treatment Pages That Answer Questions and Calm Nerves" },
+      {
+        kind: "p",
+        text: 'A single "Services" page listing twenty treatments with one line each does not sell treatments. Each popular treatment deserves its own page, written the way a client actually thinks: what it does, who it is for, what it feels like, how long results last, and what it costs (or a realistic starting price). Add a short FAQ for the questions staff hear every day — "Is there downtime?", "How many sessions will I need?"',
+      },
+      {
+        kind: "p",
+        text: 'These pages do two jobs at once. They reassure the client, and they bring you traffic from Google. When someone searches "how long does lip filler last" or "microneedling downtime", a page that answers that question honestly can rank, get found, and turn a searcher into a booking. This is how a small med spa competes with bigger clinics: by being the most helpful answer in its city.',
+      },
+      {
+        kind: "callout",
+        text: "One page per popular treatment — what it does, what it feels like, how long results last, and the starting price.",
+      },
+      { kind: "h2", text: "Before-and-After Proof That Builds Trust" },
+      {
+        kind: "p",
+        text: "Med spa treatments are personal, and clients are cautious. They want proof that your work is real before they trust you with their face or skin. Before-and-after photos are the strongest proof you have — but only if they are presented honestly.",
+      },
+      {
+        kind: "p",
+        text: "Use real client photos (with permission), in similar lighting, with a short honest caption: the treatment, the number of sessions, and the time between photos. Add short written reviews next to them, with the client's first name and the treatment they had. A gallery of genuine results beats a homepage full of stock photos every time.",
+      },
+      {
+        kind: "p",
+        text: "Reviews also matter on Google itself. A happy client's review helps your ranking in local searches and reassures the next person reading it. Make it easy: after an appointment, send a short message with a direct link to your Google review page.",
+      },
+      {
+        kind: "callout",
+        text: "Ask for the review on the day of the appointment — a short message with a direct link to your Google review page.",
+      },
+      { kind: "h2", text: "Google and Local Search: How Clients Find You" },
+      {
+        kind: "p",
+        text: 'Most med spa clients choose someone nearby, so local search is your most valuable marketing channel. Your Google Business Profile should match your website exactly: same name, address, phone number, hours and services. Mention your city naturally in your pages ("hydrafacial in your city"), because that is how local clients search. Answer every Google review politely — a thoughtful reply to a bad review often impresses future clients more than ten five-star reviews.',
+      },
+      {
+        kind: "p",
+        text: "Speed and mobile matter here too. More than half of your visitors arrive on a phone, and many leave if a page takes more than a couple of seconds to load. A fast, mobile-friendly site keeps those visitors; a slow one hands them to your competitor.",
+      },
+      { kind: "h2", text: "What to Put on Your Homepage First" },
+      {
+        kind: "p",
+        text: 'A med spa homepage has one job: turn a curious visitor into a booked client. At the top, a clear headline saying what you do and where you are, plus a "Book Now" button. Below that, your most popular treatments with prices or starting prices. Then a few real results and reviews, a short "why choose us" section, and your location, hours and contact details at the bottom.',
+      },
+      {
+        kind: "p",
+        text: "Everything else — long philosophy paragraphs, a dozen sliders, pop-ups that block the screen — only gets in the way. Your clients are not browsing for fun. They are deciding. Make the decision easy.",
+      },
+      {
+        kind: "callout",
+        text: "Your homepage has one job — turn a curious visitor into a booked client.",
+      },
+      { kind: "h2", text: "A Website That Books While You Work" },
+      {
+        kind: "p",
+        text: "A med spa website that brings more bookings is not magic. It is a clear homepage, one page per treatment, real photos and reviews, online booking that works on a phone, and local search done properly. Together, they turn your website into a member of your team — one that never takes a day off, never misses a call, and books clients while you are busy treating the ones already in your chair.",
+      },
+      {
+        kind: "p",
+        text: "If your current website is not doing that job, you do not have to guess what a better one would look like. CRAFTLOGIC offers a free homepage concept: we design a first look at your new homepage so you can see the difference before you commit.",
+      },
+      {
+        kind: "p",
+        text: "Ready to see the difference? Visit our contact page (https://craftlogic.live/#contact) and tell us about your med spa.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
