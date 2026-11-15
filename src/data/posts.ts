@@ -2269,6 +2269,181 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-couples-find-a-wedding-planner-online",
+    title: "How Couples Find a Wedding Planner Online in 2026 (And What Your Website Must Show to Get the Booking)",
+    description:
+      "Most couples Google a wedding planner before they book. Learn what they search for, and what your planning website must show to turn clicks into enquiries.",
+    date: "November 15, 2026",
+    published: "2026-11-15",
+    readTime: "4 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      { kind: "h2", text: "The 11pm Search" },
+      {
+        kind: "p",
+        text: 'A couple gets engaged on a Saturday. By 11pm the same night, they are on the sofa with a phone, searching "wedding planner near me".',
+      },
+      {
+        kind: "p",
+        text: "They have never hired a planner before. They do not know what one costs, what one does, or how to tell a good one from a bad one. In the next few minutes, they will build a shortlist of two or three planners — and everyone else will never hear from them.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-couples-find-a-wedding-planner-online.jpg",
+        alt: "A happy engaged couple at home in the evening, looking at wedding photos on a laptop together",
+      },
+      {
+        kind: "p",
+        text: "That shortlist is decided by what shows up on Google and what those websites show in the first ten seconds. Your Instagram can be beautiful, but it is rarely where the search starts. Your website is where the booking is won or lost.",
+      },
+      { kind: "h2", text: "1. Real Weddings Sell You — Show Them First" },
+      {
+        kind: "p",
+        text: "Couples do not hire a planner because of a nice logo. They hire one because they can already picture their own wedding in the photos on your website.",
+      },
+      {
+        kind: "p",
+        text: "Your portfolio is your strongest page. Show real weddings you planned — the ceremony, the tables, the flowers, the happy couple — with a line or two about each one: where it was, how many guests, what made it special.",
+      },
+      {
+        kind: "p",
+        text: "One real wedding gallery beats ten paragraphs about your passion for weddings. Couples judge a planner on photos, and they decide fast.",
+      },
+      {
+        kind: "callout",
+        text: "Put real wedding photos on your homepage, not stock images. Couples can spot a borrowed photo in a second — and a borrowed photo tells them nothing about your work.",
+      },
+      { kind: "h2", text: "2. Say Clearly What You Do — and What It Costs" },
+      {
+        kind: "p",
+        text: "Most planner websites hide their prices. Couples notice, and they leave.",
+      },
+      {
+        kind: "p",
+        text: "You do not need to publish a fixed price for every wedding. But you do need clear packages: full planning, partial planning, and day-of coordination, each with what is included. The Knot's 2026 Real Weddings Study puts the average cost of a wedding planner at $2,100 — couples are already looking that number up, so a website that says nothing about money looks like it is hiding something.",
+      },
+      {
+        kind: "p",
+        text: "Clear packages do two jobs at once. They help couples choose the right service, and they filter out enquiries that were never a fit — which saves you hours of calls that go nowhere.",
+      },
+      {
+        kind: "callout",
+        text: "List your packages with what each one includes. A couple who knows what they are buying is a couple who is ready to enquire.",
+      },
+      { kind: "h2", text: "3. Be on Google When They Search — the Map Pack Decides the Shortlist" },
+      {
+        kind: "p",
+        text: 'When a couple searches "wedding planner near me" or "day-of coordinator [city]", Google shows a map with three businesses before any website. For most couples, those three names are the entire shortlist.',
+      },
+      {
+        kind: "p",
+        text: "To be one of them, you need two things working together: a complete Google Business Profile and a website behind it.",
+      },
+      {
+        kind: "p",
+        text: 'Your profile needs your real service area, photos from actual weddings, and fresh reviews. Your website needs a page for each service and each city you serve — "wedding planner in [your city]" is exactly what couples type.',
+      },
+      {
+        kind: "p",
+        text: "A fast site with real wedding galleries, clear package pages, and separate pages for each specialty and city will outrank a pretty one-page site every time.",
+      },
+      {
+        kind: "callout",
+        text: "Claim and complete your Google Business Profile, and link it to your website. If you are not in the map pack, most couples never see you at all.",
+      },
+      { kind: "h2", text: "4. Reviews From Real Couples — Ask While the Joy Is Fresh" },
+      {
+        kind: "p",
+        text: "Engaged couples read planner reviews the way diners read restaurant reviews. A planner with twenty recent five-star reviews from real couples beats a planner with a beautiful feed and no reviews at all.",
+      },
+      {
+        kind: "p",
+        text: "Ask every couple for a review within two weeks of their wedding, while the gratitude is still fresh. A steady stream of recent reviews beats a handful of old ones — and every new review pushes you above planners who stopped asking.",
+      },
+      {
+        kind: "p",
+        text: "Put your best reviews on your website, with the couple's first names and the wedding date. Real names and real dates are what make a review believable.",
+      },
+      {
+        kind: "callout",
+        text: 'Ask for the review within two weeks of the wedding. A simple "we loved working with you — a quick Google review would mean the world" is enough.',
+      },
+      { kind: "h2", text: "5. One Clear Next Step: Enquire in Under a Minute" },
+      {
+        kind: "p",
+        text: "A couple who likes your work should be able to reach you in under a minute. If your enquiry form asks for twenty details, or your contact page is hard to find, they will message the next planner on the list instead.",
+      },
+      {
+        kind: "p",
+        text: "Keep the first step small: name, wedding date, city, and a short message. That is all you need to start a conversation. The long questionnaire can come later, after they have heard back from you.",
+      },
+      {
+        kind: "p",
+        text: "Answer fast, too. Couples often enquire with two or three planners on the same evening. The planner who replies first — with a warm, personal message, not an automated wall of text — usually wins the call.",
+      },
+      {
+        kind: "callout",
+        text: "Keep your first enquiry form to four fields: name, wedding date, city, and message. Every extra field loses you enquiries.",
+      },
+      { kind: "h2", text: "6. What to Leave Off Your Wedding Planner Website" },
+      {
+        kind: "p",
+        text: "A good planner website is also about what you remove:",
+      },
+      {
+        kind: "list",
+        items: [
+          "A long story about yourself on the homepage: couples came for your weddings, not your biography. Keep your story short and further down the page.",
+          "Only Instagram links and no real content: couples who find you on Google want answers on your website, not a detour to an app.",
+          'Vague words instead of real details: "Bespoke celebrations" says nothing. Real photos, real packages and real prices say everything.',
+          "A slow gallery that takes forever to load: couples browse on phones, often late at night. If your photos take ten seconds to appear, they are already looking at the next planner.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Simple wins. Fast wins. Clear wins.",
+      },
+      { kind: "h2", text: "Your Wedding Planner Website Checklist" },
+      {
+        kind: "p",
+        text: "Before you publish or refresh your site, check these seven things:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Real wedding photos on the homepage",
+          "Clear packages: full, partial, and day-of",
+          "A page for each service and each city you serve",
+          "A complete Google Business Profile linked to your website",
+          "Recent reviews from real couples, with names and dates",
+          "A short enquiry form — four fields, one button",
+          "A fast page that loads in seconds on a phone",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Get these right, and your website stops being a digital brochure and starts being your best salesperson — greeting every newly engaged couple at 11pm, showing them your weddings, and turning their search into an enquiry.",
+      },
+      {
+        kind: "callout",
+        text: "The test is simple: open your own website on your phone at night. If a stranger cannot see your real weddings, your packages, and your enquiry button in ten seconds, fix that first.",
+      },
+      { kind: "h2", text: "Ready to Make Your Wedding Planning Website Book More Weddings?" },
+      {
+        kind: "p",
+        text: "A wedding planner's website should fill your calendar, not just look pretty. At CRAFTLOGIC (https://craftlogic.live/), we build fast, mobile-first websites for wedding planners and small businesses — with real wedding galleries, clear packages, and an enquiry form couples actually finish.",
+      },
+      {
+        kind: "p",
+        text: "Want to see what yours could look like first? We will design a free homepage concept for your planning business — no cost, no obligation. If you love it, we build the full site. If not, you keep the idea.",
+      },
+      {
+        kind: "p",
+        text: "Visit our contact page (https://craftlogic.live/#contact) and tell us about your weddings. Your next booking could start with one click.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
