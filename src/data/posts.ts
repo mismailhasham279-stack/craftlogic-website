@@ -2444,6 +2444,199 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-customers-find-a-pharmacy-online",
+    title: "How Customers Find a Pharmacy Online in 2026 (And What Your Pharmacy Website Must Show to Win Them)",
+    description:
+      "Most customers Google a pharmacy before they visit. Learn what they search for, and what your pharmacy website must show to win them as regulars.",
+    date: "November 16, 2026",
+    published: "2026-11-16",
+    readTime: "5 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      { kind: "h2", text: "The 9pm Search" },
+      {
+        kind: "p",
+        text: "It is 9pm. A parent's child has a fever, and the medicine cupboard is empty. Nobody asks a neighbour. They pick up their phone and search 'pharmacy near me open now'.",
+      },
+      {
+        kind: "p",
+        text: "In thirty seconds, they will pick one of the three pharmacies Google shows on a map — and drive straight there. The others will never know that customer existed.",
+      },
+      {
+        kind: "p",
+        text: "That is how people find a pharmacy in 2026 — through a phone, in a hurry, at night.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-customers-find-a-pharmacy-online.jpg",
+        alt: "A friendly pharmacist at a bright modern pharmacy counter handing a paper medicine bag to a smiling customer",
+      },
+      {
+        kind: "p",
+        text: "Research shows 83% of patients look for a pharmacy near them using Google Maps. The search is urgent, the choice is fast, and the winner is the pharmacy that looks open, close, and trustworthy in the first few seconds. Your website — and your Google listing behind it — decide whether that customer is yours.",
+      },
+      { kind: "h2", text: "1. Be in the Map Pack — the Three Names That Get the Call" },
+      {
+        kind: "p",
+        text: 'When someone searches "pharmacy near me", Google shows a map with three pharmacies before any website. For most people, those three names are the whole choice.',
+      },
+      {
+        kind: "p",
+        text: "To be one of them, you need two things working together: a complete Google Business Profile and a website behind it.",
+      },
+      {
+        kind: "p",
+        text: "Your profile needs the right category — \"Pharmacy\", not \"Store\" or \"Health\" — your real hours, services, real photos, and fresh reviews. Your website needs pages for your town and services, so Google sees a real pharmacy, not just a pin on a map.",
+      },
+      {
+        kind: "callout",
+        text: "Claim and complete your Google Business Profile, set the category to \"Pharmacy\", and link it to your website. If you are not in the map pack, most new customers never see you at all.",
+      },
+      { kind: "h2", text: "2. Show You Are Open Right Now — Hours Decide the Click" },
+      {
+        kind: "p",
+        text: "Someone looking for a dentist compares options over days. Someone looking for a pharmacy at night has one urgent need and goes to the first result that looks open.",
+      },
+      {
+        kind: "p",
+        text: 'Search data shows "pharmacy near me" searches peak outside normal hours — between 8 and 11pm. If your listing says you close at 9pm but you are really open until 11pm, Google filters you out after 9pm — your most valuable hours.',
+      },
+      {
+        kind: "p",
+        text: "Put your real opening hours on your homepage, where nobody has to hunt for them. \"Open now until 11pm\" is worth more than any slogan.",
+      },
+      {
+        kind: "callout",
+        text: "Put your real opening hours on your homepage and keep them updated — including late-night and weekend hours. Wrong hours lose you the exact customers who need you most.",
+      },
+      { kind: "h2", text: "3. Let People Order and Refill Online — the Number One Reason They Visit" },
+      {
+        kind: "p",
+        text: "The number one reason a patient visits a pharmacy website is to order or refill a medicine. If your website cannot do that, most visitors leave — and phone the chain that can.",
+      },
+      {
+        kind: "p",
+        text: "Keep it simple: the patient's name, the medicine, and pick-up or delivery. A prescription upload button helps too. The whole thing should take less than a minute.",
+      },
+      {
+        kind: "p",
+        text: "People who take regular medicine order every single month — win the first refill, and you may keep that patient for years.",
+      },
+      {
+        kind: "callout",
+        text: "Add a simple refill request — name, medicine, pick-up or delivery. If ordering takes more than a minute, patients call the chain instead.",
+      },
+      { kind: "h2", text: "4. Say Delivery Clearly — It Wins Patients Who Never Visit" },
+      {
+        kind: "p",
+        text: 'More people now search for "medicine home delivery near me". For busy professionals, elderly patients, and people with long-term conditions, delivery matters more than distance.',
+      },
+      {
+        kind: "p",
+        text: 'If you deliver, say so on your homepage — not buried three clicks deep: which areas you cover, how fast it arrives, and what it costs. "Free delivery over $20, same day in [your town]" turns a searcher into a regular.',
+      },
+      {
+        kind: "callout",
+        text: "Show delivery on your homepage: the areas you cover, how fast, and what it costs. Delivery patients become regular patients.",
+      },
+      { kind: "h2", text: "5. Reviews Are the Tie-Breaker — Ask at the Counter" },
+      {
+        kind: "p",
+        text: "When two pharmacies are equally close, the one with more and better reviews wins. Patients care most about two things: whether the medicine is in stock, and whether the pharmacist is helpful.",
+      },
+      {
+        kind: "p",
+        text: "A pharmacy has a huge advantage here: you serve dozens of customers every day, and each one is a chance to ask. A small card with a QR code at the counter is all it takes.",
+      },
+      {
+        kind: "p",
+        text: "Ask after a quick refill or a kind answer. A steady stream of recent reviews beats a handful of old ones.",
+      },
+      {
+        kind: "callout",
+        text: "Ask for a Google review at the counter — a small QR code card is enough. A pharmacy with 50 recent reviews beats a closer one with none.",
+      },
+      { kind: "h2", text: "6. List Your Services, Not Just Your Medicines" },
+      {
+        kind: "p",
+        text: "Most pharmacy websites are just a name, an address, and a phone number. That is not enough anymore — people now search by service, not by shop.",
+      },
+      {
+        kind: "p",
+        text: 'They search for "flu jab near me", "travel vaccinations [town]", or "blood pressure check pharmacy". In the UK, Pharmacy First lets a pharmacist treat seven common conditions with no GP appointment — and patients search for exactly that.',
+      },
+      {
+        kind: "p",
+        text: "In 2026, AI search has made this even more important: when someone asks an AI assistant which pharmacy nearby is open late, it names only a few local pharmacies — the ones whose websites clearly explain their services, hours, and location.",
+      },
+      {
+        kind: "p",
+        text: "Give every service its own short page — flu jabs, blood pressure checks, travel vaccinations, health checks, delivery — with a few honest lines and real photos. That is how Google, and now AI search, finds you.",
+      },
+      {
+        kind: "callout",
+        text: "Give every service its own short page — flu jabs, blood pressure checks, travel vaccinations. That is how Google and AI search find you and recommend you.",
+      },
+      { kind: "h2", text: "7. What to Leave Off Your Pharmacy Website" },
+      {
+        kind: "p",
+        text: "A good pharmacy website is also about what you remove:",
+      },
+      {
+        kind: "list",
+        items: [
+          "A giant medicine catalogue with prices. Wrong prices destroy trust — show your services, not a price list.",
+          "Stock photos of pills and boxes. Customers want to see your real shop and your real team, not a picture from the internet.",
+          "Only a Facebook link and no real information. Patients who find you on Google want answers on your website, not a detour to an app.",
+          "Your licence and registration hidden away. Show your registration number and pharmacist's name proudly — proof beats promises.",
+          "A slow site. Most pharmacy searches happen on a phone, at night, in a hurry. If your page takes ten seconds, the customer is already calling the next pharmacy.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Simple wins. Fast wins. Clear wins.",
+      },
+      { kind: "h2", text: "Your Pharmacy Website Checklist" },
+      {
+        kind: "p",
+        text: "Before you publish or refresh your site, check these seven things:",
+      },
+      {
+        kind: "list",
+        items: [
+          "A complete Google Business Profile, category \"Pharmacy\", linked to your website",
+          "Real opening hours on the homepage — including late-night and weekend hours",
+          "A simple refill request — name, medicine, pick-up or delivery",
+          "Delivery shown clearly: areas, speed, and cost",
+          "Recent Google reviews, asked for at the counter with a QR code",
+          "A short page for every service: flu jabs, blood pressure checks, vaccinations",
+          "A fast page that loads in seconds on a phone, with your phone number visible",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Get these right, and your website stops being a digital signboard and starts being your best member of staff — greeting every worried parent at 9pm and winning a customer who comes back every month.",
+      },
+      {
+        kind: "callout",
+        text: "The test is simple: open your own website on your phone at night. If a stranger cannot see your hours, your refill button, and your phone number in ten seconds, fix that first.",
+      },
+      { kind: "h2", text: "Ready to Make Your Pharmacy Website Bring More Customers?" },
+      {
+        kind: "p",
+        text: "A pharmacy's website should bring in new customers, not just sit there. At CRAFTLOGIC (https://craftlogic.live/), we build fast, mobile-first websites for pharmacies — with online refills, delivery pages, and service pages that put you in the map pack.",
+      },
+      {
+        kind: "p",
+        text: "Want to see what yours could look like first? We will design a free homepage concept for your pharmacy — no cost, no obligation. If you love it, we build the full site. If not, you keep the idea.",
+      },
+      {
+        kind: "p",
+        text: "Visit our contact page (https://craftlogic.live/#contact) and tell us about your pharmacy. Your next regular customer could start with one click.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
