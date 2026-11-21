@@ -44,7 +44,7 @@ export const PROJECT_ASSETS = {
 
 const PROJECT_PREVIEWS = {
   luxevia: null,
-  haider: "/project-previews/haider-stillbok.svg",
+  skillbook: "/project-previews/skillbook.svg",
   aurevane: "/project-previews/aurevane.svg",
   usaLuxe: null,
   nailsByGrace: null,
@@ -205,70 +205,70 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "haider-stillbok",
-    slug: "haider-stillbok-premium",
+    id: "skillbook",
+    slug: "skillbook",
     index: "02",
-    name: "Haider Stillbok Premium",
-    category: "Commercial Tech Catalog",
+    name: "SKILLBOOK",
+    category: "Verified Devices Store",
     description:
-      "A premium laptop catalog for business users, creators and professionals, presenting imported HP and Dell laptops with clear specifications, condition details and direct WhatsApp ordering.",
+      "A verified laptops and workstations store in Pakistan, presenting 19 available devices across laptops, MacBooks, Chromebooks, smartphones and accessories, with clear specifications, condition details and direct WhatsApp ordering.",
     businessChallenge:
-      "Laptop buyers need to compare processor, memory, storage, display and condition before they can make a confident choice. A broad catalog can feel difficult to navigate when product details, pricing and availability are spread across separate listings or conversations.",
+      "Device buyers need to compare processor, memory, storage, display, battery health and condition before they can make a confident choice. A broad catalog can feel difficult to navigate when product details, pricing and availability are spread across separate listings or conversations.",
     solution:
-      "The site groups business laptops, EliteBooks, workstations and convertibles into clear collections, then presents selected listings with their key specifications, condition notes and pricing. Product discovery is paired with direct WhatsApp contact, while delivery, ordering steps and frequently asked questions explain what to expect before a customer gets in touch.",
+      "The store groups laptops, MacBooks, Chromebooks, smartphones and accessories into clear categories, then presents each device with its key specifications, condition notes and pricing. Product discovery is paired with direct WhatsApp contact, while nationwide delivery, COD for confirmed orders and Terms & Conditions explain what to expect before a customer gets in touch.",
     businessValue: [
-      "Organises business laptops, workstations and convertibles into distinct collections.",
-      "Makes key specifications easier to scan and compare across listings.",
-      "Displays condition and pricing details alongside each laptop.",
+      "Organises laptops, MacBooks, Chromebooks, smartphones and accessories into distinct categories.",
+      "Makes key specifications easier to scan and compare across 19 listed devices.",
+      "Displays condition, battery health and pricing details alongside each device.",
       "Provides a direct WhatsApp path for availability and ordering questions.",
-      "Explains ordering, delivery and common pre-purchase questions.",
-      "Serves professional buyers across desktop and mobile browsing.",
+      "Explains COD for confirmed orders, nationwide delivery and Terms & Conditions.",
+      "Serves buyers across desktop and mobile browsing.",
     ],
-    liveUrl: "https://haider-stillbok-premium.vercel.app/",
-    thumbnail: PROJECT_PREVIEWS.haider,
-    heroImage: PROJECT_PREVIEWS.haider,
-    mobileImage: PROJECT_PREVIEWS.haider,
+    liveUrl: "https://skillbook786.com",
+    thumbnail: PROJECT_PREVIEWS.skillbook,
+    heroImage: PROJECT_PREVIEWS.skillbook,
+    mobileImage: PROJECT_PREVIEWS.skillbook,
     gallery: [
       {
-        src: PROJECT_PREVIEWS.haider,
-        alt: "Premium business laptop shown on a dark studio background",
-        caption: "Premium laptop hero",
+        src: PROJECT_PREVIEWS.skillbook,
+        alt: "Certified enterprise laptops and workstations",
+        caption: "Enterprise laptops",
         device: "desktop",
       },
       {
-        src: PROJECT_PREVIEWS.haider,
-        alt: "Business laptop collection",
-        caption: "Business laptops",
+        src: PROJECT_PREVIEWS.skillbook,
+        alt: "MacBook Pro with Liquid Retina displays",
+        caption: "MacBooks",
         device: "desktop",
       },
       {
-        src: PROJECT_PREVIEWS.haider,
-        alt: "Professional mobile workstation",
-        caption: "Workstations",
+        src: PROJECT_PREVIEWS.skillbook,
+        alt: "Chromebooks, smartphones and accessories",
+        caption: "More categories",
         device: "desktop",
       },
       {
-        src: PROJECT_PREVIEWS.haider,
-        alt: "Convertible business laptop",
-        caption: "x360 convertibles",
+        src: PROJECT_PREVIEWS.skillbook,
+        alt: "Device catalog on a phone",
+        caption: "Mobile browsing",
         device: "mobile",
       },
     ],
     features: [
       {
         icon: Layout,
-        title: "Product Collections",
-        copy: "Business laptops, EliteBooks, workstations, convertibles and other focused collections.",
+        title: "Product Categories",
+        copy: "Laptops, MacBooks, Chromebooks, smartphones and accessories in focused categories.",
       },
       {
         icon: Search,
         title: "Specification-Led Browsing",
-        copy: "Processor, memory, storage and display details help customers compare listings.",
+        copy: "Processor, memory, storage, display and battery details help customers compare devices.",
       },
       {
         icon: Tag,
         title: "Clear Listing Details",
-        copy: "Pricing, condition and charger notes appear with the product information.",
+        copy: "Pricing, condition and battery notes appear with the product information.",
       },
       {
         icon: MessageCircle,
@@ -278,36 +278,36 @@ export const projects: Project[] = [
       {
         icon: Truck,
         title: "Delivery Information",
-        copy: "Delivery details and nationwide service information support purchase planning.",
+        copy: "Nationwide delivery across Pakistan with COD only for confirmed orders.",
       },
       {
         icon: HelpCircle,
         title: "Ordering Guidance",
-        copy: "A three-step ordering outline and FAQ cover common pre-purchase questions.",
+        copy: "Terms & Conditions and ordering steps cover common pre-purchase questions.",
       },
     ],
-    technologies: ["React", "Tailwind CSS", "TypeScript"],
-    projectType: "Commercial Technology Catalog",
+    technologies: ["React", "TypeScript", "Supabase"],
+    projectType: "Verified Devices Store",
     services: ["UI Design", "Front-End Development", "Product Catalog"],
     status: "live",
     anatomy: [
       {
         id: "hero",
         label: "Product Hero",
-        copy: "The opening introduces premium imported laptops and directs visitors to browse or ask a question.",
+        copy: "The opening introduces certified enterprise laptops and directs visitors to browse or ask a question.",
         view: "desktop",
         rect: { top: 8, left: 5, width: 90, height: 55 },
       },
       {
         id: "collections",
-        label: "Collections",
-        copy: "Dedicated categories help visitors browse by laptop type and work requirement.",
+        label: "Device Categories",
+        copy: "Dedicated categories help visitors browse by device type and requirement.",
         view: "desktop2",
         rect: { top: 8, left: 5, width: 90, height: 55 },
       },
       {
         id: "listings",
-        label: "Laptop Listings",
+        label: "Device Listings",
         copy: "Product cards present model names, specifications, condition and pricing together.",
         view: "desktop",
         rect: { top: 14, left: 5, width: 90, height: 65 },
@@ -329,7 +329,7 @@ export const projects: Project[] = [
       {
         id: "mobile",
         label: "Mobile Product",
-        copy: "The laptop catalog is available to customers browsing on mobile devices.",
+        copy: "The device catalog is available to customers browsing on mobile devices.",
         view: "mobile",
         rect: { top: 8, left: 5, width: 90, height: 75 },
       },
@@ -841,7 +841,7 @@ export const projects: Project[] = [
   },
 ];
 
-const PUBLIC_PROJECT_IDS = new Set(["luxevia", "usaluxe", "nailsbygrace", "shoptop"]);
+const PUBLIC_PROJECT_IDS = new Set(["luxevia", "usaluxe", "nailsbygrace", "shoptop", "skillbook"]);
 
 export const getProject = (slug: string) =>
   projects.find((project) => project.slug === slug && PUBLIC_PROJECT_IDS.has(project.id));
