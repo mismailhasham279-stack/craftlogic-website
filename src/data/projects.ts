@@ -846,6 +846,9 @@ const PUBLIC_PROJECT_IDS = new Set(["luxevia", "usaluxe", "nailsbygrace", "shopt
 export const getProject = (slug: string) =>
   projects.find((project) => project.slug === slug && PUBLIC_PROJECT_IDS.has(project.id));
 
+export const getPublicProjects = () =>
+  projects.filter((project) => PUBLIC_PROJECT_IDS.has(project.id));
+
 /** Enable once genuine client testimonials are available. */
 export const TESTIMONIALS_ENABLED = false;
 export const testimonials: { quote: string; author: string; role: string }[] = [];
