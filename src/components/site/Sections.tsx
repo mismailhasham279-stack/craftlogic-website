@@ -448,6 +448,15 @@ export function Work() {
               </Reveal>
             ))}
           </div>
+          <div className="mt-10 text-center">
+            <Link
+              to="/work"
+              className="focus-ring inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-[#f0d391]"
+            >
+              View all projects
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
