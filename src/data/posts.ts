@@ -31,6 +31,11 @@ export const POSTS: Post[] = [
         kind: "p",
         text: "Before a customer calls you, they search for you. If they cannot find a proper website, most of them move on to a competitor who has one. A professional website is not decoration — it is a salesperson that works 24 hours a day, 7 days a week, without asking for a salary.",
       },
+      {
+        kind: "image",
+        src: "/blog-images/how-a-professional-website-brings-more-customers.jpg",
+        alt: "A business owner shows a customer the shop website on a laptop",
+      },
       { kind: "h2", text: "1. It builds trust in seconds" },
       {
         kind: "p",
@@ -92,6 +97,11 @@ export const POSTS: Post[] = [
       {
         kind: "p",
         text: "Ask ten web designers what a business website costs and you will get ten different answers. One quotes $200, another quotes $10,000, and both insist they are right. No wonder so many business owners delay the decision — not because they doubt a website helps, but because nobody gives them a straight answer on price.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-much-does-a-business-website-cost-in-2026.jpg",
+        alt: "A business owner checks website prices on a laptop at his desk",
       },
       {
         kind: "p",
@@ -236,6 +246,11 @@ export const POSTS: Post[] = [
       {
         kind: "p",
         text: "Most small business websites fail for a simple reason: they are missing the pages customers actually look for. A visitor lands on your site, cannot find what they need within seconds, and leaves — often to a competitor whose website answers their questions faster.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/5-pages-every-business-website-must-have.jpg",
+        alt: "A laptop showing a clean multi-page business website",
       },
       {
         kind: "p",
@@ -387,6 +402,11 @@ export const POSTS: Post[] = [
         text: "When someone searches for your business, they are usually ready to act — to book an appointment, get a quote, or find your opening hours. They tap your link — and then they wait.",
       },
       {
+        kind: "image",
+        src: "/blog-images/why-your-website-must-load-in-under-2-seconds.jpg",
+        alt: "A customer waits for a website to load on a phone in a cafe",
+      },
+      {
         kind: "p",
         text: "If your page takes too long to appear, most of them will not wait — they will go back and open a competitor instead. A fast website feels professional and reliable. A slow one feels careless, even if your real work is excellent.",
       },
@@ -521,6 +541,11 @@ export const POSTS: Post[] = [
       {
         kind: "p",
         text: "If you run a service business, you already know the pattern. The phone rings while you are with a client. A message arrives on Instagram asking for a price and a time slot. By Friday, you have spent hours just managing bookings — hours you could have spent serving customers or growing the business.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-a-booking-system-saves-hours-every-week.jpg",
+        alt: "A salon receptionist shows a booking calendar on a tablet",
       },
       {
         kind: "p",
