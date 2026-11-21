@@ -44,8 +44,8 @@ const projectsList: ProjectCaseStudy[] = [
     client: "Luxevia Purse",
     category: "High-Ticket Luxury E-Commerce",
     location: "United States • Global Shipping",
-    liveUrl: "https://usa-luxe-curated.vercel.app",
-    browserDisplayUrl: "usa-luxe-curated.vercel.app",
+    liveUrl: "https://luxevia-edit-m964.vercel.app",
+    browserDisplayUrl: "luxevia-edit-m964.vercel.app",
     thumbnailPath: "/project-previews/usa-luxe-curate.webp",
     accentColor: "#D4AF37",
     metrics: [
@@ -124,8 +124,8 @@ const projectsList: ProjectCaseStudy[] = [
     client: "ShopTop // Curated",
     category: "Cross-Border Streetwear Platform",
     location: "Almaty / Astana • Kazakhstan",
-    liveUrl: "https://usa-luxe-curated.vercel.app",
-    browserDisplayUrl: "shoptop.kz/curated",
+    liveUrl: "https://curated-streetwear-showcase.vercel.app",
+    browserDisplayUrl: "curated-streetwear-showcase.vercel.app",
     thumbnailPath: "/project-previews/curate.webp",
     accentColor: "#10B981",
     metrics: [
