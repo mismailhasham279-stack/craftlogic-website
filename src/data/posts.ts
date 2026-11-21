@@ -2662,6 +2662,195 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "website-vs-instagram-where-should-customers-find-you",
+    title: "Website vs Instagram: Where Should Customers Find You in 2026?",
+    description: "Website vs Instagram \u2014 which one brings you customers in 2026? See the real numbers, what each one does best, and how to use both together.",
+    date: "November 17, 2026",
+    published: "2026-11-17",
+    readTime: "5 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "Every small business owner asks the same question in 2026: \"I already have Instagram \u2014 do I really need a website too?\"",
+      },
+      {
+        kind: "p",
+        text: "It is a fair question. Instagram is free, it is fast, and your customers are already there.",
+      },
+      {
+        kind: "p",
+        text: "But here is the short answer: Instagram and a website do two different jobs. One finds customers. The other turns them into bookings, calls, and sales.",
+      },
+      {
+        kind: "p",
+        text: "This post shows you the real numbers, what each one does best, and the simple way to use both together \u2014 without spending a fortune or managing two full-time jobs.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/website-vs-instagram-where-should-customers-find-you.jpg",
+        alt: "A small business owner holds a phone showing Instagram in one hand and a laptop showing a business website in the other",
+      },
+      { kind: "h2", text: "What Customers Actually Do in 2026" },
+      {
+        kind: "p",
+        text: "Before you choose a channel, look at how customers behave today.",
+      },
+      {
+        kind: "p",
+        text: "98% of consumers used the internet to find information about a local business in the past year (BrightLocal, Local Consumer Review Survey 2026). And that search almost always starts on Google \u2014 not on a social app.",
+      },
+      {
+        kind: "p",
+        text: "At the same time, Instagram is getting harder, not easier. Organic engagement for business accounts fell 28% year on year in 2026, and the average Facebook business page now reaches only about 1.25% of its followers.",
+      },
+      {
+        kind: "p",
+        text: "And there is a new player in the room: AI. In 2026, 45% of consumers now use ChatGPT or other AI tools for local recommendations \u2014 up from just 6% a year earlier. AI answers pull from websites, not from Instagram profiles.",
+      },
+      {
+        kind: "callout",
+        text: "98% of customers search online before choosing a local business \u2014 and that search starts on Google, not on Instagram.",
+      },
+      { kind: "h2", text: "What Instagram Does Best" },
+      {
+        kind: "p",
+        text: "Instagram is not useless \u2014 far from it. It is simply good at a different job.",
+      },
+      {
+        kind: "p",
+        text: "It shows your work. A salon can post a fresh haircut. A restaurant can post tonight's special. A contractor can post a finished kitchen. Photos and short videos do this better than any website page.",
+      },
+      {
+        kind: "p",
+        text: "It keeps you in touch. Stories, replies, and comments keep past customers warm. A follower who sees you every week remembers you when they need you.",
+      },
+      {
+        kind: "p",
+        text: "It brings new eyes. Reels and shares put your business in front of people who never searched for you. That is discovery \u2014 and Instagram is built for it.",
+      },
+      {
+        kind: "p",
+        text: "But notice what Instagram does not do: it does not answer \"are you open now?\", it does not take a booking at 11pm, and it does not show up when someone Googles \"plumber near me\" at 9pm on a Tuesday.",
+      },
+      {
+        kind: "callout",
+        text: "Instagram is for discovery \u2014 showing your work and staying visible. It was never built to close the sale.",
+      },
+      { kind: "h2", text: "What a Website Does That Instagram Cannot" },
+      {
+        kind: "p",
+        text: "A website is the one place online that is fully yours. Here is what it does that no social profile can.",
+      },
+      {
+        kind: "p",
+        text: "It gets found on Google: a website is what Google can index, rank, and show to someone typing \"dentist near me\" or \"wedding planner in Manchester\". An Instagram profile simply does not rank for those searches.",
+      },
+      {
+        kind: "p",
+        text: "It answers questions at any hour: your hours, prices, services, location, and a booking button \u2014 available at 2am, when you are asleep and Instagram is silent.",
+      },
+      {
+        kind: "p",
+        text: "It builds trust in seconds: real photos of real work, real reviews, a clear services page, and a proper contact page. A stranger decides in seconds whether you look like a real, reliable business.",
+      },
+      {
+        kind: "p",
+        text: "It shows up in AI answers: ChatGPT, Gemini, and Google's AI answers read web pages. A business with no website is invisible to the fastest-growing way people now search.",
+      },
+      {
+        kind: "p",
+        text: "You own it completely: no algorithm change, no policy update, no wrongful suspension can take your website away. On Instagram, your account \u2014 and every follower you built \u2014 sits on someone else's platform.",
+      },
+      {
+        kind: "callout",
+        text: "Your website is the only piece of digital real estate you actually own. Every other channel is rented space.",
+      },
+      { kind: "h2", text: "The Real Risk of Instagram-Only" },
+      {
+        kind: "p",
+        text: "This is not a theory. It happens every week.",
+      },
+      {
+        kind: "p",
+        text: "On 11 December 2024, Facebook, Instagram, Threads, WhatsApp, and Messenger all went down at the same time for more than three hours. Businesses that only existed on those apps simply disappeared for an afternoon.",
+      },
+      {
+        kind: "p",
+        text: "Accounts get suspended by mistake too \u2014 sometimes over a false report, sometimes over an automated check. When that happens, years of followers and messages can vanish overnight, and getting the account back can take weeks.",
+      },
+      {
+        kind: "p",
+        text: "A website does not fix everything, but it means you always have a front door that works, on a domain you control, with your phone number and booking link on it.",
+      },
+      {
+        kind: "callout",
+        text: "If Instagram went down tomorrow, could your customers still find you, call you, or book you? If the answer is no, you need a website.",
+      },
+      { kind: "h2", text: "How to Use Both Together (The Simple Setup)" },
+      {
+        kind: "p",
+        text: "You do not have to choose. The businesses that win in 2026 use both \u2014 with a clear job for each.",
+      },
+      {
+        kind: "p",
+        text: "Instagram brings attention. Post your work, your offers, and your story. Every post should point people somewhere: your website.",
+      },
+      {
+        kind: "p",
+        text: "Your website closes the deal. The link in your bio goes to your website, not to a link-in-bio page full of dead ends. On the website, the visitor finds your services, your prices, your reviews, and a booking or call button \u2014 in seconds.",
+      },
+      {
+        kind: "p",
+        text: "Google brings the ready buyers. People searching \"near me\" find your website and your Google Business Profile. They are not browsing \u2014 they are ready to book.",
+      },
+      {
+        kind: "p",
+        text: "Think of it as a funnel: Instagram at the top, Google in the middle, and your website at the bottom, turning interest into revenue.",
+      },
+      {
+        kind: "callout",
+        text: "Instagram brings attention. Google catches ready buyers. Your website turns both into bookings.",
+      },
+      { kind: "h2", text: "What Your Website Needs on Day One" },
+      {
+        kind: "p",
+        text: "You do not need a 40-page website to start. Five things are enough:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Your service and your town, in the first line",
+          "A call or booking button visible on a phone, without scrolling",
+          "Real photos of real work, and real reviews from real customers",
+          "Your hours, location, and prices \u2014 the three things everyone checks first",
+          "A contact page that actually works, with a form or a number that gets answered",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "A simple five-page website that answers questions beats a busy Instagram page with no booking button.",
+      },
+      { kind: "h2", text: "So \u2014 Website or Instagram?" },
+      {
+        kind: "p",
+        text: "So \u2014 website or Instagram? The honest answer in 2026 is both, but in the right order: your website is the foundation, and Instagram is the megaphone.",
+      },
+      {
+        kind: "p",
+        text: "Instagram can change its rules tomorrow. Google can change its results. But a website on your own domain, with your services, your reviews, and your booking button, keeps working for you 24 hours a day.",
+      },
+      {
+        kind: "p",
+        text: "Want to see what that looks like for your business? CRAFTLOGIC will design a free homepage concept for you first \u2014 so you can see the design before you decide anything. Once you approve it, you get an exact, all-inclusive price, with no hidden costs.",
+      },
+      {
+        kind: "p",
+        text: "See more about how we work at CRAFTLOGIC (https://craftlogic.live/) \u2014 or get in touch through our contact page (https://craftlogic.live/#contact).",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
