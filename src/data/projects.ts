@@ -43,12 +43,12 @@ export const PROJECT_ASSETS = {
 } as const;
 
 const PROJECT_PREVIEWS = {
-  luxevia: null,
+  luxevia: "/project-previews/luxevia.webp",
   skillbook: "/project-previews/skillbook.svg",
   aurevane: "/project-previews/aurevane.svg",
-  usaLuxe: null,
-  nailsByGrace: null,
-  shopTop: null,
+  usaLuxe: "/project-previews/usa-luxe.webp",
+  nailsByGrace: "/project-previews/nails-by-grace.webp",
+  shopTop: "/project-previews/shoptop.webp",
 } as const;
 
 export type GalleryImage = {
@@ -113,8 +113,8 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://luxevia-edit-m964.vercel.app/",
     thumbnail: PROJECT_PREVIEWS.luxevia,
-    heroImage: null,
-    mobileImage: null,
+    heroImage: PROJECT_PREVIEWS.luxevia,
+    mobileImage: PROJECT_PREVIEWS.luxevia,
     gallery: [
       {
         src: PROJECT_PREVIEWS.luxevia,
@@ -488,8 +488,8 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://usa-luxe-curated.vercel.app/",
     thumbnail: PROJECT_PREVIEWS.usaLuxe,
-    heroImage: null,
-    mobileImage: null,
+    heroImage: PROJECT_PREVIEWS.usaLuxe,
+    mobileImage: PROJECT_PREVIEWS.usaLuxe,
     gallery: [
       {
         src: PROJECT_PREVIEWS.usaLuxe,
@@ -600,8 +600,8 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://grace-nails-studio.vercel.app/",
     thumbnail: PROJECT_PREVIEWS.nailsByGrace,
-    heroImage: null,
-    mobileImage: null,
+    heroImage: PROJECT_PREVIEWS.nailsByGrace,
+    mobileImage: PROJECT_PREVIEWS.nailsByGrace,
     gallery: [
       {
         src: PROJECT_PREVIEWS.nailsByGrace,
@@ -723,8 +723,8 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://curated-streetwear-showcase.vercel.app/",
     thumbnail: PROJECT_PREVIEWS.shopTop,
-    heroImage: null,
-    mobileImage: null,
+    heroImage: PROJECT_PREVIEWS.shopTop,
+    mobileImage: PROJECT_PREVIEWS.shopTop,
     gallery: [
       {
         src: PROJECT_PREVIEWS.shopTop,
