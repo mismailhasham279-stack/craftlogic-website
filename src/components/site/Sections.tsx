@@ -65,7 +65,7 @@ const triggerOpenProject = (onOpenInquiry?: () => void) => {
 };
 
 /* ============================================================================
-   1. TRUST / WHY CRAFTLOGIC — CLEAN EDITORIAL NUMBERED LIST
+1. TRUST / WHY CRAFTLOGIC — CLEAN EDITORIAL NUMBERED LIST
    ============================================================================ */
 const WHY_PILLARS = [
   {
@@ -113,7 +113,7 @@ export function Trust() {
 
             <div className="mt-5 sm:mt-7">
               <a
-                href="#services"
+                href="/#services"
                 className="inline-flex items-center gap-2 rounded-full bg-[#0A0A0A] px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-white transition-colors hover:bg-[#0AAA8C]"
               >
                 <span>Explore our services</span>
@@ -149,7 +149,7 @@ export function Trust() {
 }
 
 /* ============================================================================
-   2. ABOUT / CURVED DEEP BLACK COMPANY BAND
+2. ABOUT / CURVED DEEP BLACK COMPANY BAND
    ============================================================================ */
 export function About() {
   return (
@@ -205,7 +205,7 @@ export function About() {
 }
 
 /* ============================================================================
-   3. SERVICES — INTERACTIVE EXPANDABLE SERVICE ROWS
+3. SERVICES — INTERACTIVE EXPANDABLE SERVICE ROWS
    ============================================================================ */
 const CORE_SERVICES = [
   {
@@ -298,7 +298,9 @@ export function Services({ onOpenInquiry }: SectionActionProps) {
               <div
                 key={service.num}
                 className={`transition-colors duration-300 ${
-                  isExpanded ? "bg-[#0A0A0A] text-white" : "bg-white text-[#0A0A0A] hover:bg-neutral-50"
+                  isExpanded
+                    ? "bg-[#0A0A0A] text-white"
+                    : "bg-white text-[#0A0A0A] hover:bg-neutral-50"
                 }`}
               >
                 <button
@@ -388,14 +390,14 @@ export function Services({ onOpenInquiry }: SectionActionProps) {
 }
 
 /* ============================================================================
-   4. BUSINESS PROBLEM (KEPT COMPATIBLE)
+4. BUSINESS PROBLEM (KEPT COMPATIBLE)
    ============================================================================ */
 export function BusinessProblem() {
   return null;
 }
 
 /* ============================================================================
-   5. FREE HOMEPAGE PREVIEW / DEMO SECTION WITH POPUP MODAL (WHATSAPP + EMAIL)
+5. FREE HOMEPAGE PREVIEW / DEMO SECTION WITH POPUP MODAL (WHATSAPP + EMAIL)
    ============================================================================ */
 function FreePreviewModal({
   isOpen,
@@ -637,7 +639,7 @@ export function FreeDemo() {
 }
 
 /* ============================================================================
-   6. PROCESS — CONNECTED 3-STEP TIMELINE
+6. PROCESS — CONNECTED 3-STEP TIMELINE
    ============================================================================ */
 const PROCESS_STEPS = [
   {
@@ -707,14 +709,14 @@ export function Process() {
 }
 
 /* ============================================================================
-   7. WHYME (REMOVED DUPLICATE FOUNDATIONS SECTION)
+7. WHYME (KEPT COMPATIBLE)
    ============================================================================ */
 export function WhyMe() {
   return null;
 }
 
 /* ============================================================================
-   8. FAQ SECTION (COMPACT INTERACTIVE ACCORDION)
+8. FAQ SECTION (COMPACT INTERACTIVE ACCORDION)
    ============================================================================ */
 const FAQ_ITEMS = [
   {
@@ -797,7 +799,7 @@ export function FaqSection() {
 }
 
 /* ============================================================================
-   9. START PROJECT & CONTACT (WITH OFFICIAL info@craftlogic.live)
+9. START PROJECT & CONTACT (WITH OFFICIAL info@craftlogic.live)
    ============================================================================ */
 export function StartProject({ onOpenInquiry }: SectionActionProps) {
   return (
@@ -871,7 +873,7 @@ export function Contact() {
 }
 
 /* ============================================================================
-   10. FOOTER (WITH info@craftlogic.live & ALL 7 SOCIAL MEDIA LINKS)
+10. FOOTER (WITH info@craftlogic.live, /work, /blog & ALL 7 SOCIAL MEDIA LINKS)
    ============================================================================ */
 export function Footer() {
   return (
@@ -907,22 +909,25 @@ export function Footer() {
           <div className="flex flex-col gap-4 lg:items-end">
             {/* Navigation Links */}
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm font-medium text-neutral-700">
-              <a href="#home" className="hover:text-[#0AAA8C]">
+              <a href="/" className="hover:text-[#0AAA8C]">
                 Home
               </a>
-              <a href="#services" className="hover:text-[#0AAA8C]">
+              <a href="/#services" className="hover:text-[#0AAA8C]">
                 Services
               </a>
-              <a href="#work" className="hover:text-[#0AAA8C]">
+              <a href="/work" className="hover:text-[#0AAA8C]">
                 Work
               </a>
-              <a href="#process" className="hover:text-[#0AAA8C]">
+              <a href="/blog" className="hover:text-[#0AAA8C]">
+                Blog
+              </a>
+              <a href="/#process" className="hover:text-[#0AAA8C]">
                 Process
               </a>
-              <a href="#free-preview" className="hover:text-[#0AAA8C]">
+              <a href="/#free-preview" className="hover:text-[#0AAA8C]">
                 Free Preview
               </a>
-              <a href="#faq" className="hover:text-[#0AAA8C]">
+              <a href="/#faq" className="hover:text-[#0AAA8C]">
                 FAQ
               </a>
             </div>

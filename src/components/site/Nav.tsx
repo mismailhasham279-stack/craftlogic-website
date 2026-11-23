@@ -7,18 +7,19 @@ interface NavProps {
 }
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "Free Preview", href: "#free-preview" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/work" },
+  { label: "Blog", href: "/blog" },
+  { label: "Process", href: "/#process" },
+  { label: "Free Preview", href: "/#free-preview" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export function Nav({ onOpenInquiry }: NavProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState("#home");
+  const [activeHref, setActiveHref] = useState("/");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,19 @@ export function Nav({ onOpenInquiry }: NavProps) {
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentPath = window.location.pathname;
+      if (currentPath.startsWith("/blog")) {
+        setActiveHref("/blog");
+      } else if (currentPath.startsWith("/work")) {
+        setActiveHref("/work");
+      } else {
+        setActiveHref("/");
+      }
+    }
   }, []);
 
   const handleTriggerProject = () => {
@@ -48,8 +62,8 @@ export function Nav({ onOpenInquiry }: NavProps) {
       <div className="mx-auto flex h-[64px] sm:h-[74px] max-w-[1320px] items-center justify-between gap-2 px-3.5 sm:px-6 lg:px-10">
         {/* Left: Compact Brand Logo on Mobile, Full Tagline on Tablet/Desktop */}
         <a
-          href="#home"
-          onClick={() => setActiveHref("#home")}
+          href="/"
+          onClick={() => setActiveHref("/")}
           aria-label="CraftLogic Home"
           className="shrink-0 focus-visible:outline-none"
         >
@@ -61,10 +75,10 @@ export function Nav({ onOpenInquiry }: NavProps) {
           </div>
         </a>
 
-        {/* Center: Clean Desktop Navigation Links */}
+        {/* Center: Clean Desktop Navigation Links (Including Work & Blog) */}
         <nav
           aria-label="Primary Navigation"
-          className="hidden items-center gap-7 lg:flex"
+          className="hidden items-center gap-6 xl:gap-7 lg:flex"
         >
           {NAV_LINKS.map((link) => {
             const isActive = activeHref === link.href;
@@ -103,9 +117,14 @@ export function Nav({ onOpenInquiry }: NavProps) {
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle Menu"
+            aria-expanded={mobileOpen}
             className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-neutral-200 bg-white text-[#0A0A0A] lg:hidden cursor-pointer"
           >
-            {mobileOpen ? <X className="h-4 w-4 sm:h-5 sm:w-5" /> : <Menu className="h-4 w-4 sm:h-5 sm:w-5" />}
+            {mobileOpen ? (
+              <X className="h-4 w-4 sm:h-5 sm:w-5" />
+            ) : (
+              <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
+            )}
           </button>
         </div>
       </div>
