@@ -11,18 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
-import { SITE_NAME } from "@/lib/site";
 
-/**
- * PRODUCTION DOMAIN CONFIGURATION
- * Primary Canonical Domain for CRAFTLOGIC Studio.
- */
 export const SITE_URL = "https://craftlogic.live";
 
-/**
- * Google Search Engine Structured Data (JSON-LD Organization & Service Graph)
- * Schema.org compliant representation for rich snippet validation.
- */
 const JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
@@ -31,7 +22,7 @@ const JSON_LD = {
       "@id": `${SITE_URL}/#website`,
       url: `${SITE_URL}/`,
       name: "CRAFTLOGIC",
-      description: "High-Performance Web Development Agency",
+      description: "Software Development Company — Custom Software, Websites, Mobile Apps & SaaS",
       publisher: {
         "@id": `${SITE_URL}/#organization`,
       },
@@ -40,7 +31,7 @@ const JSON_LD = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: "CRAFTLOGIC",
-      legalName: "CRAFTLOGIC Digital Agency",
+      legalName: "CRAFTLOGIC Software Development Company",
       url: `${SITE_URL}/`,
       email: "foundercraftlogic@gmail.com",
       telephone: "+923344957382",
@@ -66,7 +57,7 @@ const JSON_LD = {
     {
       "@type": "ProfessionalService",
       "@id": `${SITE_URL}/#service`,
-      name: "CRAFTLOGIC Web Engineering Studio",
+      name: "CRAFTLOGIC Software Development Company",
       url: `${SITE_URL}/`,
       telephone: "+923344957382",
       email: "foundercraftlogic@gmail.com",
@@ -76,11 +67,12 @@ const JSON_LD = {
         addressCountry: "PK",
       },
       knowsAbout: [
-        "High-Performance Web Engineering",
-        "React & TypeScript Architecture",
-        "Tailwind CSS Systems",
-        "Headless E-Commerce Platforms",
-        "Enterprise Digital Infrastructure",
+        "Custom Software Development",
+        "Website & Web App Engineering",
+        "Mobile App Development",
+        "SaaS Platform Development",
+        "Business Workflow Automation",
+        "AI Chatbots & Smart Assistants",
       ],
     },
   ],
@@ -112,8 +104,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
 
   useEffect(() => {
-    // Native production telemetry & console diagnostic (Zero external leak)
-    if (process.env.NODE_ENV !== "production") {
+    if (process.env["NODE_ENV"] !== "production") {
       console.error("[CRAFTLOGIC App Root Boundary Caught Error]:", error);
     }
   }, [error]);
@@ -155,42 +146,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        title: "CRAFTLOGIC — High-Performance Web Development & Digital Engineering Agency",
+        title: "CRAFTLOGIC — Software Development Company | Custom Software, Websites & SaaS",
       },
       {
         name: "description",
         content:
-          "CRAFTLOGIC builds fast, modern, and reliable business websites, headless e-commerce platforms, and custom web applications tailored to scale your revenue.",
+          "CraftLogic is a software development company. We build custom software, websites, mobile apps and SaaS platforms for your business.",
       },
       { name: "author", content: "Muhammad Ismail" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
-      { name: "theme-color", content: "#090a0f" },
-      /* OpenGraph — WhatsApp / Facebook / LinkedIn preview */
+      { name: "theme-color", content: "#fafafa" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "CRAFTLOGIC" },
       { property: "og:url", content: `${SITE_URL}/` },
       {
         property: "og:title",
-        content: "CRAFTLOGIC — High-Performance Web Development",
+        content: "CRAFTLOGIC — Software Development Company",
       },
       {
         property: "og:description",
         content:
-          "Bespoke digital storefronts, headless e-commerce, and high-converting web platforms engineered for ambitious businesses.",
+          "We design, develop & deliver custom software, websites, mobile apps and SaaS platforms for your business.",
       },
       { property: "og:image", content: `${SITE_URL}/og-preview.png` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "CRAFTLOGIC — Web Development Agency" },
-      /* Twitter Cards */
+      { property: "og:image:alt", content: "CRAFTLOGIC — Software Development Company" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "CRAFTLOGIC — High-Performance Web Systems",
+        content: "CRAFTLOGIC — Software Development Company",
       },
       {
         name: "twitter:description",
-        content: "Custom web platforms built to eliminate manual business bottlenecks.",
+        content: "Custom software, websites, mobile apps and SaaS platforms built for business growth.",
       },
       { name: "twitter:image", content: `${SITE_URL}/og-preview.png` },
     ],
@@ -207,7 +196,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap",
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "apple-touch-icon", href: "/logo.png", sizes: "180x180" },
@@ -223,19 +212,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <head>
-        {/*
-          JS guard: agar JavaScript na chale to .reveal content
-          chhupa na rahe (styles.css wali safety ke saath kaam karta hai)
-        */}
         <script
           dangerouslySetInnerHTML={{
             __html: `document.documentElement.classList.add("js")`,
           }}
         />
         <HeadContent />
-        {/* Google Analytics (GA4) */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-NDL52JNNZ8"
@@ -248,7 +232,6 @@ function RootShell({ children }: { children: ReactNode }) {
               gtag('config', 'G-NDL52JNNZ8');`,
           }}
         />
-        {/* Google Structured Data — static JSON-LD for rich snippet eligibility */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
@@ -268,7 +251,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SmoothScroll />
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );

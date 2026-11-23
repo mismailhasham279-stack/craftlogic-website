@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, Sparkles, CheckCircle2, AlertCircle, MessageSquare } from "lucide-react";
-import { EMAIL, WHATSAPP_RAW } from "@/data/projects";
+import {
+  X,
+  Send,
+  Sparkles,
+  CheckCircle2,
+  AlertCircle,
+  MessageSquare,
+} from "lucide-react";
 
 interface ProjectInquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+const OFFICIAL_EMAIL = "info@craftlogic.live";
+const OFFICIAL_WHATSAPP = "923344957382";
 
 export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProps) {
   const [submitting, setSubmitting] = useState(false);
@@ -25,43 +34,54 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
 
   const [formData, setFormData] = useState(initialFormState);
 
-  // Lock background scroll when modal is active
+  // Lock background scroll & support Escape key close
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) onClose();
+    };
+
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
     } else {
       document.body.style.overflow = "unset";
       setSubmitted(false);
       setErrorMessage("");
     }
+
     return () => {
       document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   const generateLeadMessage = () => {
     return (
-      `🚀 *NEW CRAFTLOGIC MODAL INQUIRY*\n` +
+      `🚀 *NEW CRAFTLOGIC PROJECT INQUIRY*\n` +
       `━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
       `👤 *Client Name:* ${formData.name || "Not provided"}\n` +
       `📧 *Email:* ${formData.email || "Not provided"}\n` +
       `📞 *Phone/WhatsApp:* ${formData.phone || "Not provided"}\n` +
-      `💻 *Project Type:* ${formData.projectType || "Custom Web System"}\n` +
+      `💻 *Project Type:* ${formData.projectType || "Website / Custom Software"}\n` +
       `💰 *Estimated Budget:* ${formData.budget || "To be discussed"}\n` +
       `⏱️ *Target Timeline:* ${formData.timeline || "Flexible"}\n` +
       `━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
-      `📝 *Scope & Requirements:*\n${formData.details || "No additional scope provided."}`
+      `📝 *Project Requirements:*\n${formData.details || "No additional scope provided."}`
     );
   };
 
-  // Instant WhatsApp Direct Dispatch
+  // Instant WhatsApp Dispatch
   const handleDirectWhatsApp = () => {
     if (!formData.name.trim() || !formData.email.trim()) {
-      setErrorMessage("Please fill in at least your Name and Email Address.");
+      setErrorMessage("Please enter your Name and Email Address first.");
       return;
     }
     const text = encodeURIComponent(generateLeadMessage());
-    window.open(`https://wa.me/${WHATSAPP_RAW}?text=${text}`, "_blank", "noopener,noreferrer");
+    window.open(
+      `https://wa.me/${OFFICIAL_WHATSAPP}?text=${text}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
     setSubmitted(true);
     setTimeout(() => {
       setFormData(initialFormState);
@@ -70,14 +90,14 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
     }, 2500);
   };
 
-  // Guaranteed FormSubmit AJAX to foundercraftlogic@gmail.com
+  // Direct Email Dispatch to info@craftlogic.live
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     setErrorMessage("");
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+      const response = await fetch(`https://formsubmit.co/ajax/${OFFICIAL_EMAIL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,22 +111,25 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
           budget: formData.budget || "Not specified",
           timeline: formData.timeline || "Not specified",
           requirements: formData.details || "Not specified",
-          _subject: `CRAFTLOGIC Lead: ${formData.name} (Modal Drawer)`,
+          _subject: `CRAFTLOGIC Project Lead: ${formData.name}`,
         }),
       });
 
       if (response.ok) {
         setSubmitted(true);
-        // Reset form and return to clean state after 3 seconds
         setTimeout(() => {
           setFormData(initialFormState);
           setSubmitted(false);
           onClose();
         }, 3000);
       } else {
-        // Safe WhatsApp fallback
+        // Automatic WhatsApp fallback if FormSubmit needs initial activation
         const text = encodeURIComponent(generateLeadMessage());
-        window.open(`https://wa.me/${WHATSAPP_RAW}?text=${text}`, "_blank", "noopener,noreferrer");
+        window.open(
+          `https://wa.me/${OFFICIAL_WHATSAPP}?text=${text}`,
+          "_blank",
+          "noopener,noreferrer"
+        );
         setSubmitted(true);
         setTimeout(() => {
           setFormData(initialFormState);
@@ -115,9 +138,12 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
         }, 3000);
       }
     } catch {
-      // Offline fallback
       const text = encodeURIComponent(generateLeadMessage());
-      window.open(`https://wa.me/${WHATSAPP_RAW}?text=${text}`, "_blank", "noopener,noreferrer");
+      window.open(
+        `https://wa.me/${OFFICIAL_WHATSAPP}?text=${text}`,
+        "_blank",
+        "noopener,noreferrer"
+      );
       setSubmitted(true);
       setTimeout(() => {
         setFormData(initialFormState);
@@ -132,34 +158,47 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-8">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-modal-title"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-8"
+        >
+          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/85 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/65 backdrop-blur-xs"
           />
 
+          {/* Clean Light Editorial Modal Card */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
+            exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="relative z-10 flex max-h-[92dvh] sm:max-h-[90vh] w-full max-w-2xl flex-col rounded-t-2xl sm:rounded-2xl border border-primary/30 bg-[#0B0F17] p-5 sm:p-7 shadow-2xl overflow-y-auto"
+            className="relative z-10 flex max-h-[92dvh] sm:max-h-[90vh] w-full max-w-2xl flex-col rounded-t-3xl sm:rounded-3xl border border-neutral-200 bg-white p-5 sm:p-8 shadow-2xl overflow-y-auto"
           >
-            {/* Modal Header */}
-            <div className="flex items-start justify-between border-b border-white/10 pb-4">
+            {/* Header */}
+            <div className="flex items-start justify-between border-b border-neutral-100 pb-4">
               <div>
-                <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 font-mono text-[9px] sm:text-[10px] font-semibold text-primary uppercase tracking-widest">
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-[#0AAA8C]/30 bg-[#0AAA8C]/10 px-3 py-1 font-mono text-[10px] font-semibold text-[#0AAA8C] uppercase tracking-wider">
                   <Sparkles className="h-3 w-3" />
                   <span>Start A Project</span>
                 </div>
-                <h3 className="font-display mt-2 text-xl sm:text-2xl font-extrabold tracking-tight text-white">
-                  Tell Us About Your Vision.
+                <h3
+                  id="project-modal-title"
+                  className="font-display mt-2.5 text-xl sm:text-2xl font-extrabold tracking-tight text-[#0A0A0A]"
+                >
+                  Tell Us About Your Project.
                 </h3>
-                <p className="mt-0.5 text-[11px] text-muted-foreground">
-                  Direct dispatch to: <strong className="text-primary font-mono">{EMAIL}</strong>.
+                <p className="mt-1 text-xs text-neutral-500">
+                  Direct dispatch to:{" "}
+                  <strong className="font-mono font-semibold text-[#0A0A0A]">
+                    {OFFICIAL_EMAIL}
+                  </strong>
                 </p>
               </div>
 
@@ -167,7 +206,7 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                 type="button"
                 onClick={onClose}
                 aria-label="Close Inquiry Form"
-                className="rounded-full border border-white/10 bg-white/5 p-2 text-muted-foreground transition-colors hover:bg-white/10 hover:text-white cursor-pointer min-h-[42px] min-w-[42px] flex items-center justify-center"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-[#0A0A0A] cursor-pointer"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -179,59 +218,60 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex flex-col items-center justify-center py-12 text-center"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#0AAA8C]/15 text-[#0AAA8C]">
                   <CheckCircle2 className="h-7 w-7" />
                 </div>
-                <h4 className="font-display mt-3 text-xl font-bold text-white">
-                  Inquiry Dispatched Successfully!
+                <h4 className="font-display mt-3.5 text-xl font-extrabold text-[#0A0A0A]">
+                  Inquiry Sent Successfully!
                 </h4>
-                <p className="mt-1.5 max-w-xs text-xs text-muted-foreground leading-relaxed">
-                  Your requirements have reached <strong className="text-white">{EMAIL}</strong>. We
-                  will review the scope and reply within 24 hours.
+                <p className="mt-1.5 max-w-sm text-xs sm:text-sm text-neutral-600 leading-relaxed">
+                  Your project details have been sent to{" "}
+                  <strong className="text-[#0A0A0A]">{OFFICIAL_EMAIL}</strong>. Our team will
+                  review your scope and reply within 24 hours.
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="mt-4 space-y-3.5">
+              <form onSubmit={handleSubmit} className="mt-5 space-y-3.5">
                 {errorMessage && (
-                  <div className="flex items-center gap-2 rounded-lg border border-rose-500/20 bg-rose-950/20 p-2.5 text-xs text-rose-300">
-                    <AlertCircle className="h-4 w-4 shrink-0 text-rose-400" />
+                  <div className="flex items-center gap-2 rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs font-medium text-rose-700">
+                    <AlertCircle className="h-4 w-4 shrink-0 text-rose-500" />
                     <span>{errorMessage}</span>
                   </div>
                 )}
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                    <label className="block text-xs font-semibold text-neutral-700 mb-1">
                       Your Name *
                     </label>
                     <input
                       required
                       type="text"
-                      placeholder="e.g. Alex Johnson"
+                      placeholder="e.g. Ahmed Khan"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[42px] rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-2 text-xs sm:text-sm text-[#0A0A0A] placeholder-neutral-400 focus:border-[#0AAA8C] focus:bg-white focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                    <label className="block text-xs font-semibold text-neutral-700 mb-1">
                       Business Email *
                     </label>
                     <input
                       required
                       type="email"
-                      placeholder="alex@brand.com"
+                      placeholder="you@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[42px] rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-2 text-xs sm:text-sm text-[#0A0A0A] placeholder-neutral-400 focus:border-[#0AAA8C] focus:bg-white focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
+                    <label className="block text-xs font-semibold text-neutral-700 mb-1">
                       WhatsApp / Phone
                     </label>
                     <input
@@ -239,83 +279,103 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                       placeholder="+92 300 0000000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[42px] rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-2 text-xs sm:text-sm text-[#0A0A0A] placeholder-neutral-400 focus:border-[#0AAA8C] focus:bg-white focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
-                      Project Type
+                    <label className="block text-xs font-semibold text-neutral-700 mb-1">
+                      Service Needed
                     </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. E-Commerce / Full-Stack Platform"
+                    <select
                       value={formData.projectType}
-                      onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                    />
+                      onChange={(e) =>
+                        setFormData({ ...formData, projectType: e.target.value })
+                      }
+                      className="w-full min-h-[42px] rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 text-xs sm:text-sm text-[#0A0A0A] focus:border-[#0AAA8C] focus:bg-white focus:outline-none"
+                    >
+                      <option value="">Select a service...</option>
+                      <option value="Website Development">Website Development</option>
+                      <option value="Mobile App (iOS & Android)">
+                        Mobile App (iOS &amp; Android)
+                      </option>
+                      <option value="E-Commerce / Online Store">
+                        E-Commerce / Online Store
+                      </option>
+                      <option value="SaaS Platform / Web App">
+                        SaaS Platform / Web App
+                      </option>
+                      <option value="SEO & Speed Optimization">
+                        SEO &amp; Speed Optimization
+                      </option>
+                      <option value="AI Chatbot & Automation">
+                        AI Chatbot &amp; Automation
+                      </option>
+                    </select>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
-                      Estimated Budget
+                    <label className="block text-xs font-semibold text-neutral-700 mb-1">
+                      Estimated Budget (Optional)
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. $2,500 or $5k-$10k"
+                      placeholder="e.g. $500 - $2,000"
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="w-full min-h-[42px] rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-2 text-xs sm:text-sm text-[#0A0A0A] placeholder-neutral-400 focus:border-[#0AAA8C] focus:bg-white focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
-                      Target Timeline
+                    <label className="block text-xs font-semibold text-neutral-700 mb-1">
+                      Target Timeline (Optional)
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g. 2-3 Weeks / Flexible"
+                      placeholder="e.g. 1-2 Weeks / Flexible"
                       value={formData.timeline}
-                      onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                      className="w-full min-h-[44px] rounded-lg border border-white/10 bg-black/50 px-3.5 py-2.5 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      onChange={(e) =>
+                        setFormData({ ...formData, timeline: e.target.value })
+                      }
+                      className="w-full min-h-[42px] rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-2 text-xs sm:text-sm text-[#0A0A0A] placeholder-neutral-400 focus:border-[#0AAA8C] focus:bg-white focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block font-mono text-[10px] uppercase tracking-wider text-white/70 mb-1">
-                    Project Scope & Bottlenecks *
+                  <label className="block text-xs font-semibold text-neutral-700 mb-1">
+                    Project Requirements *
                   </label>
                   <textarea
                     required
                     rows={3}
-                    placeholder="Briefly state your requirements, current challenges, or target features..."
+                    placeholder="Briefly describe your business and the features you need..."
                     value={formData.details}
                     onChange={(e) => setFormData({ ...formData, details: e.target.value })}
-                    className="w-full rounded-lg border border-white/10 bg-black/50 p-3 text-xs text-white placeholder-white/30 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-y"
+                    className="w-full rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-xs sm:text-sm text-[#0A0A0A] placeholder-neutral-400 focus:border-[#0AAA8C] focus:bg-white focus:outline-none resize-y"
                   />
                 </div>
 
-                {/* Dual Action Controls: Instant WhatsApp + Email Dispatch */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3">
+                {/* Dual Action Controls */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-2">
                   <button
                     type="button"
                     onClick={handleDirectWhatsApp}
-                    className="min-h-[46px] inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-4 py-2.5 font-display text-xs font-bold text-emerald-400 hover:bg-emerald-500/20 active:scale-95 transition-all cursor-pointer"
+                    className="min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full border border-[#0AAA8C]/40 bg-[#0AAA8C]/10 px-5 py-2.5 text-xs sm:text-sm font-bold text-[#087F68] hover:bg-[#0AAA8C]/20 active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <MessageSquare className="h-4 w-4" />
-                    <span>Send via WhatsApp Instantly</span>
+                    <span>Send via WhatsApp</span>
                   </button>
 
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="min-h-[46px] inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 font-display text-xs font-bold text-primary-foreground shadow-md transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
+                    className="min-h-[44px] inline-flex items-center justify-center gap-2 rounded-full bg-[#0A0A0A] px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm transition-all hover:bg-[#0AAA8C] active:scale-[0.98] disabled:opacity-50 cursor-pointer"
                   >
-                    <span>{submitting ? "Transmitting..." : "Send Project Inquiry"}</span>
+                    <span>{submitting ? "Sending..." : "Send Project Inquiry"}</span>
                     <Send className="h-3.5 w-3.5" />
                   </button>
                 </div>
@@ -329,5 +389,3 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
 }
 
 export default ProjectInquiryModal;
-
-

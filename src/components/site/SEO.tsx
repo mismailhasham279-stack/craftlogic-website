@@ -9,8 +9,8 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = "CRAFTLOGIC — High-Performance Web Engineering & Digital Agency",
-  description = "CraftLogic builds resilient, high-converting digital storefronts, SaaS applications, and bespoke web platforms engineered for business growth.",
+  title = "CRAFTLOGIC — Websites, Mobile Apps & Software That Grow Your Business",
+  description = "CraftLogic builds fast, high-converting websites, online stores, mobile apps, and SaaS platforms engineered to grow your business.",
   canonicalUrl = "https://craftlogic.live/",
   image = "https://craftlogic.live/logo.png",
   type = "website",
@@ -47,11 +47,11 @@ export function SEO({
       element.setAttribute("href", hrefVal);
     };
 
-    // 2. Browser tab favicon
+    // 2. Browser Tab Favicon
     setLinkTag("icon", "/favicon.svg?v=4", "image/svg+xml");
     setLinkTag("shortcut icon", "/favicon.svg?v=4", "image/svg+xml");
 
-    // 3. Search Engine & Mobile Home Screen DP (Dedicated Apple Touch Icon - no tab override)
+    // 3. Search Engine & Mobile Home Screen Icon
     setLinkTag("apple-touch-icon", "/logo.png", undefined, "180x180");
 
     // 4. Core Search Engine Directives
@@ -66,7 +66,7 @@ export function SEO({
     // 5. Canonical Link
     setLinkTag("canonical", canonicalUrl);
 
-    // 6. OpenGraph / WhatsApp / Social Share Previews (Shows full brand logo on social sharing)
+    // 6. OpenGraph / WhatsApp / Social Share Previews
     setMetaTag("property", "og:title", title);
     setMetaTag("property", "og:description", description);
     setMetaTag("property", "og:url", canonicalUrl);
@@ -87,7 +87,7 @@ export function SEO({
     setMetaTag("name", "twitter:description", description);
     setMetaTag("name", "twitter:image", image);
 
-    // 8. Google Rich Snippet Organization & Brand Schema (JSON-LD)
+    // 8. Google Rich Snippet Organization, FAQ & Service Schema (JSON-LD)
     const schemaId = "craftlogic-structured-schema";
     let schemaScript = document.getElementById(schemaId) as HTMLScriptElement | null;
     if (!schemaScript) {
@@ -99,40 +99,75 @@ export function SEO({
 
     const schemaData = {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      name: "CRAFTLOGIC",
-      legalName: "CRAFTLOGIC Digital Agency",
-      url: "https://craftlogic.live",
-      logo: "https://craftlogic.live/logo.png",
-      image: "https://craftlogic.live/logo.png",
-      description: description,
-      founder: {
-        "@type": "Person",
-        name: "Muhammad Ismail",
-        jobTitle: "Founder & Lead Solutions Architect",
-      },
-      email: "foundercraftlogic@gmail.com",
-      telephone: "+923344957382",
-      priceRange: "$$",
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "PK",
-      },
-      sameAs: [
-        "https://www.instagram.com/craft_logics?obrf=d3NqYmY3ZmJyMm9w",
-        "https://www.facebook.com/share/14mTT25RfBp/",
-        "https://www.tiktok.com/@craftlogics?_r=1&_t=ZP-9AibnwtdjRf",
-        "https://www.threads.com/@craftlogic.web",
-        "https://x.com/web_developer92",
-        "https://www.linkedin.com/in/craft-logic-712857409?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-        "https://youtube.com/@craft_logics?si=ugoevhrErI-Z7zwq",
-      ],
-      knowsAbout: [
-        "High-Performance Web Engineering",
-        "React & TypeScript Development",
-        "Tailwind CSS Architecture",
-        "E-Commerce Infrastructure",
-        "Custom Corporate Portals",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://craftlogic.live/#service",
+          name: "CRAFTLOGIC",
+          legalName: "CRAFTLOGIC Web & Software Development Studio",
+          url: "https://craftlogic.live",
+          logo: "https://craftlogic.live/logo.png",
+          image: "https://craftlogic.live/logo.png",
+          description: description,
+          founder: {
+            "@type": "Person",
+            name: "Muhammad Ismail",
+            jobTitle: "Founder & Lead Solutions Architect",
+          },
+          email: "info@craftlogic.live",
+          telephone: "+923344957382",
+          priceRange: "$$",
+          address: {
+            "@type": "PostalAddress",
+            addressCountry: "PK",
+          },
+          sameAs: [
+            "https://www.instagram.com/craft_logics?obrf=d3NqYmY3ZmJyMm9w",
+            "https://www.facebook.com/share/14mTT25RfBp/",
+            "https://www.tiktok.com/@craftlogics?_r=1&_t=ZP-9AibnwtdjRf",
+            "https://www.threads.com/@craftlogic.web",
+            "https://x.com/web_developer92",
+            "https://www.linkedin.com/in/craft-logic-712857409?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+            "https://youtube.com/@craft_logics?si=ugoevhrErI-Z7zwq",
+          ],
+          knowsAbout: [
+            "Website Development",
+            "Mobile App Development",
+            "E-Commerce & Online Stores",
+            "SaaS Platforms & Web Applications",
+            "SEO & Core Web Vitals Optimization",
+            "AI Chatbots & WhatsApp Automation",
+          ],
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "What can CraftLogic help our business build?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "CraftLogic builds modern business websites, mobile apps (iOS & Android), e-commerce stores, SaaS platforms, Google SEO optimizations, and 24/7 AI chatbots tailored to your exact business goals.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How can I see a Free Homepage Preview before starting?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Click the Get Free Homepage Preview button on craftlogic.live, share your business name and industry, and our design team will prepare a customized homepage concept within 24-48 hours with zero obligation.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Who owns the source code, domain, and design after launch?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "You get 100% full ownership of your domain, source code, UI designs, and business data upon completion with zero lock-ins.",
+              },
+            },
+          ],
+        },
       ],
     };
 
