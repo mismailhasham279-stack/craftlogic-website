@@ -3068,6 +3068,270 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-to-get-chatgpt-to-recommend-your-business",
+    title: "How to Get ChatGPT to Recommend Your Business in 2026",
+    description: "45% of customers now ask AI for local recommendations \u2014 up from 6% last year. Learn how ChatGPT picks businesses, and how your website gets you named.",
+    date: "November 24, 2026",
+    published: "2026-11-24",
+    readTime: "5 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "A customer needs a plumber. A dentist. A med spa appointment.",
+      },
+      {
+        kind: "p",
+        text: "They no longer open Google and scroll ten blue links. They ask their phone: \"Who is the best plumber near me?\"",
+      },
+      {
+        kind: "p",
+        text: "ChatGPT answers with two or three names. The customer calls one. If your business is not named, you were never in the conversation. The customer did not reject you \u2014 they never saw you.",
+      },
+      {
+        kind: "p",
+        text: "This is not the future \u2014 it is already happening. BrightLocal's 2026 research found 45% of consumers used AI tools for local recommendations in the past year, up from just 6% a year earlier.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-to-get-chatgpt-to-recommend-your-business.jpg",
+        alt: "A happy customer outside a modern shopfront asking her phone for a local business recommendation, the business owner smiling beside her",
+      },
+      {
+        kind: "callout",
+        text: "The search box became an answer box. Customers no longer see ten results \u2014 they see two or three names. Page one is no longer enough; you have to be in the answer.",
+      },
+      { kind: "h2", text: "What Changed in 2026" },
+      {
+        kind: "p",
+        text: "The shift was fast: 31% of consumers now use ChatGPT for local businesses and 23% Google's AI Mode (BrightLocal 2026, 1,002 US consumers).",
+      },
+      {
+        kind: "p",
+        text: "And people trust what they hear: 63% of active AI users trust these tools.",
+      },
+      {
+        kind: "p",
+        text: "Pew Research found users clicked a traditional result in only 8% of visits when an AI summary appeared, down from 15%. Ahrefs measured a 34.5% lower click-through rate for the top page with an AI Overview.",
+      },
+      {
+        kind: "p",
+        text: "Fewer clicks are available, and the ones that remain go to the businesses AI names.",
+      },
+      {
+        kind: "callout",
+        text: "45% of customers now ask AI for recommendations, up from 6% in one year. The businesses that get named win the call; the rest never appear.",
+      },
+      { kind: "h2", text: "How ChatGPT Actually Picks a Business" },
+      {
+        kind: "p",
+        text: "ChatGPT is not a directory \u2014 there is no form to fill in and no fee to pay to be listed.",
+      },
+      {
+        kind: "p",
+        text: "When someone asks, it searches the web, reads what comes back, and writes an answer with citations \u2014 from search results, review platforms, \"best of\" lists, directories, and your own website.",
+      },
+      {
+        kind: "p",
+        text: "Since July 2026, Yelp licenses its reviews and photos to OpenAI \u2014 ChatGPT reads Yelp directly. Google's Gemini and AI Mode draw on your Google Business Profile: categories, hours, photos, and reviews.",
+      },
+      {
+        kind: "p",
+        text: "And the competition is thinner than it looks. SOCi's 2026 Local Visibility Index, of nearly 350,000 locations, found that ChatGPT recommended just 1.2% of them. Perplexity named 7.4%, Gemini 11% \u2014 against 35.9% appearing in Google's local 3-pack.",
+      },
+      {
+        kind: "p",
+        text: "Only about one in a hundred local businesses gets named \u2014 good news, because the bar to stand out is lower than it looks.",
+      },
+      {
+        kind: "callout",
+        text: "No form, no fee. AI recommends you because the sources it reads agree: you are real, well-reviewed, and clear about what you do and where.",
+      },
+      { kind: "h2", text: "5 Things That Decide Whether AI Names Your Business" },
+      { kind: "h2", text: "1. A Website AI Can Actually Read" },
+      {
+        kind: "p",
+        text: "AI can only recommend what it can read. Your website must be crawlable, fast, and open to AI crawlers.",
+      },
+      {
+        kind: "p",
+        text: "OpenAI says its crawler, OAI-SearchBot, decides whether a site can appear in ChatGPT answers \u2014 and sites that block it \"will not be shown in ChatGPT search answers.\"",
+      },
+      {
+        kind: "p",
+        text: "If your website is broken, slow, or blocks crawlers, you are invisible to AI before the conversation starts.",
+      },
+      {
+        kind: "callout",
+        text: "Check that your website does not block OAI-SearchBot. A site AI cannot read is a business AI cannot recommend.",
+      },
+      { kind: "h2", text: "2. Plain Answers to Real Questions" },
+      {
+        kind: "p",
+        text: "AI repeats what is easy to extract: pages that answer the exact question a customer would ask, in plain language.",
+      },
+      {
+        kind: "p",
+        text: "Give every important service its own page: who it is for, what is included, where, what it costs, and how to book. Start with the direct answer, then add detail.",
+      },
+      {
+        kind: "p",
+        text: "A page that says \"best dentist\" ten times tells AI nothing. A page that says \"gentle teeth cleaning for nervous patients in Manchester, from $45, book online today\" tells it everything.",
+      },
+      {
+        kind: "callout",
+        text: "Write the way customers ask. \"Who fixes a leaking tap in Leeds on a Sunday?\" is the question \u2014 your page should be the answer.",
+      },
+      { kind: "h2", text: "3. Real Reviews \u2014 Recent, and Replied To" },
+      {
+        kind: "p",
+        text: "Reviews are the fuel of AI recommendations: 97% of AI users sometimes double-check an AI recommendation against real reviews (BrightLocal).",
+      },
+      {
+        kind: "p",
+        text: "That means two things: recent reviews on a steady basis, not five old ones from two years ago, and a reply to every review. Replying makes you look active and trusted \u2014 to customers and to AI alike.",
+      },
+      {
+        kind: "p",
+        text: "Ask every happy customer the day the job is finished, send the review link the same day, and reply when it comes in.",
+      },
+      {
+        kind: "callout",
+        text: "Ask for the review on the day the job is finished. One fresh, honest review beats ten old ones.",
+      },
+      { kind: "h2", text: "4. The Same Name, Address, and Phone \u2014 Everywhere" },
+      {
+        kind: "p",
+        text: "AI trusts agreement: when your website, your Google profile, and every directory all say the same name, address, and phone number, AI believes you are real.",
+      },
+      {
+        kind: "p",
+        text: "When they disagree, AI is not sure which is you, so it names someone else.",
+      },
+      {
+        kind: "p",
+        text: "Keep one real business name everywhere, and fill your Google Business Profile in completely: the right category, full hours, services, photos, and website link \u2014 matched character for character on your website.",
+      },
+      {
+        kind: "callout",
+        text: "Same name, same address, same phone \u2014 on your website, your Google profile, and every listing. One mismatch can cost you the recommendation.",
+      },
+      { kind: "h2", text: "5. Mentions on Lists Other People Write" },
+      {
+        kind: "p",
+        text: "Here is the signal most owners underestimate. Whitespark's 2026 Local Search Ranking Factors, scored by 47 experts, put presence on expert-curated \"best of\" lists as the top factor for AI visibility.",
+      },
+      {
+        kind: "p",
+        text: "A 2026 study by Position Digital found the same: most AI recommendations cited independent lists and roundups, not the brand's own website.",
+      },
+      {
+        kind: "p",
+        text: "AI treats an independent site naming you as more trustworthy than you naming yourself. So get listed where your town's best businesses are listed: local \"best of\" guides, industry directories, and review platforms. Honest mentions carry more weight than anything you write about yourself.",
+      },
+      {
+        kind: "callout",
+        text: "An independent site naming you beats you naming yourself. Earn mentions on \"best of\" lists and directories \u2014 AI trusts them most.",
+      },
+      { kind: "h2", text: "What NOT to Do" },
+      {
+        kind: "p",
+        text: "No trick, no shortcut: no agency can guarantee an AI recommendation \u2014 any promise otherwise is a sales pitch.",
+      },
+      {
+        kind: "p",
+        text: "Do not buy fake reviews. Google removed 292 million+ policy-violating reviews in 2025, and review gating and paid reviews are banned. Fake proof gets you removed, not recommended.",
+      },
+      {
+        kind: "p",
+        text: "Do not stuff pages with keywords or hide text for crawlers. AI reads like a careful customer and ignores pages that try to game it.",
+      },
+      {
+        kind: "callout",
+        text: "Fake reviews are the fastest way to disappear from AI answers. One real review beats ten fake ones \u2014 every time.",
+      },
+      { kind: "h2", text: "The 5-Minute Test \u2014 Try It Tonight" },
+      {
+        kind: "p",
+        text: "See exactly where you stand tonight, in five minutes:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Ask AI yourself. Log out of ChatGPT and ask three questions a real customer would ask \u2014 your service, your town, a real detail, like \"best dentist in Manchester for a nervous patient.\" Are you named? Are your competitors?",
+          "Check your crawler access. Ask whoever built your website whether OAI-SearchBot is allowed \u2014 if it is blocked, ChatGPT cannot show you at all.",
+          "Check your Google Business Profile: complete \u2014 category, hours, services, photos, reviews \u2014 with the name, address, and phone identical to your website?",
+        ],
+      },
+      {
+        kind: "p",
+        text: "If AI does not name you tonight, that is your starting point, not a verdict \u2014 fix the first gap and test again in a month.",
+      },
+      {
+        kind: "callout",
+        text: "Five minutes, three questions, one honest answer. If AI does not name you tonight, fix the first gap \u2014 that is the customer you win back first.",
+      },
+      { kind: "h2", text: "The Bottom Line" },
+      {
+        kind: "p",
+        text: "SEO has not died \u2014 its job has changed. It is now the supply chain for AI answers.",
+      },
+      {
+        kind: "p",
+        text: "The same fundamentals still decide whether you get found: a fast, readable website, plain answers, fresh reviews, consistent details, honest mentions. What changed is the prize \u2014 not a click on page one, but your name in the answer itself.",
+      },
+      {
+        kind: "p",
+        text: "Fix this now, while only 1% are named, and yours will be the name customers hear first for years.",
+      },
+      {
+        kind: "p",
+        text: "That is exactly what CRAFTLOGIC (https://craftlogic.live/) builds: fast, professional websites customers trust, that AI tools can read, understand, and recommend.",
+      },
+      {
+        kind: "p",
+        text: "Start with a free homepage concept: see the real design for your business first \u2014 services, town, reviews \u2014 written the way customers and AI both understand. Only when you like it do we agree an exact, all-inclusive quote. No hidden costs, no surprises, no pressure.",
+      },
+      {
+        kind: "p",
+        text: "Ready to be the business ChatGPT names first? Visit CRAFTLOGIC (https://craftlogic.live/) and get in touch through our contact page (https://craftlogic.live/#contact) to claim your free homepage concept.",
+      },
+      { kind: "h2", text: "Frequently Asked Questions" },
+      {
+        kind: "p",
+        text: "How does ChatGPT choose which business to recommend?",
+      },
+      {
+        kind: "p",
+        text: "ChatGPT searches the web and reads search results, review platforms, best-of lists, directories, and your website, then names the businesses the sources agree are real, well-reviewed, and clear about what they do and where. There is no form to fill in and no fee to pay to be listed.",
+      },
+      {
+        kind: "p",
+        text: "Can I pay ChatGPT to recommend my business?",
+      },
+      {
+        kind: "p",
+        text: "No \u2014 ChatGPT does not sell recommendations, and any agency promising a guaranteed mention is selling a pitch, not a result. The only way in is through the sources AI reads: your website, your reviews, your Google profile, and independent lists that name you.",
+      },
+      {
+        kind: "p",
+        text: "How many reviews does my business need for AI to recommend it?",
+      },
+      {
+        kind: "p",
+        text: "There is no fixed number, but recent reviews matter far more than old ones \u2014 97% of AI users double-check an AI recommendation against real reviews. A steady flow of fresh reviews, with a reply to each one, is what makes AI trust you.",
+      },
+      {
+        kind: "p",
+        text: "Does my website need special code for AI to find it?",
+      },
+      {
+        kind: "p",
+        text: "No special code \u2014 just a fast, crawlable website that does not block AI crawlers such as OAI-SearchBot. If your site blocks the crawler, ChatGPT cannot show you at all, so ask whoever built your site to check.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
