@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { Pause, Play, ArrowUpRight, Layers } from "lucide-react";
 
 interface CapabilityTile {
@@ -17,8 +17,6 @@ const CAPABILITY_TILES: CapabilityTile[] = [
   { id: "05", category: "Google Ranking", title: "SEO & Speed", isSerif: false, href: "#services" },
   { id: "06", category: "Smart Growth", title: "AI & Automation", isSerif: true, href: "#services" },
 ];
-
-const FLIP_SEQUENCE = [0, 3, 1, 4, 2, 5];
 
 function FlipCapabilityCard({
   tile,
@@ -524,63 +522,22 @@ function HorizontalBusinessCard({ item }: { item: BusinessShowcaseItem }) {
 }
 
 export const LaptopShowcase: React.FC = () => {
-  const [tilesPaused, setTilesPaused] = useState(false);
-  const [flippedIndices, setFlippedIndices] = useState<Set<number>>(
-    () => new Set([1, 4])
-  );
+  // Tiles stay in their settled state and only change on hover.
+  // The auto-flip timer kept catching the text doubled mid-change.
+  const flippedIndices = useMemo(() => new Set([1, 4]), []);
   const [marqueePaused, setMarqueePaused] = useState(false);
-
-  useEffect(() => {
-    if (tilesPaused) return;
-    let pointer = 0;
-
-    const timer = setInterval(() => {
-      const targetIndex = FLIP_SEQUENCE[pointer % FLIP_SEQUENCE.length]!;
-      setFlippedIndices((prev) => {
-        const next = new Set(prev);
-        if (next.has(targetIndex)) {
-          next.delete(targetIndex);
-        } else {
-          next.add(targetIndex);
-        }
-        return next;
-      });
-      pointer += 1;
-    }, 1050);
-
-    return () => clearInterval(timer);
-  }, [tilesPaused]);
 
   const topRowBusinesses = useMemo(() => BUSINESS_SHOWCASE_LIST.slice(0, 15), []);
   const bottomRowBusinesses = useMemo(() => BUSINESS_SHOWCASE_LIST.slice(15, 30), []);
 
   return (
     <div className="w-full select-none">
-      {/* SECTION A: 6 FOCUSED CAPABILITIES (gentle crossfade, no 3D flip) */}
+      {/* SECTION A: 6 FOCUSED CAPABILITIES (change on hover only) */}
       <div className="mx-auto max-w-[1320px] px-3.5 sm:px-6 lg:px-10 pt-1 pb-8 sm:pb-14">
         <div className="mb-3.5 sm:mb-6 flex flex-col items-center justify-center gap-2 text-center">
           <p className="text-xs sm:text-[15px] font-medium text-neutral-600">
             Everything we build to grow your business online
           </p>
-
-          <button
-            type="button"
-            onClick={() => setTilesPaused((prev) => !prev)}
-            aria-label={tilesPaused ? "Play tiles" : "Pause tiles"}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 bg-white px-2.5 py-1 text-[10.5px] sm:text-xs font-medium text-neutral-600 shadow-2xs transition-colors hover:border-neutral-300 hover:text-[#0A0A0A] cursor-pointer"
-          >
-            {tilesPaused ? (
-              <>
-                <Play className="h-3 w-3 text-[#0AAA8C]" />
-                <span>Play tiles</span>
-              </>
-            ) : (
-              <>
-                <Pause className="h-3 w-3 text-neutral-500" />
-                <span>Pause tiles</span>
-              </>
-            )}
-          </button>
         </div>
 
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3.5 lg:grid-cols-6 lg:gap-3.5">
