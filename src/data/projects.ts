@@ -21,14 +21,14 @@ export const BRAND_NAME = "CRAFTLOGIC";
 
 export const PROJECT_ASSETS = {
   luxevia: {
-    thumbnail: "/project-previews/usa-luxe-curate.png",
-    desktop: "/project-previews/usa-luxe-curate.png",
-    mobile: "/project-previews/usa-luxe-curate.png",
+    thumbnail: "/project-previews/luxevia.webp",
+    desktop: "/project-previews/luxevia.webp",
+    mobile: "/project-previews/luxevia.webp",
   },
   usaLuxe: {
-    thumbnail: "/project-previews/curate.png",
-    desktop: "/project-previews/curate.png",
-    mobile: "/project-previews/curate.png",
+    thumbnail: "/project-previews/usa-luxe.webp",
+    desktop: "/project-previews/usa-luxe.webp",
+    mobile: "/project-previews/usa-luxe.webp",
   },
   nailsByGrace: {
     thumbnail: "/project-previews/nails-by-grace.png",
@@ -36,19 +36,19 @@ export const PROJECT_ASSETS = {
     mobile: "/project-previews/nails-by-grace.png",
   },
   skillbook: {
-    thumbnail: "/project-previews/skillbook.png",
-    desktop: "/project-previews/skillbook.png",
-    mobile: "/project-previews/skillbook.png",
+    thumbnail: "/project-previews/skillbook.webp",
+    desktop: "/project-previews/skillbook.webp",
+    mobile: "/project-previews/skillbook.webp",
   },
 } as const;
 
 const PROJECT_PREVIEWS = {
-  luxevia: "/project-previews/usa-luxe-curate.png",
-  haider: "/project-previews/haider-stillbok.png",
+  luxevia: "/project-previews/luxevia.webp",
   aurevane: "/project-previews/aurevane.png",
-  usaLuxe: "/project-previews/curate.png",
+  usaLuxe: "/project-previews/usa-luxe.webp",
   nailsByGrace: "/project-previews/nails-by-grace.png",
-  skillbook: "/project-previews/skillbook.png",
+  shoptop: "/project-previews/shoptop.webp",
+  skillbook: "/project-previews/skillbook.webp",
 } as const;
 
 export type GalleryImage = {
@@ -316,7 +316,7 @@ export const projects: Project[] = [
     thumbnail: PROJECT_PREVIEWS.skillbook,
     heroImage: PROJECT_PREVIEWS.skillbook,
     imageSrc: PROJECT_PREVIEWS.skillbook,
-    fallbackSrc: "/project-previews/shoptop.svg",
+    fallbackSrc: "/project-previews/skillbook.svg",
     mobileImage: PROJECT_PREVIEWS.skillbook,
     gallery: [
       {
@@ -347,87 +347,8 @@ export const projects: Project[] = [
   },
   {
     id: "04",
-    slug: "haider-stillbok-premium",
-    index: "04",
-    name: "StillBok Tech Systems",
-    category: "B2B Hardware & Fleet Portal",
-    clientIndustry: "Enterprise Hardware & Industrial Tech",
-    timeline: "2.5 Weeks",
-    headline: "Replacing Static PDFs with an Interactive B2B Hardware Procurement Portal",
-    description:
-      "Enterprise hardware procurement and specification portal built for corporate buyers and industrial teams.",
-    impactMetric: "3x Faster B2B Quotes",
-    businessChallenge:
-      "StillBok's corporate buyers had to request outdated PDF brochures via email to compare hardware models and submit bulk orders, creating a 3-to-4-day delay in every B2B sales inquiry.",
-    theProblem:
-      "StillBok's corporate buyers had to request outdated PDF brochures via email to compare hardware models and submit bulk orders, creating a 3-to-4-day delay in every B2B sales inquiry.",
-    solution:
-      "The site groups business laptops, EliteBooks, workstations and convertibles into clear collections, then presents selected listings with their key specifications, condition notes and direct WhatsApp ordering.",
-    howWeBuiltIt: [
-      {
-        title: "Interactive Hardware Specification Matrix",
-        detail:
-          "Transformed dense technical datasheets into clean, scannable product cards with side-by-side performance metrics.",
-      },
-      {
-        title: "Direct Corporate Quote Request Engine",
-        detail:
-          "Built a structured B2B inquiry drawer allowing procurement managers to select models, specify quantities, and request quotes in one click.",
-      },
-      {
-        title: "High-Contrast Dark Industrial UI",
-        detail:
-          "Crafted an authoritative, precision-engineered interface reflecting enterprise hardware reliability across desktop and tablet screens.",
-      },
-      {
-        title: "Zero-Downtime Edge Deployment",
-        detail:
-          "Deployed on global edge infrastructure with automated health checks and instant asset caching.",
-      },
-    ],
-    businessValue: [
-      "Organises business laptops, workstations and convertibles into distinct collections.",
-      "Makes key specifications easier to scan and compare across listings.",
-      "Provides a direct WhatsApp path for availability and ordering questions.",
-    ],
-    deliverables: [
-      "Enterprise B2B Product Showcase",
-      "Interactive Spec Comparison Layout",
-      "Direct Corporate Quote Workflow",
-      "Edge Hosting & Technical SEO",
-    ],
-    liveUrl: "https://haider-stillbok-premium.vercel.app/",
-    thumbnail: PROJECT_PREVIEWS.haider,
-    heroImage: PROJECT_PREVIEWS.haider,
-    imageSrc: PROJECT_PREVIEWS.haider,
-    fallbackSrc: "/project-previews/haider-stillbok.svg",
-    mobileImage: PROJECT_PREVIEWS.haider,
-    gallery: [
-      {
-        src: PROJECT_PREVIEWS.haider,
-        alt: "Premium business laptop shown on a dark studio background",
-        caption: "Premium laptop hero",
-        device: "desktop",
-      },
-    ],
-    features: [
-      {
-        icon: Search,
-        title: "Specification-Led Browsing",
-        copy: "Processor, memory, storage and display details help customers compare listings.",
-      },
-    ],
-    technologies: ["React", "Tailwind CSS", "TypeScript", "Node.js"],
-    stack: ["React", "Tailwind CSS", "TypeScript", "Node.js"],
-    projectType: "Commercial Technology Catalog",
-    services: ["UI Design", "Front-End Development", "Product Catalog"],
-    status: "live",
-    anatomy: [],
-  },
-  {
-    id: "05",
     slug: "aurevane",
-    index: "05",
+    index: "04",
     name: "Aurevane Timepieces",
     category: "Luxury Horology & Showcase",
     clientIndustry: "Fine Jewelry & Collector Watches",
@@ -504,55 +425,58 @@ export const projects: Project[] = [
     anatomy: [],
   },
   {
-    id: "06",
+    id: "05",
     slug: "usa-luxe-import",
-    index: "06",
-    name: "Curated Streetwear & Drop Grid",
-    category: "High-Traffic Retail Store",
-    clientIndustry: "Apparel & Limited-Edition Drops",
+    index: "05",
+    name: "USA Luxe Import",
+    category: "Business Website",
+    clientIndustry: "Luxury Imports & Sourcing",
     timeline: "2 Weeks",
-    headline: "Flash-Sale Ready Retail Grid Engineered for Sudden Traffic Spikes",
+    headline: "Luxury Finds, Sourced From the USA",
     description:
-      "Engineered to handle flash-sale traffic spikes with zero lag, real-time inventory updates, and instant mobile previews.",
-    impactMetric: "+180% Drop Sales Velocity",
+      "A business page directing visitors to Instagram for new arrivals, products and launches.",
+    impactMetric: "Ready-to-Ship + Custom Sourcing",
     businessChallenge:
-      "During limited-edition streetwear drops, sudden bursts of mobile visitors from social media caused slow page loads and frustrated buyers before they could complete their orders.",
+      "An import and sourcing business has two very different types of customer: people who want something that is ready to ship, and people who want a specific item sourced for them. Both need to understand what is available, how the process works and how to start a conversation quickly.",
     theProblem:
-      "During limited-edition streetwear drops, sudden bursts of mobile visitors from social media caused slow page loads and frustrated buyers before they could complete their orders.",
+      "An import and sourcing business has two very different types of customer: people who want something that is ready to ship, and people who want a specific item sourced for them. Both need to understand what is available, how the process works and how to start a conversation quickly.",
     solution:
-      "Built a high-velocity visual drop grid with edge CDN caching, one-handed mobile navigation, and instant WhatsApp/cart reservation actions.",
+      "The website separates the ready-to-ship collection from custom sourcing. A product catalogue with imagery, details and pricing covers what is available now, while a custom order request flow covers everything else. WhatsApp enquiry keeps the conversation immediate, and process, delivery and FAQ sections explain how ordering works before a customer has to ask.",
     howWeBuiltIt: [
       {
-        title: "High-Velocity Visual Drop Grid",
+        title: "Ready-to-Ship Collection Catalogue",
         detail:
-          "Built a bold, scannable product grid with instant size/stock badges so buyers can spot available pieces within seconds.",
+          "A product catalogue with imagery, details and pricing covers what is available now.",
       },
       {
-        title: "Static Edge Caching for Traffic Spikes",
+        title: "Custom Sourcing Request Flow",
         detail:
-          "Served pre-rendered storefront assets from edge nodes so hundreds of simultaneous visitors experience zero server slowdown.",
+          "A custom order request flow covers everything else, for customers who want a specific item sourced.",
       },
       {
-        title: "One-Handed Mobile Browsing UX",
+        title: "WhatsApp Enquiry, Built In",
         detail:
-          "Placed navigation, quick-view drawers, and checkout triggers within natural thumb reach for mobile-first shoppers.",
+          "WhatsApp enquiry keeps the conversation immediate, so customers can start a conversation quickly.",
       },
       {
-        title: "Core Web Vitals 95+ Score",
+        title: "Process, Delivery & FAQ Sections",
         detail:
-          "Eliminated render-blocking scripts and optimized font loading to achieve sub-1.2s Largest Contentful Paint.",
+          "Process, delivery and FAQ sections explain how ordering works before a customer has to ask.",
       },
     ],
     businessValue: [
-      "Handles flash-sale social traffic spikes with zero lag.",
-      "Separates ready-to-ship drops from custom sourcing requests.",
-      "Turns interest into immediate orders on mobile devices.",
+      "Presents the curated catalogue clearly to international customers.",
+      "Separates ready-to-ship products from custom sourcing requests.",
+      "Turns interest into direct conversations through WhatsApp enquiry.",
+      "Explains the sourcing and delivery process up front.",
+      "Reduces repetitive questions with a structured FAQ.",
+      "Works comfortably on the phones most customers browse from.",
     ],
     deliverables: [
-      "Flash-Sale Ready Retail Storefront",
-      "Thumb-Friendly Mobile Shopping UX",
-      "Edge CDN Spike Protection",
-      "Core Web Vitals Speed Optimization",
+      "Business Website with Product Catalogue",
+      "Custom Sourcing Request Flow",
+      "WhatsApp Enquiry Integration",
+      "Process, Delivery & FAQ Sections",
     ],
     liveUrl: "https://usa-luxe-curated.vercel.app/",
     thumbnail: PROJECT_PREVIEWS.usaLuxe,
@@ -563,25 +487,113 @@ export const projects: Project[] = [
     gallery: [
       {
         src: PROJECT_PREVIEWS.usaLuxe,
-        alt: "Curated Streetwear & Drop Grid",
-        caption: "Product catalogue",
+        alt: "USA Luxe Import homepage on desktop",
+        caption: "Homepage",
         device: "desktop",
       },
     ],
     features: [
       {
-        icon: Truck,
-        title: "Edge-Cached Drop Grid",
-        copy: "Instant product loading during high-traffic release windows.",
+        icon: Images,
+        title: "Instagram Updates",
+        copy: "The live page points visitors to Instagram for new arrivals, products and launches.",
       },
     ],
-    technologies: ["React", "Tailwind CSS", "TypeScript", "Edge Caching"],
-    stack: ["React", "Tailwind CSS", "TypeScript", "Edge Caching"],
-    projectType: "Business & Retail Website",
+    technologies: ["React", "Tailwind CSS", "TypeScript"],
+    stack: ["React", "Tailwind CSS", "TypeScript"],
+    projectType: "Business Website",
     services: ["UI Design", "Front-End Development", "Enquiry Flow"],
     status: "live",
     anatomy: [],
   },
+  {
+    id: "06",
+    slug: "shoptop",
+    index: "06",
+    name: "ShopTop",
+    category: "Fashion / Pre-Order Commerce",
+    clientIndustry: "Fashion & Streetwear E-Commerce",
+    timeline: "2 Weeks",
+    headline: "Editorial Streetwear Drops, Built Around Pre-Orders",
+    description:
+      "An editorial streetwear experience designed around curated Asian fashion, pre-orders and direct customer reservations.",
+    impactMetric: "Curated Drops, Direct Reservations",
+    businessChallenge:
+      "Pre-order commerce works differently from stock-on-hand retail. Customers need to understand what a drop is, what is available, how reserving works and what happens with shipping and payment — otherwise interest stalls before it becomes an order.",
+    theProblem:
+      "Pre-order commerce works differently from stock-on-hand retail. Customers need to understand what a drop is, what is available, how reserving works and what happens with shipping and payment — otherwise interest stalls before it becomes an order.",
+    solution:
+      "The site is built around drops. An editorial hero introduces the current pre-order, a drop index and category structure organise streetwear, knits and tops and accessories, and quick reserve plus WhatsApp concierge make reserving a piece immediate. Shipping, payment and delivery information is explicit, and email lead capture keeps interested customers connected to the next drop.",
+    howWeBuiltIt: [
+      {
+        title: "Editorial Hero for the Current Drop",
+        detail:
+          "An editorial hero introduces the current pre-order.",
+      },
+      {
+        title: "Drop Index & Category Structure",
+        detail:
+          "A drop index and category structure organise streetwear, knits and tops and accessories.",
+      },
+      {
+        title: "Quick Reserve + WhatsApp Concierge",
+        detail:
+          "Quick reserve plus WhatsApp concierge make reserving a piece immediate.",
+      },
+      {
+        title: "Shipping, Payment & Email Capture",
+        detail:
+          "Shipping, payment and delivery information is explicit, and email lead capture keeps interested customers connected to the next drop.",
+      },
+    ],
+    businessValue: [
+      "Frames pre-orders as a considered editorial experience rather than a risk.",
+      "Organises drops and categories so browsing stays clear.",
+      "Turns interest into reservations with quick reserve and concierge chat.",
+      "Sets expectations with shipping, payment and delivery information.",
+      "Builds an audience for future drops through email capture.",
+      "Keeps the editorial presentation intact across devices.",
+    ],
+    deliverables: [
+      "Editorial Pre-Order Storefront",
+      "Drop Index & Category Structure",
+      "Quick Reserve & Concierge Flow",
+      "Shipping, Payment & Email Capture",
+    ],
+    liveUrl: "https://curated-streetwear-showcase.vercel.app/",
+    thumbnail: PROJECT_PREVIEWS.shoptop,
+    heroImage: PROJECT_PREVIEWS.shoptop,
+    imageSrc: PROJECT_PREVIEWS.shoptop,
+    fallbackSrc: "/project-previews/shoptop.svg",
+    mobileImage: PROJECT_PREVIEWS.shoptop,
+    gallery: [
+      {
+        src: PROJECT_PREVIEWS.shoptop,
+        alt: "ShopTop homepage on desktop",
+        caption: "Editorial hero",
+        device: "desktop",
+      },
+    ],
+    features: [
+      {
+        icon: Images,
+        title: "Editorial Fashion Hero",
+        copy: "A drop-led opening that frames the current pre-order.",
+      },
+      {
+        icon: MessageCircle,
+        title: "WhatsApp Concierge",
+        copy: "Direct chat for sizing, availability and reservation questions.",
+      },
+    ],
+    technologies: ["React", "Tailwind CSS", "TypeScript"],
+    stack: ["React", "Tailwind CSS", "TypeScript"],
+    projectType: "E-Commerce Website",
+    services: ["UI Design", "Front-End Development", "Reservation Flow"],
+    status: "live",
+    anatomy: [],
+  },
+
 ];
 
 /* Alias so both `projects` and `PROJECTS` work everywhere */

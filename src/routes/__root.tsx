@@ -33,7 +33,7 @@ const JSON_LD = {
       name: "CRAFTLOGIC",
       legalName: "CRAFTLOGIC Software Development Company",
       url: `${SITE_URL}/`,
-      email: "foundercraftlogic@gmail.com",
+      email: "info@craftlogic.live",
       telephone: "+923344957382",
       logo: {
         "@type": "ImageObject",
@@ -60,7 +60,7 @@ const JSON_LD = {
       name: "CRAFTLOGIC Software Development Company",
       url: `${SITE_URL}/`,
       telephone: "+923344957382",
-      email: "foundercraftlogic@gmail.com",
+      email: "info@craftlogic.live",
       priceRange: "$$$",
       address: {
         "@type": "PostalAddress",

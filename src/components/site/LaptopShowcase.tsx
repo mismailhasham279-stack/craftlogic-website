@@ -35,15 +35,12 @@ function FlipCapabilityCard({
       href={tile.href}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group block h-[72px] sm:h-[108px] lg:h-[120px] w-full [perspective:1100px] focus-visible:outline-none"
+      className="group block h-[72px] sm:h-[108px] lg:h-[120px] w-full focus-visible:outline-none"
     >
-      <div
-        className="relative h-full w-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] [transform-style:preserve-3d]"
-        style={{
-          transform: showBack ? "rotateY(180deg)" : "rotateY(0deg)",
-        }}
-      >
-        <div className="absolute inset-0 flex items-center justify-center rounded-xl sm:rounded-2xl border border-neutral-200/80 bg-white px-3 text-center shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-colors group-hover:border-[#0AAA8C]/50 [backface-visibility:hidden]">
+      <div className="relative h-full w-full">
+        <div
+          className={`absolute inset-0 flex items-center justify-center rounded-xl sm:rounded-2xl border border-neutral-200/80 bg-white px-3 text-center shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-opacity duration-500 group-hover:border-[#0AAA8C]/50 ${showBack ? "opacity-0" : "opacity-100"}`}
+        >
           <span
             className={`text-[13.5px] sm:text-[18px] lg:text-[20px] leading-tight tracking-[-0.02em] text-[#0A0A0A] ${
               tile.isSerif
@@ -55,7 +52,9 @@ function FlipCapabilityCard({
           </span>
         </div>
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center rounded-xl sm:rounded-2xl border border-neutral-200/90 bg-white px-3 text-center shadow-[0_4px_14px_-4px_rgba(0,0,0,0.07)] transition-colors group-hover:border-[#0AAA8C] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <div
+          className={`absolute inset-0 flex flex-col items-center justify-center rounded-xl sm:rounded-2xl border border-neutral-200/90 bg-white px-3 text-center shadow-[0_4px_14px_-4px_rgba(0,0,0,0.07)] transition-opacity duration-500 group-hover:border-[#0AAA8C] ${showBack ? "opacity-100" : "opacity-0"}`}
+        >
           <span className="text-[9px] sm:text-[11px] font-medium tracking-wide text-neutral-400">
             {tile.category}
           </span>
@@ -557,7 +556,7 @@ export const LaptopShowcase: React.FC = () => {
 
   return (
     <div className="w-full select-none">
-      {/* SECTION A: 6 FOCUSED 3D FLIPPING CAPABILITIES */}
+      {/* SECTION A: 6 FOCUSED CAPABILITIES (gentle crossfade, no 3D flip) */}
       <div className="mx-auto max-w-[1320px] px-3.5 sm:px-6 lg:px-10 pt-1 pb-8 sm:pb-14">
         <div className="mb-3.5 sm:mb-6 flex flex-col items-center justify-center gap-2 text-center">
           <p className="text-xs sm:text-[15px] font-medium text-neutral-600">

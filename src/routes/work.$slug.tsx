@@ -23,8 +23,38 @@ function ProjectCaseStudyPage() {
   const [inquiryOpen, setInquiryOpen] = useState(false);
 
   const projectIndex = PROJECTS.findIndex((p) => p.slug === slug);
-  const project = projectIndex >= 0 ? PROJECTS[projectIndex]! : PROJECTS[0]!;
-  const nextProject = PROJECTS[(Math.max(projectIndex, 0) + 1) % PROJECTS.length]!;
+
+  if (projectIndex < 0) {
+    return (
+      <div className="min-h-screen bg-[#FAFAFA] text-[#0A0A0A]">
+        <SEO
+          title="Project Not Found — CRAFTLOGIC"
+          description="This project page does not exist."
+          canonicalUrl="https://craftlogic.live/work"
+        />
+        <Nav onOpenInquiry={() => setInquiryOpen(true)} />
+        <main className="mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-10 pt-24 pb-24 text-center">
+          <h1 className="font-display text-3xl font-extrabold tracking-[-0.035em] text-[#0A0A0A] sm:text-5xl">
+            Project not found
+          </h1>
+          <p className="mt-3 text-sm sm:text-base text-neutral-600">
+            This project page does not exist or has been removed.
+          </p>
+          <a
+            href="/work"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0A0A0A] px-6 py-3 text-xs sm:text-sm font-bold text-white transition-colors hover:bg-[#0AAA8C]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            <span>Back to All Projects</span>
+          </a>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  const project = PROJECTS[projectIndex]!;
+  const nextProject = PROJECTS[(projectIndex + 1) % PROJECTS.length]!;
 
   const [currentSrc, setCurrentSrc] = useState(project.imageSrc);
   const [imgFailed, setImgFailed] = useState(false);

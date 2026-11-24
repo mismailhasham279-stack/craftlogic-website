@@ -95,7 +95,7 @@ export function Trust() {
     <section
       id="about"
       aria-label="Why Businesses Trust CraftLogic"
-      className="bg-white py-12 sm:py-20 lg:py-24"
+      className="bg-white py-12 sm:py-16 lg:pt-12 lg:pb-24"
     >
       <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-12">

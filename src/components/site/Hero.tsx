@@ -22,7 +22,7 @@ export function Hero({ onOpenInquiry }: HeroProps) {
     <section
       id="home"
       aria-label="Hero Introduction"
-      className="relative overflow-hidden border-b border-neutral-200/80 bg-[#FAFAFA] pt-7 pb-8 sm:pt-14 sm:pb-16 lg:pt-20 lg:pb-24"
+      className="relative overflow-hidden border-b border-neutral-200/80 bg-[#FAFAFA] pt-7 pb-8 sm:pt-14 sm:pb-16 lg:pt-20 lg:pb-12"
     >
       {/* Subtle Architectural Grid Pattern */}
       <div
@@ -32,7 +32,7 @@ export function Hero({ onOpenInquiry }: HeroProps) {
 
       {/* Top Centered Editorial Hero Copy */}
       <motion.div
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
+        initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
         className="relative z-10 mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-10"
