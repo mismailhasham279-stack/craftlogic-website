@@ -47,7 +47,7 @@ export function Hero({ onOpenInquiry }: HeroProps) {
           </div>
 
           {/* High-Class Display Headline */}
-          <h1 className="font-display mt-5 sm:mt-7 text-[28px] leading-[1.18] font-extrabold tracking-[-0.035em] text-[#0A0A0A] sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[1.12]">
+          <h1 className="font-display mt-6 sm:mt-8 text-[28px] leading-[1.3] font-extrabold tracking-[-0.035em] text-[#0A0A0A] sm:text-5xl sm:leading-[1.18] md:text-6xl lg:text-[64px] lg:leading-[1.14]">
             We build fast{" "}
             <span className="text-[#0AAA8C]">websites &amp; software</span> that grow your business.
           </h1>
