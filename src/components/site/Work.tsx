@@ -115,11 +115,11 @@ export function Work() {
           </p>
         </div>
 
-        {/* Horizontal Swipe on Mobile, 2-Column Interactive Grid on Desktop */}
+        {/* Horizontal Swipe on Mobile, 3-Column Grid on Laptop */}
         <div
           ref={scrollContainerRef}
           onScroll={handleMobileScroll}
-          className="mt-7 sm:mt-12 -mx-4 px-4 sm:mx-0 sm:px-0 flex md:grid md:grid-cols-2 gap-5 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-7 sm:mt-12 -mx-4 px-4 sm:mx-0 sm:px-0 flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {PROJECTS.map((project: ProjectCaseStudy, idx: number) => (
             <motion.article
@@ -132,7 +132,7 @@ export function Work() {
                 delay: shouldReduceMotion ? 0 : (idx % 2) * 0.08,
                 ease: "easeOut",
               }}
-              className="group w-[86vw] max-w-[360px] md:w-auto md:max-w-none shrink-0 snap-start flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-neutral-200/90 bg-white p-4 sm:p-6 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#0AAA8C] hover:shadow-[0_24px_48px_-14px_rgba(10,170,140,0.22)] active:scale-[0.985] active:border-[#0AAA8C] active:shadow-[0_16px_36px_-10px_rgba(10,170,140,0.25)]"
+              className="group w-[86vw] max-w-[360px] md:w-auto md:max-w-none shrink-0 snap-start flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-neutral-200/90 bg-white p-4 sm:p-5 lg:p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#0AAA8C] hover:shadow-[0_24px_48px_-14px_rgba(10,170,140,0.22)] active:scale-[0.985] active:border-[#0AAA8C] active:shadow-[0_16px_36px_-10px_rgba(10,170,140,0.25)]"
             >
               <div>
                 <a
