@@ -3332,6 +3332,183 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-ai-chatbot-website-wins-customers",
+    title: "How an AI Chatbot on Your Website Wins Customers in 2026",
+    description: "39% of customers message outside working hours. See how an AI chatbot answers instantly, books appointments and captures leads for you while you sleep.",
+    date: "November 25, 2026",
+    published: "2026-11-25",
+    readTime: "5 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "39% of the chats customers start with a website AI assistant begin outside 9 a.m. to 6 p.m. That is the finding from 5,470 real website conversations analysed in 2026 \u2014 and it is the simplest reason a chatbot matters. Your customers do not stop having questions when your shop closes. An AI chatbot answers them anyway, in seconds, while you sleep.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/how-ai-chatbot-website-wins-customers.jpg",
+        alt: "A friendly small business owner smiling at a laptop on a shop counter, the laptop screen showing a neat AI chat window with a customer question and an instant helpful answer",
+      },
+      {
+        kind: "callout",
+        text: "39% of website AI chats start outside working hours. (Chatonbo Research, 5,470 chats, June\u2013September 2026)",
+      },
+      { kind: "h2", text: "What Is an AI Chatbot on a Business Website?" },
+      {
+        kind: "p",
+        text: "An AI chatbot is a small chat window on your website that talks to visitors like a helpful member of staff. A customer types a question \u2014 \"What time do you open?\", \"How much is a haircut?\", \"Do you deliver?\" \u2014 and the bot answers instantly, using your real hours, prices, services and booking page.",
+      },
+      {
+        kind: "p",
+        text: "It is not the clumsy pop-up of five years ago that only understood three phrases. A modern AI chatbot understands normal, messy human questions, remembers the conversation, and knows when to hand over to a real person. Think of it as your best receptionist, working 24 hours a day, never tired and never forgetting an answer.",
+      },
+      { kind: "h2", text: "Why Customers Message at 2 a.m. \u2014 and What It Costs You to Miss Them" },
+      {
+        kind: "p",
+        text: "Customers search and decide on their own schedule, not yours. They check a salon's prices at 11 p.m. after the kids are asleep. They ask a dentist about a toothache on a Sunday. They compare two restaurants at midnight before booking lunch.",
+      },
+      {
+        kind: "p",
+        text: "74% of consumers now expect service to be available 24/7 (Zendesk CX Trends 2026). And speed decides who wins: answering a lead within five minutes makes you 21 times likelier to qualify it than waiting 30 minutes (MIT and InsideSales study).",
+      },
+      {
+        kind: "p",
+        text: "When nobody answers, the customer does not wait. They open the next business on Google. That is the real cost of a silent website \u2014 not a complaint, just a quiet lost sale you never hear about.",
+      },
+      {
+        kind: "callout",
+        text: "A lead answered in 5 minutes is 21 times likelier to become a customer than one answered in 30. Speed is the sale.",
+      },
+      { kind: "h2", text: "What Can an AI Chatbot Actually Do for a Small Business?" },
+      {
+        kind: "p",
+        text: "A good chatbot does the repetitive work that eats your day, so you only handle the conversations that truly need a human.",
+      },
+      {
+        kind: "list",
+        items: [
+          "Answer the same 10 questions, instantly. Hours, location, prices, services, delivery, parking, \"Do you have this in stock?\" \u2014 the questions every business hears daily. Industry benchmarks put the share of routine questions a well-set-up bot can handle at 40\u201370%.",
+          "Take bookings and enquiries while you work. A salon chatbot books the appointment. A clinic bot takes the enquiry. A restaurant bot confirms the table. The customer gets an answer in seconds, and you get a booking without a phone call.",
+          "Capture leads that would otherwise leave. In the 2026 study of 5,470 real chats, 12.8% ended with the visitor leaving an email address or phone number \u2014 one in eight visitors handing you their details, because the bot asked at the right moment.",
+          "Answer order and delivery questions. \"Where is my order?\" is the top question on online shops. A bot connected to your orders answers it in seconds, instead of a customer waiting hours for an email reply.",
+          "Hand over to a human, cleanly. When the question is complicated or high-value, the bot passes the full conversation to you \u2014 so the customer never has to repeat themselves.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "One in eight website chats ends with the visitor leaving their email or phone number. A chatbot is a lead machine, not just a help desk.",
+      },
+      { kind: "h2", text: "AI Chatbot vs. Contact Form vs. Phone Only \u2014 What Actually Works?" },
+      {
+        kind: "list",
+        items: [
+          "Answer in seconds: AI chatbot \u2014 yes, 24/7. Contact form \u2014 no, hours or days. Phone only \u2014 only when you pick up.",
+          "Works after hours: AI chatbot \u2014 yes. Contact form \u2014 yes, but no reply yet. Phone only \u2014 no.",
+          "Books or takes an enquiry: AI chatbot \u2014 yes, instantly. Contact form \u2014 yes, slowly. Phone only \u2014 yes, if you answer.",
+          "Captures the visitor's details: AI chatbot \u2014 yes, in the chat. Contact form \u2014 only if they fill it in. Phone only \u2014 only if they call.",
+          "Costs you staff time per question: AI chatbot \u2014 almost none. Contact form \u2014 reading and replying later. Phone only \u2014 full attention each call.",
+          "Customer waits: AI chatbot \u2014 seconds. Contact form \u2014 hours. Phone only \u2014 until you are free.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "A form makes customers wait, a phone makes them call, and a chatbot meets them where they already are \u2014 typing a question into your website at whatever hour suits them.",
+      },
+      { kind: "h2", text: "How Much Does a Chatbot Cost in 2026?" },
+      {
+        kind: "p",
+        text: "For most small businesses, a purpose-built AI chatbot costs roughly $50\u2013$200 a month \u2014 less than one day of a part-time receptionist's pay. The exact price depends on conversation volume and which tools it connects to, such as your booking system or online shop.",
+      },
+      {
+        kind: "p",
+        text: "Compare that with the other side of the maths. An AI-handled interaction costs around $0.50, against roughly $6 for a human-handled one (Juniper Research). And businesses that deploy chatbots well typically cut support costs by about 30%, a figure first estimated by IBM and still cited across the industry today.",
+      },
+      {
+        kind: "callout",
+        text: "A chatbot costs about $50\u2013$200 a month. One extra booking a week usually pays for it many times over.",
+      },
+      { kind: "h2", text: "5 Steps to Add a Chatbot to Your Website" },
+      {
+        kind: "p",
+        text: "You do not need to be technical. A good setup follows five simple steps:",
+      },
+      {
+        kind: "list",
+        items: [
+          "List your top 10 customer questions. Hours, prices, services, location, booking, delivery, returns. These are the answers your bot must know perfectly.",
+          "Feed it your real business information. Services, prices, booking link, policies \u2014 the bot should only answer from your real details, never invent them.",
+          "Connect it to your booking or shop. A bot that can actually book an appointment or check an order is ten times more useful than one that only chats.",
+          "Build in a human hand-off from day one. Every conversation should have a clear path to a real person: \"Would you like me to pass this to the team?\" Customers trust a bot far more when they know a human is one tap away.",
+          "Check the conversations every week. Every question the bot could not answer is a gap on your website \u2014 fix the page, and the bot gets smarter too.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Read your chatbot's conversations every week. Every question it could not answer is a gap on your website \u2014 fix the page.",
+      },
+      { kind: "h2", text: "The Mistakes That Make Customers Hate Chatbots" },
+      {
+        kind: "p",
+        text: "A bad chatbot is worse than no chatbot. Avoid these four mistakes:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Pretending to be human. A bot that says \"Hi, I'm Sarah\" and then fails a simple question destroys trust. A short, honest line \u2014 \"I'm the assistant here, I can help with hours, prices and bookings\" \u2014 builds it.",
+          "No way to reach a person. Only about 1% of website AI chats include a request for a human \u2014 but for that 1%, the hand-off must work instantly. A bot that traps a frustrated customer is a reputation problem.",
+          "Stale answers. A bot that quotes last year's prices or old opening hours is worse than silence. Update the bot whenever you change a price, a service, or your hours.",
+          "Hiding the bot. A chatbot buried in a corner nobody sees helps nobody. Put it where visitors actually look \u2014 bottom right, on every page, ready when they need it.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "See how CRAFTLOGIC builds websites that work this way in our portfolio at craftlogic.live/work (https://craftlogic.live/work), and what we can build for your business at craftlogic.live/#services (https://craftlogic.live/#services).",
+      },
+      { kind: "h2", text: "Get a Free Homepage Preview" },
+      {
+        kind: "p",
+        text: "Your customers are already asking questions at hours you cannot staff. A website with an AI chatbot answers them, books them, and captures their details \u2014 while you focus on the work only you can do.",
+      },
+      {
+        kind: "p",
+        text: "Claim your Free Homepage Preview today at https://craftlogic.live, or reach out at info@craftlogic.live before you pay anything. See what your business could look like online \u2014 then decide.",
+      },
+      { kind: "h2", text: "Frequently Asked Questions" },
+      {
+        kind: "p",
+        text: "How much does an AI chatbot cost for a small business in 2026?",
+      },
+      {
+        kind: "p",
+        text: "Most small business chatbots cost about $50\u2013$200 a month, depending on conversation volume and integrations. One extra booking a week usually covers the cost, and well-run deployments cut support costs by around 30%.",
+      },
+      {
+        kind: "p",
+        text: "Will an AI chatbot replace my staff?",
+      },
+      {
+        kind: "p",
+        text: "No. A chatbot handles the routine 40\u201370% of questions \u2014 hours, prices, bookings, order status \u2014 and hands the rest to a real person. It removes the repetitive work so your team can focus on customers who truly need a human.",
+      },
+      {
+        kind: "p",
+        text: "What questions do customers ask a website chatbot most?",
+      },
+      {
+        kind: "p",
+        text: "Business hours, prices, services, location, order status, and \"can I talk to a person?\" are the most common. A good bot answers these instantly from your real business details and captures the visitor's contact information when they are ready.",
+      },
+      {
+        kind: "p",
+        text: "Can an AI chatbot take bookings on my website?",
+      },
+      {
+        kind: "p",
+        text: "Yes \u2014 when it is connected to your booking system, a chatbot can book appointments, take enquiries, and confirm reservations in seconds, 24/7. Customers get an instant answer and you get the booking without a phone call.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
