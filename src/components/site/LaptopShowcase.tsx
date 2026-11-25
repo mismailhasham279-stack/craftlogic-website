@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { useReducedMotion } from "framer-motion";
 import { Pause, Play, ArrowUpRight, Layers } from "lucide-react";
 
 interface CapabilityTile {
@@ -6,34 +7,37 @@ interface CapabilityTile {
   category: string;
   title: string;
   isSerif: boolean;
-  href: string;
 }
 
 const CAPABILITY_TILES: CapabilityTile[] = [
-  { id: "01", category: "Web", title: "Website Development", isSerif: false, href: "#services" },
-  { id: "02", category: "iOS & Android", title: "Mobile Apps", isSerif: true, href: "#services" },
-  { id: "03", category: "Online Sales", title: "E-Commerce Stores", isSerif: false, href: "#services" },
-  { id: "04", category: "Web Apps", title: "SaaS Platforms", isSerif: true, href: "#services" },
-  { id: "05", category: "Google Ranking", title: "SEO & Speed", isSerif: false, href: "#services" },
-  { id: "06", category: "Smart Growth", title: "AI & Automation", isSerif: true, href: "#services" },
+  { id: "01", category: "Web", title: "Website Development", isSerif: false },
+  { id: "02", category: "iOS & Android", title: "Mobile Apps", isSerif: true },
+  { id: "03", category: "Online Sales", title: "E-Commerce Stores", isSerif: false },
+  { id: "04", category: "Web Apps", title: "SaaS Platforms", isSerif: true },
+  { id: "05", category: "Google Ranking", title: "SEO & Speed", isSerif: false },
+  { id: "06", category: "Smart Growth", title: "AI & Automation", isSerif: true },
 ];
+
+// Order in which tiles take turns showing their back face.
+const FLIP_SEQUENCE = [0, 3, 1, 4, 2, 5];
 
 function FlipCapabilityCard({
   tile,
   isFlipped,
+  fading,
 }: {
   tile: CapabilityTile;
   isFlipped: boolean;
+  fading: boolean;
 }) {
   const [hovered, setHovered] = useState(false);
   const showBack = hovered ? !isFlipped : isFlipped;
 
   return (
-    <a
-      href={tile.href}
+    <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group block h-[72px] sm:h-[108px] lg:h-[120px] w-full focus-visible:outline-none"
+      className={`group block h-[72px] sm:h-[108px] lg:h-[120px] w-full cursor-default transition-opacity duration-200 ${fading ? "opacity-0" : "opacity-100"}`}
     >
       <div className="relative h-full w-full">
         <div
@@ -56,15 +60,12 @@ function FlipCapabilityCard({
           <span className="text-[9px] sm:text-[11px] font-medium tracking-wide text-neutral-400">
             {tile.category}
           </span>
-          <div className="mt-0.5 sm:mt-1 flex items-center justify-center gap-1">
-            <span className="font-display text-[12px] sm:text-[15.5px] font-bold leading-tight tracking-[-0.02em] text-[#0A0A0A] group-hover:text-[#0AAA8C] transition-colors">
-              {tile.title}
-            </span>
-            <ArrowUpRight className="h-3 w-3 sm:h-4 sm:w-4 shrink-0 text-[#0A0A0A] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#0AAA8C]" />
-          </div>
+          <span className="mt-0.5 sm:mt-1 font-display text-[12px] sm:text-[15.5px] font-bold leading-tight tracking-[-0.02em] text-[#0A0A0A] group-hover:text-[#0AAA8C] transition-colors">
+            {tile.title}
+          </span>
         </div>
       </div>
-    </a>
+    </div>
   );
 }
 
@@ -503,7 +504,7 @@ function MiniLaptopWebsiteHero({ item }: { item: BusinessShowcaseItem }) {
 /* Non-clickable Industry Showcase Card (pure visual preview, zero navigation) */
 function HorizontalBusinessCard({ item }: { item: BusinessShowcaseItem }) {
   return (
-    <article className="flex min-h-[102px] w-[335px] sm:min-h-[128px] sm:w-[435px] shrink-0 cursor-default select-none items-center gap-3.5 sm:gap-4 rounded-2xl border border-neutral-200/90 bg-white px-3.5 py-2.5 sm:px-4 sm:py-3.5 shadow-[0_1px_6px_rgba(0,0,0,0.03)]">
+    <article className="flex min-h-[102px] w-[335px] sm:min-h-[120px] sm:w-[400px] shrink-0 cursor-default select-none items-center gap-3.5 sm:gap-4 rounded-2xl border border-neutral-200/90 bg-white px-3.5 py-2.5 sm:px-4 sm:py-3.5 shadow-[0_1px_6px_rgba(0,0,0,0.03)]">
       <MiniLaptopWebsiteHero item={item} />
 
       <div className="flex-1 text-left">
@@ -522,17 +523,48 @@ function HorizontalBusinessCard({ item }: { item: BusinessShowcaseItem }) {
 }
 
 export const LaptopShowcase: React.FC = () => {
-  // Tiles stay in their settled state and only change on hover.
-  // The auto-flip timer kept catching the text doubled mid-change.
-  const flippedIndices = useMemo(() => new Set([1, 4]), []);
+  const shouldReduceMotion = useReducedMotion();
+  const [flippedIndices, setFlippedIndices] = useState<Set<number>>(
+    () => new Set([1, 4])
+  );
+  // Tile currently fading out — its face swaps while it is invisible,
+  // so the text never shows doubled mid-change (the old ghosting bug).
+  const [fadingIndex, setFadingIndex] = useState<number | null>(null);
   const [marqueePaused, setMarqueePaused] = useState(false);
+
+  useEffect(() => {
+    if (shouldReduceMotion) return;
+    let pointer = 0;
+    let swapTimer: ReturnType<typeof setTimeout> | undefined;
+    const timer = setInterval(() => {
+      const targetIndex = FLIP_SEQUENCE[pointer % FLIP_SEQUENCE.length]!;
+      pointer += 1;
+      setFadingIndex(targetIndex);
+      swapTimer = setTimeout(() => {
+        setFlippedIndices((prev) => {
+          const next = new Set(prev);
+          if (next.has(targetIndex)) {
+            next.delete(targetIndex);
+          } else {
+            next.add(targetIndex);
+          }
+          return next;
+        });
+        setFadingIndex(null);
+      }, 220);
+    }, 1800);
+    return () => {
+      clearInterval(timer);
+      if (swapTimer) clearTimeout(swapTimer);
+    };
+  }, [shouldReduceMotion]);
 
   const topRowBusinesses = useMemo(() => BUSINESS_SHOWCASE_LIST.slice(0, 15), []);
   const bottomRowBusinesses = useMemo(() => BUSINESS_SHOWCASE_LIST.slice(15, 30), []);
 
   return (
     <div className="w-full select-none">
-      {/* SECTION A: 6 FOCUSED CAPABILITIES (change on hover only) */}
+      {/* SECTION A: 6 FOCUSED CAPABILITIES (auto-change, not clickable) */}
       <div className="mx-auto max-w-[1320px] px-3.5 sm:px-6 lg:px-10 pt-1 pb-8 sm:pb-14">
         <div className="mb-3.5 sm:mb-6 flex flex-col items-center justify-center gap-2 text-center">
           <p className="text-xs sm:text-[15px] font-medium text-neutral-600">
@@ -546,6 +578,7 @@ export const LaptopShowcase: React.FC = () => {
               key={tile.id}
               tile={tile}
               isFlipped={flippedIndices.has(idx)}
+              fading={fadingIndex === idx}
             />
           ))}
         </div>
