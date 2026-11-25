@@ -102,8 +102,8 @@ function AllWorkPage() {
             </p>
           </div>
 
-          {/* 2-Column Responsive Portfolio Grid */}
-          <div className="mt-10 grid gap-6 sm:gap-8 md:grid-cols-2">
+          {/* 3-Column Portfolio Grid on Laptop */}
+          <div className="mt-10 grid gap-6 sm:gap-6 lg:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {PROJECTS.map((project) => {
               const cleanDomain = project.liveUrl
                 .replace(/^https?:\/\//, "")
@@ -112,7 +112,7 @@ function AllWorkPage() {
               return (
                 <article
                   key={project.slug}
-                  className="group flex flex-col justify-between rounded-2xl border border-neutral-200/90 bg-white p-5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-[#0AAA8C] hover:shadow-[0_24px_48px_-14px_rgba(10,170,140,0.2)] sm:rounded-3xl sm:p-6"
+                  className="group flex flex-col justify-between rounded-2xl border border-neutral-200/90 bg-white p-5 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-[#0AAA8C] hover:shadow-[0_24px_48px_-14px_rgba(10,170,140,0.2)] sm:rounded-3xl sm:p-5 lg:p-5"
                 >
                   <div>
                     <ProjectCardPreview project={project} cleanDomain={cleanDomain} />
