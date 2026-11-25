@@ -41,7 +41,7 @@ function FlipCapabilityCard({
     >
       <div className="relative h-full w-full">
         <div
-          className={`absolute inset-0 flex items-center justify-center rounded-xl sm:rounded-2xl border border-neutral-200/80 bg-white px-3 text-center shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-opacity duration-200 group-hover:border-[#0AAA8C]/50 ${showBack ? "opacity-0" : "opacity-100"}`}
+          className={`absolute inset-0 flex items-center justify-center rounded-xl sm:rounded-2xl border border-neutral-200/80 bg-white px-3 text-center shadow-[0_1px_2px_rgba(0,0,0,0.03)] ${fading ? "transition-none" : "transition-opacity duration-200"} group-hover:border-[#0AAA8C]/50 ${showBack ? "opacity-0" : "opacity-100"}`}
         >
           <span
             className={`text-[13.5px] sm:text-[18px] lg:text-[20px] leading-tight tracking-[-0.02em] text-[#0A0A0A] ${
@@ -55,7 +55,7 @@ function FlipCapabilityCard({
         </div>
 
         <div
-          className={`absolute inset-0 flex flex-col items-center justify-center rounded-xl sm:rounded-2xl border border-neutral-200/90 bg-white px-3 text-center shadow-[0_4px_14px_-4px_rgba(0,0,0,0.07)] transition-opacity duration-200 group-hover:border-[#0AAA8C] ${showBack ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 flex flex-col items-center justify-center rounded-xl sm:rounded-2xl border border-neutral-200/90 bg-white px-3 text-center shadow-[0_4px_14px_-4px_rgba(0,0,0,0.07)] ${fading ? "transition-none" : "transition-opacity duration-200"} group-hover:border-[#0AAA8C] ${showBack ? "opacity-100" : "opacity-0"}`}
         >
           <span className="text-[9px] sm:text-[11px] font-medium tracking-wide text-neutral-400">
             {tile.category}
