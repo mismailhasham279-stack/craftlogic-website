@@ -12,9 +12,47 @@ import { PROJECTS } from "@/data/projects";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Sections";
 import { ProjectInquiryModal } from "@/components/site/ProjectInquiryModal";
-import { SEO } from "@/components/site/SEO";
+import { SITE_ORIGIN } from "@/lib/site";
 
 export const Route = createFileRoute("/work/$slug")({
+  // Server-rendered meta per project: previously title/description only
+  // existed in JS (SEO.tsx), so crawlers saw the homepage title on every
+  // case-study page. Unknown slugs get noindex (they render a 200
+  // "not found" page, so they must not be indexed).
+  head: ({ params }) => {
+    const project = PROJECTS.find((p) => p.slug === params.slug);
+    const url = `${SITE_ORIGIN}/work/${params.slug}`;
+
+    if (!project) {
+      return {
+        meta: [
+          { title: "Project Not Found — CRAFTLOGIC" },
+          { name: "robots", content: "noindex" },
+        ],
+      };
+    }
+
+    const title = `${project.name} — Case Study | CRAFTLOGIC`;
+    const image = project.imageSrc.startsWith("http")
+      ? project.imageSrc
+      : `${SITE_ORIGIN}${project.imageSrc}`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: project.description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: project.description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
+        { property: "og:image", content: image },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: project.description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
   component: ProjectCaseStudyPage,
 });
 
@@ -27,11 +65,6 @@ function ProjectCaseStudyPage() {
   if (projectIndex < 0) {
     return (
       <div className="min-h-screen bg-[#FAFAFA] text-[#0A0A0A]">
-        <SEO
-          title="Project Not Found — CRAFTLOGIC"
-          description="This project page does not exist."
-          canonicalUrl="https://craftlogic.live/work"
-        />
         <Nav onOpenInquiry={() => setInquiryOpen(true)} />
         <main className="mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-10 pt-24 pb-24 text-center">
           <h1 className="font-display text-3xl font-extrabold tracking-[-0.035em] text-[#0A0A0A] sm:text-5xl">
@@ -71,12 +104,6 @@ function ProjectCaseStudyPage() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#0A0A0A]">
-      <SEO
-        title={`${project.name} — Case Study | CRAFTLOGIC`}
-        description={project.description}
-        canonicalUrl={`https://craftlogic.live/work/${project.slug}`}
-      />
-
       <Nav onOpenInquiry={() => setInquiryOpen(true)} />
 
       <main className="pt-8 pb-16 sm:pt-14 sm:pb-24">
