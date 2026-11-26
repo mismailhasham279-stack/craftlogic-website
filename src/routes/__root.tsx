@@ -155,6 +155,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Muhammad Ismail" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "msvalidate.01", content: "BB1CCD59FC2C08937AB5EDD73E95A548" },
       { name: "theme-color", content: "#fafafa" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "CRAFTLOGIC" },
