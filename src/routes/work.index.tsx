@@ -5,9 +5,39 @@ import { PROJECTS, type Project } from "@/data/projects";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Sections";
 import { ProjectInquiryModal } from "@/components/site/ProjectInquiryModal";
-import { SEO } from "@/components/site/SEO";
+import { SITE_ORIGIN } from "@/lib/site";
 
 export const Route = createFileRoute("/work/")({
+  // Server-rendered meta: previously this page's title/description only
+  // existed in JS (SEO.tsx), so crawlers saw the homepage title instead.
+  head: () => ({
+    meta: [
+      { title: "Our Work & Case Studies | CRAFTLOGIC" },
+      {
+        name: "description",
+        content:
+          "Explore production websites, e-commerce stores, booking platforms, and custom web applications engineered by CRAFTLOGIC.",
+      },
+      { property: "og:title", content: "Our Work & Case Studies | CRAFTLOGIC" },
+      {
+        property: "og:description",
+        content:
+          "Explore production websites, e-commerce stores, booking platforms, and custom web applications engineered by CRAFTLOGIC.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_ORIGIN}/work` },
+      { property: "og:image", content: `${SITE_ORIGIN}/og-preview.png` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Our Work & Case Studies | CRAFTLOGIC" },
+      {
+        name: "twitter:description",
+        content:
+          "Explore production websites, e-commerce stores, booking platforms, and custom web applications engineered by CRAFTLOGIC.",
+      },
+      { name: "twitter:image", content: `${SITE_ORIGIN}/og-preview.png` },
+    ],
+    links: [{ rel: "canonical", href: `${SITE_ORIGIN}/work` }],
+  }),
   component: AllWorkPage,
 });
 
@@ -78,12 +108,6 @@ function AllWorkPage() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#0A0A0A]">
-      <SEO
-        title="Our Work & Case Studies | CRAFTLOGIC"
-        description="Explore production websites, e-commerce stores, booking platforms, and custom web applications engineered by CRAFTLOGIC."
-        canonicalUrl="https://craftlogic.live/work"
-      />
-
       <Nav onOpenInquiry={() => setInquiryOpen(true)} />
 
       <main className="pt-10 pb-16 sm:pt-16 sm:pb-24">
