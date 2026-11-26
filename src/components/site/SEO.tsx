@@ -12,7 +12,7 @@ export function SEO({
   title = "CRAFTLOGIC — Websites, Mobile Apps & Software That Grow Your Business",
   description = "CraftLogic builds fast, high-converting websites, online stores, mobile apps, and SaaS platforms engineered to grow your business.",
   canonicalUrl = "https://craftlogic.live/",
-  image = "https://craftlogic.live/logo.png",
+  image = "https://craftlogic.live/og-preview.png",
   type = "website",
 }: SEOProps) {
   useEffect(() => {
@@ -49,7 +49,7 @@ export function SEO({
 
     // 2. Browser Tab Favicon
     setLinkTag("icon", "/favicon.svg?v=4", "image/svg+xml");
-    setLinkTag("shortcut icon", "/favicon.svg?v=4", "image/svg+xml");
+    setLinkTag("shortcut icon", "/favicon.ico", "image/x-icon");
 
     // 3. Search Engine & Mobile Home Screen Icon
     setLinkTag("apple-touch-icon", "/logo.png", undefined, "180x180");
@@ -75,8 +75,12 @@ export function SEO({
     setMetaTag("property", "og:image:secure_url", image);
     setMetaTag("property", "og:image:type", "image/png");
     setMetaTag("property", "og:image:width", "1200");
-    setMetaTag("property", "og:image:height", "1200");
-    setMetaTag("property", "og:image:alt", "CRAFTLOGIC Official Brand Logo");
+    setMetaTag("property", "og:image:height", "630");
+    setMetaTag(
+      "property",
+      "og:image:alt",
+      "CRAFTLOGIC — Software Development Company",
+    );
     setMetaTag("property", "og:site_name", "CRAFTLOGIC");
 
     // 7. Twitter / X Cards
