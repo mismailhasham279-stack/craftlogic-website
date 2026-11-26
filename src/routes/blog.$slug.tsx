@@ -23,6 +23,13 @@ export const Route = createFileRoute("/blog/$slug")({
     }
 
     const title = `${post.title} | ${SITE_NAME}`;
+    // Use the post's own hero image for sharing previews instead of the
+    // generic site preview; fall back to it when a post has no image block.
+    const cover = post.blocks.find((b) => b.kind === "image");
+    const ogImage =
+      cover && cover.kind === "image"
+        ? `${SITE_ORIGIN}${cover.src}`
+        : `${SITE_ORIGIN}/og-preview.png`;
     return {
       meta: [
         { title },
@@ -31,9 +38,14 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:description", content: post.description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
-        { property: "og:image", content: `${SITE_ORIGIN}/og-preview.png` },
+        { property: "og:image", content: ogImage },
         { property: "article:published_time", content: post.published },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: post.description },
+        { name: "twitter:image", content: ogImage },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
   component: BlogPostPage,
