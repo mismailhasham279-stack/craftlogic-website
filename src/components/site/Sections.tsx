@@ -3,12 +3,6 @@ import {
   ArrowUpRight,
   Check,
   ChevronDown,
-  Globe,
-  Smartphone,
-  ShoppingBag,
-  Layers,
-  Search,
-  Bot,
   Sparkles,
   MessageSquare,
   Mail,
@@ -17,6 +11,7 @@ import {
   ArrowUp,
 } from "lucide-react";
 import { Logo } from "./Logo";
+import { SERVICES } from "@/data/services";
 
 interface SectionActionProps {
   onOpenInquiry?: () => void;
@@ -207,62 +202,7 @@ export function About() {
 /* ============================================================================
 3. SERVICES — INTERACTIVE EXPANDABLE SERVICE ROWS
    ============================================================================ */
-const CORE_SERVICES = [
-  {
-    num: "01",
-    title: "Website Development",
-    tag: "Websites & Landing Pages",
-    description:
-      "Modern business websites and high-converting landing pages built to turn visitors into paying clients.",
-    highlights: ["Corporate & Agency Sites", "High-Converting Landing Pages", "100% Mobile Ready"],
-    icon: Globe,
-  },
-  {
-    num: "02",
-    title: "Mobile App Development",
-    tag: "iOS & Android",
-    description:
-      "Fast, easy-to-use iOS and Android apps for customer booking, ordering, loyalty, and daily engagement.",
-    highlights: ["iOS & Android Apps", "Customer Booking Flows", "Push Notifications"],
-    icon: Smartphone,
-  },
-  {
-    num: "03",
-    title: "E-Commerce & Online Stores",
-    tag: "Online Sales",
-    description:
-      "Secure online shops with smooth product browsing, instant filtering, and mobile-first cart checkout.",
-    highlights: ["Fast Product Catalogs", "Easy Cart & Checkout", "Order & Stock Control"],
-    icon: ShoppingBag,
-  },
-  {
-    num: "04",
-    title: "SaaS Platforms & Web Apps",
-    tag: "Custom Software",
-    description:
-      "Custom online software with user logins, admin dashboards, role permissions, and monthly subscription billing.",
-    highlights: ["User Accounts & Roles", "Subscription Billing", "Custom Admin Portals"],
-    icon: Layers,
-  },
-  {
-    num: "05",
-    title: "SEO & Performance Optimization",
-    tag: "Google Ranking",
-    description:
-      "Technical SEO, Google schema, and speed tuning so customers find your business first on search.",
-    highlights: ["Google Search Schema", "Core Web Vitals 95+", "On-Page SEO Structure"],
-    icon: Search,
-  },
-  {
-    num: "06",
-    title: "AI Chatbots & WhatsApp Automation",
-    tag: "Smart Growth",
-    description:
-      "Smart 24/7 website chatbots and instant WhatsApp inquiry flows that answer questions and capture leads automatically.",
-    highlights: ["24/7 AI Support Bot", "Direct WhatsApp Leads", "Automated Booking Replies"],
-    icon: Bot,
-  },
-];
+const CORE_SERVICES = SERVICES;
 
 export function Services({ onOpenInquiry }: SectionActionProps) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -368,14 +308,13 @@ export function Services({ onOpenInquiry }: SectionActionProps) {
                       </div>
 
                       <div className="flex lg:col-span-5 lg:justify-end">
-                        <button
-                          type="button"
-                          onClick={() => triggerOpenProject(onOpenInquiry)}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#0AAA8C] px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#0A0A0A] cursor-pointer"
+                        <a
+                          href={`/services/${service.slug}`}
+                          className="inline-flex items-center gap-2 rounded-full bg-[#0AAA8C] px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#0A0A0A]"
                         >
-                          <span>Start this project</span>
+                          <span>Explore {service.title}</span>
                           <ArrowUpRight className="h-4 w-4" />
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
