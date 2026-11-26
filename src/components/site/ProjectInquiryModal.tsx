@@ -179,10 +179,10 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="relative z-10 flex max-h-[92dvh] sm:max-h-[90vh] w-full max-w-2xl flex-col rounded-t-3xl sm:rounded-3xl border border-neutral-200 bg-white p-5 sm:p-8 shadow-2xl overflow-y-auto"
+            className="relative z-10 flex max-h-[86vh] supports-[height:100dvh]:max-h-[86dvh] sm:max-h-[88vh] sm:supports-[height:100dvh]:max-h-[88dvh] w-full max-w-2xl flex-col rounded-t-3xl sm:rounded-3xl border border-neutral-200 bg-white p-4 sm:p-8 shadow-2xl overflow-y-auto overscroll-contain"
           >
             {/* Header */}
-            <div className="flex items-start justify-between border-b border-neutral-100 pb-4">
+            <div className="flex items-start justify-between border-b border-neutral-100 pb-3 sm:pb-4">
               <div>
                 <div className="inline-flex items-center gap-1.5 rounded-full border border-[#0AAA8C]/30 bg-[#0AAA8C]/10 px-3 py-1 font-mono text-[10px] font-semibold text-[#0AAA8C] uppercase tracking-wider">
                   <Sparkles className="h-3 w-3" />
@@ -190,7 +190,7 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                 </div>
                 <h3
                   id="project-modal-title"
-                  className="font-display mt-2.5 text-xl sm:text-2xl font-extrabold tracking-tight text-[#0A0A0A]"
+                  className="font-display mt-2.5 text-lg sm:text-2xl font-extrabold tracking-tight text-[#0A0A0A]"
                 >
                   Tell Us About Your Project.
                 </h3>
@@ -231,7 +231,7 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="mt-5 space-y-3.5">
+              <form onSubmit={handleSubmit} className="mt-4 sm:mt-5 space-y-3 sm:space-y-3.5">
                 {errorMessage && (
                   <div className="flex items-center gap-2 rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs font-medium text-rose-700">
                     <AlertCircle className="h-4 w-4 shrink-0 text-rose-500" />
@@ -359,8 +359,8 @@ export function ProjectInquiryModal({ isOpen, onClose }: ProjectInquiryModalProp
                   />
                 </div>
 
-                {/* Dual Action Controls */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-2">
+                {/* Dual Action Controls — sticky footer: submit hamesha nazar aaye */}
+                <div className="sticky bottom-0 -mx-4 sm:-mx-8 bg-white border-t border-neutral-100 px-4 sm:px-8 pt-3 pb-1 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
                   <button
                     type="button"
                     onClick={handleDirectWhatsApp}
