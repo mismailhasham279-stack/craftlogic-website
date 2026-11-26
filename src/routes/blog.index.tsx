@@ -25,7 +25,18 @@ export const Route = createFileRoute("/blog/")({
           "Practical guides on websites, online growth, and turning visitors into customers — written by the CRAFTLOGIC team.",
       },
       { property: "og:image", content: `${SITE_ORIGIN}/og-preview.png` },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_ORIGIN}/blog` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Blog — CRAFTLOGIC" },
+      {
+        name: "twitter:description",
+        content:
+          "Practical guides on websites, online growth, and turning visitors into customers — written by the CRAFTLOGIC team.",
+      },
+      { name: "twitter:image", content: `${SITE_ORIGIN}/og-preview.png` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_ORIGIN}/blog` }],
   }),
   component: BlogPage,
 });
