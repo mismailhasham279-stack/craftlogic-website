@@ -6,6 +6,11 @@ interface SEOProps {
   canonicalUrl?: string;
   image?: string;
   type?: "website" | "article";
+  // Only true on pages that visibly show the FAQ section (homepage).
+  // FAQPage markup must match visible content, and the Organization /
+  // ProfessionalService schema already lives in __root.tsx (static
+  // JSON-LD), so this component must not inject a second copy of it.
+  includeFaq?: boolean;
 }
 
 export function SEO({
@@ -14,6 +19,7 @@ export function SEO({
   canonicalUrl = "https://craftlogic.live/",
   image = "https://craftlogic.live/og-preview.png",
   type = "website",
+  includeFaq = false,
 }: SEOProps) {
   useEffect(() => {
     // 1. Browser Tab Window Title
@@ -91,9 +97,16 @@ export function SEO({
     setMetaTag("name", "twitter:description", description);
     setMetaTag("name", "twitter:image", image);
 
-    // 8. Google Rich Snippet Organization, FAQ & Service Schema (JSON-LD)
+    // 8. Google Rich Snippet FAQ Schema (JSON-LD) — only on pages that
+    // visibly show these FAQs (homepage). The Organization /
+    // ProfessionalService schema is NOT duplicated here: it already
+    // exists once in __root.tsx as static JSON-LD.
     const schemaId = "craftlogic-structured-schema";
     let schemaScript = document.getElementById(schemaId) as HTMLScriptElement | null;
+    if (!includeFaq) {
+      if (schemaScript) schemaScript.remove();
+      return;
+    }
     if (!schemaScript) {
       schemaScript = document.createElement("script");
       schemaScript.id = schemaId;
@@ -104,45 +117,6 @@ export function SEO({
     const schemaData = {
       "@context": "https://schema.org",
       "@graph": [
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://craftlogic.live/#service",
-          name: "CRAFTLOGIC",
-          legalName: "CRAFTLOGIC Web & Software Development Studio",
-          url: "https://craftlogic.live",
-          logo: "https://craftlogic.live/logo.png",
-          image: "https://craftlogic.live/logo.png",
-          description: description,
-          founder: {
-            "@type": "Person",
-            name: "Muhammad Ismail",
-            jobTitle: "Founder & Lead Solutions Architect",
-          },
-          email: "info@craftlogic.live",
-          telephone: "+923344957382",
-          priceRange: "$$",
-          address: {
-            "@type": "PostalAddress",
-            addressCountry: "PK",
-          },
-          sameAs: [
-            "https://www.instagram.com/craft_logics?obrf=d3NqYmY3ZmJyMm9w",
-            "https://www.facebook.com/share/14mTT25RfBp/",
-            "https://www.tiktok.com/@craftlogics?_r=1&_t=ZP-9AibnwtdjRf",
-            "https://www.threads.com/@craftlogic.web",
-            "https://x.com/web_developer92",
-            "https://www.linkedin.com/in/craft-logic-712857409?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-            "https://youtube.com/@craft_logics?si=ugoevhrErI-Z7zwq",
-          ],
-          knowsAbout: [
-            "Website Development",
-            "Mobile App Development",
-            "E-Commerce & Online Stores",
-            "SaaS Platforms & Web Applications",
-            "SEO & Core Web Vitals Optimization",
-            "AI Chatbots & WhatsApp Automation",
-          ],
-        },
         {
           "@type": "FAQPage",
           mainEntity: [
@@ -176,7 +150,7 @@ export function SEO({
     };
 
     schemaScript.textContent = JSON.stringify(schemaData);
-  }, [title, description, canonicalUrl, image, type]);
+  }, [title, description, canonicalUrl, image, type, includeFaq]);
 
   return null;
 }
