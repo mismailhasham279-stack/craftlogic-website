@@ -3705,6 +3705,218 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "google-business-profile-more-calls",
+    title: "Get More Calls From Your Google Business Profile in 2026",
+    description: "85% of small businesses have a Google Business Profile, but only 35% keep it active. Fix these 7 things and turn your free listing into more calls.",
+    date: "November 27, 2026",
+    published: "2026-11-27",
+    readTime: "5 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "85% of small businesses have a Google Business Profile. Only 35% of them keep it active. That gap is your opening \u2014 because 61% of local searches start on Google Search or Google Maps, and 75% of customers decide within 30 minutes of starting their search (BrightLocal, 2026).",
+      },
+      {
+        kind: "p",
+        text: "Your Google Business Profile is free. It sits above your website in search results, it shows your phone number, your hours, and your reviews \u2014 and it has a big Call button. The businesses that win the call are not the ones with the biggest budget. They are the ones whose profile answers the customer's three silent questions in seconds: do you do the job I need, are you open right now, and can I trust you?",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/google-business-profile-more-calls.jpg",
+        alt: "A smiling small business owner in a bright navy and teal shopfront holding a smartphone showing an incoming call, a laptop beside them showing Google Maps with a location pin and five-star reviews",
+      },
+      { kind: "h2", text: "What Is a Google Business Profile \u2014 and Why Does It Bring Calls?" },
+      {
+        kind: "p",
+        text: "A Google Business Profile is the free listing Google shows for your business in Search and on Google Maps. When someone searches \"plumber near me\" or \"salon open now\", your profile is what appears \u2014 your name, your star rating, your hours, your photos, and a button to call you.",
+      },
+      {
+        kind: "p",
+        text: "For many local businesses, the profile brings more calls than the website does. That is because the customer never has to leave Google: they see you, they trust you, they tap Call. Your website still matters \u2014 it closes the sale after the first tap \u2014 but the profile is what gets you found in the first place.",
+      },
+      {
+        kind: "p",
+        text: "What the customer actually sees in those first seconds decides everything: your star rating next to your name, how far away you are, whether you are open right now, and your newest photos. There is no \"about us\" page to read and no scrolling to do. If those four things look right, the call happens. If one of them looks wrong, the customer taps the next listing without a second thought.",
+      },
+      {
+        kind: "callout",
+        text: "Think of your profile as your shop window on Google. Your website is the shop itself. Both must look open, honest, and ready.",
+      },
+      { kind: "h2", text: "Why Most Google Business Profiles Never Bring Calls" },
+      {
+        kind: "p",
+        text: "Most profiles fail quietly. The owner set it up once, years ago, and never touched it again. Here are the five silent problems that cost calls every week:",
+      },
+      {
+        kind: "list",
+        items: [
+          "The wrong category. A listing under \"Business Service\" never shows up for \"emergency plumber\". Google matches your category to the search \u2014 pick the most specific one that fits your main job.",
+          "Empty services. If your services list is blank, Google cannot match you to what the customer typed \u2014 and the customer cannot see that you do the job they need.",
+          "Wrong hours. Nothing kills trust faster than a customer driving to a closed shop, or calling a number nobody answers at 7pm. Out-of-date holiday hours cause bad reviews.",
+          "Old or missing photos. A profile with two blurry photos from 2021 looks closed, even when you are open. Customers choose the business they can see.",
+          "Unanswered reviews. 97% of customers read reviews before choosing a local business (BrightLocal, 2026). A profile with no replies looks like nobody is home.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Each of these problems costs the same thing: a customer who was ready to call, and called someone else instead. The profile never tells you about the calls you lost \u2014 you only see the ones that arrived. That is why a neglected profile feels harmless while it quietly hands your work to competitors.",
+      },
+      {
+        kind: "callout",
+        text: "Check your profile today as a customer would: search your business on Google Maps. If anything looks wrong, your customers see the same thing.",
+      },
+      { kind: "h2", text: "How Do I Get More Calls From My Google Business Profile?" },
+      {
+        kind: "p",
+        text: "Seven fixes. All free. Work through them once, then repeat the last three every month.",
+      },
+      {
+        kind: "list",
+        items: [
+          "Pick the most specific primary category. \"HVAC Contractor\" beats \"Contractor\". \"Hair Salon\" beats \"Beauty Salon\". Add only secondary categories for services you truly offer.",
+          "List every service in the customer's words. Write \"emergency drain unblocking\", not trade slang. Add prices where you can \u2014 a price range removes the fear of calling.",
+          "Set true hours \u2014 including holiday hours. Update special hours before every public holiday. Test your own call button once a month: does it ring a phone someone answers?",
+          "Add 10 real photos. Aim for this mix: 1 shopfront in daylight with your sign clear, 2 of your workspace, 4 of real work in action, 2 of your team, 1 of your products or finished results. Real photos beat stock photos every time.",
+          "Ask every customer for a review \u2014 and reply to every one. Ask on the day the job is finished, while the customer is still happy. Reply within a day, with detail: mention the job, thank them by name. Make asking easy: a small card at the counter with a QR code, or a short message after the job with the review link. Never offer a discount for a review \u2014 Google bans that, and it can get reviews removed.",
+        ],
+      },
+      { kind: "h2", text: "What Should You Never Do on Your Google Business Profile?" },
+      {
+        kind: "p",
+        text: "Three mistakes can hurt you more than a blank profile. Never stuff keywords into your business name \u2014 \"Best Plumber London Cheap\" can get your listing suspended, and Google removes keyword-stuffed names. Use your real business name, exactly as it appears on your sign.",
+      },
+      {
+        kind: "p",
+        text: "Never buy fake reviews. Google removed over 290 million policy-violating reviews in 2025, and a sudden burst of five-star reviews from strangers is easy to spot. One honest review from a real customer is worth more than twenty fake ones.",
+      },
+      {
+        kind: "p",
+        text: "Never use a fake address. A virtual office or PO box for a storefront listing breaks Google's rules. If you visit customers instead of receiving them, set a service area and hide your address \u2014 that is the correct setup for plumbers, cleaners, and mobile services.",
+      },
+      {
+        kind: "callout",
+        text: "A suspended profile brings zero calls. Honest details, kept up to date, are the only safe shortcut.",
+      },
+      {
+        kind: "list",
+        items: [
+          "Post once a week. A short update, an offer, a new service, or a photo of recent work \u2014 each with a Call button. Posts show Google (and customers) that you are active.",
+          "Read your numbers once a month. Open the Performance report and write down three numbers: views, calls, and direction requests. Change one thing each month based on what you see.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "Ask for the review on the day the job is finished. A review asked for three weeks later almost never arrives.",
+      },
+      {
+        kind: "callout",
+        text: "Fix the category first. Posts and photos cannot rescue a profile listed under the wrong category.",
+      },
+      {
+        kind: "list",
+        items: [
+          "Category: a neglected profile is generic, e.g. \"Business Service\"; an active profile uses the most specific, e.g. \"Emergency Plumber\".",
+          "Services: a neglected profile is blank or out of date; an active profile lists every service, in customer words.",
+          "Photos: a neglected profile has 2 old, blurry photos; an active profile has 10+ fresh, real photos.",
+          "Reviews: a neglected profile has few, none answered; an active profile has steady new reviews, every one answered.",
+          "Posts: a neglected profile has nothing for months; an active profile has a fresh update every week.",
+          "Hours: a neglected profile is wrong on holidays; an active profile is always correct, holidays set.",
+          "Result: a neglected profile is seen, then skipped; an active profile is called, visited, booked.",
+        ],
+      },
+      { kind: "h2", text: "How Does Google Decide Which Business Shows First?" },
+      {
+        kind: "p",
+        text: "Google ranks local listings on three factors: relevance (how well your profile matches the search), distance (how close you are to the searcher), and prominence (how well-known and trusted you are \u2014 reviews, photos, mentions). You cannot change your distance. But relevance and prominence are fully in your hands: the right category, complete services, fresh photos, and a steady flow of answered reviews.",
+      },
+      {
+        kind: "p",
+        text: "This is also why the top three results \u2014 the map pack \u2014 win most of the calls. 72% of customers look at three or fewer businesses before deciding (BrightLocal, 2026). Your job is to be one of those three, and then to look like the safest choice among them.",
+      },
+      {
+        kind: "p",
+        text: "Prominence also grows outside your profile. When your business name, address, and phone number match exactly across your website, your profile, and other directories, Google trusts you more. When local websites mention you, that counts too. The profile is the centre of it \u2014 but the whole web around it either supports it or weakens it.",
+      },
+      {
+        kind: "callout",
+        text: "You cannot move your shop closer to the customer. You can move your profile higher \u2014 with relevance and prominence.",
+      },
+      { kind: "h2", text: "What Happens After Someone Taps Call \u2014 or Clicks Your Website?" },
+      {
+        kind: "p",
+        text: "Your profile sends two kinds of visitors: callers and clickers. Callers want a human now \u2014 so the phone must be answered, and your hours must be true. Clickers land on your website, and the website has exactly the same job: answer in seconds.",
+      },
+      {
+        kind: "p",
+        text: "That is where your website must do its part. The visitor who clicks through wants to see your services, your real photos, your reviews, and a call or booking button \u2014 without scrolling or searching. The first screen should answer five things: what you do, where you do it, how to reach you, proof that you are good, and how fast you load on a phone.",
+      },
+      {
+        kind: "p",
+        text: "If your website is slow or confusing, the customer goes straight back to Google and calls your competitor instead. See how CRAFTLOGIC builds websites that answer first on our work page at craftlogic.live/work (https://craftlogic.live/work), and the full list of what we build at craftlogic.live/#services (https://craftlogic.live/#services).",
+      },
+      {
+        kind: "callout",
+        text: "Your profile wins the tap. Your website wins the customer. One without the other leaks half your enquiries.",
+      },
+      { kind: "h2", text: "How Often Should You Update Your Google Business Profile?" },
+      {
+        kind: "p",
+        text: "Fifteen minutes a month is enough. Same date every month: check your hours, add one new photo, post one update, reply to new reviews, and write down your calls and views. Every three months, re-check your category and services \u2014 businesses change, and profiles should change with them.",
+      },
+      {
+        kind: "p",
+        text: "The owners who do this small routine beat the owners who set up a profile once and forgot it. Remember: 85% of small businesses have a profile, but only 35% maintain one. Being in that active 35% is the cheapest advantage in local marketing.",
+      },
+      { kind: "h2", text: "The Bottom Line" },
+      {
+        kind: "p",
+        text: "You do not need ads to get more calls from Google. You need a profile that is complete, honest, and alive: the right category, every service listed, true hours, real photos, fresh reviews with replies, and one post a week. That is fifteen minutes a month \u2014 for the listing that 61% of local customers see first.",
+      },
+      {
+        kind: "p",
+        text: "And when they tap through to your website, make sure it answers just as fast. That is what a well-built website does: it turns a tap into a customer.",
+      },
+      {
+        kind: "p",
+        text: "Want to see what your business could look like when every tap counts? Claim a Free Homepage Preview at craftlogic.live (https://craftlogic.live) \u2014 see the design first, get an exact quote, and decide with zero pressure. Or write to us at info@craftlogic.live. Visit craftlogic.live/#contact (https://craftlogic.live/#contact) to start.",
+      },
+      { kind: "h2", text: "Frequently Asked Questions" },
+      {
+        kind: "p",
+        text: "How do I get more calls from my Google Business Profile?",
+      },
+      {
+        kind: "p",
+        text: "Pick the most specific category, list every service in customer words, set true hours, add real photos, and ask every customer for a review. Most calls come from complete, active profiles \u2014 not from paying for ads.",
+      },
+      {
+        kind: "p",
+        text: "Is a Google Business Profile free?",
+      },
+      {
+        kind: "p",
+        text: "Yes, creating and managing a Google Business Profile is completely free. Google charges nothing for the listing, the call button, reviews, or posts \u2014 you only pay if you choose to run ads.",
+      },
+      {
+        kind: "p",
+        text: "How long does it take to rank higher on Google Maps?",
+      },
+      {
+        kind: "p",
+        text: "Small fixes like the right category and fresh photos can improve visibility within weeks, but lasting map-pack rankings take steady work: regular posts, new reviews, and accurate information over 2\u20133 months.",
+      },
+      {
+        kind: "p",
+        text: "Do I still need a website if I have a Google Business Profile?",
+      },
+      {
+        kind: "p",
+        text: "Yes. Your profile gets you found, but your website is where customers check your services, prices, and proof before they call or book. A profile without a good website sends customers to your competitors.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
