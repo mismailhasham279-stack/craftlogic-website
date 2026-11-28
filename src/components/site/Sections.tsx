@@ -22,14 +22,6 @@ const OFFICIAL_WHATSAPP = "923344957382";
 
 const SOCIAL_LINKS = [
   {
-    name: "Instagram",
-    href: "https://www.instagram.com/craft_logics?obrf=d3NqYmY3ZmJyMm9w",
-  },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/share/14mTT25RfBp/",
-  },
-  {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/craft-logic-712857409?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
@@ -40,10 +32,6 @@ const SOCIAL_LINKS = [
   {
     name: "TikTok",
     href: "https://www.tiktok.com/@craftlogics?_r=1&_t=ZP-9AibnwtdjRf",
-  },
-  {
-    name: "Threads",
-    href: "https://www.threads.com/@craftlogic.web",
   },
   {
     name: "X",
