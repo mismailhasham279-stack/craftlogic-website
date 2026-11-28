@@ -3966,6 +3966,11 @@ export const POSTS: Post[] = [
         text: "AI tools answer by reading real web pages. With no website, there is nothing clear for them to read \u2014 no services, no prices, no area, no proof \u2014 so you simply do not appear in the answer. 97% of AI users double-check recommendations against real reviews, and 63% trust what these tools tell them.",
       },
       {
+        kind: "image",
+        src: "/blog-images/do-businesses-still-need-websites-2026-ai.jpg",
+        alt: "A smiling woman speaking into her smartphone, asking a voice assistant for a nearby business",
+      },
+      {
         kind: "callout",
         text: "If AI cannot read your business, it cannot recommend it \u2014 and in 2026, 45% of customers ask AI first.",
       },
@@ -3994,6 +3999,11 @@ export const POSTS: Post[] = [
         kind: "callout",
         text: "31% of shoppers chose not to buy from a business simply because it had no website \u2014 a third of your market, gone quietly.",
       },
+      {
+        kind: "image",
+        src: "/blog-images/do-businesses-still-need-websites-2026-trust.jpg",
+        alt: "A friendly shopkeeper talking with a smiling customer at the counter of a small shop",
+      },
       { kind: "h2", text: "Website vs social media only: what is the real difference?" },
       {
         kind: "list",
@@ -4017,6 +4027,11 @@ export const POSTS: Post[] = [
       {
         kind: "p",
         text: "A website only helps if it does its job \u2014 check these five points before you pay for one:",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/do-businesses-still-need-websites-2026-booking.jpg",
+        alt: "Hands holding a smartphone showing a booking confirmation with a green checkmark",
       },
       {
         kind: "list",
