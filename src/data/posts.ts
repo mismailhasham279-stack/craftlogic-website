@@ -3917,6 +3917,195 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "do-businesses-still-need-websites-2026",
+    title: "Do Small Businesses Still Need a Website in 2026?",
+    description: "17% of small businesses still have no website in 2026, yet 81% of shoppers research online first. Here is the honest answer \u2014 and what to do next.",
+    date: "November 28, 2026",
+    published: "2026-11-28",
+    readTime: "6 min read",
+    author: "Muhammad Ismail",
+    blocks: [
+      {
+        kind: "p",
+        text: "17% of small businesses still have no website at all in 2026, according to a census that audited 91,904 small business websites \u2014 it also found 8.2% of the websites that do exist failed to load when tested.",
+      },
+      {
+        kind: "p",
+        text: "Meanwhile, 81% of shoppers research online before they buy, and 31% say they chose not to buy from a business simply because it had no website. So the question is no longer whether a website looks nice \u2014 it is whether customers can find you at all.",
+      },
+      {
+        kind: "image",
+        src: "/blog-images/do-businesses-still-need-websites-2026.jpg",
+        alt: "A friendly small business owner outside a bright modern shopfront at dusk, holding a smartphone, a laptop beside them showing a clean business website with a booking button",
+      },
+      { kind: "h2", text: "Do small businesses still need a website in 2026?" },
+      {
+        kind: "p",
+        text: "The short answer is yes \u2014 for most businesses. A website is the one place on the internet you actually own. Social media accounts can change their rules, shrink your reach, or suspend you overnight; your website stays yours, and it works while you sleep.",
+      },
+      {
+        kind: "p",
+        text: "The honest exception is narrow: at full capacity, with every job arriving through a closed referral network, and no plans to grow, you can survive without one. But the moment you want even one new customer, the website becomes the cheapest way to get found.",
+      },
+      {
+        kind: "callout",
+        text: "A website is the only place online that you own. Social media rents you attention \u2014 a website keeps it.",
+      },
+      { kind: "h2", text: "What changed in 2026: customers started asking AI" },
+      {
+        kind: "p",
+        text: "2026 is the first year the reason for a website has changed: it is no longer mainly about looking credible, but about being readable by the machines your customers now ask for recommendations.",
+      },
+      {
+        kind: "p",
+        text: "BrightLocal's 2026 research found 45% of consumers now use AI tools for local recommendations \u2014 up from just 6% a year earlier; 31% use ChatGPT and 23% Google's AI Mode. And here is the hard part: ChatGPT names just 1.2% of local business locations, Perplexity 7.4%, Gemini 11%, while Google's local 3-pack appears 35.9% of the time.",
+      },
+      {
+        kind: "p",
+        text: "AI tools answer by reading real web pages. With no website, there is nothing clear for them to read \u2014 no services, no prices, no area, no proof \u2014 so you simply do not appear in the answer. 97% of AI users double-check recommendations against real reviews, and 63% trust what these tools tell them.",
+      },
+      {
+        kind: "callout",
+        text: "If AI cannot read your business, it cannot recommend it \u2014 and in 2026, 45% of customers ask AI first.",
+      },
+      { kind: "h2", text: "What does a business without a website actually lose?" },
+      {
+        kind: "p",
+        text: "A business without a website does not just look behind the times \u2014 it loses real customers quietly, because they never call to tell you.",
+      },
+      {
+        kind: "p",
+        text: "First, it is invisible on Google: 83% of small businesses now have a website, so the ones without one get skipped past. Second, it has no home for its proof \u2014 no place where reviews, photos, prices, and services sit together for a customer deciding right now.",
+      },
+      {
+        kind: "p",
+        text: "Third, it cannot take a booking outside working hours. Customers message at night and on weekends \u2014 a booking button or simple form catches them; a phone number alone does not.",
+      },
+      {
+        kind: "p",
+        text: "Fourth, social media alone does not replace it: Instagram posts reach just 3.5% of followers on average, Facebook posts about 1.2%, and social posts are not indexed like web pages \u2014 so your prices, service area, and credentials stay invisible to search engines and AI.",
+      },
+      {
+        kind: "p",
+        text: "And the trust gap is real: 94% of first impressions are tied to website design, 83% of people judge a business's credibility within 20 seconds of visiting its website, and 87% have left a site at once because it did not look trustworthy. Businesses with websites grow roughly twice as fast.",
+      },
+      {
+        kind: "callout",
+        text: "31% of shoppers chose not to buy from a business simply because it had no website \u2014 a third of your market, gone quietly.",
+      },
+      { kind: "h2", text: "Website vs social media only: what is the real difference?" },
+      {
+        kind: "list",
+        items: [
+          "Found on Google search: social media only \u2014 barely indexed; a real website \u2014 pages rank.",
+          "Recommended by AI tools: social media only \u2014 almost never; a real website \u2014 AI can quote it.",
+          "Book or enquire any time: social media only \u2014 only by DM, when you reply; a real website \u2014 24/7 booking.",
+          "Prices and services listed: social media only \u2014 buried in old posts; a real website \u2014 clear, easy to find.",
+          "Reach per post: social media only \u2014 about 3.5% on Instagram, about 1.2% on Facebook; a real website \u2014 every search, every day.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "The smart answer is not website or social media \u2014 it is both: the website is the home base, social media is how people discover you. Social brings the attention; the website turns it into a booking.",
+      },
+      {
+        kind: "callout",
+        text: "Social media brings the attention. Your website turns it into a booking.",
+      },
+      { kind: "h2", text: "What should your website do in 2026? The 5-point checklist" },
+      {
+        kind: "p",
+        text: "A website only helps if it does its job \u2014 check these five points before you pay for one:",
+      },
+      {
+        kind: "list",
+        items: [
+          "Answer in seconds: what you do, where you work, and how to book or call \u2014 on the first screen of a phone, without scrolling.",
+          "Load fast on a phone: the average small business site scores just 58 out of 100 on mobile speed, and most visitors leave a slow site before they ever see your work.",
+          "Show real proof: real reviews and real photos of real work \u2014 stock photos and empty promises do not build trust; your own work does.",
+          "Put a contact form or booking button on the homepage: only 28% of small business sites do this, so most sites make customers hunt for a way to reach them.",
+          "Be readable by Google and AI: clear pages, honest service descriptions, and schema markup \u2014 only 70.5% of homepages have it \u2014 so search engines and AI tools can understand and recommend your business.",
+        ],
+      },
+      {
+        kind: "callout",
+        text: "If a visitor cannot see what you do, where you work, and how to book within 5 seconds on their phone, your website is not working \u2014 no matter how pretty it is.",
+      },
+      { kind: "h2", text: "Who genuinely does not need a website?" },
+      {
+        kind: "p",
+        text: "Be honest with yourself: you may not need a website yet if all three are true \u2014 fully booked for months, every new job from people you already know, and no plans to grow.",
+      },
+      {
+        kind: "p",
+        text: "Even then, a simple one-page website is cheap insurance: it protects your business name on Google, answers \"are you open, where are you, how do I book\", and collects your reviews in one place. The day you do want growth \u2014 a quiet month, a new service, a new town \u2014 you will already be found.",
+      },
+      {
+        kind: "p",
+        text: "Often the businesses that struggle are not the ones without a website, but the ones with a broken one: a site that fails to load, shows old prices, or hides the booking button. 9.3% of listed sites are broken or dead ends \u2014 if that is yours, fixing it matters more than redesigning it.",
+      },
+      {
+        kind: "callout",
+        text: "A broken website is worse than no website \u2014 it tells Google and customers that you are closed, even when you are open.",
+      },
+      { kind: "h2", text: "How much does a business website cost in 2026?" },
+      {
+        kind: "p",
+        text: "Website costs range from under $100 for a do-it-yourself builder site to more than $100,000 for a large custom build. For a small business, the honest range sits far below the top end \u2014 the price depends on pages, booking, and features, not guesswork.",
+      },
+      {
+        kind: "p",
+        text: "The right way to find out is to see the design first. CRAFTLOGIC starts with a free homepage concept: you see exactly what your website would look like, then you get an exact, all-inclusive quote \u2014 no hidden costs. Read our full 2026 price guide on the blog (https://craftlogic.live/blog/how-much-does-a-business-website-cost-in-2026) for the real ranges before you pay anything.",
+      },
+      { kind: "h2", text: "Get found before your competitors are" },
+      {
+        kind: "p",
+        text: "In 2026, a business without a website is not just behind the curve \u2014 it is invisible to most potential customers: 81% research online first, 45% now ask AI, and a third will skip you entirely if there is nothing to find.",
+      },
+      {
+        kind: "p",
+        text: "The good news: the fix is simple and the gap is still wide open \u2014 17% of your competitors have no website at all, and many of the rest have one that is slow, broken, or impossible to book through. A fast, clear website puts you ahead of both groups.",
+      },
+      {
+        kind: "p",
+        text: "Claim your Free Homepage Preview today at craftlogic.live (https://craftlogic.live) \u2014 see your new homepage before you pay anything \u2014 or reach out via info@craftlogic.live. Your customers are already searching. Make sure they find you.",
+      },
+      { kind: "h2", text: "Frequently Asked Questions" },
+      {
+        kind: "p",
+        text: "Do I need a website if I already have Instagram and Facebook?",
+      },
+      {
+        kind: "p",
+        text: "Yes. Social posts reach only about 3.5% of followers on Instagram and 1.2% on Facebook, and they are not indexed by Google or read by AI tools. A website is the home base that turns social attention into bookings.",
+      },
+      {
+        kind: "p",
+        text: "How much does a small business website cost in 2026?",
+      },
+      {
+        kind: "p",
+        text: "Costs range from under $100 for a do-it-yourself site to $100,000+ for large custom builds, with most small business sites far below the top end. The price depends on pages, booking features, and design \u2014 CRAFTLOGIC shows you a free homepage concept first, then gives an exact, all-inclusive quote.",
+      },
+      {
+        kind: "p",
+        text: "Can customers find my business on Google without a website?",
+      },
+      {
+        kind: "p",
+        text: "A Google Business Profile helps you appear on Maps, but without a website there is nowhere for customers to check your services, prices, and proof before they call. A profile plus a good website together win far more calls than a profile alone.",
+      },
+      {
+        kind: "p",
+        text: "Will AI tools like ChatGPT recommend my business if I have no website?",
+      },
+      {
+        kind: "p",
+        text: "Almost certainly not. ChatGPT names just 1.2% of local business locations, and it answers by reading real web pages. Without a clear website, there is nothing for it to quote \u2014 so your business stays out of the answer entirely.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): Post | undefined {
