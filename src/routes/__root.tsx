@@ -45,10 +45,7 @@ const JSON_LD = {
         jobTitle: "Founder & Lead Solutions Architect",
       },
       sameAs: [
-        "https://www.instagram.com/craft_logics?obrf=d3NqYmY3ZmJyMm9w",
-        "https://www.facebook.com/share/14mTT25RfBp/",
         "https://www.tiktok.com/@craftlogics?_r=1&_t=ZP-9AibnwtdjRf",
-        "https://www.threads.com/@craftlogic.web",
         "https://x.com/web_developer92",
         "https://www.linkedin.com/in/craft-logic-712857409?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         "https://youtube.com/@craft_logics?si=ugoevhrErI-Z7zwq",
