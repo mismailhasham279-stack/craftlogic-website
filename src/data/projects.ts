@@ -612,12 +612,9 @@ export const PHONE_DISPLAY = "+92 334 4957382";
 export const PHONE_TEL = "+923344957382";
 export const WHATSAPP_RAW = "923344957382";
 
-/* ---------------- 7 Official Social Profiles ---------------- */
+/* ---------------- 4 Official Social Profiles ---------------- */
 export const SOCIAL = {
-  instagram: "https://www.instagram.com/craft_logics?obrf=d3NqYmY3ZmJyMm9w",
-  facebook: "https://www.facebook.com/share/14mTT25RfBp/",
   tiktok: "https://www.tiktok.com/@craftlogics?_r=1&_t=ZP-9AibnwtdjRf",
-  threads: "https://www.threads.com/@craftlogic.web",
   x: "https://x.com/web_developer92",
   linkedin:
     "https://www.linkedin.com/in/craft-logic-712857409?utm_source=share_via&utm_content=profile&utm_medium=member_android",
